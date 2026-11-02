@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-30T11:27:53.129195+00:00",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/bridge.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/bridge.test.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/host-extension.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/inbox.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/inbox.test.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/page.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/peer.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/probe.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-m0/serve.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "check": "new documentation links and whitespace",
+      "passed": true
+    }
+  ],
+  "unit_tests": {
+    "passed": 10,
+    "log": "all-green.txt"
+  },
+  "real_component_probe": "passed, 3 exact-identity replies, no browser evidence",
+  "previous_evidence_unchanged": 38,
+  "new_listener_started": false,
+  "production_suite": "not run: no production source changed",
+  "browser_suite": "not run: listener forbidden"
+}

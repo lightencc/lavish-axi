@@ -457,7 +457,7 @@ export function deriveAttachmentNoticeState(state = {}) {
  * @param {number} [artifactRevision]
  * @param {string} [artifactLoadToken]
  * @param {string} [sessionKey]
- * @param {{ maxAttachmentCount?: number, maxAttachmentBytes?: number, acceptedImageMime?: string[] }} [options]
+ * @param {{ maxAttachmentCount?: number, maxAttachmentBytes?: number, acceptedImageMime?: string[], polish?: boolean }} [options]
  */
 export function createArtifactSdk(
   deriveQueueKey,
@@ -469,6 +469,9 @@ export function createArtifactSdk(
   options = {},
 ) {
   const { isMermaidSvg, mermaidNodeFrom, mermaidNodeElement } = mermaid;
+  const polishEnabled = options.polish === true;
+  let polishItems = [],
+    polishPoint = null;
   function postArtifactMessage(type, payload = {}) {
     parent.postMessage({ type, ...payload, artifact_load_token: String(artifactLoadToken || "") }, "*");
   }
@@ -479,6 +482,7 @@ export function createArtifactSdk(
   let hovered = null;
   let selected = null;
   let ignoreNextClick = false;
+  let polishSelecting = false;
   // Selectors the chrome reports as carrying a queued note. A click on one opens that note in the
   // chrome's panel instead of a fresh card; the note's words never enter this document.
   let queuedAnchorSelectors = new Set();
@@ -1134,6 +1138,7 @@ export function createArtifactSdk(
     const target = {
       type: "text-range",
       text,
+      rangeText: range.toString().trim().replace(/\s+/g, " "),
       selector: commonAncestorSelector,
       commonAncestorSelector,
       start: rangeBoundary(range.startContainer, range.startOffset),
@@ -1206,6 +1211,7 @@ export function createArtifactSdk(
       style.textContent =
         ":root{--lavish-accent:#f4c95d;--lavish-annotate-outline:2px solid var(--lavish-accent);--lavish-annotate-offset:2px}*{cursor:default!important}:where(:is([role='button'],[role='checkbox'],[role='combobox'],[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option'],[role='radio'],[role='switch'],[role='tab'],[role='treeitem']):not(a[href])),:where(:is([role='button'],[role='checkbox'],[role='combobox'],[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option'],[role='radio'],[role='switch'],[role='tab'],[role='treeitem']):not(a[href])) *{cursor:pointer!important}:where(:is([role='button'],[role='checkbox'],[role='combobox'],[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option'],[role='radio'],[role='switch'],[role='tab'],[role='treeitem']) a[href]),:where(:is([role='button'],[role='checkbox'],[role='combobox'],[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option'],[role='radio'],[role='switch'],[role='tab'],[role='treeitem']) a[href]) *{cursor:default!important}[data-lavish-action],[data-lavish-action] *{cursor:pointer!important}input,textarea,[contenteditable]:not([contenteditable='false']){cursor:text!important}button,select,label,option,input[type='button'],input[type='submit'],input[type='reset'],input[type='checkbox'],input[type='radio'],input[type='file'],input[type='color'],input[type='range'],input[type='image']{cursor:pointer!important}";
       document.head.appendChild(style);
+      if (polishEnabled) style.textContent += ":root{--lavish-accent:#3370ff}";
     }
     if (!annotationMode && style) style.remove();
     if (!annotationMode) closeCard();
@@ -1217,7 +1223,7 @@ export function createArtifactSdk(
 
   function queuePrompt(prompt, options = {}) {
     const originElement = options.element || document.activeElement || document.body;
-    /** @type {{ uid: string, prompt: string, selector: string, tag: string, text: string, target?: unknown, attachments?: Array<{ id: string, name?: string }>, _lavishQueueKey?: string }} */
+    /** @type {{ uid: string, prompt: string, selector: string, tag: string, text: string, scope?: string, target?: unknown, attachments?: Array<{ id: string, name?: string }>, _lavishQueueKey?: string }} */
     const item = {
       ...context(originElement),
       prompt: String(prompt || ""),
@@ -1231,6 +1237,15 @@ export function createArtifactSdk(
     if (options.text) item.text = String(options.text);
     if (options.target) item.target = options.target;
     if (options.data) item.prompt += "\n\nContext data:\n" + JSON.stringify(options.data, null, 2);
+    if (polishEnabled) {
+      item.scope = options.scope || (options.element || options.selector ? "anchored" : "session");
+      if (item.scope === "session") {
+        delete item.selector;
+        delete item.tag;
+        delete item.text;
+        delete item.target;
+      }
+    }
     // Attach only the client-controllable fields (server-vetted id + display name);
     // the chrome forwards these and the server re-resolves each id (see queuePrompts).
     if (Array.isArray(options.attachments) && options.attachments.length) {
@@ -2237,10 +2252,100 @@ export function createArtifactSdk(
     const style = document.createElement("style");
     style.textContent = `:host{all:initial;position:fixed;z-index:2147483647;left:0;top:0;color-scheme:dark;--ink-900:#0f1115;--ink-800:#11141a;--ink-700:#171a21;--ink-600:#1c212b;--steel-700:#2a2f3a;--steel-600:#303745;--steel-500:#3c4557;--steel-400:#8c96aa;--steel-300:#aeb6c6;--steel-200:#b9c0cf;--steel-100:#d8deea;--cream-50:#fffbf3;--cream-100:#f7f3ea;--cream-200:#e8e1cf;--brass-500:#f4c95d;--brass-400:#ffd877;--brass-ink:#17130a;--bg:var(--ink-900);--bg-panel:var(--ink-800);--bg-elevated:var(--ink-600);--fg:var(--cream-100);--fg-faint:var(--steel-300);--border:var(--steel-600);--accent:#f4c95d;--accent-hover:#ffd877;--font-sans:Geist,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--radius-md:10px;--radius-xl:14px;--shadow-floating:0 20px 70px rgba(0,0,0,.35);font-family:var(--font-sans)}*{box-sizing:border-box}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.lavish-text-highlight{position:fixed;pointer-events:none;background:rgba(244,201,93,.28);border-radius:2px;box-shadow:0 0 0 1px rgba(244,201,93,.45)}.lavish-annotation-card{position:fixed;width:min(320px,calc(100vw - 24px));padding:12px;border-radius:var(--radius-xl);background:var(--bg-panel);color:var(--fg);border:1px solid var(--accent);box-shadow:var(--shadow-floating);font:14px/1.4 var(--font-sans)}.lavish-heading{font-weight:700;margin-bottom:6px}.lavish-annotation-card textarea{width:100%;min-height:86px;resize:vertical;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--bg);color:var(--fg);padding:9px;font:inherit;font-family:var(--font-sans)}.lavish-annotation-card textarea::placeholder{color:var(--fg-faint)}.lavish-annotation-card .lavish-hint{margin-top:6px;font-size:11px;color:var(--fg-faint)}.lavish-annotation-card .lavish-hint-alert{color:#ff9d7a;font-weight:700}.lavish-annotation-card .lavish-row{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}.lavish-annotation-card button{border:0;border-radius:var(--radius-md);padding:8px 10px;font-family:var(--font-sans);font-size:13px;font-weight:700;cursor:pointer}.lavish-annotation-card button:active{opacity:.85}.lavish-annotation-card .lavish-send{background:var(--accent);color:var(--brass-ink)}.lavish-annotation-card .lavish-send:hover{background:var(--accent-hover)}.lavish-annotation-card .lavish-cancel{background:var(--steel-700);color:var(--fg)}.lavish-annotation-card.is-dropping{outline:2px dashed var(--accent);outline-offset:3px}.lavish-attachments{display:flex;flex-direction:column;gap:6px;margin-top:8px;max-height:176px;overflow-y:auto}.lavish-attachment-chip{display:flex;align-items:center;gap:8px;padding:6px;border-radius:var(--radius-md);background:var(--bg);border:1px solid var(--border)}.lavish-attachment-chip.is-error{border-color:#e0623d}.lavish-attachment-thumb{width:32px;height:32px;border-radius:6px;object-fit:cover;background:var(--ink-700);flex:0 0 auto}.lavish-attachment-thumb-empty{display:inline-block}.lavish-attachment-body{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1 1 auto}.lavish-attachment-name{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lavish-attachment-status{font-size:11px;color:var(--fg-faint)}.lavish-attachment-status-error{color:#ff9d7a}.lavish-attachment-retry{flex:0 0 auto;padding:4px 8px;font-size:11px;font-weight:700;border-radius:8px;background:var(--steel-700);color:var(--fg);cursor:pointer;border:0}.lavish-attachment-remove{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:22px;height:22px;padding:0!important;border-radius:50%;background:transparent;color:rgba(255,255,255,.85);cursor:pointer;border:0}.lavish-attachment-remove:hover{background:rgba(255,255,255,.14);color:#fff}.lavish-attach-row{margin-top:8px}.lavish-attach{display:inline-flex;align-items:center;gap:6px;padding:6px 9px!important;background:var(--steel-700)!important;color:var(--fg)!important;font-size:12px!important}.lavish-attach:hover{background:var(--steel-600)!important}.lavish-reveal-marker{position:fixed;pointer-events:none;border:2px solid var(--accent);border-radius:4px;box-shadow:0 0 0 4px rgba(244,201,93,.22);animation:lavish-reveal-pulse 2.4s var(--ease,ease-out) forwards}@keyframes lavish-reveal-pulse{0%{opacity:0}12%{opacity:1}70%{opacity:1}100%{opacity:0}}`;
     shadow.appendChild(style);
+    if (polishEnabled) {
+      const polishStyle = document.createElement("style");
+      polishStyle.textContent =
+        ".polish-pin{position:fixed;width:28px;height:28px;padding:0;border:2px solid #3370ff;border-radius:50%;background:#fff;box-shadow:0 2px 8px #1f232926;cursor:pointer}.polish-pin.processing{border-color:#ff9817;background:#fff5e7}.polish-pin.replied::after{content:'';position:absolute;width:6px;height:6px;right:-2px;top:-2px;border-radius:50%;background:#25885b;border:2px solid white}.lavish-text-highlight{background:#3370ff33;box-shadow:0 0 0 1px #3370ff44}";
+      shadow.appendChild(polishStyle);
+    }
     return shadow;
   }
 
+  function resolvePolishAnchor(p) {
+    const normalize = (text) =>
+      String(text || "")
+        .trim()
+        .replace(/\s+/g, " ");
+    const unique = (value) => {
+      if (typeof value !== "string" || !value || value.length > 2000) return null;
+      const matches = document.querySelectorAll(value);
+      return matches.length === 1 ? matches[0] : null;
+    };
+    try {
+      const element = unique(p.selector);
+      if (!element) return null;
+      if (p.target?.type === "text-range") {
+        const boundary = (value) => {
+          if (!value || !Array.isArray(value.path) || value.path.length > 100) return null;
+          let node = /** @type {Node} */ (unique(value.selector));
+          for (const index of value.path) {
+            if (!Number.isInteger(index) || index < 0) return null;
+            node = node?.childNodes[index];
+          }
+          return node;
+        };
+        const start = boundary(p.target.start),
+          end = boundary(p.target.end);
+        if (!start || !end || !element.contains(start) || !element.contains(end)) return null;
+        const range = document.createRange();
+        range.setStart(start, p.target.start.offset);
+        range.setEnd(end, p.target.end.offset);
+        const expected = normalize(p.target.rangeText ?? p.target.text);
+        if (!expected || normalize(range.toString()) !== expected) return null;
+        return element;
+      }
+      // A selector may be reused after a revision. Never attach a comment to a
+      // merely similar block, including a longer block sharing a truncated quote.
+      const expected = normalize(p.target?.type === "block" ? p.target.text : p.text);
+      return expected && normalize(/** @type {HTMLElement} */ (element).innerText || element.textContent) === expected
+        ? element
+        : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function renderPolishPins() {
+    if (!polishEnabled) return;
+    const root = ensureShadow();
+    // Keep the same button across live replies so keyboard focus is not lost.
+    const existing = new Map(
+      [...root.querySelectorAll(".polish-pin")].map((pin) => [pin.getAttribute("data-comment-id"), pin]),
+    );
+    const offsets = new Map();
+    const missing = [];
+    for (const item of polishItems) {
+      const p = item.prompt;
+      if (!p || p.scope !== "anchored" || typeof p.selector !== "string" || p.selector.length > 2000) continue;
+      const target = resolvePolishAnchor(p);
+      if (!target) {
+        missing.push(item.id);
+        continue;
+      }
+      const rect = target.getBoundingClientRect(),
+        offset = offsets.get(p.selector) || 0;
+      offsets.set(p.selector, offset + 32);
+      const pin = /** @type {HTMLButtonElement} */ (existing.get(item.id) || document.createElement("button"));
+      existing.delete(item.id);
+      pin.setAttribute("data-comment-id", item.id);
+      pin.className =
+        "polish-pin" + (item.state === "delivered" ? " processing" : "") + (item.replied ? " replied" : "");
+      pin.setAttribute("aria-label", item.label || "查看评论");
+      pin.title = item.label || "查看评论";
+      pin.style.left = Math.max(4, Math.min(window.innerWidth - 32, rect.right + 6)) + "px";
+      pin.style.top = rect.top + offset + "px";
+      pin.onclick = (event) => {
+        event.stopPropagation();
+        postArtifactMessage("polish:openThread", { id: item.id, x: event.clientX, y: event.clientY });
+      };
+      if (pin.parentNode !== root) root.appendChild(pin);
+    }
+    for (const pin of existing.values()) pin.remove();
+    postArtifactMessage("polish:anchors", { missing });
+  }
+
   function closeCard() {
+    if (polishEnabled) document.getSelection()?.removeAllRanges();
     const hadCard = activeCardContext !== null;
     activeCardContext = null;
     if (activeAttachments) {
@@ -2272,6 +2377,28 @@ export function createArtifactSdk(
     closeCard();
 
     const c = options.context || context(target, { table: true });
+    if (polishEnabled) {
+      if (options.range) highlightTextRange(options.range);
+      else {
+        selected = annotationTargetEl(target);
+        highlightElement(selected);
+      }
+      const rect = target.getBoundingClientRect();
+      postArtifactMessage("polish:open", {
+        context: {
+          selector: c.selector,
+          tag: c.tag,
+          text: c.text,
+          target: c.target || {
+            type: "block",
+            text: (target.innerText || target.textContent || "").trim().replace(/\s+/g, " ").slice(0, 12000),
+          },
+        },
+        x: polishPoint?.x ?? rect.left,
+        y: polishPoint?.y ?? rect.bottom,
+      });
+      return;
+    }
     activeCardContext = c;
     let anchor = target;
     if (options.range) {
@@ -2498,12 +2625,22 @@ export function createArtifactSdk(
     setDocumentMeta,
     snapshot,
   };
+  if (polishEnabled) /** @type {any} */ (window).polish = /** @type {any} */ (window).lavish;
 
   window.addEventListener("message", (event) => {
     // The chrome is the only legitimate sender. This listener is on `window`, so
     // without the source check the artifact could post to itself and drive the SDK.
     if (event.source !== parent) return;
     const msg = event.data || {};
+    if (polishEnabled && msg.type === "polish:close") closeCard();
+    if (polishEnabled && msg.type === "polish:state") {
+      polishItems = Array.isArray(msg.items) ? msg.items : [];
+      renderPolishPins();
+    }
+    if (polishEnabled && msg.type === "polish:selectionEnd" && polishSelecting) {
+      polishSelecting = false;
+      openTextSelection({ x: Number(msg.x) || 0, y: Number(msg.y) || 0 });
+    }
     if (msg.type === "lavish:setAnnotationMode") setAnnotationMode(msg.enabled);
     if (msg.type === "lavish:attachmentResult") {
       if (!isTrustedAttachmentResult(event, { parentWindow: parent, nonce: ATTACHMENT_NONCE })) return;
@@ -2562,6 +2699,23 @@ export function createArtifactSdk(
     true,
   );
 
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        polishEnabled &&
+        (event.metaKey || event.ctrlKey) &&
+        event.altKey &&
+        event.key.toLowerCase() === "m" &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        if (isInteractiveControl(document.activeElement) || !openTextSelection()) postArtifactMessage("polish:overall");
+      }
+    },
+    true,
+  );
+
   // Report scroll position to the chrome so it can be restored across hot reloads.
   // The iframe is sandboxed without same-origin, so the chrome can't read scrollY directly.
   let scrollFrame = 0;
@@ -2607,9 +2761,39 @@ export function createArtifactSdk(
     true,
   );
 
+  function openTextSelection(point = null) {
+    if (!annotationMode) return false;
+    const c = textSelectionContext(document.getSelection());
+    if (!c) return false;
+    const rect = c.range.getBoundingClientRect();
+    polishPoint = point || { x: rect.left, y: rect.bottom };
+    showAnnotationCard(c.element, { context: c, range: c.range });
+    return true;
+  }
+
+  document.addEventListener(
+    "pointerdown",
+    (event) => {
+      if (
+        !polishEnabled ||
+        !annotationMode ||
+        event.button !== 0 ||
+        isLavishUi(event.target) ||
+        isLavishAction(event.target) ||
+        isInteractiveControl(event.target)
+      )
+        return;
+      polishSelecting = true;
+      postArtifactMessage("polish:selectionStart");
+    },
+    true,
+  );
+
   document.addEventListener(
     "mouseup",
     (event) => {
+      polishSelecting = false;
+      if (polishEnabled) postArtifactMessage("polish:selectionDone");
       if (
         !annotationMode ||
         isLavishUi(event.target) ||
@@ -2618,11 +2802,7 @@ export function createArtifactSdk(
       )
         return;
 
-      const c = textSelectionContext(document.getSelection());
-      if (!c) return;
-
-      ignoreNextClick = true;
-      showAnnotationCard(c.element, { context: c, range: c.range });
+      if (openTextSelection({ x: event.clientX, y: event.clientY })) ignoreNextClick = true;
     },
     true,
   );
@@ -2643,6 +2823,7 @@ export function createArtifactSdk(
       // Checked before the queued-note branch so the modifier always wins, and it clears a pending
       // text-selection swallow so the next plain click is not eaten.
       const followModifier = isApplePlatform() ? event.metaKey : event.ctrlKey;
+      if (polishEnabled && /** @type {Element} */ (event.target)?.closest?.("a[href]")) return;
       if (followModifier && /** @type {Element} */ (event.target)?.closest?.("a[href]")) {
         ignoreNextClick = false;
         return;
@@ -2663,6 +2844,7 @@ export function createArtifactSdk(
         postArtifactMessage("lavish:editQueuedAnchor", { selector });
         return;
       }
+      polishPoint = { x: event.clientX, y: event.clientY };
       showAnnotationCard(event.target);
     },
     true,
@@ -2671,6 +2853,11 @@ export function createArtifactSdk(
   setAnnotationMode(annotationMode);
   // Report the page default once; subsequent mode changes belong to the chrome.
   postArtifactMessage("lavish:annotationMode", { enabled: initialAnnotationMode });
+  if (polishEnabled) {
+    window.addEventListener("scroll", renderPolishPins, { passive: true });
+    window.addEventListener("resize", renderPolishPins);
+    postArtifactMessage("polish:ready");
+  }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", startLayoutAudit, { once: true });
   } else {

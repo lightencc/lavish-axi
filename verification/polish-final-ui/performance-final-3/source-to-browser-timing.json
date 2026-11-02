@@ -1,0 +1,567 @@
+{
+  "launch": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/launches/84e9d8be-711a-400e-bffc-f401a0d67708",
+  "uiFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/performance-final-3/ui-results.json",
+  "sourceClock": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+  "browserClock": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+  "supervisorClock": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+  "calibration": {
+    "sourceCalibrations": 2,
+    "browserCalibrations": 2,
+    "sourceMinusBrowserLowerMs": -1.755859375,
+    "sourceMinusBrowserUpperMs": 0.830810546875,
+    "method": "Bracketed source/browser offsets to the same supervisor; envelope pre/post samples plus 1ms browser quantization. Intervening drift is not independently observed."
+  },
+  "inputSamples": 33,
+  "allCompleted": true,
+  "unsuccessful": [],
+  "uiFeedbackMs": {
+    "n": 33,
+    "p50": 2.700000047683716,
+    "p95": 5,
+    "max": 5.700000047683716
+  },
+  "uiAcknowledgementMs": {
+    "n": 33,
+    "p50": 58.799999952316284,
+    "p95": 65.5,
+    "max": 75.5
+  },
+  "uiCompleteReplyMs": {
+    "n": 33,
+    "p50": 1695.7999999523163,
+    "p95": 3545.0999999046326,
+    "max": 3779.7999999523163
+  },
+  "intervals": {
+    "input_consumed": {
+      "estimates": {
+        "n": 33,
+        "p50": 29.3941650390625,
+        "p95": 33.3265380859375,
+        "max": 38.0330810546875
+      },
+      "upperBounds": {
+        "n": 33,
+        "p50": 30.6875,
+        "p95": 34.619873046875,
+        "max": 39.326416015625
+      },
+      "targetP95Ms": 200,
+      "passed": true
+    },
+    "reply_persisted": {
+      "estimates": {
+        "n": 33,
+        "p50": 9.3375244140625,
+        "p95": 12.3070068359375,
+        "max": 13.5628662109375
+      },
+      "upperBounds": {
+        "n": 33,
+        "p50": 10.630859375,
+        "p95": 13.600341796875,
+        "max": 14.856201171875
+      },
+      "targetP95Ms": 200,
+      "passed": true
+    }
+  },
+  "observations": [
+    {
+      "index": 1,
+      "id": "73d4850d-26dd-4898-8922-c65bf6136d19",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 25.572509765625,
+        "estimateMs": 26.8658447265625,
+        "upperMs": 28.1591796875
+      },
+      "reply_persisted": {
+        "lowerMs": 7.6123046875,
+        "estimateMs": 8.9056396484375,
+        "upperMs": 10.198974609375
+      }
+    },
+    {
+      "index": 2,
+      "id": "dbd4490e-3bfa-485a-b35a-009820b828fb",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 25.9462890625,
+        "estimateMs": 27.2396240234375,
+        "upperMs": 28.532958984375
+      },
+      "reply_persisted": {
+        "lowerMs": 6.906982421875,
+        "estimateMs": 8.2003173828125,
+        "upperMs": 9.49365234375
+      }
+    },
+    {
+      "index": 3,
+      "id": "e84f0457-9c2b-4cea-8a99-4d4a47ff2a3b",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 30.44287109375,
+        "estimateMs": 31.7362060546875,
+        "upperMs": 33.029541015625
+      },
+      "reply_persisted": {
+        "lowerMs": 8.243896484375,
+        "estimateMs": 9.5372314453125,
+        "upperMs": 10.83056640625
+      }
+    },
+    {
+      "index": 4,
+      "id": "43a0b4fa-a48d-4aa4-9597-963348ef64d9",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 30.916015625,
+        "estimateMs": 32.2093505859375,
+        "upperMs": 33.502685546875
+      },
+      "reply_persisted": {
+        "lowerMs": 5.06591796875,
+        "estimateMs": 6.3592529296875,
+        "upperMs": 7.652587890625
+      }
+    },
+    {
+      "index": 5,
+      "id": "58d5db4d-8f1f-49bc-83fb-b1bf98ef498a",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 25.53271484375,
+        "estimateMs": 26.8260498046875,
+        "upperMs": 28.119384765625
+      },
+      "reply_persisted": {
+        "lowerMs": 4.62841796875,
+        "estimateMs": 5.9217529296875,
+        "upperMs": 7.215087890625
+      }
+    },
+    {
+      "index": 6,
+      "id": "9dff0d33-9430-42da-91e4-bafa73e330fe",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 23.4111328125,
+        "estimateMs": 24.7044677734375,
+        "upperMs": 25.997802734375
+      },
+      "reply_persisted": {
+        "lowerMs": 5.803955078125,
+        "estimateMs": 7.0972900390625,
+        "upperMs": 8.390625
+      }
+    },
+    {
+      "index": 7,
+      "id": "ddddc2f2-4c77-48df-9791-bf1fb25d3830",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 26.483154296875,
+        "estimateMs": 27.7764892578125,
+        "upperMs": 29.06982421875
+      },
+      "reply_persisted": {
+        "lowerMs": 7.56103515625,
+        "estimateMs": 8.8543701171875,
+        "upperMs": 10.147705078125
+      }
+    },
+    {
+      "index": 8,
+      "id": "49a2ad7b-83ab-4f88-95e2-9bf91af1e3b4",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.1103515625,
+        "estimateMs": 29.4036865234375,
+        "upperMs": 30.697021484375
+      },
+      "reply_persisted": {
+        "lowerMs": 8.148193359375,
+        "estimateMs": 9.4415283203125,
+        "upperMs": 10.73486328125
+      }
+    },
+    {
+      "index": 9,
+      "id": "bd8e991d-0857-4d15-be2c-08bcab0e7263",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 26.69775390625,
+        "estimateMs": 27.9910888671875,
+        "upperMs": 29.284423828125
+      },
+      "reply_persisted": {
+        "lowerMs": 8.665771484375,
+        "estimateMs": 9.9591064453125,
+        "upperMs": 11.25244140625
+      }
+    },
+    {
+      "index": 10,
+      "id": "1923e3e2-945a-43ba-a0b2-b4587ccb728e",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 25.619140625,
+        "estimateMs": 26.9124755859375,
+        "upperMs": 28.205810546875
+      },
+      "reply_persisted": {
+        "lowerMs": 5.673828125,
+        "estimateMs": 6.9671630859375,
+        "upperMs": 8.260498046875
+      }
+    },
+    {
+      "index": 11,
+      "id": "85f9aba5-f277-468e-9ed1-81154c4a4bfb",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 27.5302734375,
+        "estimateMs": 28.8236083984375,
+        "upperMs": 30.116943359375
+      },
+      "reply_persisted": {
+        "lowerMs": 9.467529296875,
+        "estimateMs": 10.7608642578125,
+        "upperMs": 12.05419921875
+      }
+    },
+    {
+      "index": 12,
+      "id": "4a65d878-0c32-4925-ae68-87d79081c751",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 29.462646484375,
+        "estimateMs": 30.7559814453125,
+        "upperMs": 32.04931640625
+      },
+      "reply_persisted": {
+        "lowerMs": 6.57275390625,
+        "estimateMs": 7.8660888671875,
+        "upperMs": 9.159423828125
+      }
+    },
+    {
+      "index": 13,
+      "id": "1838441a-bdb3-4c8c-9931-511127b226a0",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.100830078125,
+        "estimateMs": 29.3941650390625,
+        "upperMs": 30.6875
+      },
+      "reply_persisted": {
+        "lowerMs": 7.89111328125,
+        "estimateMs": 9.1844482421875,
+        "upperMs": 10.477783203125
+      }
+    },
+    {
+      "index": 14,
+      "id": "bd885251-e0e5-40f7-a132-00700b3b0731",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.785888671875,
+        "estimateMs": 30.0792236328125,
+        "upperMs": 31.37255859375
+      },
+      "reply_persisted": {
+        "lowerMs": 7.593994140625,
+        "estimateMs": 8.8873291015625,
+        "upperMs": 10.1806640625
+      }
+    },
+    {
+      "index": 15,
+      "id": "dfabf7c1-1189-4345-a05b-bdbcc49d5632",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.524658203125,
+        "estimateMs": 29.8179931640625,
+        "upperMs": 31.111328125
+      },
+      "reply_persisted": {
+        "lowerMs": 8.044189453125,
+        "estimateMs": 9.3375244140625,
+        "upperMs": 10.630859375
+      }
+    },
+    {
+      "index": 16,
+      "id": "7acbaf19-8052-41ad-8601-87a6d43daf7d",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 32.033203125,
+        "estimateMs": 33.3265380859375,
+        "upperMs": 34.619873046875
+      },
+      "reply_persisted": {
+        "lowerMs": 7.173095703125,
+        "estimateMs": 8.4664306640625,
+        "upperMs": 9.759765625
+      }
+    },
+    {
+      "index": 17,
+      "id": "e50ab92b-0d05-42da-8984-a368be6dfb04",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.122314453125,
+        "estimateMs": 29.4156494140625,
+        "upperMs": 30.708984375
+      },
+      "reply_persisted": {
+        "lowerMs": 8.6611328125,
+        "estimateMs": 9.9544677734375,
+        "upperMs": 11.247802734375
+      }
+    },
+    {
+      "index": 18,
+      "id": "bd6639a3-4017-42c5-afb5-9df3694b9988",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.44775390625,
+        "estimateMs": 29.7410888671875,
+        "upperMs": 31.034423828125
+      },
+      "reply_persisted": {
+        "lowerMs": 7.0146484375,
+        "estimateMs": 8.3079833984375,
+        "upperMs": 9.601318359375
+      }
+    },
+    {
+      "index": 19,
+      "id": "6c467b47-a099-4191-b8b8-68902dc4b872",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 29.86669921875,
+        "estimateMs": 31.1600341796875,
+        "upperMs": 32.453369140625
+      },
+      "reply_persisted": {
+        "lowerMs": 12.26953125,
+        "estimateMs": 13.5628662109375,
+        "upperMs": 14.856201171875
+      }
+    },
+    {
+      "index": 20,
+      "id": "1d7f164c-bb8d-4839-9c2b-12920645c681",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 27.591552734375,
+        "estimateMs": 28.8848876953125,
+        "upperMs": 30.17822265625
+      },
+      "reply_persisted": {
+        "lowerMs": 9.26171875,
+        "estimateMs": 10.5550537109375,
+        "upperMs": 11.848388671875
+      }
+    },
+    {
+      "index": 21,
+      "id": "1b0ddba6-40dd-458d-aad4-8c94012d3651",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.3330078125,
+        "estimateMs": 29.6263427734375,
+        "upperMs": 30.919677734375
+      },
+      "reply_persisted": {
+        "lowerMs": 10.174072265625,
+        "estimateMs": 11.4674072265625,
+        "upperMs": 12.7607421875
+      }
+    },
+    {
+      "index": 22,
+      "id": "6c368332-180c-4336-ae04-7d7847a6a652",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 36.73974609375,
+        "estimateMs": 38.0330810546875,
+        "upperMs": 39.326416015625
+      },
+      "reply_persisted": {
+        "lowerMs": 10.663330078125,
+        "estimateMs": 11.9566650390625,
+        "upperMs": 13.25
+      }
+    },
+    {
+      "index": 23,
+      "id": "4b4851c1-0ad0-4c7f-9ec6-d71564af37ca",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 27.760986328125,
+        "estimateMs": 29.0543212890625,
+        "upperMs": 30.34765625
+      },
+      "reply_persisted": {
+        "lowerMs": 7.611328125,
+        "estimateMs": 8.9046630859375,
+        "upperMs": 10.197998046875
+      }
+    },
+    {
+      "index": 24,
+      "id": "fc0d71b0-83c0-4552-94c9-c228ef472263",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.2578125,
+        "estimateMs": 29.5511474609375,
+        "upperMs": 30.844482421875
+      },
+      "reply_persisted": {
+        "lowerMs": 6.322998046875,
+        "estimateMs": 7.6163330078125,
+        "upperMs": 8.90966796875
+      }
+    },
+    {
+      "index": 25,
+      "id": "a8a9d5b0-bb2e-4c6c-bb28-8cf65df3dfbc",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 27.565673828125,
+        "estimateMs": 28.8590087890625,
+        "upperMs": 30.15234375
+      },
+      "reply_persisted": {
+        "lowerMs": 10.853271484375,
+        "estimateMs": 12.1466064453125,
+        "upperMs": 13.43994140625
+      }
+    },
+    {
+      "index": 26,
+      "id": "aa376f9c-3827-4749-b399-40a8aa549046",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 26.4482421875,
+        "estimateMs": 27.7415771484375,
+        "upperMs": 29.034912109375
+      },
+      "reply_persisted": {
+        "lowerMs": 9.40869140625,
+        "estimateMs": 10.7020263671875,
+        "upperMs": 11.995361328125
+      }
+    },
+    {
+      "index": 27,
+      "id": "e7c73b87-4e60-405e-8cd5-d3cf4e9001b0",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 28.676513671875,
+        "estimateMs": 29.9698486328125,
+        "upperMs": 31.26318359375
+      },
+      "reply_persisted": {
+        "lowerMs": 7.968017578125,
+        "estimateMs": 9.2613525390625,
+        "upperMs": 10.5546875
+      }
+    },
+    {
+      "index": 28,
+      "id": "3e34aec0-5827-4a15-ad4f-d6469ae35edc",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 26.8203125,
+        "estimateMs": 28.1136474609375,
+        "upperMs": 29.406982421875
+      },
+      "reply_persisted": {
+        "lowerMs": 9.001953125,
+        "estimateMs": 10.2952880859375,
+        "upperMs": 11.588623046875
+      }
+    },
+    {
+      "index": 29,
+      "id": "d8b12747-6ae0-4870-8233-757821a5de6d",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 27.385009765625,
+        "estimateMs": 28.6783447265625,
+        "upperMs": 29.9716796875
+      },
+      "reply_persisted": {
+        "lowerMs": 9.78076171875,
+        "estimateMs": 11.0740966796875,
+        "upperMs": 12.367431640625
+      }
+    },
+    {
+      "index": 30,
+      "id": "19a495d1-0561-43da-8949-8c59db7e7d39",
+      "kind": "session",
+      "input_consumed": {
+        "lowerMs": 30.108642578125,
+        "estimateMs": 31.4019775390625,
+        "upperMs": 32.6953125
+      },
+      "reply_persisted": {
+        "lowerMs": 9.143310546875,
+        "estimateMs": 10.4366455078125,
+        "upperMs": 11.72998046875
+      }
+    },
+    {
+      "index": 31,
+      "id": "c7114980-dbcd-47d7-b3c2-bf0689228753",
+      "kind": "anchored",
+      "input_consumed": {
+        "lowerMs": 28.020751953125,
+        "estimateMs": 29.3140869140625,
+        "upperMs": 30.607421875
+      },
+      "reply_persisted": {
+        "lowerMs": 10.596923828125,
+        "estimateMs": 11.8902587890625,
+        "upperMs": 13.18359375
+      }
+    },
+    {
+      "index": 32,
+      "id": "046e29f4-f161-4df9-a163-ecb3951a5f7d",
+      "kind": "anchored",
+      "input_consumed": {
+        "lowerMs": 28.920654296875,
+        "estimateMs": 30.2139892578125,
+        "upperMs": 31.50732421875
+      },
+      "reply_persisted": {
+        "lowerMs": 7.97216796875,
+        "estimateMs": 9.2655029296875,
+        "upperMs": 10.558837890625
+      }
+    },
+    {
+      "index": 33,
+      "id": "f931315e-9e53-4085-b5ff-72285fe5e4c7",
+      "kind": "anchored",
+      "input_consumed": {
+        "lowerMs": 25.28271484375,
+        "estimateMs": 26.5760498046875,
+        "upperMs": 27.869384765625
+      },
+      "reply_persisted": {
+        "lowerMs": 11.013671875,
+        "estimateMs": 12.3070068359375,
+        "upperMs": 13.600341796875
+      }
+    }
+  ],
+  "note": "All measurements include tracing cost. Source trace metadata alone proves neither visible UI nor an actual provider processing start."
+}

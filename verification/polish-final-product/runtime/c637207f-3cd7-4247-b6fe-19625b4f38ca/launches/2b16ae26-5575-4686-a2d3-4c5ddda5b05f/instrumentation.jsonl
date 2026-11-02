@@ -1,0 +1,4 @@
+{"stage":"harness_ready","clockID":"pi:40480:481314d3-4107-40f9-918d-631d715b51f8","at":1793387958177.5938,"durableWriteMs":4.0648339999999905}
+{"stage":"accepted_durable","clockID":"pi:40480:481314d3-4107-40f9-918d-631d715b51f8","at":1793387959638.3677,"durableWriteMs":4.144874999999956}
+{"stage":"dispatch_reserved","clockID":"pi:40480:481314d3-4107-40f9-918d-631d715b51f8","at":1793387959660.4084,"durableWriteMs":3.99741599999993}
+{"stage":"host_admitted","clockID":"pi:40480:481314d3-4107-40f9-918d-631d715b51f8","at":1793387959674.2656,"durableWriteMs":3.8768749999999272}

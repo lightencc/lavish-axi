@@ -2,6 +2,7 @@
 
 const sessionDataElement = document.getElementById("lavish-session");
 const sessionData = JSON.parse(sessionDataElement?.textContent || "{}");
+let polishReviewUi = null;
 const key = String(sessionData.key || "");
 const filePath = String(sessionData.file || "");
 const queueStorageKey = "lavish-axi:queued:" + key;
@@ -1316,7 +1317,7 @@ function readSheetOpen() {
 }
 
 function isMobileSheet() {
-  return Boolean(sheetMedia && sheetMedia.matches);
+  return !sessionData.polish && Boolean(sheetMedia && sheetMedia.matches);
 }
 
 function setSheetOpen(open) {
@@ -1349,8 +1350,10 @@ function applySheetState() {
   if (docked && activeElement && (panelScroll.contains(activeElement) || chatComposer.contains(activeElement))) {
     panelToggle.focus();
   }
-  panelToggle.setAttribute("aria-expanded", open ? "true" : "false");
-  panelToggle.setAttribute("aria-label", open ? "Hide conversation" : "Show conversation");
+  if (!sessionData.polish) {
+    panelToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    panelToggle.setAttribute("aria-label", open ? "Hide conversation" : "Show conversation");
+  }
   renderSheetSummary();
 }
 
@@ -1492,7 +1495,7 @@ syncVisualViewport();
 // honours `panel-collapsed` outside the phone breakpoint, and this controller never sets it there,
 // so a stored preference cannot hide the phone dock.
 const panelCollapsedStorageKey = "lavish-axi:panel-collapsed";
-let panelCollapsed = readPanelCollapsed();
+let panelCollapsed = sessionData.polish || readPanelCollapsed();
 
 function readPanelCollapsed() {
   try {
@@ -1530,7 +1533,9 @@ function applyPanelCollapsed() {
   document.body.classList.toggle("panel-collapsed", collapsed);
   // Focus inside a panel that just went display:none would be lost to the document body.
   const activeElement = document.activeElement;
-  if (collapsed && activeElement && panel.contains(activeElement)) sidebarToggle.focus();
+  if (collapsed && activeElement && panel.contains(activeElement)) {
+    sidebarToggle.focus();
+  }
   sidebarToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
   renderSidebarToggle();
 }
@@ -1545,13 +1550,20 @@ function renderSidebarToggle() {
   sidebarToggleCount.hidden = count === 0;
   sidebarToggle.classList.toggle("is-unread", unread);
   let label = collapsed ? "Show conversation" : "Hide conversation";
+  if (sessionData.polish) label = collapsed ? "兼容队列与附件" : "收起兼容队列与附件";
   if (count > 0) label += count === 1 ? " (1 queued)" : " (" + count + " queued)";
   else if (unread) label += " (new reply)";
   sidebarToggle.setAttribute("aria-label", label);
   sidebarToggle.title = label;
 }
 
-sidebarToggle.addEventListener("click", () => setPanelCollapsed(!panelCollapsed));
+sidebarToggle.addEventListener("click", () => {
+  setPanelCollapsed(!panelCollapsed);
+  if (sessionData.polish) {
+    if (panelCollapsed) sidebarToggle.focus();
+    else panelToggle.focus();
+  }
+});
 
 function scrollElementIntoView(el) {
   el.scrollIntoView({ block: "nearest", inline: "nearest" });
@@ -1738,6 +1750,11 @@ function enqueuePrompt(rawPrompt, /** @type {FeedbackPreparation | null} */ prep
   // The sandboxed iframe is untrusted: never accept a caller-supplied settlement identity.
   const prompt = adoptQueuedPrompt(rawPrompt, false);
   if (!prompt) return false;
+  if (sessionData.polish) {
+    prompt.scope = rawPrompt.scope || (rawPrompt.tag === "text" ? "anchored" : "session");
+    prompt.round_id = prompt[promptIdentityField];
+    if (prompt.scope === "anchored") prompt.comment_id = prompt[promptIdentityField];
+  }
 
   const queueKey = promptQueueKey(prompt);
   if (queueKey) {
@@ -2202,8 +2219,20 @@ async function submitQueuedOnce(submission, preserveFailureState = false) {
     settleAcknowledgementGuidance(submission, preserveFailureState);
     return;
   }
-  const body = { prompts: prompts.map(stripInternalPromptFields), domSnapshot: submission.domSnapshot };
-  if (shouldEndSession) body.endSession = true;
+  const body = /** @type {any} */ ({
+    prompts: prompts.map(stripInternalPromptFields),
+    domSnapshot: submission.domSnapshot,
+  });
+  if (sessionData.polish) {
+    body.review_epoch = sessionData.reviewEpoch;
+    body.prompts = body.prompts.map((p) => ({
+      ...p,
+      scope: p.scope || "session",
+      round_id: p.round_id || p.prompt_id,
+    }));
+    if (shouldEndSession)
+      body.end_request = { id: body.prompts[0].prompt_id + "-end", epoch: sessionData.reviewEpoch, final: null };
+  } else if (shouldEndSession) body.endSession = true;
   let response;
   try {
     response = await fetch("/api/" + key + "/prompts", {
@@ -2302,7 +2331,7 @@ async function submitQueuedOnce(submission, preserveFailureState = false) {
   }
   render();
   settleAcknowledgementGuidance(submission, preserveFailureState);
-  if (shouldEndSession) {
+  if (shouldEndSession && !sessionData.polish) {
     markSessionEnded();
     return;
   }
@@ -3151,6 +3180,10 @@ async function refreshLayoutWarnings() {
 
 async function endSession(terminal = null) {
   if (ended || (terminalSubmission && terminal !== terminalSubmission)) return;
+  if (polishReviewUi) {
+    await polishReviewUi.requestEnd("manual");
+    return;
+  }
   const response = await fetch("/api/" + key + "/end", { method: "POST" });
   if (!response.ok) throw new Error("failed to end session");
   markSessionEnded();
@@ -4345,6 +4378,7 @@ window.addEventListener("message", (event) => {
     return;
   }
   const messageSequence = ++artifactMessageSequence;
+  polishReviewUi?.handleFrame(msg);
   artifactSpokeToken = messageToken;
   clearTimeout(artifactSilenceTimer);
   if (msg.type === "lavish:layoutDiagnostics") {
@@ -4728,6 +4762,8 @@ document.addEventListener("keydown", (event) => {
       closeMenus();
     } else if (sheetOpen && isMobileSheet()) {
       setSheetOpen(false);
+    } else if (sessionData.polish && !panelCollapsed) {
+      setPanelCollapsed(true);
     } else {
       closeMenus();
     }
@@ -4762,10 +4798,19 @@ initializeLayoutGate();
 // WebSockets leave the browser's HTTP connection pool free for sends and artifact loads.
 const events = new Map();
 let eventReconnectDelayMs = 500;
+let activeEventSocket = null;
 function connectLiveEvents() {
   const protocol = location.protocol === "https:" ? "wss:" : "ws:";
   const socket = new WebSocket(protocol + "//" + location.host + "/events/" + encodeURIComponent(key));
+  activeEventSocket = socket;
+  let reviewCursor = null;
+  let closing = false;
+  function resync() {
+    closing = true;
+    socket.close();
+  }
   socket.addEventListener("open", () => {
+    if (activeEventSocket !== socket || closing) return;
     eventReconnectDelayMs = 500;
     liveEventFailures = 0;
     unreachableDismissed = false;
@@ -4776,14 +4821,41 @@ function connectLiveEvents() {
     refreshLayoutWarnings();
   });
   socket.addEventListener("message", (message) => {
+    if (activeEventSocket !== socket || closing) return;
     try {
       const { type, data } = JSON.parse(message.data);
+      if (type === "polish-review") {
+        const valid =
+          data &&
+          typeof data.sync_id === "string" &&
+          Number.isSafeInteger(data.version) &&
+          Number.isSafeInteger(data.epoch);
+        if (!valid || (!reviewCursor && data.full_snapshot !== true)) {
+          resync();
+          return;
+        }
+        if (reviewCursor) {
+          if (data.sync_id !== reviewCursor.sync_id || data.epoch !== reviewCursor.epoch) {
+            resync();
+            return;
+          }
+          if (data.version <= reviewCursor.version) return;
+          if (data.previous_version !== reviewCursor.version || data.full_snapshot !== false) {
+            resync();
+            return;
+          }
+        }
+        reviewCursor = { sync_id: data.sync_id, epoch: data.epoch, version: data.version };
+      }
       return events.get(type)?.(data || {});
     } catch {
       // Ignore malformed frames; a later event or reconnect can recover the stream.
     }
   });
   socket.addEventListener("close", () => {
+    if (activeEventSocket !== socket) return;
+    activeEventSocket = null;
+    polishReviewUi?.disconnected();
     liveEventFailures += 1;
     noteLiveEventsUnreachable();
     setTimeout(connectLiveEvents, eventReconnectDelayMs);
@@ -4802,6 +4874,10 @@ function noteLiveEventsUnreachable() {
 }
 
 events.set("reload", () => {
+  if (polishReviewUi) {
+    polishReviewUi.changed();
+    return;
+  }
   resetFrame().then((reloaded) => {
     if (reloaded) refreshWhiteboardSource();
   });
@@ -4826,7 +4902,52 @@ events.set("chat-sync", (data) => {
 });
 events.set("agent-presence", (data) => setAgentPresence(data.mode === "external-listener" ? "external" : data.state));
 events.set("layout-warnings", (data) => setLayoutWarnings(data.warnings || []));
-events.set("ended", () => markSessionEnded());
+events.set("ended", () => {
+  // Bound reviews use the versioned lifecycle, never an unversioned legacy signal.
+  if (!polishReviewUi) markSessionEnded();
+});
+events.set("polish-review", (data) => {
+  if (!polishReviewUi) return;
+  if (data.lifecycle === "ended") markSessionEnded();
+  else if (data.full_snapshot === true && data.lifecycle === "open" && ended) {
+    // Only a current authoritative snapshot can reopen native controls. Pending identities stay intact.
+    ended = false;
+    endedOverlay.hidden = true;
+    annotationSwitch.disabled = false;
+    moreButton.disabled = false;
+    chatInput.disabled = false;
+    updateSendState();
+    applySheetState();
+    postToFrame({ type: "lavish:setAnnotationMode", enabled: annotation });
+  }
+  polishReviewUi.sync(data);
+});
+if (sessionData.polish && /** @type {any} */ (window).mountPolishReview) {
+  polishReviewUi = /** @type {any} */ (window).mountPolishReview({
+    key,
+    frame,
+    post: postToFrame,
+    currentLoad: () => ({ token: artifactLoadToken, revision: artifactLoadRevision }),
+    reload: async () => {
+      if ((await probeChromeHealth()) !== "running") throw new Error("服务暂不可用，输入已保留");
+      await resetFrame();
+    },
+  });
+  document.querySelector(".brand-mark").innerHTML =
+    '<svg class="polish-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 3h11l-5 9H2Z" fill="currentColor" opacity=".45"/><path d="m11 12 11-3-4 12H7Z" fill="currentColor"/></svg><span class="polish-wordmark">Polish</span>';
+  annotationSwitch.querySelector(":scope > span:last-child").textContent = "评论";
+  endButton.querySelector("span").textContent = "结束通信";
+  endedOverlay.querySelector(".ended-title").textContent = "通信已结束";
+  endedOverlay.querySelector(".ended-copy").textContent = "可以关闭此页，当前 Pi 会话仍可继续。";
+  panelHead.querySelector("h2").textContent = "兼容队列与附件";
+  // Legacy artifact queues and attachments remain available on demand, not as
+  // the primary review surface or a permanent mobile dock.
+  panelToggle.textContent = "×";
+  panelToggle.setAttribute("aria-label", "收起兼容队列与附件");
+  panelToggle.removeAttribute("aria-expanded");
+  panelToggle.onclick = () => setPanelCollapsed(true);
+  if (presenceBanner) presenceBanner.hidden = true;
+}
 connectLiveEvents();
 
 applySheetState();

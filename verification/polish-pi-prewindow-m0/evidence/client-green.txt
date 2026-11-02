@@ -1,0 +1,11 @@
+✔ actual client retries missing reply after first query failure and same-version manual snapshot (2.462625ms)
+✔ actual client rejects stale SSE state without rolling replied/ended UI back to accepted/open (0.604417ms)
+✔ actual client reconnect fills missing reply from same-version SSE snapshot without submitting again (0.670208ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38.341292

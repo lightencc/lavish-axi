@@ -1,0 +1,12 @@
+{
+  "binding": {
+    "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+    "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+    "session": "01a18d97-a652-715c-8d56-71655bfa011d"
+  },
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1",
+  "piPid": 89463,
+  "supervisorPid": 89379,
+  "startedAt": 1793376888532,
+  "deadline": 1793377488532
+}

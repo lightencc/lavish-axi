@@ -1,0 +1,157 @@
+{
+  "at": "2026-10-30T11:16:37.076496+00:00",
+  "files": [
+    {
+      "path": "verification/polish-m0/.gitignore",
+      "sha256": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f"
+    },
+    {
+      "path": "verification/polish-m0/README.md",
+      "sha256": "78871ae1328f91eea2eafc03888eddc28ca61701e3e760959663e46b3198d7a6"
+    },
+    {
+      "path": "verification/polish-m0/analyze.py",
+      "sha256": "f20db7971b20ee42d3b07a5f57e2a9055a4656906982daae7a5515bd9ab9ce19"
+    },
+    {
+      "path": "verification/polish-m0/evidence/cleanup.json",
+      "sha256": "a296327e31fc7d602ac2c0dd4fdcc9cf75fd8871271fdeb4f6ce590a0de3d3df"
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-capability.json",
+      "sha256": "874c6986dc889cc95f509263ea525b1c4496917c8f3361da00347cd5491182b4"
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-thread-identity.json",
+      "sha256": "322ab61512afc9c7790fe07a9b99a6951eea38d0a0b05c88546e88bd631b6225"
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-transport.json",
+      "sha256": "59847f80b7fcc459229cae899745d31fb977980780e061006f8dccd20e3904a0"
+    },
+    {
+      "path": "verification/polish-m0/evidence/duplicate-evidence.json",
+      "sha256": "53b34becbbde8d8c9542f70d655d93de54bdf21028f805a114b91830a79f1428"
+    },
+    {
+      "path": "verification/polish-m0/evidence/environment.json",
+      "sha256": "870d44433e774094164726df0251f2540c3dfd2cc0852a41b7f3b17fd18811a5"
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-crash-events.jsonl",
+      "sha256": "d3be822fa3a485195c8f33daff17d964ca87639cc1a3d4b369c188939ddebed1"
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-events.jsonl",
+      "sha256": "403784b6082f50d12bd47610ae57f8de7fa7ce0aa5d8b992697010d9bac19677"
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-latency.json",
+      "sha256": "4138a6858d36c3d72cc12c1b239eb70a89cfbb64a0367c94c0924f4cbb2aac90"
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-persisted-user-entries.json",
+      "sha256": "a9e33396abcf15e6d12746ece965b1fbc9fe7ee1548dbee1e3195f8c490ab81c"
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-source-manifest.json",
+      "sha256": "a237a50da451f1f21347db07b7862fb6e7206320108fbaa73bfddd8337ca33f5"
+    },
+    {
+      "path": "verification/polish-m0/evidence/test-green.txt",
+      "sha256": "37cc10031d26e0ca8a93fd6e14d2aed5347f078db6283341852f2bc75a6beaf5"
+    },
+    {
+      "path": "verification/polish-m0/evidence/test-red.txt",
+      "sha256": "dce188fc5f79bafa1fcfd3677cc4230984d13eb66052cadce5b61cde92cef19c"
+    },
+    {
+      "path": "verification/polish-m0/pi-crash-probe.js",
+      "sha256": "827fe4bccaba712023b362f48fed53c5b42550398431fe0c9d2cf04a42f2839b"
+    },
+    {
+      "path": "verification/polish-m0/pi-probe.js",
+      "sha256": "c59637adc271eb8258132e2e9dbe6fd16634dcdcbb63b80057b6ac41b386b745"
+    },
+    {
+      "path": "verification/polish-m0/probe-support.js",
+      "sha256": "049aef1312753d6c0cd42fd029c841c8fe569ddc04b6f535e5ef03d88a65bcf7"
+    },
+    {
+      "path": "verification/polish-m0/probe.test.js",
+      "sha256": "57c8a46f7c8c774fdd9703aa4646e129e1294629c1a22b8df3aeb00d2a4cfee2"
+    },
+    {
+      "path": "docs/polish-m0-report.md",
+      "sha256": "2988ca98150a871cc0e83dd4db667b022e7d012a2ae52aca714cba0f2707bf92"
+    },
+    {
+      "path": "docs/polish-m0-supplement-report.md",
+      "sha256": "e4950f5666e4f71e77b3464157d9d47964a08d0421abe04a7f04b5109b91314e"
+    },
+    {
+      "path": "verification/polish-m0-supplement/.gitignore",
+      "sha256": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f"
+    },
+    {
+      "path": "verification/polish-m0-supplement/README.md",
+      "sha256": "670a19b99974bd9d34bd8b34eaa22f5ecd5b68017fc80bc952b1639d623c83cd"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/cli-readonly.json",
+      "sha256": "d0c16ebf9416bbf649f858100f0354d482150b060a702b6a79d3530b13112633"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/experiment-summary.json",
+      "sha256": "1e4faeccfd16a83f14eb6556f164ffe1333feec20761dcdabf534b5953824afc"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/extension-events.jsonl",
+      "sha256": "c30aaa33f5115015ce5c1aa92cc73a21f6eab7519a46ba8dfefd43e5690e125b"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/final-checks.json",
+      "sha256": "87d1a29c5c3a7531edf6671b0b1a1a2a60c740cf2b31def3632cf4b05d7cb8ce"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/first-round-preserved-after.json",
+      "sha256": "2ee4c02f964d87c348063f553658bc558d245ae4c127a1e70e7a49226b2f7064"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/first-round-preserved-before.json",
+      "sha256": "efc0094e6419ed9d20e0ddb669039daef7edad365813428c94b757bb1e24eacc"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/pi-source-manifest.json",
+      "sha256": "b27c908bb958d9630acf7a6f41eb937df4df6e7fe6be00a30439978c7decf618"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/unit-cleanup-failure.txt",
+      "sha256": "9a75cabd1580acc2a45f2b050348906a46452317b777d284a9aabef29f9e8f4f"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/unit-green.txt",
+      "sha256": "98f5ecfc7abd40cc3f779662d8b6e8e6d5ca13b1d7981dab9725050f7be516c4"
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/unit-red.txt",
+      "sha256": "f87d630850280a13faf9ddc1f6ad8af6335ad598f08a89b51a2b414c694eb390"
+    },
+    {
+      "path": "verification/polish-m0-supplement/ledger.js",
+      "sha256": "94d17c942b9f696c062a5faf63b08dcd6caad962d8a36d91e15eb60d21d671ba"
+    },
+    {
+      "path": "verification/polish-m0-supplement/ledger.test.js",
+      "sha256": "19c181c3ea4e0cf04691e2b0e539b1e0ace5276dd38d3e4532d03e2a78d88ebb"
+    },
+    {
+      "path": "verification/polish-m0-supplement/pi-extension.js",
+      "sha256": "38544fd8d0dd7dc844152b0461059e8e5fa575f04ec2e672b30535ee742bd409"
+    },
+    {
+      "path": "verification/polish-m0-supplement/run-extension-probe.js",
+      "sha256": "5839d00c8adbd4d38a9e087d0334c33aec77217f6a9c1958ff6bcbb16ac86b19"
+    }
+  ]
+}

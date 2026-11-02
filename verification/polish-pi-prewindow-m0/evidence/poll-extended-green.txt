@@ -1,0 +1,13 @@
+✔ actual poll handler and bridge share mode/claim; output never proves Pi consumption (42.362292ms)
+✔ disconnect after real destructive take preserves same unknown attempt, never restores to deliverable queue (51.707625ms)
+✔ unbound legacy GET and POST takeover retain native feedback and listener cleanup (2.31025ms)
+✔ event-driven actual poll takes through the same lease and leaves input unconsumed (33.693125ms)
+✔ mode switch fences an already-waiting actual poll before its later destructive take (34.133417ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 286.640208

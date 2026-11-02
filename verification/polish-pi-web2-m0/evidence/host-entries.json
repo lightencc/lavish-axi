@@ -1,0 +1,209 @@
+[
+  {
+    "id": "fa965343",
+    "parentId": "dd95fcbb",
+    "type": "message",
+    "role": "system",
+    "text": ""
+  },
+  {
+    "id": "0ed11927",
+    "parentId": "fa965343",
+    "type": "custom_message",
+    "customType": "polish-combined-input",
+    "details": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+      "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+      "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+      "epoch": 1,
+      "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+      "digest": "aaa6fe2e8d0030ea8a8acec62c1cd46655806a1cc1c3d150f505665ff1612371",
+      "attempt": "d84500a3-a05f-4bc7-bbc4-0e57d09336f2"
+    }
+  },
+  {
+    "id": "ed0df9c3",
+    "parentId": "0ed11927",
+    "type": "message",
+    "role": "assistant",
+    "text": "W2_ACK",
+    "model": "grok/grok-4.7",
+    "provider": "magpie",
+    "usage": {
+      "input": 636,
+      "output": 32,
+      "cacheRead": 1152,
+      "cacheWrite": 0,
+      "reasoning": 28,
+      "totalTokens": 1820,
+      "cost": {
+        "input": 0.001272,
+        "output": 0.000192,
+        "cacheRead": 0.000576,
+        "cacheWrite": 0,
+        "total": 0.00204
+      }
+    },
+    "stopReason": "stop"
+  },
+  {
+    "id": "a378c917",
+    "parentId": "ed0df9c3",
+    "type": "custom_message",
+    "customType": "polish-combined-input",
+    "details": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+      "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+      "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+      "epoch": 1,
+      "id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e",
+      "digest": "924403d26dd4e89d628600029e250b572fefdd9a28bad204b091a9c1b8b99ec9",
+      "attempt": "af38a307-4ef9-4737-a635-c41735e6a568"
+    }
+  },
+  {
+    "id": "0334d32a",
+    "parentId": "a378c917",
+    "type": "message",
+    "role": "assistant",
+    "text": "W2_RECOVERED",
+    "model": "grok/grok-4.7",
+    "provider": "magpie",
+    "usage": {
+      "input": 209,
+      "output": 34,
+      "cacheRead": 1664,
+      "cacheWrite": 0,
+      "reasoning": 28,
+      "totalTokens": 1907,
+      "cost": {
+        "input": 0.00041799999999999997,
+        "output": 0.000204,
+        "cacheRead": 0.000832,
+        "cacheWrite": 0,
+        "total": 0.001454
+      }
+    },
+    "stopReason": "stop"
+  },
+  {
+    "id": "c7871860",
+    "parentId": "0334d32a",
+    "type": "custom_message",
+    "customType": "polish-combined-input",
+    "details": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+      "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+      "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+      "epoch": 1,
+      "id": "r3-e7dd8719-876c-49ae-92f0-cc94089574e6",
+      "digest": "40ca21045ae803c892e3f159d2dcfdbeaf8ec245c0ee389148204a91e8bd677f",
+      "attempt": "e7b4e7cd-4a99-482a-88a0-3132b7497f79"
+    }
+  },
+  {
+    "id": "bc70c5db",
+    "parentId": "c7871860",
+    "type": "message",
+    "role": "assistant",
+    "text": "W2_POLL",
+    "model": "grok/grok-4.7",
+    "provider": "magpie",
+    "usage": {
+      "input": 166,
+      "output": 32,
+      "cacheRead": 1792,
+      "cacheWrite": 0,
+      "reasoning": 28,
+      "totalTokens": 1990,
+      "cost": {
+        "input": 0.000332,
+        "output": 0.000192,
+        "cacheRead": 0.000896,
+        "cacheWrite": 0,
+        "total": 0.0014199999999999998
+      }
+    },
+    "stopReason": "stop"
+  },
+  {
+    "id": "6e39ae55",
+    "parentId": "bc70c5db",
+    "type": "custom_message",
+    "customType": "polish-combined-input",
+    "details": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+      "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+      "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+      "epoch": 1,
+      "id": "r3-7ef0233e-38f3-4b81-ae7c-15219bc0c78f",
+      "digest": "a797174fdc38511d044a337fe8add0c17bf886271f3454af28395db90cd07447",
+      "attempt": "88a0aca3-7f83-4998-9975-f8bf3cdbaa58"
+    }
+  },
+  {
+    "id": "64087fbc",
+    "parentId": "6e39ae55",
+    "type": "message",
+    "role": "assistant",
+    "text": "W2_FINAL",
+    "model": "grok/grok-4.7",
+    "provider": "magpie",
+    "usage": {
+      "input": 124,
+      "output": 31,
+      "cacheRead": 1920,
+      "cacheWrite": 0,
+      "reasoning": 27,
+      "totalTokens": 2075,
+      "cost": {
+        "input": 0.000248,
+        "output": 0.000186,
+        "cacheRead": 0.0009599999999999999,
+        "cacheWrite": 0,
+        "total": 0.0013939999999999998
+      }
+    },
+    "stopReason": "stop"
+  },
+  {
+    "id": "2a5cad95",
+    "parentId": "64087fbc",
+    "type": "custom_message",
+    "customType": "polish-combined-input",
+    "details": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+      "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+      "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+      "epoch": 1,
+      "id": "r3-c62b21ce-3092-44c3-8d3b-f7dc4e385ce5-marker",
+      "digest": "f74cd74c70ad755b9579a034347c721d210edc461d56f74681269293fb194878",
+      "attempt": "912879af-e072-4548-a4f2-087d4d2df3aa"
+    }
+  },
+  {
+    "id": "e7c139f4",
+    "parentId": "2a5cad95",
+    "type": "message",
+    "role": "assistant",
+    "text": "Review r3-c62b21ce-3092-44c3-8d3b-f7dc4e385ce5 is noted as ended.",
+    "model": "grok/grok-4.7",
+    "provider": "magpie",
+    "usage": {
+      "input": 987,
+      "output": 201,
+      "cacheRead": 1152,
+      "cacheWrite": 0,
+      "reasoning": 166,
+      "totalTokens": 2340,
+      "cost": {
+        "input": 0.001974,
+        "output": 0.001206,
+        "cacheRead": 0.000576,
+        "cacheWrite": 0,
+        "total": 0.0037560000000000002
+      }
+    },
+    "stopReason": "stop"
+  }
+]

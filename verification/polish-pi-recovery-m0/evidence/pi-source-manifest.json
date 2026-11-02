@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/core/agent-session.js",
+    "sha256": "436e8be3bbab2db475ce30bb5d0bb30f0046b19a3476f8cd57b8133e68891162"
+  },
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/core/session-manager.js",
+    "sha256": "046b6a1109ac3f0ed893bb85bf0648709362fa926a5da75761216cf2fcf9d926"
+  },
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/core/extensions/types.d.ts",
+    "sha256": "c5038d9410cfb13f5be391f46f13de338bc46ab4c9a7d064f7b962c0dc4a807c"
+  },
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/docs/extensions.md",
+    "sha256": "46fc0baeb00db8ca8db399e33e0f506e86e425693b291258357e8063e2f3353c"
+  }
+]

@@ -1,0 +1,12 @@
+✔ foreign origin and foreign host cannot reach the host adapter (31.7335ms)
+✔ client cannot override bound session or inject an element selector (13.713041ms)
+✔ missing host receipt preserves dispatch and duplicate performs query only (37.694792ms)
+✔ business receipt from a different instance is rejected (31.092083ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 161.640166

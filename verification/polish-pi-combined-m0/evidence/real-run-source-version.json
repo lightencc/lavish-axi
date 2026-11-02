@@ -1,0 +1,13 @@
+{
+  "verification/polish-pi-combined-m0/host.js": "a40e983e19ade6f31570f248d79fe9f2fc7aa913e19602086b8ecac7773d263f",
+  "verification/polish-pi-combined-m0/coordinator-peer.js": "8faeb839f8952f5cee432b1554127daaf5fdb1ac522cd27f243cdf2e3598db4a",
+  "verification/polish-pi-combined-m0/host-extension.js": "67780320a6293bfab825937f40ec730d82355e6eb98758cf13c0a581d977cda9",
+  "verification/polish-pi-combined-m0/coordinator-child.js": "5756b93e34c48d0a2ca6545f26a221c2f29941996b9348eecffce18592245dea",
+  "verification/polish-pi-combined-m0/peer.js": "dd1f87586cdbdff9f7753c0a7dff97c8fdece6cf8bd851ad701ccfaf45715d3a",
+  "verification/polish-pi-combined-m0/host.test.js": "e4e37a6a68b3405f80b5acb07f50631197f16bc90c91c6db35f3530941c5f9ee",
+  "verification/polish-pi-combined-m0/probe.js": "c0c170150a1f2a7f5bbe3154399edc34df18a87adef8985b9d28cc65aa69d311",
+  "verification/polish-pi-combined-m0/coordinator.test.js": "61f3c98e82e506e8176e33c6fe62766be5685e0067d563dfda6c96663ef0e044",
+  "verification/polish-pi-recovery-m0/authority.js": "582beed13593892571c8fb164740c129e76f7e2e9eff463d1032ca14e7020941",
+  "verification/polish-pi-recovery-m0/drain.js": "bd0bf378e22740433017885ef68f21524801d76fb6c8635362017eb66332d5ad",
+  "verification/polish-pi-m0/inbox.js": "e87d3c523158acda98f2195d75dec81fee6b3669d4a4dac2f26617477cebea76"
+}

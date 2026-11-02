@@ -1,0 +1,171 @@
+{
+  "checked_at_utc": "2026-10-30T11:24:31.418715+00:00",
+  "original_pid_exited": 56265,
+  "unique_dispatch_and_input_per_message": [
+    {
+      "id": "pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+      "events": {
+        "dispatching": [
+          {
+            "at": "2026-10-30T11:21:44.233Z",
+            "kind": "host",
+            "data": {
+              "kind": "dispatching",
+              "id": "pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              }
+            }
+          }
+        ],
+        "processing_input": [
+          {
+            "at": "2026-10-30T11:21:44.240Z",
+            "kind": "host",
+            "data": {
+              "kind": "processing_input",
+              "id": "pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              },
+              "evidence": "context_with_system"
+            }
+          }
+        ],
+        "reply_recorded": [
+          {
+            "at": "2026-10-30T11:21:45.865Z",
+            "kind": "host",
+            "data": {
+              "kind": "reply_recorded",
+              "id": "pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              },
+              "reply": {
+                "entryId": "8b830558",
+                "text": "ACK_pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+                "stopReason": "stop"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+      "events": {
+        "dispatching": [
+          {
+            "at": "2026-10-30T11:21:45.947Z",
+            "kind": "host",
+            "data": {
+              "kind": "dispatching",
+              "id": "pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              }
+            }
+          }
+        ],
+        "processing_input": [
+          {
+            "at": "2026-10-30T11:21:45.955Z",
+            "kind": "host",
+            "data": {
+              "kind": "processing_input",
+              "id": "pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              },
+              "evidence": "context_with_system"
+            }
+          }
+        ],
+        "reply_recorded": [
+          {
+            "at": "2026-10-30T11:21:47.747Z",
+            "kind": "host",
+            "data": {
+              "kind": "reply_recorded",
+              "id": "pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              },
+              "reply": {
+                "entryId": "183207e7",
+                "text": "ACK_pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+                "stopReason": "stop"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+      "events": {
+        "dispatching": [
+          {
+            "at": "2026-10-30T11:21:47.982Z",
+            "kind": "host",
+            "data": {
+              "kind": "dispatching",
+              "id": "pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              }
+            }
+          }
+        ],
+        "processing_input": [
+          {
+            "at": "2026-10-30T11:21:47.994Z",
+            "kind": "host",
+            "data": {
+              "kind": "processing_input",
+              "id": "pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              },
+              "evidence": "context_with_system"
+            }
+          }
+        ],
+        "reply_recorded": [
+          {
+            "at": "2026-10-30T11:21:49.552Z",
+            "kind": "host",
+            "data": {
+              "kind": "reply_recorded",
+              "id": "pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+              "binding": {
+                "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+                "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+              },
+              "reply": {
+                "entryId": "8f23f9a1",
+                "text": "ACK_pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+                "stopReason": "stop"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "three_replies_verified": true,
+  "lost_receipt_resolved_by_query_without_resubmit": true,
+  "web_chain_verified": false,
+  "new_listener_started": false,
+  "listener_inventory": "COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    33191 lightencc   12u  IPv4 0xafe5a639111ce755      0t0  TCP 127.0.0.1:49791 (LISTEN)\nnode    95933 lightencc   12u  IPv4 0xfd547ebf36b2c1fc      0t0  TCP 127.0.0.1:49792 (LISTEN)\n",
+  "scope": "The first two requests were admitted before the first processing event; busy-arrival case not proven."
+}

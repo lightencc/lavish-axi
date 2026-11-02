@@ -1,0 +1,5 @@
+{"name":"stage","at":1617171672.212041,"data":"reloaded attached"}
+{"name":"stage","at":1617176773.8335,"data":"form filled"}
+{"name":"stage","at":1617181841.924375,"data":"draft filled"}
+{"name":"stage","at":1617181845.648791,"data":"offline applied"}
+{"name":"visualEvidenceSkipped","at":1617183098.821125,"data":{"name":"offline-real-connection","reason":"Prior Page.captureScreenshot timed out; retain DOM and real network events without blocking"}}

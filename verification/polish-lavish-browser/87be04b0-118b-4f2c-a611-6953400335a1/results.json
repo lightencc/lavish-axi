@@ -1,0 +1,21 @@
+{
+  "runId": "87be04b0-118b-4f2c-a611-6953400335a1",
+  "name": "polish-poll-87be04b0",
+  "started": "2026-10-31T07:23:31.210Z",
+  "steps": [],
+  "model": "synthetic test client using actual poll/reply CLI; no Claude process",
+  "hashes": {
+    "dist/polish": "d0c5ddc5c6d48c6e756d4a2288ef05440dcb6f02e333e43b5ba5e6886e5de6b6",
+    "dist/cli.mjs": "d5c7cf441b315d48e5aee2821e2412e3e2dc17db878b1d78a117ef98616eb1db",
+    "dist/polish-client.js": "0168b4c28611e57c85501932e2bf52adaf09a2f8f12e3743037f03ef15b65b84",
+    "dist/polish.css": "75dbd3cef9c1ad235a4fdf463b56b413d6c193879db53d28d5c3c9d3db9faf81"
+  },
+  "success": false,
+  "failureState": null,
+  "error": "Error: Timed out: built server listening\n    at until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-lavish-browser/run.mjs:28:110)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-lavish-browser/run.mjs:40:422",
+  "cleanup": {
+    "serviceClosed": false,
+    "portReleased": true
+  },
+  "finished": "2026-10-31T07:23:39.540Z"
+}

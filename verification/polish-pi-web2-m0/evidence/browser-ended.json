@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Script ran on page and returned:\n```json\n{\"wall\":1793377448107,\"text\":\"整体意见\\n\\n默认发给绑定会话的 agent。整体提交不关联网页元素，不生成元素描边或圆球。\\n\\nPi M0 隔离验证页，尚非正式评论界面。刷新恢复记录；连接中断后自动同步状态。\\n\\n当前会话 · 通信已结束\\n最后反馈已被接收，通信已结束\\n意见或最终确认  提交意见 确认并结束通信 刷新状态\\n[WEB2 first-reply] Isolated performance test. Reply exactly W2_ACK. No tools or file changes.\\n已回复 · 待确认\\n\\nW2_ACK\\n[WEB2 receipt-loss] Reply exactly W2_RECOVERED. No tools or file changes.\\n已回复 · 待确认\\n\\nW2_RECOVERED\\n[WEB2 real-poll] Reply exactly W2_POLL. No tools or file changes.\\n已回复 · 待确认\\n\\nW2_POLL\\n[WEB2 final] Whole-page confirmation. Reply exactly W2_FINAL. No tools or file changes.\\n已回复 · 待确认\\n\\nW2_FINAL\\n结束标记\\n已回复 · 待确认\\n\\nReview r3-c62b21ce-3092-44c3-8d3b-f7dc4e385ce5 is noted as ended.\",\"samples\":[{\"id\":\"r3-c62b21ce-3092-44c3-8d3b-f7dc4e385ce5-marker\",\"submitAt\":22465.200000047684,\"wallAt\":1793377420581,\"acceptedVisibleAt\":22556.299999952316,\"inputVisibleAt\":24163.299999952316,\"replyStateVisibleAt\":27259.599999904633,\"replyTextVisibleAt\":27287}]}\n```"
+    }
+  ]
+}

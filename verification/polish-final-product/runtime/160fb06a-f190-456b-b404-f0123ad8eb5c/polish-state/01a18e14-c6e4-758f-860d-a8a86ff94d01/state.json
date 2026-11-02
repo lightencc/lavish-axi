@@ -1,0 +1,38 @@
+{
+  "sessions": {
+    "94f5d4ef3ba7c154": {
+      "key": "94f5d4ef3ba7c154",
+      "file": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/artifact.html",
+      "url": "http://127.0.0.1:53007/session/94f5d4ef3ba7c154",
+      "status": "open",
+      "pending_prompts": 0,
+      "prompts": [],
+      "layout_warnings": [],
+      "artifact_revision": 0,
+      "artifact_load": null,
+      "artifact_failures": [],
+      "delivered_attachments": [],
+      "dom_snapshot": "",
+      "chat": [],
+      "chat_revision": 0,
+      "chat_ack_ids": [],
+      "delivery_seq": 0,
+      "closed_delivery_seq": 0,
+      "updated_at": "2026-10-30T18:31:29.013Z",
+      "review_delivery": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/artifact.html",
+          "instance": "2d6107a2-42e8-4524-80ad-4a4686887990",
+          "session": "01a18e14-c6e4-758f-860d-a8a86ff94d01"
+        },
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "version": 1,
+        "lifecycle": "open",
+        "messages": [],
+        "end": null
+      }
+    }
+  }
+}

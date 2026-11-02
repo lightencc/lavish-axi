@@ -1,0 +1,12 @@
+import {ws,send,targets,attach,read} from './cdp.mjs';
+import {writeFile} from 'node:fs/promises';
+const page=await attach(targets.find(t=>t.type==='page'&&t.url.includes('/session/')));
+const frame=await attach(targets.find(t=>t.type==='iframe'&&t.url.includes('/artifact/')));
+const snapshot=async()=>({parent:await read(page,'({hidden:document.getElementById("polish-dialog").hidden,quote:document.getElementById("polish-quote").textContent,active:document.activeElement?.id,rect:document.getElementById("artifact").getBoundingClientRect().toJSON()})'),frame:await read(frame,'({selection:document.getSelection().toString(),first:document.getElementById("first").getBoundingClientRect().toJSON(),second:document.getElementById("second").getBoundingClientRect().toJSON()})')});
+console.log(JSON.stringify(await snapshot(),null,2));
+for(const [type,x,y,buttons] of [['mouseMoved',160,240,0],['mousePressed',160,240,1],['mouseMoved',100,184,1],['mouseMoved',80,100,1],['mouseMoved',400,40,1],['mouseReleased',400,40,0]])await send('Input.dispatchMouseEvent',{type,x,y,button:type==='mouseMoved'?'none':'left',buttons,clickCount:type==='mouseMoved'?0:1},page);
+await new Promise(r=>setTimeout(r,250));
+const result=await snapshot();
+console.log(JSON.stringify(result,null,2));
+await writeFile(new URL('./outside-after.json',import.meta.url),JSON.stringify(result,null,2));
+ws.close();

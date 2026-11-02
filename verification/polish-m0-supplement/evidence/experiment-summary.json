@@ -1,0 +1,109 @@
+{
+  "checked_at_utc": "2026-10-30T10:50:52.650284+00:00",
+  "normal_submissions": 2,
+  "normal_custom_inputs": 1,
+  "duplicate_rejected_locally": true,
+  "normal_reply_matched": true,
+  "normal_queries": [
+    {
+      "kind": "query",
+      "id": "supp-normal-001",
+      "record": {
+        "sessionId": "01a18c6a-1d1d-7127-a872-7179f9801fe4",
+        "externalId": "supp-normal-001",
+        "digest": "bebff236e1465702023572f67c92ff42bd8415f13f0cdd7f4fad8226a5cafbd8",
+        "state": "input_observed",
+        "at": "2026-10-30T10:45:32.827Z"
+      },
+      "hostEntries": [
+        {
+          "id": "12e78f7a",
+          "details": {
+            "sessionId": "01a18c6a-1d1d-7127-a872-7179f9801fe4",
+            "externalId": "supp-normal-001",
+            "digest": "bebff236e1465702023572f67c92ff42bd8415f13f0cdd7f4fad8226a5cafbd8"
+          }
+        }
+      ],
+      "status": "input_observed",
+      "readOnly": false
+    },
+    {
+      "kind": "query",
+      "id": "supp-normal-001",
+      "record": {
+        "sessionId": "01a18c6a-1d1d-7127-a872-7179f9801fe4",
+        "externalId": "supp-normal-001",
+        "digest": "bebff236e1465702023572f67c92ff42bd8415f13f0cdd7f4fad8226a5cafbd8",
+        "state": "input_observed",
+        "at": "2026-10-30T10:45:32.827Z"
+      },
+      "hostEntries": [
+        {
+          "id": "12e78f7a",
+          "details": {
+            "sessionId": "01a18c6a-1d1d-7127-a872-7179f9801fe4",
+            "externalId": "supp-normal-001",
+            "digest": "bebff236e1465702023572f67c92ff42bd8415f13f0cdd7f4fad8226a5cafbd8"
+          }
+        }
+      ],
+      "status": "input_observed",
+      "readOnly": true
+    }
+  ],
+  "unknown_queries": [
+    {
+      "kind": "query",
+      "id": "supp-unknown-001",
+      "record": {
+        "sessionId": "01a18c6a-1d1d-7127-a872-7179f9801fe4",
+        "externalId": "supp-unknown-001",
+        "digest": "1e14192921e3c9f3f00e099729f6b789ba7c0b964fd17ce1680c2341ccf53c6e",
+        "state": "dispatching",
+        "at": "2026-10-30T10:45:34.194Z"
+      },
+      "hostEntries": [],
+      "status": "delivery_unknown",
+      "readOnly": true
+    }
+  ],
+  "setup_append_memory_only": true,
+  "local_second_writer_refused": true,
+  "conflict_receipt_limitation": "Unit test proves CONFLICT; live RPC returned handled; collector did not capture extension error event. No business rejection receipt established.",
+  "fault_window": "After local dispatch marker, before host sendMessage; does not demonstrate lost host acknowledgement.",
+  "retained_claim": [
+    {
+      "at": "2026-10-30T10:45:34.363Z",
+      "kind": "retained_claim",
+      "exists": true,
+      "automatic_resend_count": 0
+    }
+  ],
+  "cleanup": {
+    "owned_pids": [
+      57082,
+      59931
+    ],
+    "ps_exit_code": 1,
+    "ps_stdout": "",
+    "process_exits": [
+      {
+        "at": "2026-10-30T10:45:34.203Z",
+        "kind": "process_exit",
+        "pid": 57082,
+        "code": null,
+        "signal": "SIGKILL",
+        "phase": "killing"
+      },
+      {
+        "at": "2026-10-30T10:45:34.368Z",
+        "kind": "process_exit",
+        "pid": 59931,
+        "code": 0,
+        "signal": null,
+        "phase": "closing"
+      }
+    ]
+  }
+}

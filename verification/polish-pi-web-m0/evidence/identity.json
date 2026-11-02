@@ -1,0 +1,99 @@
+{
+  "checked_at_utc": "2026-10-30T12:10:48.587967+00:00",
+  "startup": [
+    {
+      "at": "2026-10-30T12:07:58.895Z",
+      "kind": "started",
+      "data": {
+        "pid": 28022,
+        "args": [
+          "--mode",
+          "rpc",
+          "--offline",
+          "--no-tools",
+          "--no-mcp",
+          "--no-extensions",
+          "--no-skills",
+          "--no-prompt-templates",
+          "--no-themes",
+          "--no-context-files",
+          "--no-approve",
+          "--extension",
+          "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/host-extension.js",
+          "--session-dir",
+          "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/runtime/7f19c71e-d27f-4a0c-ba20-760522a3b261/sessions",
+          "--name",
+          "POLISH-PI-M0-e0d0a758-4c78-437e-90ae-2c0016a487c9"
+        ]
+      }
+    },
+    {
+      "at": "2026-10-30T12:07:59.168Z",
+      "kind": "host",
+      "data": {
+        "kind": "ready",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "pid": 28022,
+        "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/runtime/7f19c71e-d27f-4a0c-ba20-760522a3b261/sessions/2026-10-30T12-07-59-054Z_01a18cb5-ad4e-745f-8bb4-7a5acda50d47.jsonl"
+      }
+    },
+    {
+      "at": "2026-10-30T12:07:59.169Z",
+      "kind": "before_web_bind",
+      "data": {
+        "pid": 28022,
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T12:07:59.190Z",
+      "kind": "listening",
+      "data": {
+        "address": "127.0.0.1:49793",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      }
+    }
+  ],
+  "session_metadata": [
+    {
+      "type": "session",
+      "version": 3,
+      "id": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47",
+      "timestamp": "2026-10-30T12:07:59.054Z",
+      "cwd": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/runtime/7f19c71e-d27f-4a0c-ba20-760522a3b261/workspace"
+    },
+    {
+      "type": "session_info",
+      "id": "7907fab2",
+      "parentId": null,
+      "timestamp": "2026-10-30T12:07:59.064Z",
+      "name": "POLISH-PI-M0-e0d0a758-4c78-437e-90ae-2c0016a487c9"
+    },
+    {
+      "type": "model_change",
+      "id": "a9c9adf4",
+      "parentId": "7907fab2",
+      "timestamp": "2026-10-30T12:07:59.148Z",
+      "provider": "magpie",
+      "modelId": "grok/grok-4.7"
+    },
+    {
+      "type": "thinking_level_change",
+      "id": "89fd0eca",
+      "parentId": "a9c9adf4",
+      "timestamp": "2026-10-30T12:07:59.148Z",
+      "thinkingLevel": "medium"
+    }
+  ],
+  "processes": "28007 36272 node verification/polish-pi-m0/serve.js\n28022 28007 pi                  \n",
+  "scope": "One owned Pi process, before_web_bind precedes listening; no unrelated sessions."
+}

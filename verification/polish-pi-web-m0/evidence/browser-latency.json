@@ -1,0 +1,42 @@
+{
+  "samples": 30,
+  "matched": 30,
+  "metrics": {
+    "sendingUiMs": {
+      "n": 30,
+      "p50": 1.8000001907348633,
+      "p95": 2.700000047683716,
+      "max": 4.900000095367432
+    },
+    "admissionUiMs": {
+      "n": 30,
+      "p50": 45.5,
+      "p95": 67.70000004768372,
+      "max": 67.79999995231628
+    },
+    "processingUiMs": {
+      "n": 30,
+      "p50": 247.89999985694885,
+      "p95": 272.2999999523163,
+      "max": 273.30000019073486
+    },
+    "totalMs": {
+      "n": 30,
+      "p50": 1394,
+      "p95": 2396.800000190735,
+      "max": 3214.7000000476837
+    },
+    "clickToCombinedReceiptResourceMs": {
+      "n": 17,
+      "p50": 42.90000009536743,
+      "p95": 53.799999952316284,
+      "max": 53.799999952316284
+    }
+  },
+  "limitations": [
+    "Browser resource buffer filled; resource timing missing for later samples, reported n is explicit.",
+    "Browser performance.now; admission sampled at 20ms, query/reply at 100ms.",
+    "Combined receipt includes bridge and host persistence, not split timings.",
+    "No first-token timing, direct-chat comparison, or realtime notification measurement."
+  ]
+}

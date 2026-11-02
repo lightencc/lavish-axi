@@ -1,0 +1,13 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/d9277bbc-8eec-4b29-af8c-a4201cce6c4c",
+  "stage": "input_consumed",
+  "id": "fault-input_consumed",
+  "capturedAt": "2026-10-30T19:19:24.173Z",
+  "pass": true,
+  "checks": [
+    "real crash fired at exact requested source stage",
+    "same session and same URL endpoint after owned restart",
+    "single durable logical message and single exact Pi input",
+    "interrupted execution recovered as unknown without resubmission"
+  ]
+}

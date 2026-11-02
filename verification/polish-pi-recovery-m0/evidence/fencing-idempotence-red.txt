@@ -1,0 +1,52 @@
+✖ bridge and poll share arbitration; claim marks dispatch before returning (80.06525ms)
+✔ same ID is idempotent; changed payload and wrong review epoch reject (34.902167ms)
+✔ host queue is not consumption; unknown blocks dispatch and end (81.0945ms)
+✖ ending atomically seals final batch, rejects late submissions, and drains marker last (36.772583ms)
+✔ restart keeps ending set and monotonic version; old generation cannot write (80.152ms)
+✔ reopen advances review epoch; old replies cannot overwrite current review (68.321167ms)
+✔ wrong binding, digest and attempt never resolve an unknown request (58.688583ms)
+✔ subscription before snapshot covers changes on either side of snapshot read (48.701625ms)
+✔ out of order, duplicate, stale snapshot and old connection cannot roll state back (51.78575ms)
+✔ disconnected replica recovers reply and ended from a durable snapshot (139.751083ms)
+✔ new epoch requires a snapshot rather than applying its event onto old epoch (69.920542ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 9
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 824.115667
+
+✖ failing tests:
+
+test at verification/polish-pi-recovery-m0/authority.test.js:19:1
+✖ bridge and poll share arbitration; claim marks dispatch before returning (80.06525ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(a.claim('poll', 'r1-two').generation > token.generation)
+  
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.test.js:28:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at verification/polish-pi-recovery-m0/authority.test.js:46:1
+✖ ending atomically seals final batch, rejects late submissions, and drains marker last (36.772583ms)
+  Error: CONFLICT
+      at Authority.beginEnd (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.js:118:104)
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.test.js:51:5)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)

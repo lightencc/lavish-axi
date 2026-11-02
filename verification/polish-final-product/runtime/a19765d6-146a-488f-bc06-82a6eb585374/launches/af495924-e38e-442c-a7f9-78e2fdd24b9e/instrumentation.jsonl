@@ -1,0 +1,9 @@
+{"stage":"harness_ready","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388553439.914,"durableWriteMs":3.543875000000014}
+{"stage":"dispatch_reserved","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388553463.8982,"durableWriteMs":3.883209000000022}
+{"stage":"host_admitted","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388553476.8904,"durableWriteMs":4.069834000000014}
+{"stage":"host_dispatching","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388553490.8193,"durableWriteMs":5.9247910000000275}
+{"stage":"input_consumed","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388553507.7976,"durableWriteMs":3.9034160000000497}
+{"stage":"model_start","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388553536.896,"durableWriteMs":3.749667000000045}
+{"stage":"first_token","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388555162.197,"durableWriteMs":3.686916999999994}
+{"stage":"host_reply_persisted","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388555177.1946,"durableWriteMs":4.040917000000036}
+{"stage":"reply_persisted","clockID":"pi:2607:9f5456cb-d984-461b-8331-ee4464723035","at":1793388555190.179,"durableWriteMs":3.9284160000001975}

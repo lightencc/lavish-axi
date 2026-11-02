@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polish · Pi M0 验证页</title>
+<style>
+  * { box-sizing: border-box; } body { margin: 0; background: #f5f6f8; color: #20242c; font: 16px/1.6 system-ui, sans-serif; }
+  main { max-width: 800px; margin: 40px auto; padding: 28px; background: white; border: 1px solid #e2e5eb; border-radius: 12px; }
+  h1 { font-size: 24px; } p, small { color: #626b7b; } textarea { width: 100%; min-height: 100px; padding: 12px; border: 1px solid #c9d0db; border-radius: 8px; font: inherit; }
+  button { padding: 8px 16px; margin: 8px 8px 8px 0; border: 1px solid #ccd5e6; border-radius: 6px; background: white; color: #285ed9; cursor: pointer; }
+  button[type=submit] { background: #3370ff; color: white; } button:disabled { opacity: .5; cursor: default; }
+  article { margin-top: 16px; padding: 16px; border: 1px solid #e4e7ec; border-radius: 8px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  article[data-state=delivered] { border-left: 4px solid #ff981a; } article[data-state=replied] { border-left: 4px solid #3370ff; }
+  #notice { min-height: 28px; } #status { font-size: 14px; } #notice { color: #285ed9; }
+</style>
+<main>
+  <h1>整体意见</h1>
+  <p>默认发给绑定会话的 agent。整体提交不关联网页元素，不生成元素描边或圆球。</p>
+  <p><small>Pi M0 隔离验证页，尚非正式评论界面。刷新恢复记录；连接中断后自动同步状态。</small></p>
+  <div id="status" role="status">正在连接</div>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <form id="composer">
+    <label for="text">意见或最终确认</label>
+    <textarea id="text" required placeholder="请输入整体修改意见"></textarea>
+    <button type="submit" id="send" disabled>提交意见</button>
+    <button type="button" id="end" disabled>确认并结束通信</button>
+    <button type="button" id="refresh">刷新状态</button>
+  </form>
+  <section id="messages" aria-label="会话记录"></section>
+</main>
+<script src="/page.js" type="module"></script>
+</html>

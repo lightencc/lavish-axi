@@ -1,0 +1,53 @@
+{
+  "status": "prepared-not-started",
+  "preparedAt": "2026-10-30T19:38:00.458738+00:00",
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43",
+  "expectedSession": "01a18e12-942e-7785-aa90-41587c940bbb",
+  "expectedURL": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "buildHashes": "final-closed-build-hashes.json",
+  "activeOldLaunch": "c4212554-dbab-4e1e-b1b1-96d553159883",
+  "oldAutomaticStopUtc": "2026-10-30T19:54:55.202140+00:00",
+  "prerequisites": [
+    "Parent explicit go after anchors FUNCTION DONE and sync upstream suites DONE",
+    "No concurrent model, browser suite or build workload",
+    "Original review is ended; snapshot old Pi inputs and artifact hash before restart"
+  ],
+  "sequence": [
+    "Graceful stop via owned supervisor (or verify its existing exact PID already exited)",
+    "Exact same-session resume --reopen, new launch and epoch, verify same endpoint and old inputs unchanged",
+    "Record actual final launch and all asset hashes; fresh 45-minute deadline",
+    "Source command calibration >=10 samples; independent browser CDP calibration >=10 samples after dedicated page prepared",
+    "direct30 serial RPC requests; keep all failed/incomplete/not-started samples",
+    "Wait direct completion then authorize anchors 30 session + 3 anchored native UI samples, dedicated output directory",
+    "Browser CDP and source command post calibration; distinct files, matching source/browser/supervisor clock IDs",
+    "Capture final Store/host/Pi identities; summaries include raw traces, build, per-sample failures, overhead and bounded cross-clock uncertainty",
+    "Explicitly end only this test artifact after samples/calibration if no unresolved ambiguous request; await marker consumed; stop own supervisor, verify livePid null and original child gone"
+  ],
+  "measurementContract": {
+    "directClock": "supervisor; actual RPC prompt start to first visible text_delta / agent_settled",
+    "directPerSampleDeadlineMs": 120000,
+    "uiClock": "browser; actual native click timestamp to MutationObserver visible processing/reply",
+    "uiPerReplyDeadlineMs": 180000,
+    "timeoutPolicy": "Record failure and stop batch; do not resend ambiguous input or substitute success",
+    "sourceStages": [
+      "accepted_durable",
+      "dispatch_reserved",
+      "host_admitted",
+      "host_dispatching",
+      "input_consumed",
+      "model_start",
+      "first_token",
+      "host_reply_persisted",
+      "reply_persisted",
+      "end_sealed"
+    ],
+    "modelStartMeaning": "Pi before_provider_request, not provider internal processing",
+    "calibration": "minimum RTT bound from >=10 raw samples; source/browser each to same supervisor; before and after files never overwrite",
+    "traceOverhead": "primary synchronous encode/write/fsync separately measured; secondary log and fault-config read excluded; no cost subtraction",
+    "summaryFiles": [
+      "summarize.js -> run/summary.json",
+      "parent browser-timing-summary.js -> UI output/source-to-browser-timing.json"
+    ]
+  },
+  "cleanupScope": "Only this harness-owned Pi ChildProcess and explicitly supplied benchmark browser owned by anchors; never identify ownership by port alone"
+}

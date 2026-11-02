@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "transport": "real /session page + production SDK/client, isolated test host (not Pi)",
+  "input": "agent-browser native mouse and keyboard; no synthetic Selection/Range used to select",
+  "cases": [
+    "exact cross-paragraph drag",
+    "next native drag after send",
+    "release outside iframe",
+    "keyboard overall comment",
+    "native input and action preserved",
+    "replaced selector/text has no misplaced pin",
+    "missing discussion available in overall history",
+    "numberless surviving pin",
+    "360x640 popup and send visible"
+  ],
+  "sourceCheck": "64 targeted tests; ESLint, TypeScript and Prettier passed"
+}

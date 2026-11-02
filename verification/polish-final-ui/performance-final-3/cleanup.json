@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-30T20:15:54.082462+00:00",
+  "session": "polish-perf-final3",
+  "method": "agent-browser --session polish-perf-final3 close",
+  "chromePid": 41642,
+  "daemonPid": 41641,
+  "bothPidsAbsent": true,
+  "priorOwnedPidsAbsent": [
+    22855,
+    22856,
+    73023,
+    37981
+  ],
+  "profileAndFixtureProcessMatches": {
+    "agent-browser-chrome-268c307b-2a6d-497f-80fc-556b8f25c905": [],
+    "agent-browser-chrome-623cfbc0-0689-4243-af9b-17d32c2976ea": [],
+    "agent-browser-chrome-c32c1a52-6eb4-4255-ba98-5f2ffae1b1ef": [],
+    "verification/polish-final-ui/serve-ui": []
+  },
+  "isolatedFixturePort53632HasListener": false,
+  "userPrototypePreserved": "COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    95933 lightencc   12u  IPv4 0xfd547ebf36b2c1fc      0t0  TCP 127.0.0.1:49792 (LISTEN)\n",
+  "piLifecycleOwner": "client_repro; no Pi stop/end performed here"
+}

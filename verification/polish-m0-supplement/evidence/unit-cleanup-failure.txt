@@ -1,0 +1,91 @@
+✖ same external identity is admitted once; altered content conflicts (10.868375ms)
+✖ dispatch with no host observation stays unknown after reopening; duplicate does not request resend (18.818333ms)
+✖ only a matching structured host event can mark input observed (17.553292ms)
+✖ exclusive writer claim refuses a second consumer; no stale lock stealing (5.12125ms)
+✔ ledger for a different host session is rejected (9.926834ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 1
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 99.823167
+
+✖ failing tests:
+
+test at verification/polish-m0-supplement/ledger.test.js:8:1
+✖ same external identity is admitted once; altered content conflicts (10.868375ms)
+  Error: ENOENT: no such file or directory, unlink '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-ZlSb8y/ledger.lock'
+      at unlinkSync (node:fs:2334:11)
+      at Ledger.close (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.js:42:52)
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.test.js:9:52)
+      at TestHook.runInAsyncScope (node:async_hooks:226:14)
+      at TestHook.run (node:internal/test_runner/test:1397:25)
+      at TestHook.run (node:internal/test_runner/test:1741:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.runHook (node:internal/test_runner/test:1284:20)
+      at async after (node:internal/test_runner/test:1337:9)
+      at async Test.run (node:internal/test_runner/test:1423:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'unlink',
+    path: '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-ZlSb8y/ledger.lock'
+  }
+
+test at verification/polish-m0-supplement/ledger.test.js:14:1
+✖ dispatch with no host observation stays unknown after reopening; duplicate does not request resend (18.818333ms)
+  Error: ENOENT: no such file or directory, unlink '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-euUOGu/ledger.lock'
+      at unlinkSync (node:fs:2334:11)
+      at Ledger.close (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.js:42:52)
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.test.js:16:39)
+      at TestHook.runInAsyncScope (node:async_hooks:226:14)
+      at TestHook.run (node:internal/test_runner/test:1397:25)
+      at TestHook.run (node:internal/test_runner/test:1741:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.runHook (node:internal/test_runner/test:1284:20)
+      at async after (node:internal/test_runner/test:1337:9)
+      at async Test.run (node:internal/test_runner/test:1423:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'unlink',
+    path: '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-euUOGu/ledger.lock'
+  }
+
+test at verification/polish-m0-supplement/ledger.test.js:19:1
+✖ only a matching structured host event can mark input observed (17.553292ms)
+  Error: ENOENT: no such file or directory, unlink '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-qEDeRu/ledger.lock'
+      at unlinkSync (node:fs:2334:11)
+      at Ledger.close (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.js:42:52)
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.test.js:20:51)
+      at TestHook.runInAsyncScope (node:async_hooks:226:14)
+      at TestHook.run (node:internal/test_runner/test:1397:25)
+      at TestHook.run (node:internal/test_runner/test:1741:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.runHook (node:internal/test_runner/test:1284:20)
+      at async after (node:internal/test_runner/test:1337:9)
+      at async Test.run (node:internal/test_runner/test:1423:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'unlink',
+    path: '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-qEDeRu/ledger.lock'
+  }
+
+test at verification/polish-m0-supplement/ledger.test.js:25:1
+✖ exclusive writer claim refuses a second consumer; no stale lock stealing (5.12125ms)
+  Error: ENOENT: no such file or directory, unlink '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-JcqTvS/ledger.lock'
+      at unlinkSync (node:fs:2334:11)
+      at Ledger.close (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.js:42:52)
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0-supplement/ledger.test.js:26:67)
+      at TestHook.runInAsyncScope (node:async_hooks:226:14)
+      at TestHook.run (node:internal/test_runner/test:1397:25)
+      at TestHook.run (node:internal/test_runner/test:1741:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.runHook (node:internal/test_runner/test:1284:20)
+      at async after (node:internal/test_runner/test:1337:9)
+      at async Test.run (node:internal/test_runner/test:1423:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'unlink',
+    path: '/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-m0-extra-JcqTvS/ledger.lock'
+  }

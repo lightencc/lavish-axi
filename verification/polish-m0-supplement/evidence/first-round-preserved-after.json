@@ -1,0 +1,138 @@
+{
+  "checked_at_utc": "2026-10-30T10:50:52.650284+00:00",
+  "all_unchanged": true,
+  "files": [
+    {
+      "path": "verification/polish-m0/.gitignore",
+      "expected": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+      "actual": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/README.md",
+      "expected": "78871ae1328f91eea2eafc03888eddc28ca61701e3e760959663e46b3198d7a6",
+      "actual": "78871ae1328f91eea2eafc03888eddc28ca61701e3e760959663e46b3198d7a6",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/analyze.py",
+      "expected": "f20db7971b20ee42d3b07a5f57e2a9055a4656906982daae7a5515bd9ab9ce19",
+      "actual": "f20db7971b20ee42d3b07a5f57e2a9055a4656906982daae7a5515bd9ab9ce19",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/cleanup.json",
+      "expected": "a296327e31fc7d602ac2c0dd4fdcc9cf75fd8871271fdeb4f6ce590a0de3d3df",
+      "actual": "a296327e31fc7d602ac2c0dd4fdcc9cf75fd8871271fdeb4f6ce590a0de3d3df",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-capability.json",
+      "expected": "874c6986dc889cc95f509263ea525b1c4496917c8f3361da00347cd5491182b4",
+      "actual": "874c6986dc889cc95f509263ea525b1c4496917c8f3361da00347cd5491182b4",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-thread-identity.json",
+      "expected": "322ab61512afc9c7790fe07a9b99a6951eea38d0a0b05c88546e88bd631b6225",
+      "actual": "322ab61512afc9c7790fe07a9b99a6951eea38d0a0b05c88546e88bd631b6225",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-transport.json",
+      "expected": "59847f80b7fcc459229cae899745d31fb977980780e061006f8dccd20e3904a0",
+      "actual": "59847f80b7fcc459229cae899745d31fb977980780e061006f8dccd20e3904a0",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/duplicate-evidence.json",
+      "expected": "53b34becbbde8d8c9542f70d655d93de54bdf21028f805a114b91830a79f1428",
+      "actual": "53b34becbbde8d8c9542f70d655d93de54bdf21028f805a114b91830a79f1428",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/environment.json",
+      "expected": "870d44433e774094164726df0251f2540c3dfd2cc0852a41b7f3b17fd18811a5",
+      "actual": "870d44433e774094164726df0251f2540c3dfd2cc0852a41b7f3b17fd18811a5",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-crash-events.jsonl",
+      "expected": "d3be822fa3a485195c8f33daff17d964ca87639cc1a3d4b369c188939ddebed1",
+      "actual": "d3be822fa3a485195c8f33daff17d964ca87639cc1a3d4b369c188939ddebed1",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-events.jsonl",
+      "expected": "403784b6082f50d12bd47610ae57f8de7fa7ce0aa5d8b992697010d9bac19677",
+      "actual": "403784b6082f50d12bd47610ae57f8de7fa7ce0aa5d8b992697010d9bac19677",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-latency.json",
+      "expected": "4138a6858d36c3d72cc12c1b239eb70a89cfbb64a0367c94c0924f4cbb2aac90",
+      "actual": "4138a6858d36c3d72cc12c1b239eb70a89cfbb64a0367c94c0924f4cbb2aac90",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-persisted-user-entries.json",
+      "expected": "a9e33396abcf15e6d12746ece965b1fbc9fe7ee1548dbee1e3195f8c490ab81c",
+      "actual": "a9e33396abcf15e6d12746ece965b1fbc9fe7ee1548dbee1e3195f8c490ab81c",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-source-manifest.json",
+      "expected": "a237a50da451f1f21347db07b7862fb6e7206320108fbaa73bfddd8337ca33f5",
+      "actual": "a237a50da451f1f21347db07b7862fb6e7206320108fbaa73bfddd8337ca33f5",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/test-green.txt",
+      "expected": "37cc10031d26e0ca8a93fd6e14d2aed5347f078db6283341852f2bc75a6beaf5",
+      "actual": "37cc10031d26e0ca8a93fd6e14d2aed5347f078db6283341852f2bc75a6beaf5",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/test-red.txt",
+      "expected": "dce188fc5f79bafa1fcfd3677cc4230984d13eb66052cadce5b61cde92cef19c",
+      "actual": "dce188fc5f79bafa1fcfd3677cc4230984d13eb66052cadce5b61cde92cef19c",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/pi-crash-probe.js",
+      "expected": "827fe4bccaba712023b362f48fed53c5b42550398431fe0c9d2cf04a42f2839b",
+      "actual": "827fe4bccaba712023b362f48fed53c5b42550398431fe0c9d2cf04a42f2839b",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/pi-probe.js",
+      "expected": "c59637adc271eb8258132e2e9dbe6fd16634dcdcbb63b80057b6ac41b386b745",
+      "actual": "c59637adc271eb8258132e2e9dbe6fd16634dcdcbb63b80057b6ac41b386b745",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/probe-support.js",
+      "expected": "049aef1312753d6c0cd42fd029c841c8fe569ddc04b6f535e5ef03d88a65bcf7",
+      "actual": "049aef1312753d6c0cd42fd029c841c8fe569ddc04b6f535e5ef03d88a65bcf7",
+      "unchanged": true
+    },
+    {
+      "path": "verification/polish-m0/probe.test.js",
+      "expected": "57c8a46f7c8c774fdd9703aa4646e129e1294629c1a22b8df3aeb00d2a4cfee2",
+      "actual": "57c8a46f7c8c774fdd9703aa4646e129e1294629c1a22b8df3aeb00d2a4cfee2",
+      "unchanged": true
+    },
+    {
+      "path": "docs/polish-m0-report.md",
+      "expected": "2988ca98150a871cc0e83dd4db667b022e7d012a2ae52aca714cba0f2707bf92",
+      "actual": "2988ca98150a871cc0e83dd4db667b022e7d012a2ae52aca714cba0f2707bf92",
+      "unchanged": true
+    },
+    {
+      "path": "docs/polish-development-spec.md",
+      "expected": "a378fe3b29818ceb1a691d68f45561f304bcb29aa0ebb77045610deb9069df77",
+      "actual": "a378fe3b29818ceb1a691d68f45561f304bcb29aa0ebb77045610deb9069df77",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+d09ccce71de3152f48c1d81b427d942fadcd68bcc239db958346ae33d5b5a5c9  src/artifact-sdk.js
+3c294101388718bc3db06a6db178fa5bfe68f09cab9d6a5d41ba9bb212b1147f  src/polish-client.js
+0765f48e76425b4b8209c3b62aa276ea7441400a4b926edd16c547269954f334  test/polish-anchor.test.js
+a48b12d8db7c750e7d190b3883affb19470a7aede2221bf6a70b8b61ec6ff2cc  test/polish-client.test.js

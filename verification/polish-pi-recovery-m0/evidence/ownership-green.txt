@@ -1,0 +1,12 @@
+✔ owned process crash in accepted: durable state and fenced recovery (80.08375ms)
+✔ owned process crash in dispatch: durable state and fenced recovery (76.779458ms)
+✔ owned process crash in ending: durable state and fenced recovery (85.819584ms)
+✔ two real consumer processes use one persisted arbitration authority (61.920542ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 341.491125

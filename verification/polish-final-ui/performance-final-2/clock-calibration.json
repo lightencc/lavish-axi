@@ -1,0 +1,92 @@
+[
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.5332913,
+    "uncertaintyMs": 0.1882084608078003,
+    "runnerStartMs": 1614168927.245083,
+    "runnerEndMs": 1614168927.6215,
+    "browserMs": 917829.9000000954
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.5818331,
+    "uncertaintyMs": 0.1507500410079956,
+    "runnerStartMs": 1614168927.631083,
+    "runnerEndMs": 1614168927.932583,
+    "browserMs": 917830.2000000477
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.672458,
+    "uncertaintyMs": 0.13766694068908691,
+    "runnerStartMs": 1614168927.934791,
+    "runnerEndMs": 1614168928.210125,
+    "browserMs": 917830.4000000954
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.512979,
+    "uncertaintyMs": 0.20102107524871826,
+    "runnerStartMs": 1614168928.211958,
+    "runnerEndMs": 1614168928.614,
+    "browserMs": 917830.9000000954
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.6299374,
+    "uncertaintyMs": 0.11256253719329834,
+    "runnerStartMs": 1614168928.617375,
+    "runnerEndMs": 1614168928.8425,
+    "browserMs": 917831.100000143
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.643458,
+    "uncertaintyMs": 0.09879195690155029,
+    "runnerStartMs": 1614168928.844666,
+    "runnerEndMs": 1614168929.04225,
+    "browserMs": 917831.3000001907
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.5348744,
+    "uncertaintyMs": 0.09070849418640137,
+    "runnerStartMs": 1614168929.044166,
+    "runnerEndMs": 1614168929.225583,
+    "browserMs": 917831.600000143
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.632187,
+    "uncertaintyMs": 0.10464596748352051,
+    "runnerStartMs": 1614168929.227541,
+    "runnerEndMs": 1614168929.436833,
+    "browserMs": 917831.7000000477
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.6279788,
+    "uncertaintyMs": 0.08939599990844727,
+    "runnerStartMs": 1614168929.438583,
+    "runnerEndMs": 1614168929.617375,
+    "browserMs": 917831.9000000954
+  },
+  {
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "browserMinusRunnerMs": -1613251097.6071033,
+    "uncertaintyMs": 0.08806252479553223,
+    "runnerStartMs": 1614168929.619041,
+    "runnerEndMs": 1614168929.795166,
+    "browserMs": 917832.100000143
+  }
+]

@@ -1,0 +1,13 @@
+✔ same external identity is admitted once; altered content conflicts (12.128333ms)
+✔ dispatch with no host observation stays unknown after reopening; duplicate does not request resend (16.616584ms)
+✔ only a matching structured host event can mark input observed (16.768583ms)
+✔ exclusive writer claim refuses a second consumer; no stale lock stealing (5.130958ms)
+✔ ledger for a different host session is rejected (8.716084ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.645959

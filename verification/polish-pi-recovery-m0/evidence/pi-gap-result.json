@@ -1,0 +1,116 @@
+{
+  "window": "gap",
+  "pid": 27697,
+  "binding": {
+    "artifact": "recovery-m0-artifact",
+    "instance": "da66cc6f-df80-46cb-882e-5d81701845de",
+    "session": "01a18cd4-8408-733c-8920-67ee83e3c60e"
+  },
+  "checkpoint": {
+    "kind": "checkpoint",
+    "window": "reply_before_receipt",
+    "id": "r1-a81fc59b-b833-44c0-8755-659a97874379"
+  },
+  "before": {
+    "binding": {
+      "artifact": "recovery-m0-artifact",
+      "instance": "da66cc6f-df80-46cb-882e-5d81701845de",
+      "session": "01a18cd4-8408-733c-8920-67ee83e3c60e"
+    },
+    "generation": 1,
+    "epoch": 1,
+    "version": 5,
+    "lifecycle": "open",
+    "mode": "bridge",
+    "messages": [
+      {
+        "id": "r1-a81fc59b-b833-44c0-8755-659a97874379",
+        "text": "[POLISH-RECOVERY-M0 r1-a81fc59b-b833-44c0-8755-659a97874379] Isolated receipt-window test. Reply exactly RECOVERY_ACK. No tools, file edits, or other sessions.",
+        "digest": "df0e8bad8c5a8351a779972a26dd441ba72f3cefa14c6353bf47dcc3472eb29e",
+        "epoch": 1,
+        "kind": "message",
+        "state": "delivered",
+        "consumed": true,
+        "claim": {
+          "id": "r1-a81fc59b-b833-44c0-8755-659a97874379",
+          "epoch": 1,
+          "generation": 1,
+          "nonce": "74aff958-b80c-4ef3-9ba5-7f1bcdc98c3b",
+          "attempt": "c77e3e5c-a4da-4d91-adb8-d002e8c9950c"
+        },
+        "inputEvidence": "context_with_system",
+        "executionUnknown": true
+      }
+    ],
+    "end": null
+  },
+  "result": {
+    "status": "unknown",
+    "reason": "missing_or_ambiguous_receipt",
+    "safeToResend": false
+  },
+  "after": {
+    "binding": {
+      "artifact": "recovery-m0-artifact",
+      "instance": "da66cc6f-df80-46cb-882e-5d81701845de",
+      "session": "01a18cd4-8408-733c-8920-67ee83e3c60e"
+    },
+    "generation": 1,
+    "epoch": 1,
+    "version": 5,
+    "lifecycle": "open",
+    "mode": "bridge",
+    "messages": [
+      {
+        "id": "r1-a81fc59b-b833-44c0-8755-659a97874379",
+        "text": "[POLISH-RECOVERY-M0 r1-a81fc59b-b833-44c0-8755-659a97874379] Isolated receipt-window test. Reply exactly RECOVERY_ACK. No tools, file edits, or other sessions.",
+        "digest": "df0e8bad8c5a8351a779972a26dd441ba72f3cefa14c6353bf47dcc3472eb29e",
+        "epoch": 1,
+        "kind": "message",
+        "state": "delivered",
+        "consumed": true,
+        "claim": {
+          "id": "r1-a81fc59b-b833-44c0-8755-659a97874379",
+          "epoch": 1,
+          "generation": 1,
+          "nonce": "74aff958-b80c-4ef3-9ba5-7f1bcdc98c3b",
+          "attempt": "c77e3e5c-a4da-4d91-adb8-d002e8c9950c"
+        },
+        "inputEvidence": "context_with_system",
+        "executionUnknown": true
+      }
+    ],
+    "end": null
+  },
+  "hostEntries": [
+    {
+      "type": "custom_message",
+      "customType": "polish-recovery-input",
+      "display": true,
+      "details": {
+        "artifact": "recovery-m0-artifact",
+        "instance": "da66cc6f-df80-46cb-882e-5d81701845de",
+        "session": "01a18cd4-8408-733c-8920-67ee83e3c60e",
+        "id": "r1-a81fc59b-b833-44c0-8755-659a97874379",
+        "epoch": 1,
+        "digest": "df0e8bad8c5a8351a779972a26dd441ba72f3cefa14c6353bf47dcc3472eb29e",
+        "attempt": "c77e3e5c-a4da-4d91-adb8-d002e8c9950c"
+      },
+      "id": "29373e31",
+      "parentId": "3a5d4771",
+      "timestamp": "2026-10-30T12:41:40.167Z"
+    },
+    {
+      "id": "b8e21410",
+      "type": "message",
+      "parentId": "29373e31",
+      "role": "assistant",
+      "text": "RECOVERY_ACK",
+      "stopReason": "stop"
+    }
+  ],
+  "newProcessForRecovery": false,
+  "resends": 0,
+  "runtime": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/runtime/b584ab61-70f3-4105-8028-c8aa06a36a60",
+  "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/runtime/b584ab61-70f3-4105-8028-c8aa06a36a60/sessions/2026-10-30T12-41-40-105Z_01a18cd4-8408-733c-8920-67ee83e3c60e.jsonl"
+}

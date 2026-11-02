@@ -10,6 +10,8 @@ import { fileURLToPath } from "node:url";
 
 import chokidar from "chokidar";
 import express from "express";
+import { createPolishReview } from "./polish-review.js";
+import { safePolishTrace } from "./polish-trace.js";
 
 import {
   classifySevereTextOverflow,
@@ -310,9 +312,12 @@ export async function serve({
   extraListenHosts = [],
   bindRecoveryDelaysMs = BIND_RECOVERY_DELAYS_MS,
   whiteboardAssetsDir = defaultWhiteboardAssetsDir(),
+  polishHost = null,
+  polishTrace = (_stage, _metadata) => {},
 } = {}) {
   // Keep the transport dependency off fast metadata paths such as `--version`.
   const { WebSocket, WebSocketServer } = await import("ws");
+  polishTrace = safePolishTrace(polishTrace);
   const extraHosts = allowedHosts ?? extraAllowedHosts(env);
   const envHost = env.LAVISH_AXI_HOST?.trim();
   const autoTailscale = !envHost;
@@ -347,6 +352,25 @@ export async function serve({
   const app = express();
   const store = new SessionStore(stateFile);
   const events = new EventEmitter();
+  // The default path uses Lavish's existing poll transport, not a new agent host.
+  const polishReview = createPolishReview({
+    store,
+    events,
+    host: polishHost || {
+      instance: serverStateId,
+      session: "lavish-poll",
+      inputEvidence: "poll_response",
+      setReceiver() {},
+      async deliver() {
+        throw new Error("POLL_ONLY");
+      },
+      async query() {
+        return null;
+      },
+    },
+    log: (message) => log?.(message),
+    trace: polishTrace,
+  });
   const watchers = new Map();
   const activePolls = new Map();
   const deliveredFeedback = new Set();
@@ -401,12 +425,24 @@ export async function serve({
   // The transcript the chrome renders is computed here (src/chat-messages.js): agent text ships
   // with its rendered html, user entries ship as text with their anchor, never as html.
   events.on("agent-reply", (key, entry) => broadcastLiveEvent("agent-reply", key, entry));
+  events.on("polish-review", (key, state) => broadcastLiveEvent("polish-review", key, state));
   events.on("chat-sync", (key, session) => broadcastLiveEvent("chat-sync", key, serializeChatSync(session)));
   events.on("agent-presence", (key, state) =>
     broadcastLiveEvent("agent-presence", key, presenceEventData(key, state, activePolls, deliveredFeedback)),
   );
   events.on("layout-warnings", (key, warnings) => broadcastLiveEvent("layout-warnings", key, { warnings }));
-  events.on("ended", (key, endedBy) => broadcastLiveEvent("ended", key, { ended_by: endedBy || null }));
+  events.on("ended", (key, endedBy) => {
+    broadcastLiveEvent("ended", key, { ended_by: endedBy || null });
+    void store
+      .feedbackSnapshot(key)
+      .then((state) => {
+        if (!state) return;
+        const watcher = watchers.get(key);
+        watchers.delete(key);
+        void watcher?.close().catch((error) => writeLog(`Polish watcher close failed: ${error.message}`));
+      })
+      .catch((error) => writeLog(`Polish watcher lookup failed: ${error.message}`));
+  });
 
   function hasLiveEventClient(key) {
     for (const clientKey of liveEventClients.values()) {
@@ -461,6 +497,7 @@ export async function serve({
       return;
     }
     client.sendEvent("chat-sync", serializeChatSync(session));
+    if (session?.review_delivery && polishReview) client.initializeReview(await polishReview.snapshot(key));
     const presence = computePresence(key, activePolls, deliveredFeedback);
     client.sendEvent("agent-presence", presenceEventData(key, presence, activePolls, deliveredFeedback));
     // A connection that attaches after the live end event still needs the terminal snapshot.
@@ -536,8 +573,17 @@ export async function serve({
     }
   }
 
-  function finishFeedbackDelivery(key, result) {
+  async function finishFeedbackDelivery(key, result) {
     if (result.status !== "feedback") return;
+    if (result.delivery) {
+      const state = await store.finishPolishPoll(key, result);
+      if (!state) return;
+      await polishReview.publish(key);
+      if (state.lifecycle === "ended" && !state.messages.some((m) => !m.consumed)) {
+        result.session_ended = true;
+        result.ended_by = (await store.findByKey(key))?.ended_by || "user";
+      }
+    }
     markFeedbackDelivered(key, activePolls, deliveredFeedback, events);
     // The take already stamped the batch Seen in state.json (docs/delivery-acks.md); tell the open
     // tabs only now, on the path that is about to write the response, never from the destructive
@@ -554,15 +600,6 @@ export async function serve({
     }
   }
 
-  // What the agent receives. `delivery_seq` is the store's own bookkeeping for undoing a take's Seen
-  // stamps on a closed poll; it means nothing to an agent and stays off the wire.
-  function agentFacingFeedback(result) {
-    if (!result || result.status !== "feedback" || !("delivery_seq" in result)) return result;
-    const rest = { ...result };
-    delete rest.delivery_seq;
-    return rest;
-  }
-
   // `takeFeedback` is destructive: it clears the batch from `state.json` before anything is
   // written to the response. A client that disconnected while that take was in flight would
   // otherwise lose the feedback for good, so put it back verbatim through the store's `restore`
@@ -576,6 +613,11 @@ export async function serve({
   // feedback that is sitting in `state.json`. Emitting wakes it exactly like a fresh `/prompts`.
   async function restoreClosedFeedback(key, result) {
     if (result.status !== "feedback") return;
+    if (await restoreClaimedFeedback(store, key, result)) {
+      await polishReview.publish(key);
+      events.emit("feedback", key);
+      return;
+    }
     const prompts = Array.isArray(result.prompts) ? result.prompts : [];
     let session = null;
     let restoreError = null;
@@ -814,7 +856,13 @@ export async function serve({
 
   app.post("/api/sessions", async (req, res, next) => {
     try {
+      if (polishReview && ["session", "instance", "binding"].some((field) => Object.hasOwn(req.body || {}, field))) {
+        res.status(400).json({ error: "binding is owned by the current host session" });
+        return;
+      }
       const file = await resolveAllowedArtifactFile(req.body?.file);
+      await polishHost?.assertArtifact?.(file);
+      polishHost?.assertDurableSession?.();
       const key = sessionKey(file);
       const reopen = Boolean(req.body.reopen);
       const existing = await store.findByKey(key);
@@ -836,7 +884,19 @@ export async function serve({
         return;
       }
       const url = shouldDisableLayoutGateOpen(req.body || {}) ? appendNoGateParam(sessionUrl) : sessionUrl;
+      const usePolish = !!polishHost || req.body?.polish === true || !!existing?.review_delivery;
+      if (existing?.ended_by === "agent" && existing?.review_delivery?.binding.inputEvidence === "poll_response") {
+        // Original Lavish permits reopening an agent-ended artifact, retaining
+        // queued feedback and transcript. Never migrate another host's state.
+        await store.mutateFeedback(key, (s) => {
+          s.review_delivery.lifecycle = "open";
+          s.review_delivery.end = null;
+          s.status = "open";
+          s.ended_by = null;
+        });
+      } else if (usePolish && existing?.review_delivery && reopen) await polishReview.open(existing, true);
       const session = await store.upsertSession(file, sessionUrl);
+      if (usePolish) await polishReview.open(session);
       if (existing?.status === "ended") {
         clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
       }
@@ -866,6 +926,7 @@ export async function serve({
   async function publishAgentReply(key, text, { requireOpen = false } = {}) {
     const session = await store.addAgentReply(key, text, { requireOpen });
     if (!session || (requireOpen && session.status === "ended")) return session;
+    if (session.review_delivery) await polishReview.publish(key);
     const lastEntry = session.chat?.at(-1);
     const entry = serializeChat([
       lastEntry?.role === "agent" ? lastEntry : { role: "agent", text, at: session.updated_at },
@@ -878,263 +939,47 @@ export async function serve({
     return session;
   }
 
-  const handlePoll = async (req, res, next) => {
-    const takeover = req.query.takeover === "1";
-    const agentReply =
-      req.method === "POST" && req.body?.agent_reply !== undefined ? String(req.body.agent_reply) : null;
-    if (takeover && req.method !== "POST") {
-      res.status(405).json({ error: "poll takeover requires POST" });
-      return;
-    }
-    if (req.method === "POST" && (agentReply === null ? !takeover : !agentReply.trim())) {
-      res.status(405).json({ error: "POST /api/poll requires agent_reply or takeover=1" });
-      return;
-    }
-    // `close` is subscribed before the first `await` and re-checked after the listeners are armed,
-    // because a client that disconnects while `takeFeedback` is in flight would otherwise arrive
-    // too late for its own cleanup: the handler marks the poll active afterwards and nothing left
-    // would clear it, leaving presence stuck on "listening" for an agent that is already gone.
-    let requestClosed = Boolean(req.aborted || (req.method !== "POST" && req.destroyed));
-    let cleanupPoll = null;
-    let claimedHolder = null;
-    const onRequestClose = () => {
-      // A POST request emits `close` when its JSON body stream ends, before the long-poll
-      // response has been written. `aborted` distinguishes that normal parser lifecycle from a
-      // client that actually went away.
-      if (req.method === "POST" && !req.aborted) return;
-      requestClosed = true;
-      cleanupPoll?.();
-    };
-    const onResponseClose = () => {
-      // Once the body has been parsed, a POST request's close event is no longer useful: the
-      // response socket is the authoritative signal for a client that aborts its long-poll.
-      if (req.method === "POST" && !res.writableEnded) {
-        requestClosed = true;
-        cleanupPoll?.();
-      }
-    };
-    res.on("close", onResponseClose);
-    const detachRequestClose = () => req.off("close", onRequestClose);
-    req.on("close", onRequestClose);
-    try {
-      const file = await canonicalFile(String(req.query.file || ""));
-      const key = sessionKey(file);
-      const ownerValue = typeof req.query.owner === "string" ? req.query.owner.trim() : "";
-      if (ownerValue.toLowerCase() === "none" || ownerValue.startsWith("-")) {
-        detachRequestClose();
-        res.status(400).json({
-          status: "error",
-          code: "VALIDATION_ERROR",
-          error: "--owner none is reserved; pass a different listener label",
-        });
-        return;
-      }
-      const owner = ownerValue || null;
-      if (hasPresentOriginOrReferer(req) && !isSameOriginRequest(req, allowedHostnames, allowAnyHostname)) {
-        detachRequestClose();
-        res.status(403).json({ error: "cross-origin poll takeover rejected" });
-        return;
-      }
-      const { holder, previousPresence, conflict, missing } = await pollOwnershipLock.runExclusive(async () => {
-        const currentHolder = activePolls.get(key);
-        if (currentHolder && !takeover) return { conflict: listenerConflict(currentHolder, "LISTENER_ACTIVE") };
-        const nextHolder = { key, owner, startedAt: Date.now(), replaced: false, replace: null };
-        claimedHolder = nextHolder;
-        const priorPresence = presenceSignature(key, activePolls, deliveredFeedback);
-        if (currentHolder) {
-          // Install the successor before releasing the old response so its cleanup cannot emit a
-          // transient "waiting" state or clear the successor's listener ownership.
-          currentHolder.replaced = true;
-          activePolls.set(key, nextHolder);
-          currentHolder.replace?.();
-        } else {
-          activePolls.set(key, nextHolder);
-        }
-        // Attaching a fresh round retires the prior delivery marker; releasing a poll never does.
-        deliveredFeedback.delete(key);
-        if (agentReply !== null) {
-          const session = await publishAgentReply(key, agentReply);
-          if (!session) {
-            activePolls.delete(key);
-            return { missing: true };
-          }
-        }
-        return { holder: nextHolder, previousPresence: priorPresence };
-      });
-      if (conflict) {
-        detachRequestClose();
-        res.status(409).json(conflict);
-        return;
-      }
-      if (missing) {
-        detachRequestClose();
-        res.status(404).json({ error: "session not found" });
-        return;
-      }
-      const timeoutMs =
-        req.query.timeoutMs === undefined ? null : Math.max(0, Math.min(Number(req.query.timeoutMs || 0), 2147483647));
-      const immediate = await store.takeFeedback(key);
-      if (immediate.status !== "waiting") {
-        if (holder.replaced) {
-          await restoreClosedFeedback(key, immediate);
-          detachRequestClose();
-          res.json(listenerConflict(holder, "LISTENER_REPLACED"));
-          releasePollListener(holder, activePolls, deliveredFeedback, events);
-          return;
-        }
-        if (requestClosed || res.writableEnded) {
-          await restoreClosedFeedback(key, immediate);
-          releasePollListener(holder, activePolls, deliveredFeedback, events);
-          detachRequestClose();
-          return;
-        }
-        finishFeedbackDelivery(key, immediate);
-        releasePollListener(holder, activePolls, deliveredFeedback, events);
-        if (immediate.session_ended) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
-        detachRequestClose();
-        res.json(agentFacingFeedback(immediate));
-        return;
-      }
-      if (holder.replaced) {
-        detachRequestClose();
-        res.json(listenerConflict(holder, "LISTENER_REPLACED"));
-        releasePollListener(holder, activePolls, deliveredFeedback, events);
-        return;
-      }
-      if (requestClosed || res.writableEnded) {
-        releasePollListener(holder, activePolls, deliveredFeedback, events);
-        detachRequestClose();
-        return;
-      }
-      const streamHeartbeat = timeoutMs === null;
-      let heartbeat = null;
-      if (streamHeartbeat) {
-        res.status(200).type("application/json").set("Lavish-Poll-State", "listening");
-        res.write(" ");
-        heartbeat = setInterval(() => {
-          if (!res.writableEnded) res.write(" ");
-        }, pollHeartbeatMs);
-        heartbeat.unref?.();
-      }
-      refreshIdleTimer();
-      let timer = null;
-      let cleaned = false;
-      let responding = false;
-      const cleanup = () => {
-        if (cleaned) return;
-        cleaned = true;
-        if (timer) clearTimeout(timer);
-        if (heartbeat) clearInterval(heartbeat);
-        events.off("feedback", onFeedback);
-        events.off("ended", onFeedback);
-        events.off("browser-disconnected", onBrowserDisconnected);
-        releasePollListener(holder, activePolls, deliveredFeedback, events);
-        if (!activePolls.has(key)) {
-          clearBrowserDisconnectTimer(key);
-          browserDisconnectPending.delete(key);
-        }
-        refreshIdleTimer();
-        cleanupPoll = null;
-        detachRequestClose();
-        res.off("close", onResponseClose);
-      };
-      const respondReplacement = () => {
-        if (responding || res.writableEnded) return;
-        responding = true;
-        try {
-          const replacement = listenerConflict(holder, "LISTENER_REPLACED");
-          if (streamHeartbeat) res.end(JSON.stringify(replacement));
-          else res.json(replacement);
-        } finally {
-          cleanup();
-        }
-      };
-      holder.replace = respondReplacement;
-      const respond = async (forcedResult = null) => {
-        if (responding || res.writableEnded) return;
-        responding = true;
-        let finalSessionEnded = false;
-        try {
-          const result = await store.takeFeedback(key);
-          // Feedback or an explicit end that raced the grace timer wins. The disconnect result
-          // is only the non-terminal replacement for a poll that would otherwise keep waiting.
-          const responseResult = forcedResult && result.status === "waiting" ? forcedResult : result;
-          finalSessionEnded = responseResult?.session_ended === true;
-          if (holder.replaced) {
-            if (responseResult.status !== "waiting") await restoreClosedFeedback(key, responseResult);
-            if (!requestClosed && !res.writableEnded) {
-              if (streamHeartbeat) res.end(JSON.stringify(listenerConflict(holder, "LISTENER_REPLACED")));
-              else res.json(listenerConflict(holder, "LISTENER_REPLACED"));
-            }
-            return;
-          }
-          if (requestClosed || res.writableEnded) {
-            await restoreClosedFeedback(key, responseResult);
-            return;
-          }
-          finishFeedbackDelivery(key, responseResult);
-          const agentResponse = agentFacingFeedback(responseResult);
-          if (streamHeartbeat) {
-            res.end(JSON.stringify(agentResponse));
-          } else {
-            res.json(agentResponse);
-          }
-        } finally {
-          cleanup();
-          if (finalSessionEnded) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
-        }
-      };
-      function handleRespondError(error) {
-        if (streamHeartbeat) {
-          cleanup();
-          if (!res.writableEnded) res.destroy(error);
-          return;
-        }
-        next(error);
-      }
-      const onFeedback = (changedKey) => {
-        if (changedKey !== key || res.writableEnded) {
-          return;
-        }
-        respond().catch(handleRespondError);
-      };
-      const onBrowserDisconnected = (changedKey) => {
-        if (changedKey !== key || res.writableEnded) return;
-        respond({ status: "browser_disconnected" }).catch(handleRespondError);
-      };
-      events.on("feedback", onFeedback);
-      events.on("ended", onFeedback);
-      events.on("browser-disconnected", onBrowserDisconnected);
-      cleanupPoll = cleanup;
-      if (holder.replaced) {
-        respondReplacement();
-        return;
-      }
-      if (requestClosed || res.writableEnded) {
-        cleanup();
-        return;
-      }
-      // A browser can disappear while the initial take is in flight. The disconnect timer may
-      // have fired before this request installed its event listeners, so reconcile that state now.
-      if (browserDisconnectPending.has(key)) {
-        browserDisconnectPending.delete(key);
-        onBrowserDisconnected(key);
-        return;
-      }
-      const nextPresence = presenceSignature(key, activePolls, deliveredFeedback);
-      if (nextPresence !== previousPresence) {
-        events.emit("agent-presence", key, computePresence(key, activePolls, deliveredFeedback));
-      }
-      timer = timeoutMs === null ? null : setTimeout(() => respond().catch(handleRespondError), timeoutMs);
-    } catch (error) {
-      cleanupPoll?.();
-      if (claimedHolder) releasePollListener(claimedHolder, activePolls, deliveredFeedback, events);
-      detachRequestClose();
-      next(error);
-    }
-  };
+  const handlePoll = createPollHandler({
+    store,
+    activePolls,
+    events,
+    pollOwnershipLock,
+    deliveredFeedback,
+    allowedHostnames,
+    allowAnyHostname,
+    publishAgentReply,
+    restoreClosedFeedback,
+    finishFeedbackDelivery,
+    refreshIdleTimer,
+    clearBrowserDisconnectTimer,
+    browserDisconnectPending,
+    pollHeartbeatMs,
+  });
   app.get("/api/poll", handlePoll);
   app.post("/api/poll", handlePoll);
+
+  app.get("/api/:key/review", async (req, res) => {
+    try {
+      if (!polishReview) return res.status(404).json({ error: "Pi review is not enabled" });
+      res.setHeader("cache-control", "no-store");
+      res.json(await polishReview.snapshot(req.params.key));
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  });
+  for (const operation of ["complete", "end"])
+    app.post(`/api/:key/review/${operation}`, async (req, res) => {
+      if (!isSameOriginRequest(req, allowedHostnames, allowAnyHostname))
+        return res.status(403).json({ error: "cross-origin review submission rejected" });
+      try {
+        if (!polishReview) return res.status(404).json({ error: "Pi review is not enabled" });
+        if (operation === "complete" && (!req.body?.artifact_load_token || !req.body?.artifact_digest))
+          return res.status(400).json({ error: "viewed artifact identity is required" });
+        res.json(await polishReview[operation](req.params.key, req.body || {}));
+      } catch (error) {
+        res.status(409).json({ error: error.message });
+      }
+    });
 
   // The one route that puts words in the reviewer's mouth: whatever lands here
   // reaches the agent as the user's own instructions. The session key is derived
@@ -1146,7 +991,9 @@ export async function serve({
         res.status(403).json({ error: "cross-origin prompt submission rejected" });
         return;
       }
-      const shouldEndSession = Boolean(req.body?.endSession || req.body?.end_session);
+      const bound = await store.feedbackSnapshot(req.params.key);
+      if (bound && req.body?.review_epoch !== bound.epoch) return res.status(409).json({ error: "EPOCH" });
+      const shouldEndSession = !bound && Boolean(req.body?.endSession || req.body?.end_session);
       const hasLayoutWarningPrompt = Array.isArray(req.body?.prompts)
         ? req.body.prompts.some((prompt) => prompt?.tag === "layout-warnings")
         : false;
@@ -1189,6 +1036,18 @@ export async function serve({
         return;
       }
       const freshFeedback = session.fresh_feedback === true;
+      if (bound && freshFeedback) {
+        const existingIds = new Set(bound.messages.map((message) => message.id));
+        for (const message of session.review_delivery.messages) {
+          if (!existingIds.has(message.id))
+            polishTrace("accepted_durable", {
+              ...bound.binding,
+              epoch: bound.epoch,
+              id: message.id,
+              digest: message.digest,
+            });
+        }
+      }
       if (shouldEndSession) clearFeedbackDelivery(req.params.key, activePolls, deliveredFeedback, events);
       let publishedSession = session;
       if (hasLayoutWarningPrompt) {
@@ -1209,6 +1068,10 @@ export async function serve({
       });
       if (shouldEndSession) await shutdownIfNoLiveSessions();
     } catch (error) {
+      if (["CLOSED", "EPOCH", "CONFLICT"].includes(error.message)) {
+        res.status(409).json({ error: error.message });
+        return;
+      }
       next(error);
     }
   });
@@ -1491,7 +1354,13 @@ export async function serve({
         createChromeHtml(session, {
           layoutGateEnabled: shouldEnableLayoutGate(req.query || {}),
           faviconTag,
-          title: title ? `${title} · Lavish` : "Lavish Editor",
+          title: session.review_delivery
+            ? title
+              ? `${title} · Polish`
+              : "Polish"
+            : title
+              ? `${title} · Lavish`
+              : "Lavish Editor",
           artifactRevision: chromeLoad.artifact_revision,
           artifactLoadToken: chromeLoad.artifact_load_token,
           artifactLoadSequence: chromeLoad.artifact_load_sequence,
@@ -1584,6 +1453,10 @@ export async function serve({
           );
         return;
       }
+      if (verified.session.review_delivery) {
+        await store.recordReviewArtifact(key, token, html);
+        await polishReview?.publish(key);
+      }
       res.type("html").send(injectLavishSdk(html, key, verified.artifact_revision, verified.artifact_load_token));
     } catch (error) {
       next(error);
@@ -1651,6 +1524,17 @@ export async function serve({
     }
   });
 
+  for (const asset of ["polish-client.js", "polish.css"])
+    app.get(`/${asset}`, async (_req, res, next) => {
+      try {
+        res
+          .type(asset.endsWith(".js") ? "application/javascript" : "text/css")
+          .send(await readFile(new URL(`./${asset}`, import.meta.url), "utf8"));
+      } catch (error) {
+        next(error);
+      }
+    });
+
   app.get("/sdk.js", async (req, res, next) => {
     try {
       const verified = await store.verifyArtifactLoad(
@@ -1668,6 +1552,7 @@ export async function serve({
       }
       res.type("application/javascript").send(
         createSdkJs(String(req.query.key || ""), verified.artifact_revision, verified.artifact_load_token, {
+          polish: Boolean(verified.session.review_delivery),
           maxAttachmentCount: attachmentConfig.maxPerPrompt,
           maxAttachmentBytes: attachmentConfig.maxBytes,
         }),
@@ -2006,9 +1891,41 @@ export async function serve({
       return;
     }
     eventWebSocketServer.handleUpgrade(req, socket, head, (webSocket) => {
+      const syncId = crypto.randomUUID();
+      let reviewReady = false,
+        pendingReview = null,
+        lastReviewVersion = null;
+      function sendReview(data, fullSnapshot = false) {
+        if (webSocket.readyState !== WebSocket.OPEN || (!fullSnapshot && data.version <= lastReviewVersion)) return;
+        webSocket.send(
+          JSON.stringify({
+            type: "polish-review",
+            data: {
+              ...data,
+              sync_id: syncId,
+              full_snapshot: fullSnapshot,
+              previous_version: lastReviewVersion,
+            },
+          }),
+        );
+        lastReviewVersion = data.version;
+      }
       const client = {
         sendEvent(type, data) {
+          if (type === "polish-review") {
+            // Every update is complete state, so only the latest buffered state is needed.
+            if (!reviewReady) {
+              if (!pendingReview || data.version > pendingReview.version) pendingReview = data;
+            } else sendReview(data);
+            return;
+          }
           if (webSocket.readyState === WebSocket.OPEN) webSocket.send(JSON.stringify({ type, data }));
+        },
+        initializeReview(data) {
+          sendReview(data, true);
+          reviewReady = true;
+          if (pendingReview) sendReview(pendingReview);
+          pendingReview = null;
         },
         close(code = 1001, reason = "Lavish server shutdown") {
           webSocket.close(code, reason);
@@ -2251,6 +2168,7 @@ export async function serve({
   // something untrue. Without the log line, server.log records an exit with no explanation at all.
   function shutdown(reloadKey = "", reason = "", cause = "requested") {
     if (shuttingDown) return;
+    polishReview?.close();
     shuttingDown = true;
     writeLog(`[lavish] shutting down: ${cause}${reason ? ` (reason=${reason})` : ""}`);
     if (idleTimer) {
@@ -2398,6 +2316,7 @@ export async function serve({
 
   return {
     port: publicPort,
+    review: polishReview,
     hosts: boundHosts,
     addresses: httpServers.map((server) => server.address()),
     close: async () => {
@@ -2730,6 +2649,7 @@ export async function resolveArtifactAsset(root, assetPath) {
  * @param {(key: string) => number} reloadDebounceMs
  */
 async function watchSession(session, watchers, events, logEvent, reloadDebounceMs = () => RELOAD_DEBOUNCE_MS) {
+  if (session.review_delivery?.lifecycle === "ended") return;
   if (watchers.has(session.key)) {
     return;
   }
@@ -2743,7 +2663,9 @@ async function watchSession(session, watchers, events, logEvent, reloadDebounceM
   watcher.on("all", (event, file) => {
     logEvent?.(`watch event=${event} session=${session.key} file=${file ?? ""}`);
     clearTimeout(timer);
-    timer = setTimeout(() => events.emit("reload", session.key), reloadDebounceMs(session.key));
+    timer = setTimeout(() => {
+      if (watchers.get(session.key) === watcher) events.emit("reload", session.key);
+    }, reloadDebounceMs(session.key));
   });
   watcher.on("error", (error) => {
     const message = error instanceof Error ? error.message : String(error);
@@ -3069,6 +2991,8 @@ export function createChromeHtml(
   const acceptedMime = attachmentAcceptedMime.map(String);
   const sessionJson = jsonScript({
     key: session.key,
+    polish: Boolean(session.review_delivery),
+    reviewEpoch: session.review_delivery?.epoch,
     file: session.file,
     // A page loaded (or reloaded) after the session already ended has no future live `ended`
     // event to wait for - it must start read-only instead of looking live until the user tries
@@ -3098,7 +3022,8 @@ export function createChromeHtml(
     revisionPalette: artifactRevisions.revisionPalette(),
   });
   const { head: pathHead, tail: pathTail } = displayPathParts(session.file);
-  const bodyClass = layoutGateEnabled ? "lavish layout-gate-active" : "lavish";
+  const bodyClass =
+    (layoutGateEnabled ? "lavish layout-gate-active" : "lavish") + (session.review_delivery ? " polish" : "");
   const layoutGateHidden = layoutGateEnabled ? "" : " hidden";
   const modeHotkeyUpper = MODE_TOGGLE_HOTKEY_KEY.toUpperCase();
   const modeToggleHint = `Toggle annotate/explore mode (⌘${modeHotkeyUpper} / Ctrl+${modeHotkeyUpper})`;
@@ -3110,6 +3035,7 @@ export function createChromeHtml(
 <title>${escapeHtml(title)}</title>
 ${faviconTag}
 <link rel="stylesheet" href="/chrome.css">
+${session.review_delivery ? '<link rel="stylesheet" href="/polish.css"><script src="/polish-client.js"></script>' : ""}
 </head>
 <body class="${bodyClass}">
 <div class="bar"><div class="brand"><span class="brand-mark">Lavish</span><span class="brand-support">Editor</span></div><div class="spacer" aria-hidden="true"></div><div class="warnings-wrap" id="warningsWrap" hidden><button class="warnings-button" id="warningsButton" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="warningsDrawer">${chromeIcons.warning}<span class="warnings-count" id="warningsCount">0</span></button><div class="menu warnings-drawer" id="warningsDrawer" role="dialog" aria-labelledby="warningsTitle" aria-describedby="warningsSummary" hidden><div class="warnings-head"><h2 class="warnings-title" id="warningsTitle">Layout issues</h2><p class="warnings-summary" id="warningsSummary"></p></div><div class="warnings-toolbar"><label class="warnings-selectall"><input type="checkbox" id="warningsSelectAll"><span>Select all</span></label><span class="warnings-selected" id="warningsSelected" role="status" aria-live="polite"></span></div><div class="warnings-list" id="warningsList"></div><div class="warnings-foot"><p class="warnings-note">Queueing sends a repair request with your next feedback. An issue is marked resolved only after a newer artifact load and a complete check at the same viewport no longer finds it.</p><button class="button" id="warningsQueueButton" type="button" disabled>Queue selected fixes</button></div></div></div><div class="revisions-wrap" id="revisionsWrap" hidden><button class="revisions-button" id="revisionsButton" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="revisionsDrawer"><span class="revisions-button-text">Revisions</span><span class="revisions-count" id="revisionsCount">0</span></button><div class="menu revisions-drawer" id="revisionsDrawer" role="dialog" aria-labelledby="revisionsTitle" aria-describedby="revisionsSummary" hidden><div class="revisions-head"><h2 class="revisions-title" id="revisionsTitle">Revisions</h2><p class="revisions-summary" id="revisionsSummary"></p></div><div class="revisions-list" id="revisionsList"></div><div class="revisions-foot"><p class="revisions-note">The agent declares these in the artifact itself. Reveal flashes the next block it marked for that revision; nothing about the page is restyled, so the saved file still looks the way it does here.</p></div></div></div><button class="annotate-switch" id="annotation" type="button" aria-pressed="true" title="${escapeHtml(modeToggleHint)}"><span class="switch-track" aria-hidden="true"><span class="switch-knob"></span></span><span>Annotate</span></button><button class="sidebar-toggle" id="sidebarToggle" type="button" aria-controls="panel" aria-expanded="true" aria-label="Hide conversation" title="Hide conversation">${chromeIcons.sidebar}<span class="sidebar-toggle-count" id="sidebarToggleCount" aria-hidden="true" hidden></span></button><div class="more-wrap" id="moreWrap"><button class="more-button" id="moreButton" type="button" title="More" aria-haspopup="menu" aria-expanded="false">${chromeIcons.more}</button><div class="menu more-menu" id="moreMenu" hidden><div class="menu-head"><div class="menu-label">Editing</div><button class="menu-file" id="copyPath" type="button" title="Copy path · ${escapeHtml(session.file)}">${chromeIcons.file}<span class="menu-file-text"><span class="path-head">${escapeHtml(pathHead)}</span><span class="path-tail">${escapeHtml(pathTail)}</span></span><span class="copy-hint" id="copyHint"><span class="icon-copy">${chromeIcons.copy}</span><span class="icon-check">${chromeIcons.check}</span><span id="copyHintText">Copy</span></span></button></div><div class="menu-rule"></div><button class="menu-item" id="reloadArtifact" type="button">${chromeIcons.refresh}<span>Reload artifact</span></button><button class="menu-item" id="copySnapshot" type="button">${chromeIcons.camera}<span>Copy DOM snapshot</span></button><button class="menu-item" id="exportArtifact" type="button">${chromeIcons.download}<span>Export standalone HTML</span></button><button class="menu-item" id="shareArtifact" type="button">${chromeIcons.globe}<span>Publish link</span></button><div class="menu-rule"></div><button class="menu-item danger" id="end" type="button">${chromeIcons.exit}<span>End session</span></button></div></div></div>
@@ -3166,13 +3092,13 @@ function serializeModuleHelpers(module) {
  * @param {string} key
  * @param {number} [artifactRevision]
  * @param {string} [artifactLoadToken]
- * @param {{ maxAttachmentCount?: number, maxAttachmentBytes?: number, acceptedImageMime?: string[] }} [options]
+ * @param {{ maxAttachmentCount?: number, maxAttachmentBytes?: number, acceptedImageMime?: string[], polish?: boolean }} [options]
  */
 export function createSdkJs(
   key,
   artifactRevision = 0,
   artifactLoadToken = "",
-  { maxAttachmentCount, maxAttachmentBytes, acceptedImageMime = ACCEPTED_IMAGE_MIME } = {},
+  { maxAttachmentCount, maxAttachmentBytes, acceptedImageMime = ACCEPTED_IMAGE_MIME, polish = false } = {},
 ) {
   const mermaidHelperSource = serializeModuleHelpers(mermaidNode);
   const tableHelperSource = serializeModuleHelpers(tableCellHelpers);
@@ -3185,6 +3111,7 @@ export function createSdkJs(
   // limit instead of a hardcoded literal (W1). The card is still only a UX guide - the
   // server re-enforces the cap on /prompts and rejects the whole batch on a mismatch.
   const sdkOptions = {
+    polish,
     maxAttachmentCount: Number.isFinite(maxAttachmentCount) ? maxAttachmentCount : undefined,
     maxAttachmentBytes: Number.isFinite(maxAttachmentBytes) ? maxAttachmentBytes : undefined,
     acceptedImageMime: acceptedImageMime.map(String),
@@ -3238,4 +3165,305 @@ function jsonScript(value) {
     .replace(/>/g, "\\u003e")
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
+}
+
+// Shared by the production HTTP route and non-listening integration tests.
+export function createPollHandler({
+  store,
+  activePolls,
+  events,
+  pollOwnershipLock,
+  deliveredFeedback,
+  allowedHostnames,
+  allowAnyHostname,
+  publishAgentReply,
+  restoreClosedFeedback,
+  finishFeedbackDelivery,
+  refreshIdleTimer,
+  clearBrowserDisconnectTimer,
+  browserDisconnectPending,
+  pollHeartbeatMs,
+}) {
+  return async (req, res, next) => {
+    const takeover = req.query.takeover === "1";
+    const agentReply =
+      req.method === "POST" && req.body?.agent_reply !== undefined ? String(req.body.agent_reply) : null;
+    if (takeover && req.method !== "POST") {
+      res.status(405).json({ error: "poll takeover requires POST" });
+      return;
+    }
+    if (req.method === "POST" && (agentReply === null ? !takeover : !agentReply.trim())) {
+      res.status(405).json({ error: "POST /api/poll requires agent_reply or takeover=1" });
+      return;
+    }
+    // `close` is subscribed before the first `await` and re-checked after the listeners are armed,
+    // because a client that disconnects while `takeFeedback` is in flight would otherwise arrive
+    // too late for its own cleanup: the handler marks the poll active afterwards and nothing left
+    // would clear it, leaving presence stuck on "listening" for an agent that is already gone.
+    let requestClosed = Boolean(req.aborted || (req.method !== "POST" && req.destroyed));
+    let cleanupPoll = null;
+    let claimedHolder = null;
+    const onRequestClose = () => {
+      // A POST request emits `close` when its JSON body stream ends, before the long-poll
+      // response has been written. `aborted` distinguishes that normal parser lifecycle from a
+      // client that actually went away.
+      if (req.method === "POST" && !req.aborted) return;
+      requestClosed = true;
+      cleanupPoll?.();
+    };
+    const onResponseClose = () => {
+      // Once the body has been parsed, a POST request's close event is no longer useful: the
+      // response socket is the authoritative signal for a client that aborts its long-poll.
+      if (req.method === "POST" && !res.writableEnded) {
+        requestClosed = true;
+        cleanupPoll?.();
+      }
+    };
+    res.on("close", onResponseClose);
+    const detachRequestClose = () => req.off("close", onRequestClose);
+    req.on("close", onRequestClose);
+    try {
+      const file = await canonicalFile(String(req.query.file || ""));
+      const key = sessionKey(file);
+      const ownerValue = typeof req.query.owner === "string" ? req.query.owner.trim() : "";
+      if (ownerValue.toLowerCase() === "none" || ownerValue.startsWith("-")) {
+        detachRequestClose();
+        res.status(400).json({
+          status: "error",
+          code: "VALIDATION_ERROR",
+          error: "--owner none is reserved; pass a different listener label",
+        });
+        return;
+      }
+      const owner = ownerValue || null;
+      if (hasPresentOriginOrReferer(req) && !isSameOriginRequest(req, allowedHostnames, allowAnyHostname)) {
+        detachRequestClose();
+        res.status(403).json({ error: "cross-origin poll takeover rejected" });
+        return;
+      }
+      const { holder, previousPresence, conflict, missing } = await pollOwnershipLock.runExclusive(async () => {
+        const deliveryLease = await store.feedbackLease(key, "poll");
+        const currentHolder = activePolls.get(key);
+        if (currentHolder && !takeover) return { conflict: listenerConflict(currentHolder, "LISTENER_ACTIVE") };
+        const nextHolder = { key, owner, deliveryLease, startedAt: Date.now(), replaced: false, replace: null };
+        claimedHolder = nextHolder;
+        const priorPresence = presenceSignature(key, activePolls, deliveredFeedback);
+        if (currentHolder) {
+          // Install the successor before releasing the old response so its cleanup cannot emit a
+          // transient "waiting" state or clear the successor's listener ownership.
+          currentHolder.replaced = true;
+          activePolls.set(key, nextHolder);
+          currentHolder.replace?.();
+        } else {
+          activePolls.set(key, nextHolder);
+        }
+        // Attaching a fresh round retires the prior delivery marker; releasing a poll never does.
+        deliveredFeedback.delete(key);
+        if (agentReply !== null) {
+          const session = await publishAgentReply(key, agentReply);
+          if (!session) {
+            activePolls.delete(key);
+            return { missing: true };
+          }
+        }
+        return { holder: nextHolder, previousPresence: priorPresence };
+      });
+      if (conflict) {
+        detachRequestClose();
+        res.status(409).json(conflict);
+        return;
+      }
+      if (missing) {
+        detachRequestClose();
+        res.status(404).json({ error: "session not found" });
+        return;
+      }
+      const timeoutMs =
+        req.query.timeoutMs === undefined ? null : Math.max(0, Math.min(Number(req.query.timeoutMs || 0), 2147483647));
+      const immediate = await store.takeFeedback(key, holder.deliveryLease);
+      if (immediate.status !== "waiting") {
+        if (holder.replaced) {
+          await restoreClosedFeedback(key, immediate);
+          detachRequestClose();
+          res.json(listenerConflict(holder, "LISTENER_REPLACED"));
+          releasePollListener(holder, activePolls, deliveredFeedback, events);
+          return;
+        }
+        if (requestClosed || res.writableEnded) {
+          await restoreClosedFeedback(key, immediate);
+          releasePollListener(holder, activePolls, deliveredFeedback, events);
+          detachRequestClose();
+          return;
+        }
+        await finishFeedbackDelivery(key, immediate);
+        if (requestClosed || res.writableEnded || holder.replaced) {
+          await restoreClosedFeedback(key, immediate);
+          releasePollListener(holder, activePolls, deliveredFeedback, events);
+          detachRequestClose();
+          return;
+        }
+        releasePollListener(holder, activePolls, deliveredFeedback, events);
+        if (immediate.session_ended) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
+        detachRequestClose();
+        res.json(agentFacingFeedback(immediate));
+        return;
+      }
+      if (holder.replaced) {
+        detachRequestClose();
+        res.json(listenerConflict(holder, "LISTENER_REPLACED"));
+        releasePollListener(holder, activePolls, deliveredFeedback, events);
+        return;
+      }
+      if (requestClosed || res.writableEnded) {
+        releasePollListener(holder, activePolls, deliveredFeedback, events);
+        detachRequestClose();
+        return;
+      }
+      const streamHeartbeat = timeoutMs === null;
+      let heartbeat = null;
+      if (streamHeartbeat) {
+        res.status(200).type("application/json").set("Lavish-Poll-State", "listening");
+        res.write(" ");
+        heartbeat = setInterval(() => {
+          if (!res.writableEnded) res.write(" ");
+        }, pollHeartbeatMs);
+        heartbeat.unref?.();
+      }
+      refreshIdleTimer();
+      let timer = null;
+      let cleaned = false;
+      let responding = false;
+      const cleanup = () => {
+        if (cleaned) return;
+        cleaned = true;
+        if (timer) clearTimeout(timer);
+        if (heartbeat) clearInterval(heartbeat);
+        events.off("feedback", onFeedback);
+        events.off("ended", onFeedback);
+        events.off("browser-disconnected", onBrowserDisconnected);
+        releasePollListener(holder, activePolls, deliveredFeedback, events);
+        if (!activePolls.has(key)) {
+          clearBrowserDisconnectTimer(key);
+          browserDisconnectPending.delete(key);
+        }
+        refreshIdleTimer();
+        cleanupPoll = null;
+        detachRequestClose();
+        res.off("close", onResponseClose);
+      };
+      const respondReplacement = () => {
+        if (responding || res.writableEnded) return;
+        responding = true;
+        try {
+          const replacement = listenerConflict(holder, "LISTENER_REPLACED");
+          if (streamHeartbeat) res.end(JSON.stringify(replacement));
+          else res.json(replacement);
+        } finally {
+          cleanup();
+        }
+      };
+      holder.replace = respondReplacement;
+      const respond = async (forcedResult = null) => {
+        if (responding || res.writableEnded) return;
+        responding = true;
+        let finalSessionEnded = false;
+        try {
+          const result = await store.takeFeedback(key, holder.deliveryLease);
+          // Feedback or an explicit end that raced the grace timer wins. The disconnect result
+          // is only the non-terminal replacement for a poll that would otherwise keep waiting.
+          const responseResult = forcedResult && result.status === "waiting" ? forcedResult : result;
+          finalSessionEnded = responseResult?.session_ended === true;
+          if (holder.replaced) {
+            if (responseResult.status !== "waiting") await restoreClosedFeedback(key, responseResult);
+            if (!requestClosed && !res.writableEnded) {
+              if (streamHeartbeat) res.end(JSON.stringify(listenerConflict(holder, "LISTENER_REPLACED")));
+              else res.json(listenerConflict(holder, "LISTENER_REPLACED"));
+            }
+            return;
+          }
+          if (requestClosed || res.writableEnded) {
+            await restoreClosedFeedback(key, responseResult);
+            return;
+          }
+          await finishFeedbackDelivery(key, responseResult);
+          if (requestClosed || res.writableEnded || holder.replaced) {
+            await restoreClosedFeedback(key, responseResult);
+            return;
+          }
+          finalSessionEnded = responseResult?.session_ended === true;
+          const agentResponse = agentFacingFeedback(responseResult);
+          if (streamHeartbeat) {
+            res.end(JSON.stringify(agentResponse));
+          } else {
+            res.json(agentResponse);
+          }
+        } finally {
+          cleanup();
+          if (finalSessionEnded) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
+        }
+      };
+      function handleRespondError(error) {
+        if (streamHeartbeat) {
+          cleanup();
+          if (!res.writableEnded) res.destroy(error);
+          return;
+        }
+        next(error);
+      }
+      const onFeedback = (changedKey) => {
+        if (changedKey !== key || res.writableEnded) {
+          return;
+        }
+        respond().catch(handleRespondError);
+      };
+      const onBrowserDisconnected = (changedKey) => {
+        if (changedKey !== key || res.writableEnded) return;
+        respond({ status: "browser_disconnected" }).catch(handleRespondError);
+      };
+      events.on("feedback", onFeedback);
+      events.on("ended", onFeedback);
+      events.on("browser-disconnected", onBrowserDisconnected);
+      cleanupPoll = cleanup;
+      if (holder.replaced) {
+        respondReplacement();
+        return;
+      }
+      if (requestClosed || res.writableEnded) {
+        cleanup();
+        return;
+      }
+      // A browser can disappear while the initial take is in flight. The disconnect timer may
+      // have fired before this request installed its event listeners, so reconcile that state now.
+      if (browserDisconnectPending.has(key)) {
+        browserDisconnectPending.delete(key);
+        onBrowserDisconnected(key);
+        return;
+      }
+      const nextPresence = presenceSignature(key, activePolls, deliveredFeedback);
+      if (nextPresence !== previousPresence) {
+        events.emit("agent-presence", key, computePresence(key, activePolls, deliveredFeedback));
+      }
+      timer = timeoutMs === null ? null : setTimeout(() => respond().catch(handleRespondError), timeoutMs);
+    } catch (error) {
+      cleanupPoll?.();
+      if (claimedHolder) releasePollListener(claimedHolder, activePolls, deliveredFeedback, events);
+      detachRequestClose();
+      next(error);
+    }
+  };
+}
+
+export async function restoreClaimedFeedback(store, key, result) {
+  if (!result.delivery) return false;
+  if (result.delivery.inputEvidence === "poll_response") await store.restorePolishPoll(key, result.delivery);
+  else await store.markFeedbackUnknown(key, result.delivery);
+  return true;
+}
+
+// `delivery_seq` only undoes legacy Seen stamps; the bound delivery identity stays on the wire.
+function agentFacingFeedback(result) {
+  if (!result || result.status !== "feedback" || !("delivery_seq" in result)) return result;
+  const rest = { ...result };
+  delete rest.delivery_seq;
+  return rest;
 }

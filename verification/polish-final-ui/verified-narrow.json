@@ -1,0 +1,26 @@
+{
+  "body": 360,
+  "case": "final-narrow-popup",
+  "dialog": {
+    "bottom": 525.328125,
+    "height": 441.328125,
+    "left": 12,
+    "right": 348,
+    "top": 84,
+    "width": 336,
+    "x": 12,
+    "y": 84
+  },
+  "height": 640,
+  "send": {
+    "bottom": 508.328125,
+    "height": 36.390625,
+    "left": 262.640625,
+    "right": 331,
+    "top": 471.9375,
+    "width": 68.359375,
+    "x": 262.640625,
+    "y": 471.9375
+  },
+  "width": 360
+}

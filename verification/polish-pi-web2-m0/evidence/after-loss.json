@@ -1,0 +1,19 @@
+{
+  "now": 1793377314463,
+  "remainingMs": 174069,
+  "lifecycle": "open",
+  "mode": "bridge",
+  "version": 11,
+  "messages": [
+    {
+      "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+      "state": "replied",
+      "consumed": true
+    },
+    {
+      "id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e",
+      "state": "unknown",
+      "consumed": false
+    }
+  ]
+}

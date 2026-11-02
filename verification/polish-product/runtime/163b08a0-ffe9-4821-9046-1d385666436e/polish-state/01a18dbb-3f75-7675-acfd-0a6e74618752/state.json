@@ -1,0 +1,95 @@
+{
+  "sessions": {
+    "37b9dc08766c67dc": {
+      "key": "37b9dc08766c67dc",
+      "file": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-product/runtime/163b08a0-ffe9-4821-9046-1d385666436e/artifact.html",
+      "url": "http://127.0.0.1:51324/session/37b9dc08766c67dc",
+      "status": "feedback",
+      "pending_prompts": 0,
+      "prompts": [],
+      "layout_warnings": [],
+      "artifact_revision": 1,
+      "artifact_load": {
+        "artifact_load_token": "jCOaQ6vahj-7YDbDTBj0rr7CfoeVfGvm",
+        "artifact_revision": 1,
+        "last_pass_sequence": 0,
+        "request_id": "lavish-load-mvv7ouq5-1-uzv9id5htgi",
+        "request_sequence": 1,
+        "handoff_token": "GeSqE4S8Lior2w4PnIboWcA_O1h4_FVe"
+      },
+      "artifact_failures": [],
+      "delivered_attachments": [],
+      "dom_snapshot": "",
+      "chat": [
+        {
+          "role": "user",
+          "kind": "annotation",
+          "text": "请仅把当前 HTML 中 id=\"heading\" 的标题改为「同一 Pi 会话 · 第一轮已修订」。保留其他内容与原生表单，完成后简短回复。",
+          "at": "2026-10-30T16:54:40.571Z",
+          "prompt_id": "6c4e8b2e-5ad5-4f55-a1f9-aa6f4e331fda",
+          "anchor": {
+            "kind": "element",
+            "label": "<h2>",
+            "excerpt": "第一轮需要修改的标题",
+            "selector": "h2#heading"
+          }
+        }
+      ],
+      "chat_revision": 1,
+      "chat_ack_ids": [],
+      "delivery_seq": 0,
+      "closed_delivery_seq": 0,
+      "updated_at": "2026-10-30T16:54:40.571Z",
+      "review_delivery": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-product/runtime/163b08a0-ffe9-4821-9046-1d385666436e/artifact.html",
+          "instance": "9b48ff96-98a6-4d59-be30-4cac591057ed",
+          "session": "01a18dbb-3f75-7675-acfd-0a6e74618752"
+        },
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "version": 5,
+        "lifecycle": "open",
+        "messages": [
+          {
+            "id": "6c4e8b2e-5ad5-4f55-a1f9-aa6f4e331fda",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"请仅把当前 HTML 中 id=\\\"heading\\\" 的标题改为「同一 Pi 会话 · 第一轮已修订」。保留其他内容与原生表单，完成后简短回复。\",\"selector\":\"h2#heading\",\"tag\":\"h2\",\"text\":\"第一轮需要修改的标题\",\"scope\":\"anchored\",\"comment_id\":\"28abc008-d0f2-4fbd-b63e-9ec280eaa4ff\",\"round_id\":\"bfeb428a-3bf5-4f5a-b81b-331847731163\"}",
+            "digest": "946549cb06108485fa1cceb2567626a5237544b2ecac5b303fb9d36ebb02d5c3",
+            "prompt": {
+              "uid": "",
+              "prompt": "请仅把当前 HTML 中 id=\"heading\" 的标题改为「同一 Pi 会话 · 第一轮已修订」。保留其他内容与原生表单，完成后简短回复。",
+              "selector": "h2#heading",
+              "tag": "h2",
+              "text": "第一轮需要修改的标题",
+              "scope": "anchored",
+              "comment_id": "28abc008-d0f2-4fbd-b63e-9ec280eaa4ff",
+              "round_id": "bfeb428a-3bf5-4f5a-b81b-331847731163",
+              "prompt_id": "6c4e8b2e-5ad5-4f55-a1f9-aa6f4e331fda"
+            },
+            "kind": "message",
+            "state": "dispatching",
+            "consumed": false,
+            "resolved": false,
+            "claim": {
+              "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-product/runtime/163b08a0-ffe9-4821-9046-1d385666436e/artifact.html",
+              "instance": "9b48ff96-98a6-4d59-be30-4cac591057ed",
+              "session": "01a18dbb-3f75-7675-acfd-0a6e74618752",
+              "epoch": 1,
+              "generation": 1,
+              "mode": "bridge",
+              "id": "6c4e8b2e-5ad5-4f55-a1f9-aa6f4e331fda",
+              "digest": "946549cb06108485fa1cceb2567626a5237544b2ecac5b303fb9d36ebb02d5c3",
+              "attempt": "41a760b1-5a44-41dd-8bb5-54ab15234c29"
+            },
+            "host_dispatched": true
+          }
+        ],
+        "end": null,
+        "artifact_load_token": "jCOaQ6vahj-7YDbDTBj0rr7CfoeVfGvm",
+        "artifact_digest": "439ef5973b0b4b2bfefb3d5ae23f3c8da52d3438eddcf141700e2ecf53ba413b"
+      }
+    }
+  }
+}

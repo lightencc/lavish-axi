@@ -1,0 +1,8 @@
+{
+  "run": "e1d577f1",
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "startedAt": 1617159466.958958,
+  "success": false,
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'A09 未发送保留草稿 e1d577f1A09 未发送保留草稿 e1d577f1A09 未发送保留草稿 e1d577f1A09 未发送保留草稿 e1d577f1'\n- 'A09 未发送保留草稿 e1d577f1'\n\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/product-finish-v5.mjs:48:214",
+  "finishedAt": 1617183101.373916
+}

@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-10-30T12:20:11.498805+00:00",
+  "previous_entries_verified": 67,
+  "all_previous_unchanged": true,
+  "tests": "No implementation changed; real browser and persisted-event assertions executed. Prior 10-unit-test evidence retained.",
+  "listen_limit": "Only 127.0.0.1:49793 used; no rebind after cleanup",
+  "raw_host_event_count": 680,
+  "git_diff_check": {
+    "exit_code": 0,
+    "output": ""
+  },
+  "local_links_and_whitespace": "passed",
+  "port_49793_still_released": true
+}

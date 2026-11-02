@@ -1,0 +1,65 @@
+{
+  "spec_sha256": "a378fe3b29818ceb1a691d68f45561f304bcb29aa0ebb77045610deb9069df77",
+  "thread_id": "01a18c17-e9a9-7d03-b0dd-be4bf21f18ad",
+  "cwd": "/Users/lightencc/Documents/Projects/polish-axi",
+  "checks": [
+    {
+      "label": "codex-cli-version",
+      "at": "2026-10-30T10:21:43.653032+00:00",
+      "command": [
+        "codex",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "codex-cli 0.165.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "codex-desktop-version",
+      "at": "2026-10-30T10:21:43.662577+00:00",
+      "command": [
+        "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "codex-cli 0.166.0-alpha.5.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "pi-version",
+      "at": "2026-10-30T10:21:43.673606+00:00",
+      "command": [
+        "pi",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "1.4.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "codex-control-version",
+      "at": "2026-10-30T10:21:43.878329+00:00",
+      "command": [
+        "codex",
+        "app-server",
+        "daemon",
+        "version"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Error: failed to connect to /Users/lightencc/.codex/app-server-control/app-server-control.sock\n\nCaused by:\n    No such file or directory (os error 2)\n"
+    },
+    {
+      "label": "codex-queue-help",
+      "at": "2026-10-30T10:21:43.889674+00:00",
+      "command": [
+        "codex",
+        "queue",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "Queue a message for an existing session\n\nUsage: codex queue [OPTIONS] --thread <THREAD> --message <TEXT>\n\nOptions:\n      --thread <THREAD>\n          Session UUID or exact session name\n\n      --enable <FEATURE>\n          Enable a feature (repeatable). Equivalent to `-c features.<name>=true`\n\n      --message <TEXT>\n          Message text to queue\n\n      --disable <FEATURE>\n          Disable a feature (repeatable). Equivalent to `-c features.<name>=false`\n\n      --remote <ADDR>\n          Connect the TUI to a remote app server endpoint.\n          \n          Accepted forms: `ws://host:port`, `wss://host:port`, `unix://`, or `unix://PATH`.\n\n      --remote-auth-token-env <ENV_VAR>\n          Name of the environment variable containing the bearer token to send to a remote app\n          server websocket\n\n  -i, --image <FILE>...\n          Optional image(s) to attach to the initial prompt\n\n  -m, --model <MODEL>\n          Model the agent should use\n\n      --oss\n          Use open-source provider\n\n      --local-provider <OSS_PROVIDER>\n          Specify which local provider to use (lmstudio or ollama). If not specified with --oss,\n          will use config default or show selection\n\n  -p, --profile <CONFIG_PROFILE_V2>\n          Layer $CODEX_HOME/<name>.config.toml on top of the base user config\n\n  -s, --sandbox <SANDBOX_MODE>\n          Select the sandbox policy to use when executing model-generated shell commands\n          \n          [possible values: read-only, workspace-write, danger-full-access]\n\n      --approve-for-me\n          Route approval requests through automatic review using the workspace-write sandbox\n\n      --dangerously-bypass-approvals-and-sandbox\n          Skip all confirmation prompts and execute commands without sandboxing. EXTREMELY\n          DANGEROUS. Intended solely for running in environments that are externally sandboxed\n\n      --dangerously-bypass-hook-trust\n          Run enabled hooks without requiring persisted hook trust for this invocation. DANGEROUS.\n          Intended only for automation that already vets hook sources\n\n  -C, --cd <DIR>\n          Tell the agent to use the specified directory as its working root\n\n      --worktree\n          Run the session in a new managed Git worktree\n\n      --add-dir <DIR>\n          Additional directories that should be writable alongside the primary workspace\n\n      --strict-config\n          Error out when config.toml contains fields that are not recognized by this version of\n          Codex\n\n  -c, --config <key=value>\n          Override a configuration value that would otherwise be loaded from `~/.codex/config.toml`.\n          Use a dotted path (`foo.bar.baz`) to override nested values. The `value` portion is parsed\n          as TOML. If it fails to parse as TOML, the raw string is used as a literal.\n          \n          Examples: - `-c model=\"o3\"` - `-c 'sandbox_permissions=[\"disk-full-read-access\"]'` - `-c\n          shell_environment_policy.inherit=all`\n\n  -h, --help\n          Print help (see a summary with '-h')\n",
+      "stderr": ""
+    }
+  ]
+}

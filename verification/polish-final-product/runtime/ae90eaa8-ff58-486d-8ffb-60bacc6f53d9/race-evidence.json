@@ -1,0 +1,397 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9",
+  "ready": {
+    "pid": 62206,
+    "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12",
+    "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/sessions/2026-10-30T19-19-47-939Z_01a18e41-03e2-72c6-8f5e-d2f4b3df4a12.jsonl",
+    "endpoint": "http://127.0.0.1:57653",
+    "clockID": "pi:62206:c254a894-8bc4-4cd6-a98f-dcfa54e45f96",
+    "at": 1793388169838.156
+  },
+  "requests": [
+    {
+      "route": "/api/b8b391caa5da0f6a/review",
+      "method": "GET",
+      "startedAt": "2026-10-30T19:22:56.101Z",
+      "status": 200,
+      "response": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/artifact.html",
+          "instance": "bd515d43-9f86-46a2-ad28-ce00faa65951",
+          "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12"
+        },
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "version": 8,
+        "lifecycle": "open",
+        "messages": [
+          {
+            "id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 2：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"fff5ee41-b295-4576-98e6-85cefedf4f26\"}",
+            "digest": "122ba25449bced2cdfc5d885f55e668818b11f4468fad811567e3714395d848b",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 2：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "fff5ee41-b295-4576-98e6-85cefedf4f26",
+              "prompt_id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09"
+            },
+            "kind": "message",
+            "state": "host_queued",
+            "consumed": false,
+            "resolved": false,
+            "claim": {
+              "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/artifact.html",
+              "instance": "bd515d43-9f86-46a2-ad28-ce00faa65951",
+              "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12",
+              "epoch": 1,
+              "generation": 2,
+              "mode": "bridge",
+              "id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+              "digest": "122ba25449bced2cdfc5d885f55e668818b11f4468fad811567e3714395d848b",
+              "attempt": "b5c279b7-719d-452a-8bf2-f37bf2307901"
+            },
+            "host_dispatched": true,
+            "queueEvidence": "ba2ad5d8-02e6-4c72-aab8-6b81e9bcb131"
+          },
+          {
+            "id": "40dfa9a8-4f33-460d-b4c5-a41f602e255e",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 1：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"30de05b8-6f30-4c86-8a15-bb787402e21e\"}",
+            "digest": "bb90d1c6f3db71a91bc876f48394410fb84cdebbbd6945ad6d44c2e7dd68dfc4",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 1：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "30de05b8-6f30-4c86-8a15-bb787402e21e",
+              "prompt_id": "40dfa9a8-4f33-460d-b4c5-a41f602e255e"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          },
+          {
+            "id": "2142295b-ba93-49e2-a41c-856170b2e43e",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 3：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"2d45ba38-65a8-4339-881c-24c1898ae949\"}",
+            "digest": "99757bf34fc0f661b59da8f99ea92d13f0d8db5597436d4a4889d294844b37d9",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 3：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "2d45ba38-65a8-4339-881c-24c1898ae949",
+              "prompt_id": "2142295b-ba93-49e2-a41c-856170b2e43e"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          }
+        ],
+        "end": null,
+        "artifact_revision": 0,
+        "artifact_load_token": "",
+        "artifact_digest": ""
+      },
+      "finishedAt": "2026-10-30T19:22:56.115Z"
+    },
+    {
+      "route": "/api/poll?file=%2FUsers%2Flightencc%2FDocuments%2FProjects%2Fpolish-axi%2Fverification%2Fpolish-final-product%2Fruntime%2Fae90eaa8-ff58-486d-8ffb-60bacc6f53d9%2Fartifact.html&timeoutMs=1",
+      "method": "GET",
+      "startedAt": "2026-10-30T19:22:56.115Z",
+      "status": 500,
+      "response": {
+        "error": "MODE"
+      },
+      "finishedAt": "2026-10-30T19:22:56.117Z"
+    },
+    {
+      "route": "/api/poll?file=%2FUsers%2Flightencc%2FDocuments%2FProjects%2Fpolish-axi%2Fverification%2Fpolish-final-product%2Fruntime%2Fae90eaa8-ff58-486d-8ffb-60bacc6f53d9%2Fartifact.html&timeoutMs=1&takeover=1",
+      "method": "POST",
+      "body": {},
+      "startedAt": "2026-10-30T19:22:56.118Z",
+      "status": 500,
+      "response": {
+        "error": "MODE"
+      },
+      "finishedAt": "2026-10-30T19:22:56.120Z"
+    },
+    {
+      "route": "/api/b8b391caa5da0f6a/review",
+      "method": "GET",
+      "startedAt": "2026-10-30T19:22:56.120Z",
+      "status": 200,
+      "response": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/artifact.html",
+          "instance": "bd515d43-9f86-46a2-ad28-ce00faa65951",
+          "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12"
+        },
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "version": 8,
+        "lifecycle": "open",
+        "messages": [
+          {
+            "id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 2：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"fff5ee41-b295-4576-98e6-85cefedf4f26\"}",
+            "digest": "122ba25449bced2cdfc5d885f55e668818b11f4468fad811567e3714395d848b",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 2：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "fff5ee41-b295-4576-98e6-85cefedf4f26",
+              "prompt_id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09"
+            },
+            "kind": "message",
+            "state": "host_queued",
+            "consumed": false,
+            "resolved": false,
+            "claim": {
+              "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/artifact.html",
+              "instance": "bd515d43-9f86-46a2-ad28-ce00faa65951",
+              "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12",
+              "epoch": 1,
+              "generation": 2,
+              "mode": "bridge",
+              "id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+              "digest": "122ba25449bced2cdfc5d885f55e668818b11f4468fad811567e3714395d848b",
+              "attempt": "b5c279b7-719d-452a-8bf2-f37bf2307901"
+            },
+            "host_dispatched": true,
+            "queueEvidence": "ba2ad5d8-02e6-4c72-aab8-6b81e9bcb131"
+          },
+          {
+            "id": "40dfa9a8-4f33-460d-b4c5-a41f602e255e",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 1：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"30de05b8-6f30-4c86-8a15-bb787402e21e\"}",
+            "digest": "bb90d1c6f3db71a91bc876f48394410fb84cdebbbd6945ad6d44c2e7dd68dfc4",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 1：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "30de05b8-6f30-4c86-8a15-bb787402e21e",
+              "prompt_id": "40dfa9a8-4f33-460d-b4c5-a41f602e255e"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          },
+          {
+            "id": "2142295b-ba93-49e2-a41c-856170b2e43e",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 3：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"2d45ba38-65a8-4339-881c-24c1898ae949\"}",
+            "digest": "99757bf34fc0f661b59da8f99ea92d13f0d8db5597436d4a4889d294844b37d9",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 3：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "2d45ba38-65a8-4339-881c-24c1898ae949",
+              "prompt_id": "2142295b-ba93-49e2-a41c-856170b2e43e"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          }
+        ],
+        "end": null,
+        "artifact_revision": 0,
+        "artifact_load_token": "",
+        "artifact_digest": ""
+      },
+      "finishedAt": "2026-10-30T19:22:56.121Z"
+    },
+    {
+      "route": "/api/b8b391caa5da0f6a/prompts",
+      "method": "POST",
+      "body": {
+        "review_epoch": 1,
+        "prompts": [
+          {
+            "prompt_id": "79d64929-d4a6-4571-a992-4d245ce97b0a",
+            "round_id": "207299bb-e5e9-40e1-bfd6-f59665c8260a",
+            "scope": "session",
+            "prompt": "Concurrent final feedback: do not modify files or use tools; reply OK only."
+          }
+        ]
+      },
+      "startedAt": "2026-10-30T19:22:56.122Z",
+      "status": 500,
+      "response": {
+        "error": "CLOSED"
+      },
+      "finishedAt": "2026-10-30T19:22:56.136Z"
+    },
+    {
+      "route": "/api/b8b391caa5da0f6a/review/end",
+      "method": "POST",
+      "body": {
+        "id": "e3451b01-61cc-41ca-a107-3837758689c6",
+        "epoch": 1,
+        "final": {
+          "id": "4d60b343-2a96-4898-9c70-f1ace3c865b5",
+          "epoch": 1,
+          "text": "Final feedback: do not modify files or use tools; acknowledge only."
+        }
+      },
+      "startedAt": "2026-10-30T19:22:56.122Z",
+      "status": 200,
+      "response": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/artifact.html",
+          "instance": "bd515d43-9f86-46a2-ad28-ce00faa65951",
+          "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12"
+        },
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "version": 9,
+        "lifecycle": "ending",
+        "messages": [
+          {
+            "id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 2：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"fff5ee41-b295-4576-98e6-85cefedf4f26\"}",
+            "digest": "122ba25449bced2cdfc5d885f55e668818b11f4468fad811567e3714395d848b",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 2：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "fff5ee41-b295-4576-98e6-85cefedf4f26",
+              "prompt_id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09"
+            },
+            "kind": "message",
+            "state": "host_queued",
+            "consumed": false,
+            "resolved": false,
+            "claim": {
+              "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/artifact.html",
+              "instance": "bd515d43-9f86-46a2-ad28-ce00faa65951",
+              "session": "01a18e41-03e2-72c6-8f5e-d2f4b3df4a12",
+              "epoch": 1,
+              "generation": 2,
+              "mode": "bridge",
+              "id": "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+              "digest": "122ba25449bced2cdfc5d885f55e668818b11f4468fad811567e3714395d848b",
+              "attempt": "b5c279b7-719d-452a-8bf2-f37bf2307901"
+            },
+            "host_dispatched": true,
+            "queueEvidence": "ba2ad5d8-02e6-4c72-aab8-6b81e9bcb131"
+          },
+          {
+            "id": "40dfa9a8-4f33-460d-b4c5-a41f602e255e",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 1：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"30de05b8-6f30-4c86-8a15-bb787402e21e\"}",
+            "digest": "bb90d1c6f3db71a91bc876f48394410fb84cdebbbd6945ad6d44c2e7dd68dfc4",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 1：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "30de05b8-6f30-4c86-8a15-bb787402e21e",
+              "prompt_id": "40dfa9a8-4f33-460d-b4c5-a41f602e255e"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          },
+          {
+            "id": "2142295b-ba93-49e2-a41c-856170b2e43e",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"并发反馈 3：不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"2d45ba38-65a8-4339-881c-24c1898ae949\"}",
+            "digest": "99757bf34fc0f661b59da8f99ea92d13f0d8db5597436d4a4889d294844b37d9",
+            "prompt": {
+              "uid": "",
+              "prompt": "并发反馈 3：不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "2d45ba38-65a8-4339-881c-24c1898ae949",
+              "prompt_id": "2142295b-ba93-49e2-a41c-856170b2e43e"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          },
+          {
+            "id": "4d60b343-2a96-4898-9c70-f1ace3c865b5",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"Final feedback: do not modify files or use tools; acknowledge only.\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+            "digest": "c85ab4df60dc928c64aff67d955a5b66274f418d0923d2b6a8081a8ccf903cf5",
+            "prompt": {
+              "prompt_id": "4d60b343-2a96-4898-9c70-f1ace3c865b5",
+              "prompt": "Final feedback: do not modify files or use tools; acknowledge only."
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          },
+          {
+            "id": "e3451b01-61cc-41ca-a107-3837758689c6-marker",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"Review ended: e3451b01-61cc-41ca-a107-3837758689c6\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+            "digest": "cc2e653379f7c08ad4a7c74d1e50d93c10446bc45e8e64da00ad498579538ead",
+            "prompt": {
+              "prompt_id": "e3451b01-61cc-41ca-a107-3837758689c6-marker",
+              "prompt": "Review ended: e3451b01-61cc-41ca-a107-3837758689c6"
+            },
+            "kind": "end",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          }
+        ],
+        "end": {
+          "id": "e3451b01-61cc-41ca-a107-3837758689c6",
+          "digest": "7cd4e73df2b569c187293d9edc6bf9aaa97a930fe5a782a85693aeb2ad34f567",
+          "ids": [
+            "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+            "40dfa9a8-4f33-460d-b4c5-a41f602e255e",
+            "2142295b-ba93-49e2-a41c-856170b2e43e",
+            "4d60b343-2a96-4898-9c70-f1ace3c865b5",
+            "e3451b01-61cc-41ca-a107-3837758689c6-marker"
+          ]
+        },
+        "artifact_revision": 0,
+        "artifact_load_token": "",
+        "artifact_digest": ""
+      },
+      "finishedAt": "2026-10-30T19:22:56.137Z"
+    }
+  ],
+  "checks": [
+    "real busy inputs exist while competing poll starts",
+    "GET poll refused in bridge mode",
+    "POST takeover poll refused in bridge mode",
+    "poll cannot change bridge ownership or logical message set"
+  ],
+  "pass": false,
+  "endRequest": {
+    "id": "e3451b01-61cc-41ca-a107-3837758689c6",
+    "epoch": 1,
+    "final": {
+      "id": "4d60b343-2a96-4898-9c70-f1ace3c865b5",
+      "epoch": 1,
+      "text": "Final feedback: do not modify files or use tools; acknowledge only."
+    }
+  },
+  "racePrompt": {
+    "review_epoch": 1,
+    "prompts": [
+      {
+        "prompt_id": "79d64929-d4a6-4571-a992-4d245ce97b0a",
+        "round_id": "207299bb-e5e9-40e1-bfd6-f59665c8260a",
+        "scope": "session",
+        "prompt": "Concurrent final feedback: do not modify files or use tools; reply OK only."
+      }
+    ]
+  },
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(sent.status === 200 || sent.status === 409)\n\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/race-check.js:92:12\n    at check (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/race-check.js:33:3)\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/race-check.js:90:3\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}

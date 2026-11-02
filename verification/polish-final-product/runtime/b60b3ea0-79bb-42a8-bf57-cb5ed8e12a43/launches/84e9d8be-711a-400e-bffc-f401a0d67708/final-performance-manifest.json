@@ -1,0 +1,129 @@
+{
+  "status": "complete-cleaned",
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43",
+  "launch": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/launches/84e9d8be-711a-400e-bffc-f401a0d67708",
+  "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+  "epoch": 2,
+  "builds": {
+    "dist/pi-extension.mjs": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+    "dist/polish": "082f2ae2783b306caf28e4b7d1ed835c44cd8996944c3e3e8d51b571a188dcd2",
+    "dist/chrome-client.js": "ec5f4becf0e212b6d035df8a466cda12c3419dd0ab68821065b60f6eb846da08",
+    "dist/polish-client.js": "0168b4c28611e57c85501932e2bf52adaf09a2f8f12e3743037f03ef15b65b84",
+    "dist/polish.css": "75dbd3cef9c1ad235a4fdf463b56b413d6c193879db53d28d5c3c9d3db9faf81",
+    "dist/server.mjs": "93e5aff4c7b0713ea052f27a4a414aa77e18f22fade5bc6e6c5298f1c0d34cab"
+  },
+  "artifactSha256BeforeSampling": "00da8933bb5fc6fe21cb66850ad2d26606a4f8e98cd88e494486c0fd94eb5818",
+  "sourceCalibrationBefore": [
+    "source-calibration-8964ed7d-96b8-4871-93ab-1569b7a1e90d.json"
+  ],
+  "browserCalibrationBefore": [
+    "browser-calibration-05516b6d-9779-44f2-bfee-cdad11678fae.json"
+  ],
+  "uiOutput": "verification/polish-final-ui/performance-final-3",
+  "browserClock": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+  "browserWebsocket": "ws://127.0.0.1:64332/devtools/page/E3CF61E6F3C1005C8CEC5A864D9607E9",
+  "preparedAt": "2026-10-30T19:57:01.349959+00:00",
+  "rawEvidence": [
+    "client.jsonl",
+    "trace.jsonl",
+    "instrumentation.jsonl",
+    "reopen-audit.json"
+  ],
+  "directSummary": {
+    "directAttempts": 30,
+    "directSuccessful": 30,
+    "directFirstTokenMs": {
+      "count": 30,
+      "p50": 1272.783447265625,
+      "p95": 2369.80712890625,
+      "max": 2926.9208984375
+    },
+    "directTotalMs": {
+      "count": 30,
+      "p50": 1303.336669921875,
+      "p95": 2373.380126953125,
+      "max": 2929.68212890625
+    }
+  },
+  "sourceCalibrationAfter": [
+    "source-calibration-953bb002-07b1-4230-a7ae-ca56039a2e80.json"
+  ],
+  "browserCalibrationAfter": [
+    "browser-calibration-ebd65012-893e-4c4c-8ddb-3fb92f116e29.json"
+  ],
+  "uiSamples": 33,
+  "uiFailures": 0,
+  "sourceSummary": "../../final-ui-source-summary.json",
+  "exactInputsAudit": {
+    "oldPreserved": 27,
+    "newUi": 33,
+    "total": 60,
+    "duplicates": 0
+  },
+  "sourceIntervals": {
+    "accepted_durable->host_admitted": {
+      "count": 33,
+      "p50": 50.6142578125,
+      "p95": 59.008056640625,
+      "max": 59.06689453125
+    },
+    "accepted_durable->dispatch_reserved": {
+      "count": 33,
+      "p50": 33.81689453125,
+      "p95": 41.73779296875,
+      "max": 41.764892578125
+    },
+    "dispatch_reserved->host_admitted": {
+      "count": 33,
+      "p50": 17.010986328125,
+      "p95": 19.9736328125,
+      "max": 21.052490234375
+    },
+    "host_admitted->host_dispatching": {
+      "count": 33,
+      "p50": 13.771240234375,
+      "p95": 14.289794921875,
+      "max": 14.5947265625
+    },
+    "host_dispatching->input_consumed": {
+      "count": 33,
+      "p50": 17.937255859375,
+      "p95": 23.018310546875,
+      "max": 24.120849609375
+    },
+    "input_consumed->model_start": {
+      "count": 33,
+      "p50": 29.93408203125,
+      "p95": 38.499267578125,
+      "max": 52.31982421875
+    },
+    "input_consumed->first_token": {
+      "count": 33,
+      "p50": 1404.142578125,
+      "p95": 2079.1103515625,
+      "max": 2111.71240234375
+    },
+    "first_token->host_reply_persisted": {
+      "count": 33,
+      "p50": 93.302001953125,
+      "p95": 1381.65087890625,
+      "max": 1558.18603515625
+    },
+    "host_reply_persisted->reply_persisted": {
+      "count": 33,
+      "p50": 17.9580078125,
+      "p95": 22.036376953125,
+      "max": 22.181884765625
+    }
+  },
+  "instrumentation": {
+    "count": 297,
+    "p50": 3.950708999997005,
+    "p95": 5.545583000057377,
+    "max": 9.944917000015266
+  },
+  "artifactUnchangedDuringSampling": true,
+  "cleanup": "cleanup-audit.json",
+  "crossClockSummary": "verification/polish-final-ui/performance-final-3/source-to-browser-timing.json",
+  "instrumentationScope": "Exact selected UI identities, matched to each synchronous immediately preceding source trace record; readiness and cleanup excluded."
+}

@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Script ran on page and returned:\n```json\n{\"at\":\"2026-10-30T12:13:30.031Z\",\"marker\":\"crash-2a2e5dde-fe74-4939-9c85-5483e155d383\",\"firstAdmission\":{\"fresh\":true,\"id\":\"pi3-99b60ea0-d6b2-48b5-bff1-d9c9df9fbd84\",\"digest\":\"983ed5c60315da0b3712edf377ac635212b96d7b0cdd257aaa3948c5fddf7a35\",\"hostQueued\":true,\"state\":\"accepted\",\"evidence\":\"host_extension_fsynced_inbox\",\"binding\":{\"instance\":\"c8538c79-f205-4c9c-9187-41e8caee3857\",\"session\":\"01a18cb5-ad4e-745f-8bb4-7a5acda50d47\"}},\"active\":{\"id\":\"pi3-99b60ea0-d6b2-48b5-bff1-d9c9df9fbd84\",\"binding\":{\"instance\":\"c8538c79-f205-4c9c-9187-41e8caee3857\",\"session\":\"01a18cb5-ad4e-745f-8bb4-7a5acda50d47\"},\"digest\":\"983ed5c60315da0b3712edf377ac635212b96d7b0cdd257aaa3948c5fddf7a35\",\"state\":\"processing\",\"inputStored\":true,\"inputEntryIds\":[\"c91acdba\"],\"delivery\":\"input_witnessed\",\"replyVerified\":false,\"reply\":null,\"safeToResend\":false,\"version\":139},\"queued\":{\"fresh\":true,\"id\":\"pi3-61be2d2b-f979-46b2-b23a-00918a1f080c\",\"digest\":\"28f778e967abf078ef1f6ab992fe4d2bd5cfb7cf8858c67efe327f7763daefb6\",\"hostQueued\":true,\"state\":\"accepted\",\"evidence\":\"host_extension_fsynced_inbox\",\"binding\":{\"instance\":\"c8538c79-f205-4c9c-9187-41e8caee3857\",\"session\":\"01a18cb5-ad4e-745f-8bb4-7a5acda50d47\"}},\"readyToKillAt\":\"2026-10-30T12:13:30.194Z\"}\n```"
+    }
+  ]
+}

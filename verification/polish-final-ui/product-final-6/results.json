@@ -1,0 +1,8 @@
+{
+  "run": "e1d577f1",
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "startedAt": 1616649041.188125,
+  "success": false,
+  "error": "Error: Timed out\n    at until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/product-finish.mjs:12:128)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/product-finish.mjs:44:2",
+  "finishedAt": 1616761689.419208
+}

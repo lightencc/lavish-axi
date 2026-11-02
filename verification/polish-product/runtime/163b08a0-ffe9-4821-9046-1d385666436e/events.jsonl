@@ -1,0 +1,3 @@
+{"at":1793379221559,"kind":"pi","data":{"type":"extension_ui_request","id":"4ab0818e-19ab-4bdb-a5cc-524f04c711c2","method":"notify","message":"Polish 已绑定当前 Pi session。使用 /polish <HTML 路径> 打开评审。","notifyType":"info"}}
+{"at":1793379221589,"kind":"pi","data":{"type":"extension_ui_request","id":"572dc21c-4655-4df0-a986-58797638e39b","method":"notify","message":"opened: http://127.0.0.1:51324/session/37b9dc08766c67dc","notifyType":"info"}}
+{"at":1793379221590,"kind":"pi","data":{"id":"open","type":"response","command":"prompt","success":true,"data":{"disposition":"handled"}}}

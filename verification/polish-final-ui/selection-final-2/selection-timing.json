@@ -1,0 +1,174 @@
+{
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "target": "FEC887D796D2EA2F52A73BD7E422D8E1",
+  "frameTarget": "9AD4FE0616DB8C83F77507C3CB9765CB",
+  "before": {
+    "top": [
+      {
+        "runnerStartMs": 1615239758.413875,
+        "runnerEndMs": 1615239758.770875,
+        "origin": 1793387669424.8,
+        "now": 35058.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.5078,
+        "uncertaintyMs": 0.17849993705749512
+      },
+      {
+        "runnerStartMs": 1615239758.779083,
+        "runnerEndMs": 1615239758.95675,
+        "origin": 1793387669424.8,
+        "now": 35058.5,
+        "absoluteMinusRunnerMs": 1791772464724.4321,
+        "uncertaintyMs": 0.08883345127105713
+      },
+      {
+        "runnerStartMs": 1615239758.958583,
+        "runnerEndMs": 1615239759.145791,
+        "origin": 1793387669424.8,
+        "now": 35058.699999809265,
+        "absoluteMinusRunnerMs": 1791772464724.4478,
+        "uncertaintyMs": 0.09360396862030029
+      },
+      {
+        "runnerStartMs": 1615239759.147333,
+        "runnerEndMs": 1615239759.344583,
+        "origin": 1793387669424.8,
+        "now": 35058.799999952316,
+        "absoluteMinusRunnerMs": 1791772464724.3542,
+        "uncertaintyMs": 0.0986250638961792
+      },
+      {
+        "runnerStartMs": 1615239759.347041,
+        "runnerEndMs": 1615239759.506791,
+        "origin": 1793387669424.8,
+        "now": 35059,
+        "absoluteMinusRunnerMs": 1791772464724.373,
+        "uncertaintyMs": 0.07987511157989502
+      },
+      {
+        "runnerStartMs": 1615239759.50925,
+        "runnerEndMs": 1615239759.678291,
+        "origin": 1793387669424.8,
+        "now": 35059.199999809265,
+        "absoluteMinusRunnerMs": 1791772464724.4062,
+        "uncertaintyMs": 0.08452057838439941
+      },
+      {
+        "runnerStartMs": 1615239759.679625,
+        "runnerEndMs": 1615239759.8215,
+        "origin": 1793387669424.8,
+        "now": 35059.39999985695,
+        "absoluteMinusRunnerMs": 1791772464724.4495,
+        "uncertaintyMs": 0.07093751430511475
+      },
+      {
+        "runnerStartMs": 1615239759.822708,
+        "runnerEndMs": 1615239760.00225,
+        "origin": 1793387669424.8,
+        "now": 35059.59999990463,
+        "absoluteMinusRunnerMs": 1791772464724.4875,
+        "uncertaintyMs": 0.08977103233337402
+      },
+      {
+        "runnerStartMs": 1615239760.00475,
+        "runnerEndMs": 1615239760.159583,
+        "origin": 1793387669424.8,
+        "now": 35059.699999809265,
+        "absoluteMinusRunnerMs": 1791772464724.4177,
+        "uncertaintyMs": 0.07741653919219971
+      },
+      {
+        "runnerStartMs": 1615239760.16125,
+        "runnerEndMs": 1615239760.316291,
+        "origin": 1793387669424.8,
+        "now": 35059.799999952316,
+        "absoluteMinusRunnerMs": 1791772464724.3613,
+        "uncertaintyMs": 0.07752048969268799
+      }
+    ],
+    "frame": [
+      {
+        "runnerStartMs": 1615239760.318458,
+        "runnerEndMs": 1615239760.86175,
+        "origin": 1793387669560.1,
+        "now": 34925,
+        "absoluteMinusRunnerMs": 1791772464724.51,
+        "uncertaintyMs": 0.2716459035873413
+      },
+      {
+        "runnerStartMs": 1615239760.863416,
+        "runnerEndMs": 1615239761.044416,
+        "origin": 1793387669560.1,
+        "now": 34925.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.4463,
+        "uncertaintyMs": 0.09049999713897705
+      },
+      {
+        "runnerStartMs": 1615239761.0455,
+        "runnerEndMs": 1615239761.25775,
+        "origin": 1793387669560.1,
+        "now": 34925.5,
+        "absoluteMinusRunnerMs": 1791772464724.4485,
+        "uncertaintyMs": 0.10612499713897705
+      },
+      {
+        "runnerStartMs": 1615239761.259333,
+        "runnerEndMs": 1615239761.430583,
+        "origin": 1793387669560.1,
+        "now": 34925.59999990463,
+        "absoluteMinusRunnerMs": 1791772464724.3552,
+        "uncertaintyMs": 0.0856250524520874
+      },
+      {
+        "runnerStartMs": 1615239761.431666,
+        "runnerEndMs": 1615239761.593708,
+        "origin": 1793387669560.1,
+        "now": 34925.799999952316,
+        "absoluteMinusRunnerMs": 1791772464724.3875,
+        "uncertaintyMs": 0.08102107048034668
+      },
+      {
+        "runnerStartMs": 1615239761.594708,
+        "runnerEndMs": 1615239761.749625,
+        "origin": 1793387669560.1,
+        "now": 34926,
+        "absoluteMinusRunnerMs": 1791772464724.428,
+        "uncertaintyMs": 0.07745850086212158
+      },
+      {
+        "runnerStartMs": 1615239761.750791,
+        "runnerEndMs": 1615239761.907333,
+        "origin": 1793387669560.1,
+        "now": 34926.200000047684,
+        "absoluteMinusRunnerMs": 1791772464724.471,
+        "uncertaintyMs": 0.07827091217041016
+      },
+      {
+        "runnerStartMs": 1615239761.908333,
+        "runnerEndMs": 1615239762.062583,
+        "origin": 1793387669560.1,
+        "now": 34926.200000047684,
+        "absoluteMinusRunnerMs": 1791772464724.3147,
+        "uncertaintyMs": 0.0771249532699585
+      },
+      {
+        "runnerStartMs": 1615239762.063583,
+        "runnerEndMs": 1615239762.253291,
+        "origin": 1793387669560.1,
+        "now": 34926.5,
+        "absoluteMinusRunnerMs": 1791772464724.4417,
+        "uncertaintyMs": 0.09485399723052979
+      },
+      {
+        "runnerStartMs": 1615239762.256291,
+        "runnerEndMs": 1615239762.438083,
+        "origin": 1793387669560.1,
+        "now": 34926.59999990463,
+        "absoluteMinusRunnerMs": 1791772464724.353,
+        "uncertaintyMs": 0.09089601039886475
+      }
+    ]
+  },
+  "samples": [],
+  "success": false,
+  "error": "Error: Command failed: agent-browser --session polish-function-final mouse move 258 343.46875\nMissing arguments for: mouse move\nUsage: agent-browser mouse move <x> <y>\n\n    at genericNodeError (node:internal/errors:999:15)\n    at wrappedFn (node:internal/errors:544:14)\n    at checkExecSyncError (node:child_process:942:11)\n    at execFileSync (node:child_process:978:15)\n    at cli (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/selection-timing.mjs:8:76)\n    at mouse (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/selection-timing.mjs:8:206)\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/selection-timing.mjs:18:8"
+}

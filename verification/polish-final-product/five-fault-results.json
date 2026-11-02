@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "accepted_durable",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/72da5867-9009-40b4-abd9-64056256fb76",
+    "cleanup": true,
+    "same_guard_build": true,
+    "audit": true
+  },
+  {
+    "stage": "end_sealed",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b0caa251-ecd1-4c5f-88c6-74d5ad64c292",
+    "cleanup": true,
+    "same_guard_build": true,
+    "audit": true
+  },
+  {
+    "stage": "host_admitted",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/c637207f-3cd7-4247-b6fe-19625b4f38ca",
+    "cleanup": true,
+    "same_guard_build": true,
+    "audit": true
+  },
+  {
+    "stage": "input_consumed",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/d9277bbc-8eec-4b29-af8c-a4201cce6c4c",
+    "cleanup": true,
+    "same_guard_build": true,
+    "audit": true
+  },
+  {
+    "stage": "host_reply_persisted",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/82f6b262-f246-4997-96ed-41a7a53685f8",
+    "cleanup": true,
+    "same_guard_build": true,
+    "audit": true
+  }
+]

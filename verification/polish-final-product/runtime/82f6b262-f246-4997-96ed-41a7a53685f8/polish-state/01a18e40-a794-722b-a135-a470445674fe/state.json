@@ -1,0 +1,86 @@
+{
+  "sessions": {
+    "81a79ec70860c923": {
+      "key": "81a79ec70860c923",
+      "file": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/82f6b262-f246-4997-96ed-41a7a53685f8/artifact.html",
+      "url": "http://127.0.0.1:57463/session/81a79ec70860c923",
+      "status": "feedback",
+      "pending_prompts": 0,
+      "prompts": [],
+      "layout_warnings": [],
+      "artifact_revision": 0,
+      "artifact_load": null,
+      "artifact_failures": [],
+      "delivered_attachments": [],
+      "dom_snapshot": "",
+      "chat": [
+        {
+          "role": "user",
+          "kind": "annotation",
+          "text": "不要修改文件，不要使用工具，只回复 OK。",
+          "at": "2026-10-30T19:19:26.330Z",
+          "prompt_id": "fault-host_reply_persisted"
+        }
+      ],
+      "chat_revision": 1,
+      "chat_ack_ids": [],
+      "delivery_seq": 0,
+      "closed_delivery_seq": 0,
+      "updated_at": "2026-10-30T19:19:26.330Z",
+      "review_delivery": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/82f6b262-f246-4997-96ed-41a7a53685f8/artifact.html",
+          "instance": "2cbea7bf-f8a5-4638-9e10-6df4d6abf635",
+          "session": "01a18e40-a794-722b-a135-a470445674fe"
+        },
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "version": 8,
+        "lifecycle": "open",
+        "messages": [
+          {
+            "id": "fault-host_reply_persisted",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"eb992371-f491-4ffb-b5e6-77c547fec0a6\"}",
+            "digest": "4c855613a5c5e35176e9e35e069a8fd1460920c754f1cbb6e0158ee8123cd7a1",
+            "prompt": {
+              "uid": "",
+              "prompt": "不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "eb992371-f491-4ffb-b5e6-77c547fec0a6",
+              "prompt_id": "fault-host_reply_persisted"
+            },
+            "kind": "message",
+            "state": "replied",
+            "consumed": true,
+            "resolved": false,
+            "claim": {
+              "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/82f6b262-f246-4997-96ed-41a7a53685f8/artifact.html",
+              "instance": "2cbea7bf-f8a5-4638-9e10-6df4d6abf635",
+              "session": "01a18e40-a794-722b-a135-a470445674fe",
+              "epoch": 1,
+              "generation": 1,
+              "mode": "bridge",
+              "id": "fault-host_reply_persisted",
+              "digest": "4c855613a5c5e35176e9e35e069a8fd1460920c754f1cbb6e0158ee8123cd7a1",
+              "attempt": "fdfc412a-ae0f-47de-905f-42bcd1334f77"
+            },
+            "host_dispatched": true,
+            "queueEvidence": "f193fdae-ff22-43b3-a323-7d432dd30da3",
+            "inputEvidence": "d91cb2bf",
+            "executionUnknown": false,
+            "replyEvidence": "d91cb2bf",
+            "reply": {
+              "text": "OK",
+              "version": 1,
+              "evidenceId": "d91cb2bf",
+              "reply_to": "fault-host_reply_persisted"
+            }
+          }
+        ],
+        "end": null
+      }
+    }
+  }
+}

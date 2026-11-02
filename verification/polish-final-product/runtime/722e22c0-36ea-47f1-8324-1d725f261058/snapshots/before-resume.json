@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-10-30T19:10:54.334Z",
+  "manifest": {
+    "schema": "polish-final-product-v1",
+    "runID": "722e22c0-36ea-47f1-8324-1d725f261058",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058",
+    "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/artifact.html",
+    "livePid": null,
+    "launch": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/launches/0af980b4-5919-4859-acf9-da45624e1a70",
+    "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/sessions/2026-10-30T19-10-34-254Z_01a18e38-910e-74e2-9427-b6b4c7244404.jsonl",
+    "session": "01a18e38-910e-74e2-9427-b6b4c7244404",
+    "key": "17be8c6131a177e0"
+  },
+  "files": {
+    "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/polish-state/01a18e38-910e-74e2-9427-b6b4c7244404/state.json": "65098f179ad0b36450908eb3b9a802dadcdc294fddfa827f40ec761c5c374ea3",
+    "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/polish-state/01a18e38-910e-74e2-9427-b6b4c7244404/host/host.json": "1e431ea60ee279f47022af51b900b7f4f728d4cd48f45aab0023c17da5039b1e"
+  },
+  "review": {
+    "binding": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/artifact.html",
+      "instance": "05395d50-e96f-4bd3-98c2-888f7258843c",
+      "session": "01a18e38-910e-74e2-9427-b6b4c7244404"
+    },
+    "epoch": 1,
+    "generation": 1,
+    "mode": "bridge",
+    "version": 2,
+    "lifecycle": "open",
+    "messages": [
+      {
+        "id": "fault-accepted_durable",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"8cff73ec-cbdc-427d-86ed-f5b260803021\"}",
+        "digest": "f76aaee96ef83775eee8fab2b2ac1256408a2673fe0aa1534c965ded858ea634",
+        "prompt": {
+          "uid": "",
+          "prompt": "不要修改文件，不要使用工具，只回复 OK。",
+          "scope": "session",
+          "round_id": "8cff73ec-cbdc-427d-86ed-f5b260803021",
+          "prompt_id": "fault-accepted_durable"
+        },
+        "kind": "message",
+        "state": "accepted",
+        "consumed": false,
+        "resolved": false
+      }
+    ],
+    "end": null
+  },
+  "host": {
+    "instance": "05395d50-e96f-4bd3-98c2-888f7258843c",
+    "session": "01a18e38-910e-74e2-9427-b6b4c7244404",
+    "messages": [],
+    "port": 49504
+  },
+  "inputs": [],
+  "assistants": []
+}

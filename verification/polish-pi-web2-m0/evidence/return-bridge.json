@@ -1,0 +1,114 @@
+{
+  "binding": {
+    "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+    "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+    "session": "01a18d97-a652-715c-8d56-71655bfa011d"
+  },
+  "epoch": 1,
+  "generation": 3,
+  "mode": "bridge",
+  "version": 22,
+  "lifecycle": "open",
+  "messages": [
+    {
+      "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"[WEB2 first-reply] Isolated performance test. Reply exactly W2_ACK. No tools or file changes.\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+      "digest": "aaa6fe2e8d0030ea8a8acec62c1cd46655806a1cc1c3d150f505665ff1612371",
+      "prompt": {
+        "uid": "",
+        "prompt": "[WEB2 first-reply] Isolated performance test. Reply exactly W2_ACK. No tools or file changes.",
+        "selector": "",
+        "tag": "",
+        "text": "",
+        "prompt_id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847"
+      },
+      "kind": "message",
+      "state": "replied",
+      "consumed": true,
+      "claim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+        "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+        "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+        "digest": "aaa6fe2e8d0030ea8a8acec62c1cd46655806a1cc1c3d150f505665ff1612371",
+        "attempt": "d84500a3-a05f-4bc7-bbc4-0e57d09336f2"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "9149c78b-aad6-4d52-816d-dfe9f1b9d007",
+      "inputEvidence": "ed0df9c3",
+      "replyEvidence": "ed0df9c3",
+      "executionUnknown": false
+    },
+    {
+      "id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"[WEB2 receipt-loss] Reply exactly W2_RECOVERED. No tools or file changes.\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+      "digest": "924403d26dd4e89d628600029e250b572fefdd9a28bad204b091a9c1b8b99ec9",
+      "prompt": {
+        "uid": "",
+        "prompt": "[WEB2 receipt-loss] Reply exactly W2_RECOVERED. No tools or file changes.",
+        "selector": "",
+        "tag": "",
+        "text": "",
+        "prompt_id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e"
+      },
+      "kind": "message",
+      "state": "replied",
+      "consumed": true,
+      "claim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+        "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+        "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e",
+        "digest": "924403d26dd4e89d628600029e250b572fefdd9a28bad204b091a9c1b8b99ec9",
+        "attempt": "af38a307-4ef9-4737-a635-c41735e6a568"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "fe2acf20-36bf-4903-a6bb-d069d2a8cade",
+      "inputEvidence": "0334d32a",
+      "replyEvidence": "0334d32a",
+      "executionUnknown": false
+    },
+    {
+      "id": "r3-e7dd8719-876c-49ae-92f0-cc94089574e6",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"[WEB2 real-poll] Reply exactly W2_POLL. No tools or file changes.\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+      "digest": "40ca21045ae803c892e3f159d2dcfdbeaf8ec245c0ee389148204a91e8bd677f",
+      "prompt": {
+        "uid": "",
+        "prompt": "[WEB2 real-poll] Reply exactly W2_POLL. No tools or file changes.",
+        "selector": "",
+        "tag": "",
+        "text": "",
+        "prompt_id": "r3-e7dd8719-876c-49ae-92f0-cc94089574e6"
+      },
+      "kind": "message",
+      "state": "replied",
+      "consumed": true,
+      "claim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+        "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+        "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "poll",
+        "id": "r3-e7dd8719-876c-49ae-92f0-cc94089574e6",
+        "digest": "40ca21045ae803c892e3f159d2dcfdbeaf8ec245c0ee389148204a91e8bd677f",
+        "attempt": "e7b4e7cd-4a99-482a-88a0-3132b7497f79"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "76247645-e8e8-4fe0-bd3b-14d0d8cb5365",
+      "inputEvidence": "bc70c5db",
+      "replyEvidence": "bc70c5db",
+      "executionUnknown": false
+    }
+  ],
+  "end": null
+}

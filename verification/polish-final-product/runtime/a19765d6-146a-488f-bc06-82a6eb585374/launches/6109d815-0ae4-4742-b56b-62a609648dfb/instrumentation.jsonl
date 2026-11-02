@@ -1,0 +1,2 @@
+{"stage":"harness_ready","clockID":"pi:2463:ab2c05bc-9927-439c-9702-786ed9a724c4","at":1793388551053.037,"durableWriteMs":3.8389999999999986}
+{"stage":"accepted_durable","clockID":"pi:2463:ab2c05bc-9927-439c-9702-786ed9a724c4","at":1793388553132.4683,"durableWriteMs":3.8571249999999964}

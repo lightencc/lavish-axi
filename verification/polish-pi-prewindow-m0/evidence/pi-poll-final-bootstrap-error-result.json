@@ -1,0 +1,12 @@
+{
+  "version": "r3",
+  "transport": "actual handlePoll/takeFeedback; in-memory HTTP boundary; real Pi RPC",
+  "runtime": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/cf6467f2-b6b2-4169-a0f0-02fe86f90a77",
+  "historicalReplays": 0,
+  "status": "FAILED",
+  "error": "Error: HOST_EXITED\n    at ChildProcess.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/peer.js:40:45)\n    at ChildProcess.emit (node:events:514:20)\n    at maybeClose (node:internal/child_process:1125:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)",
+  "exit": {
+    "code": 1,
+    "signal": null
+  }
+}

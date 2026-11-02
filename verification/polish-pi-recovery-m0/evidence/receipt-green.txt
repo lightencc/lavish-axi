@@ -1,0 +1,11 @@
+✔ persisted reply without structured receipt stays unknown despite adjacency (0.345625ms)
+✔ host receipt restores exact reply association missing from sidecar (0.084333ms)
+✔ missing target, wrong identity, wrong order and ambiguous receipts never resolve (0.067333ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 40.87075

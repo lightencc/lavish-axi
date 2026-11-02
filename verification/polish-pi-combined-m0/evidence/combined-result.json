@@ -1,0 +1,863 @@
+{
+  "version": "r2",
+  "runtime": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df",
+  "actualPoll": "NOT RUN",
+  "browser": "NOT RUN",
+  "historicalReplays": 0,
+  "ready": {
+    "at": 1793365545335,
+    "kind": "ready",
+    "binding": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+      "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+      "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+    },
+    "pid": 69225,
+    "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/sessions/2026-10-30T13-05-45-263Z_01a18cea-912f-77bc-a657-4fbd1c58fe9a.jsonl"
+  },
+  "acceptedRecovery": {
+    "before": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 1,
+      "epoch": 1,
+      "version": 2,
+      "lifecycle": "open",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "accepted",
+          "consumed": false
+        }
+      ],
+      "end": null
+    },
+    "after": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 3,
+      "epoch": 1,
+      "version": 9,
+      "lifecycle": "open",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+          },
+          "queueEvidence": "08f5472a-40aa-4322-af60-5685b66d6038",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "067024d4",
+          "executionUnknown": false
+        }
+      ],
+      "end": null
+    },
+    "admits": 1,
+    "samePid": 69225
+  },
+  "lostAdmission": {
+    "uncertain": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 3,
+      "epoch": 1,
+      "version": 12,
+      "lifecycle": "open",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+          },
+          "queueEvidence": "08f5472a-40aa-4322-af60-5685b66d6038",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "067024d4",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "text": "[POLISH-COMBINED-M0 lost-admission-receipt] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+          "epoch": 1,
+          "kind": "message",
+          "state": "unknown",
+          "consumed": false,
+          "claim": {
+            "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55"
+          }
+        }
+      ],
+      "end": null
+    },
+    "queried": {
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+        "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+        "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55",
+        "kind": "queued",
+        "evidenceId": "91db6f46-c41f-4e51-9f87-8582b8e7e0e2"
+      }
+    },
+    "absent": {
+      "status": "unknown",
+      "safeToResend": false
+    },
+    "after": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 5,
+      "epoch": 1,
+      "version": 18,
+      "lifecycle": "open",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+          },
+          "queueEvidence": "08f5472a-40aa-4322-af60-5685b66d6038",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "067024d4",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "text": "[POLISH-COMBINED-M0 lost-admission-receipt] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55"
+          },
+          "queueEvidence": "91db6f46-c41f-4e51-9f87-8582b8e7e0e2",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "57f6dc38",
+          "executionUnknown": false
+        }
+      ],
+      "end": null
+    },
+    "admits": 1
+  },
+  "end": {
+    "beforeDrain": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 5,
+      "epoch": 1,
+      "version": 22,
+      "lifecycle": "ending",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+          },
+          "queueEvidence": "08f5472a-40aa-4322-af60-5685b66d6038",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "067024d4",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "text": "[POLISH-COMBINED-M0 lost-admission-receipt] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55"
+          },
+          "queueEvidence": "91db6f46-c41f-4e51-9f87-8582b8e7e0e2",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "57f6dc38",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+          "text": "[POLISH-COMBINED-M0 final-batch-existing] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "2cddb98594c6375db7e7bf0ebd483641740e3f0eb741c66fb729bb0ff0a2a8a0",
+          "epoch": 1,
+          "kind": "message",
+          "state": "host_queued",
+          "consumed": false,
+          "claim": {
+            "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "4a99100a-9554-4abb-887c-a42a3984d14b"
+          },
+          "queueEvidence": "6a757737-2c81-4d22-9443-0df09fd0d1ef"
+        },
+        {
+          "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+          "text": "[POLISH-COMBINED-M0 final-batch-final] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "5e0e830d6be829ce8cf7dd9d2a92fc3aa66f309f4d3caa234e946a1b717f640d",
+          "epoch": 1,
+          "kind": "message",
+          "state": "accepted",
+          "consumed": false
+        },
+        {
+          "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+          "text": "Review ended: r2-69312b4b-5852-44db-9b9f-89297e782a7b",
+          "digest": "964da6892d56d6fbef8e40ca5e11a2086b267f8a3d6f06b6d76a0173b0f5b86d",
+          "epoch": 1,
+          "kind": "end",
+          "state": "accepted",
+          "consumed": false
+        }
+      ],
+      "end": {
+        "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b",
+        "digest": "cf4794a831dc68e1f264b55d8cdf850533e38fc373e85a5336ccfd7ae02fb961",
+        "ids": [
+          "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+          "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+          "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker"
+        ]
+      }
+    },
+    "endedAt": 1793365551999,
+    "ended": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 5,
+      "epoch": 1,
+      "version": 31,
+      "lifecycle": "ended",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+          },
+          "queueEvidence": "08f5472a-40aa-4322-af60-5685b66d6038",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "067024d4",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "text": "[POLISH-COMBINED-M0 lost-admission-receipt] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55"
+          },
+          "queueEvidence": "91db6f46-c41f-4e51-9f87-8582b8e7e0e2",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "57f6dc38",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+          "text": "[POLISH-COMBINED-M0 final-batch-existing] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "2cddb98594c6375db7e7bf0ebd483641740e3f0eb741c66fb729bb0ff0a2a8a0",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "4a99100a-9554-4abb-887c-a42a3984d14b"
+          },
+          "queueEvidence": "6a757737-2c81-4d22-9443-0df09fd0d1ef",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "c623713b",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+          "text": "[POLISH-COMBINED-M0 final-batch-final] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "5e0e830d6be829ce8cf7dd9d2a92fc3aa66f309f4d3caa234e946a1b717f640d",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "e780aff3-d2ec-4aee-b900-7b757626e3eb"
+          },
+          "queueEvidence": "4f7fb1cc-87f3-47d9-9405-ed9b0778a8a5",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "798993bd",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+          "text": "Review ended: r2-69312b4b-5852-44db-9b9f-89297e782a7b",
+          "digest": "964da6892d56d6fbef8e40ca5e11a2086b267f8a3d6f06b6d76a0173b0f5b86d",
+          "epoch": 1,
+          "kind": "end",
+          "state": "delivered",
+          "consumed": true,
+          "claim": {
+            "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "ac1e4471-0282-42b8-8887-d3b3f7f1d3b6"
+          },
+          "queueEvidence": "932ef7bb-20ad-4f7c-9f0b-d2d837ce3f4e",
+          "inputEvidence": "context_with_system"
+        }
+      ],
+      "end": {
+        "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b",
+        "digest": "cf4794a831dc68e1f264b55d8cdf850533e38fc373e85a5336ccfd7ae02fb961",
+        "ids": [
+          "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+          "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+          "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker"
+        ]
+      }
+    },
+    "markerReplyPresentAtEnded": false,
+    "afterReply": {
+      "binding": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+      },
+      "generation": 5,
+      "epoch": 1,
+      "version": 32,
+      "lifecycle": "ended",
+      "mode": "bridge",
+      "messages": [
+        {
+          "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "text": "[POLISH-COMBINED-M0 accepted-before-owner-crash] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+          },
+          "queueEvidence": "08f5472a-40aa-4322-af60-5685b66d6038",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "067024d4",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "text": "[POLISH-COMBINED-M0 lost-admission-receipt] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+            "epoch": 1,
+            "generation": 3,
+            "nonce": "7771bb88-446d-439e-9812-8c1e7ba415d5",
+            "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55"
+          },
+          "queueEvidence": "91db6f46-c41f-4e51-9f87-8582b8e7e0e2",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "57f6dc38",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+          "text": "[POLISH-COMBINED-M0 final-batch-existing] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "2cddb98594c6375db7e7bf0ebd483641740e3f0eb741c66fb729bb0ff0a2a8a0",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "4a99100a-9554-4abb-887c-a42a3984d14b"
+          },
+          "queueEvidence": "6a757737-2c81-4d22-9443-0df09fd0d1ef",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "c623713b",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+          "text": "[POLISH-COMBINED-M0 final-batch-final] Isolated transport test. Reply exactly R2_ACK. No tools, file changes or other sessions.",
+          "digest": "5e0e830d6be829ce8cf7dd9d2a92fc3aa66f309f4d3caa234e946a1b717f640d",
+          "epoch": 1,
+          "kind": "message",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "e780aff3-d2ec-4aee-b900-7b757626e3eb"
+          },
+          "queueEvidence": "4f7fb1cc-87f3-47d9-9405-ed9b0778a8a5",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "798993bd",
+          "executionUnknown": false
+        },
+        {
+          "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+          "text": "Review ended: r2-69312b4b-5852-44db-9b9f-89297e782a7b",
+          "digest": "964da6892d56d6fbef8e40ca5e11a2086b267f8a3d6f06b6d76a0173b0f5b86d",
+          "epoch": 1,
+          "kind": "end",
+          "state": "replied",
+          "consumed": true,
+          "claim": {
+            "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+            "epoch": 1,
+            "generation": 5,
+            "nonce": "e922de42-0744-4327-9cac-3f2c33bca2b2",
+            "attempt": "ac1e4471-0282-42b8-8887-d3b3f7f1d3b6"
+          },
+          "queueEvidence": "932ef7bb-20ad-4f7c-9f0b-d2d837ce3f4e",
+          "inputEvidence": "context_with_system",
+          "replyEvidence": "4b094116",
+          "executionUnknown": false
+        }
+      ],
+      "end": {
+        "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b",
+        "digest": "cf4794a831dc68e1f264b55d8cdf850533e38fc373e85a5336ccfd7ae02fb961",
+        "ids": [
+          "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+          "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+          "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+          "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+          "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker"
+        ]
+      }
+    }
+  },
+  "finalIdentity": {
+    "binding": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+      "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+      "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+    },
+    "pid": 69225,
+    "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a"
+  },
+  "inputs": [
+    {
+      "id": "219f93f0",
+      "parentId": "1dc6d8c0",
+      "details": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+        "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+        "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7"
+      }
+    },
+    {
+      "id": "40801a93",
+      "parentId": "067024d4",
+      "details": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+        "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+        "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55"
+      }
+    },
+    {
+      "id": "832c10c5",
+      "parentId": "57f6dc38",
+      "details": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+        "digest": "2cddb98594c6375db7e7bf0ebd483641740e3f0eb741c66fb729bb0ff0a2a8a0",
+        "attempt": "4a99100a-9554-4abb-887c-a42a3984d14b"
+      }
+    },
+    {
+      "id": "d43ea5ea",
+      "parentId": "c623713b",
+      "details": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+        "digest": "5e0e830d6be829ce8cf7dd9d2a92fc3aa66f309f4d3caa234e946a1b717f640d",
+        "attempt": "e780aff3-d2ec-4aee-b900-7b757626e3eb"
+      }
+    },
+    {
+      "id": "b6d350e4",
+      "parentId": "798993bd",
+      "details": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+        "digest": "964da6892d56d6fbef8e40ca5e11a2086b267f8a3d6f06b6d76a0173b0f5b86d",
+        "attempt": "ac1e4471-0282-42b8-8887-d3b3f7f1d3b6"
+      }
+    }
+  ],
+  "hostProofs": [
+    {
+      "at": 1793365545487,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+        "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+        "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7",
+        "kind": "consumed",
+        "evidenceId": "219f93f0",
+        "inputEvidence": "context_with_system"
+      }
+    },
+    {
+      "at": 1793365547285,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de",
+        "digest": "fed5d6832354b036d782ed0df570cb89c07cc3adcfe849b23214a3f8046f8278",
+        "attempt": "06cd17cb-8dd0-4adc-bc44-c4a7adb2bfb7",
+        "kind": "reply",
+        "evidenceId": "067024d4",
+        "inputEvidence": "context_with_system"
+      },
+      "reply": {
+        "entryId": "067024d4",
+        "text": "R2_ACK",
+        "stopReason": "stop"
+      }
+    },
+    {
+      "at": 1793365547442,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+        "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+        "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55",
+        "kind": "consumed",
+        "evidenceId": "40801a93",
+        "inputEvidence": "context_with_system"
+      }
+    },
+    {
+      "at": 1793365548969,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-010c1269-402e-4e54-aa53-5b4335e4b26a",
+        "digest": "655bc0453ce86701dc1899c109fec88a8600024c49e3a2a47842b041ba0a47f7",
+        "attempt": "8f6d88f5-cfc4-4a70-a825-f52fbee44d55",
+        "kind": "reply",
+        "evidenceId": "57f6dc38",
+        "inputEvidence": "context_with_system"
+      },
+      "reply": {
+        "entryId": "57f6dc38",
+        "text": "R2_ACK",
+        "stopReason": "stop"
+      }
+    },
+    {
+      "at": 1793365549057,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+        "digest": "2cddb98594c6375db7e7bf0ebd483641740e3f0eb741c66fb729bb0ff0a2a8a0",
+        "attempt": "4a99100a-9554-4abb-887c-a42a3984d14b",
+        "kind": "consumed",
+        "evidenceId": "832c10c5",
+        "inputEvidence": "context_with_system"
+      }
+    },
+    {
+      "at": 1793365550378,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c",
+        "digest": "2cddb98594c6375db7e7bf0ebd483641740e3f0eb741c66fb729bb0ff0a2a8a0",
+        "attempt": "4a99100a-9554-4abb-887c-a42a3984d14b",
+        "kind": "reply",
+        "evidenceId": "c623713b",
+        "inputEvidence": "context_with_system"
+      },
+      "reply": {
+        "entryId": "c623713b",
+        "text": "R2_ACK",
+        "stopReason": "stop"
+      }
+    },
+    {
+      "at": 1793365550403,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+        "digest": "5e0e830d6be829ce8cf7dd9d2a92fc3aa66f309f4d3caa234e946a1b717f640d",
+        "attempt": "e780aff3-d2ec-4aee-b900-7b757626e3eb",
+        "kind": "consumed",
+        "evidenceId": "d43ea5ea",
+        "inputEvidence": "context_with_system"
+      }
+    },
+    {
+      "at": 1793365551954,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-991aebd6-fa29-42b3-a724-977e13e40686",
+        "digest": "5e0e830d6be829ce8cf7dd9d2a92fc3aa66f309f4d3caa234e946a1b717f640d",
+        "attempt": "e780aff3-d2ec-4aee-b900-7b757626e3eb",
+        "kind": "reply",
+        "evidenceId": "798993bd",
+        "inputEvidence": "context_with_system"
+      },
+      "reply": {
+        "entryId": "798993bd",
+        "text": "R2_ACK",
+        "stopReason": "stop"
+      }
+    },
+    {
+      "at": 1793365551981,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+        "digest": "964da6892d56d6fbef8e40ca5e11a2086b267f8a3d6f06b6d76a0173b0f5b86d",
+        "attempt": "ac1e4471-0282-42b8-8887-d3b3f7f1d3b6",
+        "kind": "consumed",
+        "evidenceId": "b6d350e4",
+        "inputEvidence": "context_with_system"
+      }
+    },
+    {
+      "at": 1793365555018,
+      "status": "verified",
+      "safeToResend": false,
+      "proof": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-combined-m0/runtime/205e5a11-68db-4f06-977a-6d2859b7c9df/fixture.html",
+        "instance": "db4f2201-489d-474f-87ad-3806b5cb0616",
+        "session": "01a18cea-912f-77bc-a657-4fbd1c58fe9a",
+        "epoch": 1,
+        "id": "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker",
+        "digest": "964da6892d56d6fbef8e40ca5e11a2086b267f8a3d6f06b6d76a0173b0f5b86d",
+        "attempt": "ac1e4471-0282-42b8-8887-d3b3f7f1d3b6",
+        "kind": "reply",
+        "evidenceId": "4b094116",
+        "inputEvidence": "context_with_system"
+      },
+      "reply": {
+        "entryId": "4b094116",
+        "text": "Review r2-69312b4b-5852-44db-9b9f-89297e782a7b is closed. No further action from me.",
+        "stopReason": "stop"
+      }
+    }
+  ],
+  "admitCounts": {
+    "r2-6e2502dd-37ac-49a1-a766-9e1a1d3a53de": 1,
+    "r2-010c1269-402e-4e54-aa53-5b4335e4b26a": 1,
+    "r2-cf8c81c4-3fb1-4612-94fc-3a7985edaa2c": 1,
+    "r2-991aebd6-fa29-42b3-a724-977e13e40686": 1,
+    "r2-69312b4b-5852-44db-9b9f-89297e782a7b-marker": 1
+  },
+  "status": "PASS_COMPONENT_SUBCASES",
+  "piExit": {
+    "code": 143,
+    "signal": null
+  },
+  "ownerExits": [
+    {
+      "pid": 69248,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "pid": 69291,
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "pid": 69942,
+      "code": 0,
+      "signal": null
+    }
+  ]
+}

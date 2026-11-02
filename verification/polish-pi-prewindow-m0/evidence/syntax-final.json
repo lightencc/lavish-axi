@@ -1,0 +1,72 @@
+[
+  {
+    "path": "verification/polish-pi-prewindow-m0/host.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/runtime.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/page.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/web.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/window.test.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/window.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/peer.test.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/client.test.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/host-extension.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/web.test.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/serve-prepared.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/peer.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/probe.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-prewindow-m0/no-listen-guard.js",
+    "exit": 0,
+    "output": ""
+  }
+]

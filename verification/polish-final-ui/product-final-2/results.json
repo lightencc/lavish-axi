@@ -1,0 +1,10 @@
+{
+  "run": "e1d577f1",
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "startedAt": 1615717685.961625,
+  "pinCompletion": [],
+  "pinStates": [],
+  "success": false,
+  "error": "TypeError: fetch failed",
+  "finishedAt": 1615744965.527291
+}

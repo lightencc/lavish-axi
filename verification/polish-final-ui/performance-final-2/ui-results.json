@@ -1,0 +1,163 @@
+{
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "target": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+  "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+  "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+  "allCompleted": false,
+  "rows": [
+    {
+      "index": 18,
+      "kind": "session",
+      "label": "POLISH_UI_18_811ac7",
+      "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+      "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+      "status": "completed",
+      "startedRunnerMs": 1614168930.126583,
+      "baseline": {
+        "at": 940004.2000000477,
+        "status": "当前会话",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": false,
+        "disabled": false,
+        "error": ""
+      },
+      "nativeClickDispatchRunnerMs": 1614191102.351583,
+      "submitBrowserMs": 945012.9000000954,
+      "id": "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93",
+      "prompt": {
+        "uid": "",
+        "prompt": "请只回复 POLISH_UI_18_811ac7，不要修改文件或调用工具。",
+        "scope": "session",
+        "comment_id": "e49887a8-23be-4c69-b012-142aca2918c5",
+        "round_id": "c3f2f549-a146-45e9-bae4-3467655530a6",
+        "prompt_id": "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93"
+      },
+      "events": [
+        {
+          "at": 940004.2000000477,
+          "status": "当前会话",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": false,
+          "disabled": false,
+          "error": ""
+        },
+        {
+          "at": 945016.100000143,
+          "status": "当前会话",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": false,
+          "disabled": true,
+          "error": ""
+        },
+        {
+          "at": 945069.3000001907,
+          "status": "已保存 · 等待 agent 接收",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": true,
+          "disabled": true,
+          "error": ""
+        },
+        {
+          "at": 945070.100000143,
+          "status": "正在投递",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": true,
+          "disabled": true,
+          "error": ""
+        },
+        {
+          "at": 945120.2000000477,
+          "status": "agent 正忙，已排队",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": true,
+          "disabled": true,
+          "error": ""
+        },
+        {
+          "at": 945131.5,
+          "status": "agent 正在处理",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": true,
+          "disabled": true,
+          "error": ""
+        },
+        {
+          "at": 948188.600000143,
+          "status": "有新回复 · 请刷新查看",
+          "messageStatus": "草稿 · 尚未发送",
+          "hidden": true,
+          "disabled": true,
+          "error": ""
+        }
+      ],
+      "pins": [],
+      "uiFeedbackMs": 3.200000047683716,
+      "uiAckMs": 56.40000009536743,
+      "consumedVisibleMs": 118.59999990463257,
+      "replyVisibleMs": 3175.7000000476837,
+      "reply": {
+        "id": "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_18_811ac7，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"e49887a8-23be-4c69-b012-142aca2918c5\",\"round_id\":\"c3f2f549-a146-45e9-bae4-3467655530a6\"}",
+        "digest": "d3ab7ad08a8f12ef8d7bc8f2f1421740879f382abe1c58970f44c751f79555ba",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_18_811ac7，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "e49887a8-23be-4c69-b012-142aca2918c5",
+          "round_id": "c3f2f549-a146-45e9-bae4-3467655530a6",
+          "prompt_id": "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93",
+          "digest": "d3ab7ad08a8f12ef8d7bc8f2f1421740879f382abe1c58970f44c751f79555ba",
+          "attempt": "ad1699c7-b130-4af3-8c8a-c641731b3be5"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "460c3cfb-f1a6-4312-af1b-a31e7ecabeb1",
+        "inputEvidence": "24b2c7ad",
+        "replyEvidence": "24b2c7ad",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_18_811ac7",
+          "version": 1,
+          "evidenceId": "24b2c7ad",
+          "reply_to": "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93"
+        }
+      },
+      "finishedRunnerMs": 1614199512.747541
+    },
+    {
+      "index": 19,
+      "kind": "session",
+      "label": "POLISH_UI_19_10ec37",
+      "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+      "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+      "status": "failed",
+      "startedRunnerMs": 1614199513.903416,
+      "baseline": {
+        "at": 970545.9000000954,
+        "status": "当前会话",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": false,
+        "disabled": false,
+        "error": ""
+      },
+      "nativeClickDispatchRunnerMs": 1614221643.856916,
+      "submitBrowserMs": 975551.4000000954,
+      "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+      "error": "Error: Benchmark run interrupted: {\"id\":\"c03c89d3-f2df-44b1-9390-9d7365330d32\",\"epoch\":1,\"text\":\"{\\\"uid\\\":\\\"\\\",\\\"prompt\\\":\\\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\\\",\\\"selector\\\":\\\"\\\",\\\"tag\\\":\\\"\\\",\\\"text\\\":\\\"\\\",\\\"scope\\\":\\\"session\\\",\\\"comment_id\\\":\\\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\\\",\\\"round_id\\\":\\\"1c0cf97c-9714-407e-9913-8b04fe225b5b\\\"}\",\"digest\":\"4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a\",\"prompt\":{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\",\"scope\":\"session\",\"comment_id\":\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\",\"round_id\":\"1c0cf97c-9714-407e-9913-8b04fe225b5b\",\"prompt_id\":\"c03c89d3-f2df-44b1-9390-9d7365330d32\"},\"kind\":\"message\",\"state\":\"failed\",\"consumed\":true,\"resolved\":false,\"claim\":{\"artifact\":\"/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html\",\"instance\":\"54c8530d-4705-413b-bee6-c0961a5104e7\",\"session\":\"01a18e12-942e-7785-aa90-41587c940bbb\",\"epoch\":1,\"generation\":2,\"mode\":\"bridge\",\"id\":\"c03c89d3-f2df-44b1-9390-9d7365330d32\",\"digest\":\"4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a\",\"attempt\":\"b583ea31-375a-4c9f-982f-1cac0dc2514f\"},\"host_dispatched\":true,\"queueEvidence\":\"c76be79d-b9d9-4700-8fcf-a038597c1792\",\"inputEvidence\":\"af3039a4\",\"execution_error\":\"server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)\"}\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:57:160\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:16:96)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:57:14",
+      "finishedRunnerMs": 1614274434.938625
+    }
+  ]
+}

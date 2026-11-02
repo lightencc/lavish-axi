@@ -1,0 +1,15 @@
+{"stage":"harness_ready","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557700.8325,"durableWriteMs":3.839542000000023}
+{"stage":"dispatch_reserved","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557722.7898,"durableWriteMs":3.780333000000013}
+{"stage":"host_admitted","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557735.8455,"durableWriteMs":4.016041000000001}
+{"stage":"host_dispatching","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557747.8064,"durableWriteMs":3.993333000000007}
+{"stage":"input_consumed","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557761.7747,"durableWriteMs":3.921875}
+{"stage":"model_start","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557787.837,"durableWriteMs":3.631458000000009}
+{"stage":"dispatch_reserved","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557819.8254,"durableWriteMs":3.9188330000000065}
+{"stage":"host_admitted","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388557832.7659,"durableWriteMs":3.8763750000000528}
+{"stage":"first_token","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559042.3687,"durableWriteMs":4.198708000000124}
+{"stage":"host_reply_persisted","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559059.4072,"durableWriteMs":4.181500000000142}
+{"stage":"reply_persisted","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559072.0962,"durableWriteMs":3.866416000000072}
+{"stage":"host_dispatching","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559085.0967,"durableWriteMs":3.9135000000001128}
+{"stage":"input_consumed","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559099.1125,"durableWriteMs":3.923416999999972}
+{"stage":"model_start","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559113.1526,"durableWriteMs":3.8696659999998246}
+{"stage":"end_sealed","clockID":"pi:3317:cbedd428-2795-4854-9c67-c011aabe773f","at":1793388559344.0442,"durableWriteMs":3.8667500000001382}

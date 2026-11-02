@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Script ran on page and returned:\n```json\n{\"at\":\"2026-10-30T12:12:41.030Z\",\"id\":\"pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6\",\"duplicate\":{\"status\":200,\"value\":{\"id\":\"pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6\",\"binding\":{\"instance\":\"c8538c79-f205-4c9c-9187-41e8caee3857\",\"session\":\"01a18cb5-ad4e-745f-8bb4-7a5acda50d47\"},\"digest\":\"7d5cb0c95238ef9ce125c3622ced17d088ba0742f88e4ca45499547309b58cce\",\"state\":\"replied\",\"inputStored\":true,\"inputEntryIds\":[\"6749f1af\"],\"delivery\":\"input_witnessed\",\"replyVerified\":true,\"reply\":{\"entryId\":\"91fb00cd\",\"text\":\"ACK_0\",\"stopReason\":\"stop\"},\"safeToResend\":false,\"version\":136}},\"conflict\":{\"status\":409,\"value\":{\"error\":\"CONFLICT\"}},\"forgedBinding\":{\"status\":400,\"value\":{\"error\":\"INVALID_MESSAGE\"}},\"abortSummary\":{\"submit\":{\"error\":\"AbortError\",\"message\":\"signal is aborted without reason\"},\"lastQuery\":{\"at\":\"2026-10-30T12:12:23.343Z\",\"status\":200,\"state\":{\"id\":\"pi3-c9727972-8820-47ee-b17c-ee5b4d5676ae\",\"binding\":{\"instance\":\"c8538c79-f205-4c9c-9187-41e8caee3857\",\"session\":\"01a18cb5-ad4e-745f-8bb4-7a5acda50d47\"},\"digest\":\"d7fade327b3ae0d23f5dcc98c99d3a452705dd569ba243b7389b372bbd85e6ef\",\"state\":\"replied\",\"inputStored\":true,\"inputEntryIds\":[\"eac045f1\"],\"delivery\":\"input_witnessed\",\"replyVerified\":true,\"reply\":{\"entryId\":\"38ef41b2\",\"text\":\"ABORT_ACK\",\"stopReason\":\"stop\"},\"safeToResend\":false,\"version\":136}},\"resubmits\":0}}\n```"
+    }
+  ]
+}

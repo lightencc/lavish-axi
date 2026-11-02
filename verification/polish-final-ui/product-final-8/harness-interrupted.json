@@ -1,0 +1,5 @@
+{
+  "reason": "CDP request hung beyond until deadline; current page healthy socket OPEN, draft empty; no A09 messages submitted",
+  "pid": 58139,
+  "at": 1793389527.791265
+}

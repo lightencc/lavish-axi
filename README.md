@@ -1,4 +1,78 @@
-<h1 align="center">lavish-axi</h1>
+# Polish · 当前会话的 HTML 评审
+
+## Claude Code：沿用 Lavish 的 skill 与 poll 流程
+
+默认 `/polish` 与 `/lavish` 一样：根据自然语言需求生成并保存 HTML，无参数时从上下文推断；传入已有 HTML 路径则直接打开，不重新生成。定制集中在网页的评论浮窗、圆球、表单、回复刷新与完成交互。无需 Channels、MCP 或 `polish-claude` 启动器，普通 Claude 会话即可调用技能。
+
+```text
+/polish 做一个项目进度看板，包含里程碑和风险
+/polish
+/polish /absolute/path/existing.html
+```
+
+底层完全复用本仓库 Lavish 的 CLI、服务发现、打开、长轮询、回复和结束：
+
+```sh
+/absolute/path/to/polish-axi/dist/polish /absolute/path/demo.html
+/absolute/path/to/polish-axi/dist/polish poll /absolute/path/demo.html
+/absolute/path/to/polish-axi/dist/polish poll /absolute/path/demo.html --agent-reply "已按反馈修改"
+/absolute/path/to/polish-axi/dist/polish reply /absolute/path/demo.html --agent-reply "本轮结果"
+```
+
+这些命令由当前 agent 像 Lavish 一样执行，不要求用户手动反复 poll。打开后前台等待反馈，完整读取返回内容，修改后回复并继续等待；用户结束后停止。CLI 沿用上游帮助中的 `lavish-axi` 名称时，应替换为上面同一个本地 `polish` 可执行文件，不下载上游替代本 fork。`polish design` / `polish playbook <id>` 提供独立的 Polish 生成指导，避免继承旧的 Queue → 侧栏发送主流程。
+
+默认反馈的“已送达”表示原 poll 响应交付，并非宿主证明模型已消费；回复由原 `reply` / `poll --agent-reply` 回传。未运行 poll 时反馈排队，不承诺空闲自动唤醒 Claude。状态和服务生命周期沿用 Lavish，页面完成与结束保留 Polish 定制。Pi 的直接宿主接入保持独立，见下节。
+
+网页提交若因断线而缺少接收回执，会保留原消息身份及草稿，并显示“发送结果待核实 · 请勿重复发送”。刷新会查询实际接收状态，但不会盲目重投；若仍查不到该消息，发送保持禁用，不把这类未知结果当作自动恢复成功。
+
+### 内容与评审交互
+
+- 需要用户决策：使用清晰选项和补充说明的表单交互。整理需求、计划或开发文档：使用结构化技术写作，不强制表单化。
+- 两类内容均保留默认就地评论：选文字／内容块 → 浮窗一次发送 → 无数字圆球 → 同窗自动显示回复和追问 → 用户勾选完成。回复本身不会完成评论。
+- 旧页面的队列和附件仍可从工具栏的「兼容队列与附件」按钮按需打开；桌面和窄屏均不常驻，也不是就地评论的必经步骤。打开后可用关闭按钮或 Escape 收起。
+- 新表单的整表／逐项提交边界需要用户确认；选择变化不发送。兼容 `queuePrompt`、`sendQueuedPrompts` 的替换／批次语义不变；后者会发送现有队列，不只发送当前答案。
+
+### 一次安装技能（操作说明，未替用户安装）
+
+构建后使用 `skills/polish/SKILL.md`，不要使用 `integrations/claude` 中的实验技能。先检查 `~/.claude/skills/polish` 是否存在；存在则先确认来源，不覆盖。将技能复制到该目录，并将技能中 CLI 命令 `polish` 替换为本仓库 `dist/polish` 的绝对路径，或自行把该本地可执行文件加入 PATH。无需写 MCP、Channels、认证或组织设置。普通 Claude 与 Herdr 中的普通交互会话均按原 Lavish skill 发现规则使用；Herdr 实际发现仍须用户试用确认。
+
+### 被替代的 Channels 路线
+
+`polish-claude`、`integrations/claude` 与 Claude MCP Channel 代码仅保留为实验历史，不是默认使用或安装前提。此前 [Claude 适配计划](docs/polish-claude-plan.md)与 [Channels 验证记录](docs/polish-claude-validation.md)不再约束默认流程；其未完成的真实 Channels 验证不阻塞原 Lavish 路线。未删除旧缓存、用户记录或运行状态。
+
+## Pi（已验收）
+
+Polish 基于 lavish-axi fork，将评论放到文字选区和内容块旁。**整体意见和整体表单提交只关联当前 artifact 会话，不关联网页元素，不显示引用、高亮或内容小球。** 上游说明保留在下方，Polish 的运行方式以本节为准。
+
+```sh
+cd /Users/lightencc/Documents/Projects/polish-axi
+pnpm install
+pnpm run build
+export PATH="$PWD/dist:$PATH"
+polish --help
+pi -e "$PWD/dist/pi-extension.mjs"
+```
+
+在加载扩展的 Pi 中输入 `/polish /absolute/path/artifact.html`。继续既有 Pi 会话可在启动时使用 Pi 的 `--continue` 或 `--session` 参数，同时加载该扩展。扩展从实际 session manager 绑定当前会话；网页不会创建另一位 agent。Pi 的 shell 工具继承 `POLISH_PI_ENDPOINT`，可直接使用 `polish artifact.html --no-open`。普通外部终端没有这个绑定时会明确报错。
+
+全新空 Pi 会话须先有一条实际对话，例如直接告诉 Pi“请打开这个 HTML 进行评审”。Pi 1.4 在此之前不会创建可恢复的会话文件；Polish 会拒绝开放尚未持久化的评审绑定，不伪造消息或静默换会话。让已有对话中的 agent 调用 `polish` 无需额外步骤。
+
+- 文字选区、点击内容块：鼠标附近打开浮窗，发送后收成无数字圆球。真实接收回执到回复之间为橙色；HTTP 成功及排队不冒充正在处理。
+- 键盘使用 `⌘ / Ctrl + Alt + M` 打开评论；有选区时评论选中文字，无选区时打开整体意见。`⌘ / Ctrl + Enter` 发送。内容修改后定位失效会提示“原内容位置已变化”，可从历史讨论继续查看，不错误高亮其他内容。
+- 整体意见：从顶栏进入；历史讨论可在浮窗内选择，追问仍归入同一讨论。整体表单经原有 `window.lavish.queuePrompt()` / `sendQueuedPrompts()` 发送，默认无锚点。`window.polish` 是兼容别名。
+- agent 回复正文自动更新到同一评论浮窗，收起后再打开也能看到最新回复；保留未发送草稿、输入焦点、文字选择和阅读位置，不自动重载整页。点击“刷新查看”仅用于载入已修改的 HTML。单条勾选完成只隐藏该条圆球；完成状态写入服务端，刷新不会复活它。
+- 原生控件、附件和待发送队列保留，原会话栏入口用于展开“表单队列与附件”。带 `data-lavish-question` 的表单按原契约恢复答案，不合成 input/change 事件；应用自行管理的表单状态不被覆盖。
+- “确认并结束”提交无锚点整体确认，最后反馈和结束标记真正被当前 Pi 消费后结束通信。浏览器允许脚本关页时自动关闭，否则显示已结束，用户可自行关页。“更多 → 结束通信”支持保留草稿结束；有当前草稿时也可发送后结束或取消。原队列的 Send & End 仍可用。结束不退出 Pi，不影响其他 HTML。
+- `polish status artifact.html` 查看状态；`polish end artifact.html` 手动结束；用户结束后只有显式 `polish artifact.html --reopen` / `/polish ... --reopen` 开始新一轮。未发送草稿仅在原浏览器恢复，不自动提交。
+- `polish design` 是新 HTML 的固定简约飞书样式与表单指南；已有 HTML 保留设计。Pi 扩展精确关联最终回复，**无需 `polish poll` 或 `polish reply`**；这两个手工命令不属于当前 Pi 接口。
+
+运行要求：Node 22+；本次真实验证使用 Pi 1.4.0。当前交付范围为 Pi，Codex 接入后置。状态独立存于 `~/.polish-axi/pi/<session-id>/`；仅监听 loopback，跟随 Pi 扩展生命周期退出。没有安装或修改全局配置。
+
+重启同一个 Pi session 时复用保存的网页端口，以便原页面重连；端口被其他进程占用时明确失败，不接管或终止该进程。已接收但在回复前中断的请求保留记录并提示“处理已中断，结果待核实，请勿重复发送”，不会一直显示橙色，也不会自动重发。
+
+正式范围与验收见 [开发书](docs/polish-development-spec.md)；最新实测见 [Pi 正式版收尾验证](docs/polish-final-validation.md)，[前一轮产品记录](docs/polish-product-validation.md)保留原样。
+
+<h1 align="center">上游 lavish-axi</h1>
 <p align="center">
   <a href="https://github.com/kunchenguid/lavish-axi/actions/workflows/ci.yml"
     ><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/kunchenguid/lavish-axi/ci.yml?style=flat-square&label=ci"
@@ -267,6 +341,8 @@ pnpm link
 - **Browser opening** - Set `LAVISH_AXI_NO_OPEN=1`, equivalent to `--no-open`, to create or resume a session without launching a browser window.
 
 ## CLI Reference
+
+The Polish Pi extension binds a fresh artifact session to a shared delivery ledger. Its in-process bridge owns delivery, exact host receipts, replies, and final-batch ending. Poll and bridge share exclusive delivery leases; unassociated legacy reply/end/reopen operations cannot bypass the ledger. The historical M0 harness also exercises this ledger. Ordinary Lavish sessions retain the commands below.
 
 | Command                         | Description                                                                                                                                                                                                                                                                                                                                               |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

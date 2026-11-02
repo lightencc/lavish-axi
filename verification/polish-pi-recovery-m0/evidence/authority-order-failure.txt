@@ -1,0 +1,52 @@
+✔ bridge and poll share arbitration; claim marks dispatch before returning (72.711125ms)
+✔ same ID is idempotent; changed payload and wrong review epoch reject (28.90025ms)
+✖ host queue is not consumption; unknown blocks dispatch and end (64.128375ms)
+✔ ending atomically seals final batch, rejects late submissions, and drains marker last (94.9235ms)
+✔ restart keeps ending set and monotonic version; old generation cannot write (87.251667ms)
+✔ reopen advances review epoch; old replies cannot overwrite current review (66.107291ms)
+✔ wrong binding, digest and attempt never resolve an unknown request (54.844542ms)
+✔ subscription before snapshot covers changes on either side of snapshot read (40.366958ms)
+✔ out of order, duplicate, stale snapshot and old connection cannot roll state back (45.471333ms)
+✔ disconnected replica recovers reply and ended from a durable snapshot (108.251542ms)
+✔ new epoch requires a snapshot rather than applying its event onto old epoch (60.355375ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 10
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 767.637542
+
+✖ failing tests:
+
+test at verification/polish-pi-recovery-m0/authority.test.js:36:1
+✖ host queue is not consumption; unknown blocks dispatch and end (64.128375ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /UNSETTLED/. Input:
+  
+  'Error: DRAIN_ORDER'
+  
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.test.js:42:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: DRAIN_ORDER
+        at Authority.claim (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.js:82:93)
+        at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.test.js:42:25
+        at getActual (node:assert:580:5)
+        at strict.throws (node:assert:728:24)
+        at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/authority.test.js:42:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1397:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+        at Test.postRun (node:internal/test_runner/test:1537:19)
+        at Test.run (node:internal/test_runner/test:1462:12),
+    expected: /UNSETTLED/,
+    operator: 'throws',
+    diff: 'simple'
+  }

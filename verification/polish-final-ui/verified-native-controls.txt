@@ -1,0 +1,11 @@
+- button "Annotate" [ref=e1]
+- button "表单队列与附件" [expanded=false, ref=e2]
+- button "整体意见" [ref=e3]
+- button "刷新查看" [ref=e4]
+- button "确认并结束" [ref=e5]
+- button "More" [expanded=false, ref=e6]
+- Iframe [ref=e7]
+  - heading "Polish native selection regression" [level=1, ref=e8]
+  - textbox "Native form " [ref=e10]: Native input retained
+  - button "Form action works" [ref=e9]
+  - button "agent 正忙，已排队" [ref=e11]

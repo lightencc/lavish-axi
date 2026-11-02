@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polish · Pi M0 验证</title>
+<style>
+  body { margin: 48px auto; max-width: 720px; padding: 0 24px; font: 16px/1.6 system-ui; color: #1f2329; background: #f5f6f7; }
+  main { background: white; padding: 32px; border: 1px solid #dee0e3; border-radius: 12px; }
+  h1 { font-size: 24px; } p { color: #646a73; } textarea { box-sizing: border-box; width: 100%; min-height: 120px; padding: 12px; border: 1px solid #bbbfc4; border-radius: 8px; font: inherit; }
+  button { margin: 12px 8px 0 0; padding: 8px 18px; border: 0; border-radius: 6px; background: #3370ff; color: white; cursor: pointer; } button:disabled { opacity: .5; }
+  article { border-top: 1px solid #dee0e3; margin-top: 20px; padding-top: 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .processing { color: #d46b08; } output { display: block; } small { color: #646a73; }
+</style>
+<main>
+  <h1>Polish · Pi 通信验证</h1>
+  <p>整体意见直接发送给已绑定的测试会话，不关联网页元素。</p>
+  <small id="binding">读取绑定状态…</small>
+  <form id="form"><label for="text">整体意见</label><textarea id="text" required></textarea><button id="send" disabled>发送</button></form>
+  <p>这是 M0 验证页。点击“查询”读取宿主证据；实时同步和结束流程尚待验证。</p>
+  <output id="notice" aria-live="polite"></output>
+  <section id="messages"></section>
+</main>
+<script src="/page.js"></script>
+</html>

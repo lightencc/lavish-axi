@@ -1,0 +1,42 @@
+✔ owned coordinator crash preserves accepted; restart drains once; old generation and wrong mode reject (fake host) (419.167125ms)
+✔ host admission deduplicates exact identity; wrong binding, digest, attempt and payload reject (66.786875ms)
+✔ positive query recovers durable queued fact with no history; absence is never safe to resend (121.552083ms)
+✔ consumption requires full identity; query validates exact host input and reply IDs (165.449167ms)
+✔ whole-page submit has no anchor; origin, binding, epoch, extra fields and query methods checked (22.253166ms)
+✔ refresh snapshot restores list; reconnect SSE starts with full state including ended and replies (0.739708ms)
+✔ end forwards fixed final submission, does not infer completion from no pending browser request (0.28175ms)
+✔ bridge and poll share arbitration; claim marks dispatch before returning (258.797708ms)
+✔ same ID is idempotent; changed payload and wrong review epoch reject (115.706792ms)
+✔ host queue is not consumption; unknown blocks dispatch and end (182.1465ms)
+✔ ending atomically seals final batch, rejects late submissions, and drains marker last (221.706333ms)
+✔ restart keeps ending set and monotonic version; old generation cannot write (91.815875ms)
+✔ reopen advances review epoch; old replies cannot overwrite current review (56.597958ms)
+✔ wrong binding, digest and attempt never resolve an unknown request (45.196583ms)
+✔ a receipt without an actual dispatch attempt cannot consume accepted data (29.156625ms)
+✔ subscription before snapshot covers changes on either side of snapshot read (36.855208ms)
+✔ out of order, duplicate, stale snapshot and old connection cannot roll state back (36.729083ms)
+✔ disconnected replica recovers reply and ended from a durable snapshot (99.302375ms)
+✔ new epoch requires a snapshot rather than applying its event onto old epoch (54.894667ms)
+✔ drainer consumes the fixed final batch and marker with no connected client (315.207958ms)
+✔ queue acknowledgement cannot end or dispatch the marker early (147.727083ms)
+✔ uncertain adapter call stops drain and is never automatically retried (113.9345ms)
+✔ subscription failure cannot erase committed end event; reconnect snapshot recovers it (139.300791ms)
+✔ owned process crash in accepted: durable state and fenced recovery (294.104625ms)
+ℹ {"evidence":"owned-child-crash-recovery","mode":"accepted","pid":10561,"signal":"SIGKILL","oldNonce":"e827352e-eb2e-4479-bc68-462de426cdf2","before":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":1,"epoch":1,"version":2,"lifecycle":"open","mode":"bridge","messages":[{"id":"r1-dd294440-7db0-4a1a-b3a3-2eadbf75d76d","text":"new isolated local fixture","digest":"92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe","epoch":1,"kind":"message","state":"accepted","consumed":false}],"end":null},"after":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":2,"epoch":1,"version":3,"lifecycle":"open","mode":"bridge","messages":[{"id":"r1-dd294440-7db0-4a1a-b3a3-2eadbf75d76d","text":"new isolated local fixture","digest":"92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe","epoch":1,"kind":"message","state":"accepted","consumed":false}],"end":null},"oldToken":null}
+✔ owned process crash in dispatch: durable state and fenced recovery (219.669042ms)
+ℹ {"evidence":"owned-child-crash-recovery","mode":"dispatch","pid":10576,"signal":"SIGKILL","oldNonce":"d94af183-d439-4728-8d21-c7680ca8541f","before":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":1,"epoch":1,"version":3,"lifecycle":"open","mode":"bridge","messages":[{"id":"r1-15790c72-371e-4e77-ae36-b535b7776a51","text":"new isolated local fixture","digest":"92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe","epoch":1,"kind":"message","state":"dispatching","consumed":false,"claim":{"id":"r1-15790c72-371e-4e77-ae36-b535b7776a51","epoch":1,"generation":1,"nonce":"d94af183-d439-4728-8d21-c7680ca8541f","attempt":"6fa864ed-aee0-4c21-b0cc-61d99611b00c"}}],"end":null},"after":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":2,"epoch":1,"version":4,"lifecycle":"open","mode":"bridge","messages":[{"id":"r1-15790c72-371e-4e77-ae36-b535b7776a51","text":"new isolated local fixture","digest":"92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe","epoch":1,"kind":"message","state":"unknown","consumed":false,"claim":{"id":"r1-15790c72-371e-4e77-ae36-b535b7776a51","epoch":1,"generation":1,"nonce":"d94af183-d439-4728-8d21-c7680ca8541f","attempt":"6fa864ed-aee0-4c21-b0cc-61d99611b00c"}}],"end":null},"oldToken":{"id":"r1-15790c72-371e-4e77-ae36-b535b7776a51","epoch":1,"generation":1,"nonce":"d94af183-d439-4728-8d21-c7680ca8541f","attempt":"6fa864ed-aee0-4c21-b0cc-61d99611b00c"}}
+✔ owned process crash in ending: durable state and fenced recovery (206.157167ms)
+ℹ {"evidence":"owned-child-crash-recovery","mode":"ending","pid":10577,"signal":"SIGKILL","oldNonce":"8d07750d-f8cd-41ce-b863-7d962365ebf2","before":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":1,"epoch":1,"version":3,"lifecycle":"ending","mode":"bridge","messages":[{"id":"r1-ef2f3a64-f340-454b-b72f-7007db5fb235","text":"new isolated local fixture","digest":"92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe","epoch":1,"kind":"message","state":"accepted","consumed":false},{"id":"end-19c54a14-3347-4cba-a251-c60b790a6a74-marker","text":"Review ended: end-19c54a14-3347-4cba-a251-c60b790a6a74","digest":"02eb1dfd6fea50d670014b5f5e06a68b416792545839151df052b595acd34f64","epoch":1,"kind":"end","state":"accepted","consumed":false}],"end":{"id":"end-19c54a14-3347-4cba-a251-c60b790a6a74","digest":"7fb340734370b987e881007208a1e95c868880f22b9e255604265a7155f0ed18","ids":["r1-ef2f3a64-f340-454b-b72f-7007db5fb235","end-19c54a14-3347-4cba-a251-c60b790a6a74-marker"]}},"after":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":2,"epoch":1,"version":4,"lifecycle":"ending","mode":"bridge","messages":[{"id":"r1-ef2f3a64-f340-454b-b72f-7007db5fb235","text":"new isolated local fixture","digest":"92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe","epoch":1,"kind":"message","state":"accepted","consumed":false},{"id":"end-19c54a14-3347-4cba-a251-c60b790a6a74-marker","text":"Review ended: end-19c54a14-3347-4cba-a251-c60b790a6a74","digest":"02eb1dfd6fea50d670014b5f5e06a68b416792545839151df052b595acd34f64","epoch":1,"kind":"end","state":"accepted","consumed":false}],"end":{"id":"end-19c54a14-3347-4cba-a251-c60b790a6a74","digest":"7fb340734370b987e881007208a1e95c868880f22b9e255604265a7155f0ed18","ids":["r1-ef2f3a64-f340-454b-b72f-7007db5fb235","end-19c54a14-3347-4cba-a251-c60b790a6a74-marker"]}},"oldToken":null}
+✔ two real consumer processes use one persisted arbitration authority (107.119208ms)
+ℹ {"evidence":"shared-arbitration","pids":[10578,10579],"results":[{"mode":"poll","granted":false,"error":"MODE"},{"mode":"bridge","granted":true,"token":{"id":"r1-race","epoch":1,"generation":1,"nonce":"a7008118-2908-4724-920e-2c4540f6fe27","attempt":"b334484e-8a3a-41f6-9480-78fdc9ab7951"}}],"snapshot":{"binding":{"artifact":"m0-artifact","instance":"owned-pi","session":"owned-session"},"generation":1,"epoch":1,"version":3,"lifecycle":"open","mode":"bridge","messages":[{"id":"r1-race","text":"local arbitration fixture","digest":"3d937c5324575aa57c76a3f8b779e2fda48f3708bc383df8cb5f17f1e66c33ef","epoch":1,"kind":"message","state":"dispatching","consumed":false,"claim":{"id":"r1-race","epoch":1,"generation":1,"nonce":"a7008118-2908-4724-920e-2c4540f6fe27","attempt":"b334484e-8a3a-41f6-9480-78fdc9ab7951"}}],"end":null}}
+✔ persisted reply without structured receipt stays unknown despite adjacency (1.03525ms)
+✔ host receipt restores exact reply association missing from sidecar (0.117875ms)
+✔ missing target, wrong identity, wrong order and ambiguous receipts never resolve (0.069833ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1304.884125

@@ -1,0 +1,26 @@
+✖ foreign origin and foreign host cannot reach the host adapter (22.402917ms)
+✔ client cannot override bound session or inject an element selector (13.948167ms)
+✔ missing host receipt preserves dispatch and duplicate performs query only (45.707625ms)
+✔ business receipt from a different instance is rejected (29.205541ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 152.157625
+
+✖ failing tests:
+
+test at verification/polish-pi-m0/bridge.test.js:18:1
+✖ foreign origin and foreign host cannot reach the host adapter (22.402917ms)
+  TypeError: Invalid URL
+      at new URL (node:internal/url:862:25)
+      at handle (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/bridge.js:32:41)
+      at TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/bridge.test.js:22:25)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'ERR_INVALID_URL',
+    input: 'not-a-url'
+  }

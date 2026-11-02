@@ -1,0 +1,181 @@
+{
+  "performance_run": "runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43",
+  "superseded_launch": "21c31975-0098-41c7-8b87-20192c7db9c6",
+  "abandoned_empty_run": "runtime/160fb06a-f190-456b-b404-f0123ad8eb5c",
+  "abandoned_reason": "New artifact selection fix required final rebuild before any submission; stopped with zero review messages and zero Pi inputs.",
+  "fault_matrix": [
+    {
+      "stage": "accepted_durable",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058",
+      "status": "FAIL-empty-Pi-session-precondition",
+      "audit": "recovery-audit.json",
+      "builds": [
+        "b014ab19c23e4e5dfc24a84ed87978610f92f32df43b6964fa1ed0414bb46797"
+      ]
+    },
+    {
+      "stage": "accepted_durable",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/72da5867-9009-40b4-abd9-64056256fb76",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "5d4ac7c0b3a45522044213de58f755cbe06881929ee2aea8646b630e12388953"
+      ]
+    },
+    {
+      "stage": "end_sealed",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b0caa251-ecd1-4c5f-88c6-74d5ad64c292",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "5d4ac7c0b3a45522044213de58f755cbe06881929ee2aea8646b630e12388953"
+      ]
+    },
+    {
+      "stage": "host_admitted",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/c637207f-3cd7-4247-b6fe-19625b4f38ca",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "5d4ac7c0b3a45522044213de58f755cbe06881929ee2aea8646b630e12388953"
+      ]
+    },
+    {
+      "stage": "input_consumed",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/d9277bbc-8eec-4b29-af8c-a4201cce6c4c",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "5d4ac7c0b3a45522044213de58f755cbe06881929ee2aea8646b630e12388953"
+      ]
+    },
+    {
+      "stage": "host_reply_persisted",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/82f6b262-f246-4997-96ed-41a7a53685f8",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "5d4ac7c0b3a45522044213de58f755cbe06881929ee2aea8646b630e12388953"
+      ]
+    },
+    {
+      "stage": "accepted_durable",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/a19765d6-146a-488f-bc06-82a6eb585374",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+      ]
+    },
+    {
+      "stage": "end_sealed",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/98dc7240-dfa8-4383-aab8-e8db7c64138e",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+      ]
+    },
+    {
+      "stage": "host_admitted",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/3a3cf685-2cc1-49e4-84da-2a8877e3b3f4",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+      ]
+    },
+    {
+      "stage": "input_consumed",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/062c8a8d-d75f-4d91-ad71-25bc08dfada4",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+      ]
+    },
+    {
+      "stage": "host_reply_persisted",
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/94ebbda9-2d74-4060-8581-d1e6c7324981",
+      "status": "PASS",
+      "audit": "recovery-audit.json",
+      "precondition": "real Pi warm-up persisted session before artifact submission",
+      "builds": [
+        "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+      ]
+    }
+  ],
+  "diagnostic_performance_launch": "200c1eb2-9216-4c27-9cee-620ec68b6e0a",
+  "diagnostic_performance_reason": "Superseded pre-retry-fix build; preserved provider-tail and retry discovery evidence, not final performance.",
+  "busy_race_history": [
+    {
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9",
+      "busy_ws": "PASS",
+      "poll_competition": "PASS",
+      "end_fixed_set": "PASS",
+      "race_http_classification": "FAIL 500 CLOSED instead of 409",
+      "evidence": [
+        "race-evidence.json",
+        "race-continuation.json",
+        "busy-ws-audit.json"
+      ]
+    }
+  ],
+  "busy_race_run": {
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/74606518-21c5-4df0-8590-2fe687f7a05d",
+    "busy_ws": "PASS",
+    "poll_competition": "PASS",
+    "end_fixed_set": "PASS",
+    "race_http_classification": "PASS 409 CLOSED",
+    "build": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+    "evidence": [
+      "race-evidence.json",
+      "busy-ws-audit.json"
+    ]
+  },
+  "empty_guard_history": [
+    {
+      "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/1e5f9243-dc7d-4995-a70b-695bd2563b90",
+      "status": "PASS",
+      "audit": "empty-guard-audit.json"
+    }
+  ],
+  "empty_guard": {
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b0a2bba7-4bf7-4639-95f1-baa2a7414c0d",
+    "status": "PASS",
+    "audit": "empty-guard-audit.json",
+    "build": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+  },
+  "final_fault_build": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+  "final_fault_summary": "five-fault-results-closed-build.json",
+  "final_performance_launch": "84e9d8be-711a-400e-bffc-f401a0d67708",
+  "final_performance_build": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+  "final_performance_status": "PASS-cleaned",
+  "final_performance_summary": "runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/final-ui-source-summary.json",
+  "final_workspace_check": {
+    "status": "PASS",
+    "log": "evidence/full-check-final.log",
+    "tests": 1749,
+    "pass": 1741,
+    "fail": 0,
+    "skipped": 8,
+    "build_hashes_unchanged": true,
+    "doc_format_and_local_links": "PASS",
+    "original_prototype": {
+      "pid": 95933,
+      "address": "127.0.0.1:49792",
+      "retained": true
+    }
+  },
+  "final_browser_timing": "../polish-final-ui/performance-final-3/source-to-browser-timing.json",
+  "final_acceptance_document": "../../docs/polish-final-validation.md"
+}

@@ -1,0 +1,121 @@
+{
+  "original": {
+    "index": 19,
+    "kind": "session",
+    "label": "POLISH_UI_19_10ec37",
+    "runnerClock": "ui-runner:18595:a7bcfe4e-091c-417c-9a03-62242ba0ff72",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "status": "failed",
+    "startedRunnerMs": 1614199513.903416,
+    "baseline": {
+      "at": 970545.9000000954,
+      "status": "当前会话",
+      "messageStatus": "草稿 · 尚未发送",
+      "hidden": false,
+      "disabled": false,
+      "error": ""
+    },
+    "nativeClickDispatchRunnerMs": 1614221643.856916,
+    "submitBrowserMs": 975551.4000000954,
+    "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+    "error": "Error: Benchmark run interrupted: {\"id\":\"c03c89d3-f2df-44b1-9390-9d7365330d32\",\"epoch\":1,\"text\":\"{\\\"uid\\\":\\\"\\\",\\\"prompt\\\":\\\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\\\",\\\"selector\\\":\\\"\\\",\\\"tag\\\":\\\"\\\",\\\"text\\\":\\\"\\\",\\\"scope\\\":\\\"session\\\",\\\"comment_id\\\":\\\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\\\",\\\"round_id\\\":\\\"1c0cf97c-9714-407e-9913-8b04fe225b5b\\\"}\",\"digest\":\"4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a\",\"prompt\":{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\",\"scope\":\"session\",\"comment_id\":\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\",\"round_id\":\"1c0cf97c-9714-407e-9913-8b04fe225b5b\",\"prompt_id\":\"c03c89d3-f2df-44b1-9390-9d7365330d32\"},\"kind\":\"message\",\"state\":\"failed\",\"consumed\":true,\"resolved\":false,\"claim\":{\"artifact\":\"/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html\",\"instance\":\"54c8530d-4705-413b-bee6-c0961a5104e7\",\"session\":\"01a18e12-942e-7785-aa90-41587c940bbb\",\"epoch\":1,\"generation\":2,\"mode\":\"bridge\",\"id\":\"c03c89d3-f2df-44b1-9390-9d7365330d32\",\"digest\":\"4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a\",\"attempt\":\"b583ea31-375a-4c9f-982f-1cac0dc2514f\"},\"host_dispatched\":true,\"queueEvidence\":\"c76be79d-b9d9-4700-8fcf-a038597c1792\",\"inputEvidence\":\"af3039a4\",\"execution_error\":\"server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)\"}\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:57:160\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:16:96)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:57:14",
+    "finishedRunnerMs": 1614274434.938625
+  },
+  "observed": {
+    "at": 1210279.7000000477,
+    "origin": 1793385715817.4,
+    "status": "有反馈处理失败 · 打开整体意见查看",
+    "events": [
+      {
+        "at": 970545.9000000954,
+        "status": "当前会话",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": false,
+        "disabled": false,
+        "error": ""
+      },
+      {
+        "at": 975554.3000001907,
+        "status": "当前会话",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": false,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 975609.2000000477,
+        "status": "已保存 · 等待 agent 接收",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 975610.5,
+        "status": "正在投递",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 975662.3000001907,
+        "status": "agent 正忙，已排队",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 975674.4000000954,
+        "status": "agent 正在处理",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 1023293.9000000954,
+        "status": "有反馈处理失败 · 打开整体意见查看",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      }
+    ],
+    "click": 975551.4000000954
+  },
+  "message": {
+    "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+    "epoch": 1,
+    "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\",\"round_id\":\"1c0cf97c-9714-407e-9913-8b04fe225b5b\"}",
+    "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+    "prompt": {
+      "uid": "",
+      "prompt": "请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。",
+      "scope": "session",
+      "comment_id": "058255cc-4e7d-43f2-9a08-94cdcb9a09cc",
+      "round_id": "1c0cf97c-9714-407e-9913-8b04fe225b5b",
+      "prompt_id": "c03c89d3-f2df-44b1-9390-9d7365330d32"
+    },
+    "kind": "message",
+    "state": "failed",
+    "consumed": true,
+    "resolved": false,
+    "claim": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+      "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+      "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+      "epoch": 1,
+      "generation": 2,
+      "mode": "bridge",
+      "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+      "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+      "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+    },
+    "host_dispatched": true,
+    "queueEvidence": "c76be79d-b9d9-4700-8fcf-a038597c1792",
+    "inputEvidence": "a04b6b3b",
+    "execution_error": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)"
+  }
+}

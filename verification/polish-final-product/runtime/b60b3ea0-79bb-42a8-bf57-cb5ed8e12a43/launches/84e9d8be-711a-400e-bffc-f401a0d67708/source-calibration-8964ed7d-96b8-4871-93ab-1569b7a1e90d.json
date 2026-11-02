@@ -1,0 +1,128 @@
+{
+  "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+  "samples": [
+    {
+      "nonce": "cbf33e5c-3c63-4ffa-ad8a-dbcdbbe85753",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154548.963,
+      "receivedAt": 1793390154549.4487,
+      "sourceAt": 1793390154549.2776,
+      "rttMs": 0.48583984375,
+      "offsetLowerMs": -0.171142578125,
+      "offsetUpperMs": 0.314697265625
+    },
+    {
+      "nonce": "26d4abb0-7be7-41b3-a380-3458e1dbfdde",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154549.5933,
+      "receivedAt": 1793390154549.7715,
+      "sourceAt": 1793390154549.6606,
+      "rttMs": 0.17822265625,
+      "offsetLowerMs": -0.11083984375,
+      "offsetUpperMs": 0.0673828125
+    },
+    {
+      "nonce": "15112172-f3e3-4f23-845e-0c8b56ce2737",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154549.8696,
+      "receivedAt": 1793390154549.9954,
+      "sourceAt": 1793390154549.9246,
+      "rttMs": 0.125732421875,
+      "offsetLowerMs": -0.07080078125,
+      "offsetUpperMs": 0.054931640625
+    },
+    {
+      "nonce": "4352daee-156d-4631-8fef-f3757dc47bfe",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154550.0847,
+      "receivedAt": 1793390154550.2236,
+      "sourceAt": 1793390154550.1323,
+      "rttMs": 0.138916015625,
+      "offsetLowerMs": -0.09130859375,
+      "offsetUpperMs": 0.047607421875
+    },
+    {
+      "nonce": "d1af9efa-a881-4273-971c-64556e135f54",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154550.3027,
+      "receivedAt": 1793390154550.4172,
+      "sourceAt": 1793390154550.3572,
+      "rttMs": 0.114501953125,
+      "offsetLowerMs": -0.06005859375,
+      "offsetUpperMs": 0.054443359375
+    },
+    {
+      "nonce": "c8163c8d-5cb4-4bde-9816-d858cada8f2b",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154550.4827,
+      "receivedAt": 1793390154550.6584,
+      "sourceAt": 1793390154550.5212,
+      "rttMs": 0.17578125,
+      "offsetLowerMs": -0.13720703125,
+      "offsetUpperMs": 0.03857421875
+    },
+    {
+      "nonce": "1fd1b7c8-843a-49ec-8c19-fcf00bb3d798",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154550.6995,
+      "receivedAt": 1793390154550.8552,
+      "sourceAt": 1793390154550.771,
+      "rttMs": 0.15576171875,
+      "offsetLowerMs": -0.084228515625,
+      "offsetUpperMs": 0.071533203125
+    },
+    {
+      "nonce": "9eabd7f4-ac3f-4eec-9db5-1fc04ff69e7d",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154550.9248,
+      "receivedAt": 1793390154551.0935,
+      "sourceAt": 1793390154550.9858,
+      "rttMs": 0.168701171875,
+      "offsetLowerMs": -0.107666015625,
+      "offsetUpperMs": 0.06103515625
+    },
+    {
+      "nonce": "082f9da6-bdd8-4278-93cd-3de0cd7c92aa",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154551.16,
+      "receivedAt": 1793390154551.291,
+      "sourceAt": 1793390154551.2273,
+      "rttMs": 0.131103515625,
+      "offsetLowerMs": -0.063720703125,
+      "offsetUpperMs": 0.0673828125
+    },
+    {
+      "nonce": "0da42b2b-2f10-43c9-8a05-4bdfe6071c15",
+      "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+      "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+      "sentAt": 1793390154551.356,
+      "receivedAt": 1793390154551.469,
+      "sourceAt": 1793390154551.4016,
+      "rttMs": 0.113037109375,
+      "offsetLowerMs": -0.0673828125,
+      "offsetUpperMs": 0.045654296875
+    }
+  ],
+  "best": {
+    "nonce": "0da42b2b-2f10-43c9-8a05-4bdfe6071c15",
+    "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+    "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+    "sentAt": 1793390154551.356,
+    "receivedAt": 1793390154551.469,
+    "sourceAt": 1793390154551.4016,
+    "rttMs": 0.113037109375,
+    "offsetLowerMs": -0.0673828125,
+    "offsetUpperMs": 0.045654296875
+  },
+  "offsetEstimateMs": -0.0108642578125,
+  "uncertaintyMs": 0.0565185546875
+}

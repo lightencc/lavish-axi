@@ -1,0 +1,217 @@
+{
+  "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+  "trace": [
+    {
+      "stage": "accepted_durable",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386691388.2344,
+      "pid": 58334
+    },
+    {
+      "stage": "dispatch_reserved",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386691412.9473,
+      "pid": 58334
+    },
+    {
+      "stage": "host_admitted",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386691426.8997,
+      "pid": 58334
+    },
+    {
+      "stage": "host_dispatching",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386691439.95,
+      "pid": 58334
+    },
+    {
+      "stage": "input_consumed",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f",
+        "evidence_id": "c7168a7b"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386691459.1284,
+      "pid": 58334
+    },
+    {
+      "stage": "model_start",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386691493.0754,
+      "pid": 58334
+    },
+    {
+      "stage": "input_consumed",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f",
+        "evidence_id": "c7168a7b"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386741129.1958,
+      "pid": 58334
+    },
+    {
+      "stage": "input_consumed",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f",
+        "evidence_id": "c7168a7b"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386782441.3442,
+      "pid": 58334
+    },
+    {
+      "stage": "first_token",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386818312.8748,
+      "pid": 58334
+    },
+    {
+      "stage": "host_reply_persisted",
+      "metadata": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 2,
+        "mode": "bridge",
+        "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+        "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f",
+        "evidence_id": "720fd31d"
+      },
+      "clockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+      "at": 1793386818413.0037,
+      "pid": 58334
+    }
+  ],
+  "review": {
+    "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+    "epoch": 1,
+    "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\",\"round_id\":\"1c0cf97c-9714-407e-9913-8b04fe225b5b\"}",
+    "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+    "prompt": {
+      "uid": "",
+      "prompt": "请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。",
+      "scope": "session",
+      "comment_id": "058255cc-4e7d-43f2-9a08-94cdcb9a09cc",
+      "round_id": "1c0cf97c-9714-407e-9913-8b04fe225b5b",
+      "prompt_id": "c03c89d3-f2df-44b1-9390-9d7365330d32"
+    },
+    "kind": "message",
+    "state": "failed",
+    "consumed": true,
+    "resolved": false,
+    "claim": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+      "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+      "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+      "epoch": 1,
+      "generation": 2,
+      "mode": "bridge",
+      "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+      "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+      "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+    },
+    "host_dispatched": true,
+    "queueEvidence": "c76be79d-b9d9-4700-8fcf-a038597c1792",
+    "inputEvidence": "a04b6b3b",
+    "execution_error": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)"
+  },
+  "pi": {
+    "provider": "magpie",
+    "model": "grok/grok-4.7",
+    "stopReason": "stop",
+    "durationMs": 35927,
+    "errorMessage": null,
+    "responseId": "8d2ef4d1-0150-9e9c-975b-49169c5b5266"
+  }
+}

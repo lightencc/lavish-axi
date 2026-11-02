@@ -1,0 +1,3 @@
+{"at":1793368074846,"kind":"started","data":{"pid":22405,"args":["--mode","rpc","--offline","--no-tools","--no-mcp","--no-extensions","--no-skills","--no-prompt-templates","--no-themes","--no-context-files","--no-approve","--extension","/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/host-extension.js","--session-dir","/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/cf6467f2-b6b2-4169-a0f0-02fe86f90a77/sessions","--name","POLISH-COMBINED-M0-d893f2b8-a7e0-42ee-aa01-0bbe4e20a33b"]}}
+{"at":1793368074867,"kind":"stderr_bytes","data":{"bytes":1432}}
+{"at":1793368074869,"kind":"exit","data":{"pid":22405,"code":1,"signal":null}}

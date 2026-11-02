@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-30T19:19:14.205518+00:00",
+  "owned_supervisor_pid": 30507,
+  "owned_pi_already_exited": true,
+  "reason": "Harness stdin pipe held supervisor after product clean shutdown; fixed own stdin destroy, no product change."
+}

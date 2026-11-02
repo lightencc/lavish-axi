@@ -837,6 +837,44 @@ test("a queued layout-warnings prompt is normalized like ordinary feedback", asy
   }
 });
 
+test("Polish overall layout feedback preserves warning semantics without an element anchor", async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), "lavish-store-"));
+  try {
+    const stateFile = path.join(dir, "state.json");
+    const artifact = path.join(dir, "artifact.html");
+    await writeFile(artifact, "<h1>Hello</h1>");
+
+    const store = new SessionStore(stateFile);
+    const session = await store.upsertSession(artifact, "http://localhost:4387/session/test");
+    await store.queuePrompts(session.key, {
+      prompts: [
+        {
+          scope: "session",
+          uid: "",
+          prompt: "Fix these layout issues",
+          selector: "",
+          tag: "layout-warnings",
+          text: "Layout issues: 1 selected",
+          target: {
+            type: "layout-warnings",
+            warnings: [{ id: "abc", rule: "clipped-text", selector: "p", axis: "vertical", overflow_px: 27 }],
+          },
+        },
+      ],
+    });
+
+    const result = feedbackResult(await store.takeFeedback(session.key));
+    assert.equal(result.prompts.length, 1);
+    assert.equal(result.prompts[0].scope, "session");
+    assert.equal(result.prompts[0].selector, undefined);
+    assert.equal(result.prompts[0].tag, "layout-warnings");
+    assert.equal(result.prompts[0].target.warnings[0].id, "abc");
+    assert.equal("artifact_failures" in result, false);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
 test("the inbox survives reopening the same artifact", async () => {
   const dir = await mkdtemp(path.join(tmpdir(), "lavish-store-"));
   try {

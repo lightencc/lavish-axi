@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": [
+    "Actual WS close then new open, >=1500ms outage",
+    "RPC streaming observed before 3 concurrent submissions",
+    "All 3 original replies observed on reconnected WS, one Pi input and host record each, no resubmit"
+  ],
+  "outageMs": 1508.48046875,
+  "ids": [
+    "40dfa9a8-4f33-460d-b4c5-a41f602e255e",
+    "c1f5bdac-bef3-4263-b6b0-9b457c008e09",
+    "2142295b-ba93-49e2-a41c-856170b2e43e"
+  ],
+  "source": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/ae90eaa8-ff58-486d-8ffb-60bacc6f53d9/launches/b606a9b9-c0fb-457d-b1b0-bc4232706822/client.jsonl",
+  "scope": "This proves disconnect/reconnect during queued busy work; no claim of offline browser retry."
+}

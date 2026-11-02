@@ -1,0 +1,30 @@
+{
+  "runId": "3cc446ea-43f8-4b70-ab65-a39baa361ef1",
+  "name": "polish-poll-3cc446ea",
+  "started": "2026-10-31T07:15:29.629Z",
+  "steps": [
+    {
+      "label": "existing HTML opened unchanged",
+      "at": "2026-10-31T07:15:44.325Z",
+      "url": "http://127.0.0.1:57162/session/b225aeadea83c6d1",
+      "port": 57162
+    }
+  ],
+  "model": "synthetic test client using actual poll/reply CLI; no Claude process",
+  "hashes": {
+    "dist/polish": "d0c5ddc5c6d48c6e756d4a2288ef05440dcb6f02e333e43b5ba5e6886e5de6b6",
+    "dist/cli.mjs": "d5c7cf441b315d48e5aee2821e2412e3e2dc17db878b1d78a117ef98616eb1db",
+    "dist/polish-client.js": "0168b4c28611e57c85501932e2bf52adaf09a2f8f12e3743037f03ef15b65b84",
+    "dist/polish.css": "75dbd3cef9c1ad235a4fdf463b56b413d6c193879db53d28d5c3c9d3db9faf81"
+  },
+  "success": false,
+  "error": "Error: Timed out: submitted\n    at until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-lavish-browser/run.mjs:26:110)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-lavish-browser/run.mjs:42:15",
+  "console": "",
+  "errors": "",
+  "cleanup": {
+    "browserClosed": true,
+    "serviceClosed": true,
+    "portReleased": true
+  },
+  "finished": "2026-10-31T07:16:06.430Z"
+}

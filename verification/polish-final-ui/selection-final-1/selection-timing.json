@@ -1,0 +1,174 @@
+{
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "target": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+  "frameTarget": "6CA670381778EAB1F55D90092D949993",
+  "before": {
+    "top": [
+      {
+        "runnerStartMs": 1615012197.352416,
+        "runnerEndMs": 1615012197.634458,
+        "origin": 1793387464664.4,
+        "now": 12257.099999904633,
+        "absoluteMinusRunnerMs": 1791772464724.0066,
+        "uncertaintyMs": 0.1410210132598877
+      },
+      {
+        "runnerStartMs": 1615012197.643375,
+        "runnerEndMs": 1615012197.858,
+        "origin": 1793387464664.4,
+        "now": 12257.299999952316,
+        "absoluteMinusRunnerMs": 1791772464723.9492,
+        "uncertaintyMs": 0.10731256008148193
+      },
+      {
+        "runnerStartMs": 1615012197.860708,
+        "runnerEndMs": 1615012198.048291,
+        "origin": 1793387464664.4,
+        "now": 12257.599999904633,
+        "absoluteMinusRunnerMs": 1791772464724.0454,
+        "uncertaintyMs": 0.09379148483276367
+      },
+      {
+        "runnerStartMs": 1615012198.05025,
+        "runnerEndMs": 1615012198.267458,
+        "origin": 1793387464664.4,
+        "now": 12257.699999809265,
+        "absoluteMinusRunnerMs": 1791772464723.941,
+        "uncertaintyMs": 0.10860395431518555
+      },
+      {
+        "runnerStartMs": 1615012198.270166,
+        "runnerEndMs": 1615012198.47475,
+        "origin": 1793387464664.4,
+        "now": 12258,
+        "absoluteMinusRunnerMs": 1791772464724.0273,
+        "uncertaintyMs": 0.10229206085205078
+      },
+      {
+        "runnerStartMs": 1615012198.477875,
+        "runnerEndMs": 1615012198.692541,
+        "origin": 1793387464664.4,
+        "now": 12258.199999809265,
+        "absoluteMinusRunnerMs": 1791772464724.0146,
+        "uncertaintyMs": 0.10733294486999512
+      },
+      {
+        "runnerStartMs": 1615012198.694375,
+        "runnerEndMs": 1615012198.862291,
+        "origin": 1793387464664.4,
+        "now": 12258.399999856949,
+        "absoluteMinusRunnerMs": 1791772464724.0215,
+        "uncertaintyMs": 0.08395802974700928
+      },
+      {
+        "runnerStartMs": 1615012198.864208,
+        "runnerEndMs": 1615012199.030333,
+        "origin": 1793387464664.4,
+        "now": 12258.5,
+        "absoluteMinusRunnerMs": 1791772464723.9526,
+        "uncertaintyMs": 0.08306252956390381
+      },
+      {
+        "runnerStartMs": 1615012199.033166,
+        "runnerEndMs": 1615012199.231708,
+        "origin": 1793387464664.4,
+        "now": 12258.699999809265,
+        "absoluteMinusRunnerMs": 1791772464723.9675,
+        "uncertaintyMs": 0.09927105903625488
+      },
+      {
+        "runnerStartMs": 1615012199.232958,
+        "runnerEndMs": 1615012199.414333,
+        "origin": 1793387464664.4,
+        "now": 12258.899999856949,
+        "absoluteMinusRunnerMs": 1791772464723.976,
+        "uncertaintyMs": 0.09068751335144043
+      }
+    ],
+    "frame": [
+      {
+        "runnerStartMs": 1615012199.417291,
+        "runnerEndMs": 1615012199.91075,
+        "origin": 1793387464782.5,
+        "now": 12141.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.136,
+        "uncertaintyMs": 0.24672949314117432
+      },
+      {
+        "runnerStartMs": 1615012199.912166,
+        "runnerEndMs": 1615012200.125125,
+        "origin": 1793387464782.5,
+        "now": 12141.5,
+        "absoluteMinusRunnerMs": 1791772464723.9814,
+        "uncertaintyMs": 0.10647940635681152
+      },
+      {
+        "runnerStartMs": 1615012200.126625,
+        "runnerEndMs": 1615012200.322916,
+        "origin": 1793387464782.5,
+        "now": 12141.700000047684,
+        "absoluteMinusRunnerMs": 1791772464723.975,
+        "uncertaintyMs": 0.0981454849243164
+      },
+      {
+        "runnerStartMs": 1615012200.325125,
+        "runnerEndMs": 1615012200.503708,
+        "origin": 1793387464782.5,
+        "now": 12141.900000095367,
+        "absoluteMinusRunnerMs": 1791772464723.9856,
+        "uncertaintyMs": 0.08929145336151123
+      },
+      {
+        "runnerStartMs": 1615012200.504875,
+        "runnerEndMs": 1615012200.66825,
+        "origin": 1793387464782.5,
+        "now": 12142.099999904633,
+        "absoluteMinusRunnerMs": 1791772464724.0134,
+        "uncertaintyMs": 0.0816875696182251
+      },
+      {
+        "runnerStartMs": 1615012200.669416,
+        "runnerEndMs": 1615012200.83475,
+        "origin": 1793387464782.5,
+        "now": 12142.200000047684,
+        "absoluteMinusRunnerMs": 1791772464723.9478,
+        "uncertaintyMs": 0.08266699314117432
+      },
+      {
+        "runnerStartMs": 1615012200.835833,
+        "runnerEndMs": 1615012201.012166,
+        "origin": 1793387464782.5,
+        "now": 12142.400000095367,
+        "absoluteMinusRunnerMs": 1791772464723.9758,
+        "uncertaintyMs": 0.08816647529602051
+      },
+      {
+        "runnerStartMs": 1615012201.013375,
+        "runnerEndMs": 1615012201.182875,
+        "origin": 1793387464782.5,
+        "now": 12142.599999904633,
+        "absoluteMinusRunnerMs": 1791772464724.002,
+        "uncertaintyMs": 0.08474993705749512
+      },
+      {
+        "runnerStartMs": 1615012201.184541,
+        "runnerEndMs": 1615012201.409333,
+        "origin": 1793387464782.5,
+        "now": 12142.700000047684,
+        "absoluteMinusRunnerMs": 1791772464723.903,
+        "uncertaintyMs": 0.1123960018157959
+      },
+      {
+        "runnerStartMs": 1615012201.410791,
+        "runnerEndMs": 1615012201.609125,
+        "origin": 1793387464782.5,
+        "now": 12143,
+        "absoluteMinusRunnerMs": 1791772464723.99,
+        "uncertaintyMs": 0.09916698932647705
+      }
+    ]
+  },
+  "samples": [],
+  "success": false,
+  "error": "AssertionError [ERR_ASSERTION]: native mouseup produced a visible selection comment\n    at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/selection-timing.mjs:19:70"
+}

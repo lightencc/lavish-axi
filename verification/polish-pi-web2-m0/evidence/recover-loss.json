@@ -1,0 +1,15 @@
+{
+  "status": "verified",
+  "safeToResend": false,
+  "proof": {
+    "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+    "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+    "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+    "epoch": 1,
+    "id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e",
+    "digest": "924403d26dd4e89d628600029e250b572fefdd9a28bad204b091a9c1b8b99ec9",
+    "attempt": "af38a307-4ef9-4737-a635-c41735e6a568",
+    "kind": "queued",
+    "evidenceId": "fe2acf20-36bf-4903-a6bb-d069d2a8cade"
+  }
+}

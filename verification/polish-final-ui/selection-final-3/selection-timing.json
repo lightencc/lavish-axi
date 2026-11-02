@@ -1,0 +1,410 @@
+{
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "target": "FEC887D796D2EA2F52A73BD7E422D8E1",
+  "frameTarget": "9AD4FE0616DB8C83F77507C3CB9765CB",
+  "before": {
+    "top": [
+      {
+        "runnerStartMs": 1615250936.69575,
+        "runnerEndMs": 1615250937.2185,
+        "origin": 1793387669424.8,
+        "now": 46236.59999990463,
+        "absoluteMinusRunnerMs": 1791772464724.443,
+        "uncertaintyMs": 0.26137495040893555
+      },
+      {
+        "runnerStartMs": 1615250937.229541,
+        "runnerEndMs": 1615250937.591791,
+        "origin": 1793387669424.8,
+        "now": 46237,
+        "absoluteMinusRunnerMs": 1791772464724.3894,
+        "uncertaintyMs": 0.18112492561340332
+      },
+      {
+        "runnerStartMs": 1615250937.59725,
+        "runnerEndMs": 1615250937.8875,
+        "origin": 1793387669424.8,
+        "now": 46237.39999985695,
+        "absoluteMinusRunnerMs": 1791772464724.4575,
+        "uncertaintyMs": 0.14512503147125244
+      },
+      {
+        "runnerStartMs": 1615250937.890041,
+        "runnerEndMs": 1615250938.209416,
+        "origin": 1793387669424.8,
+        "now": 46237.699999809265,
+        "absoluteMinusRunnerMs": 1791772464724.4502,
+        "uncertaintyMs": 0.15968739986419678
+      },
+      {
+        "runnerStartMs": 1615250938.212,
+        "runnerEndMs": 1615250938.476875,
+        "origin": 1793387669424.8,
+        "now": 46238,
+        "absoluteMinusRunnerMs": 1791772464724.4556,
+        "uncertaintyMs": 0.1324375867843628
+      },
+      {
+        "runnerStartMs": 1615250938.480833,
+        "runnerEndMs": 1615250938.721875,
+        "origin": 1793387669424.8,
+        "now": 46238.199999809265,
+        "absoluteMinusRunnerMs": 1791772464724.3987,
+        "uncertaintyMs": 0.1205209493637085
+      },
+      {
+        "runnerStartMs": 1615250938.724333,
+        "runnerEndMs": 1615250939.031291,
+        "origin": 1793387669424.8,
+        "now": 46238.39999985695,
+        "absoluteMinusRunnerMs": 1791772464724.322,
+        "uncertaintyMs": 0.1534789800643921
+      },
+      {
+        "runnerStartMs": 1615250939.033125,
+        "runnerEndMs": 1615250939.223375,
+        "origin": 1793387669424.8,
+        "now": 46238.699999809265,
+        "absoluteMinusRunnerMs": 1791772464724.3718,
+        "uncertaintyMs": 0.09512507915496826
+      },
+      {
+        "runnerStartMs": 1615250939.224791,
+        "runnerEndMs": 1615250939.423375,
+        "origin": 1793387669424.8,
+        "now": 46239,
+        "absoluteMinusRunnerMs": 1791772464724.476,
+        "uncertaintyMs": 0.09929192066192627
+      },
+      {
+        "runnerStartMs": 1615250939.425666,
+        "runnerEndMs": 1615250939.595083,
+        "origin": 1793387669424.8,
+        "now": 46239.199999809265,
+        "absoluteMinusRunnerMs": 1791772464724.4897,
+        "uncertaintyMs": 0.08470845222473145
+      }
+    ],
+    "frame": [
+      {
+        "runnerStartMs": 1615250939.598458,
+        "runnerEndMs": 1615250939.932708,
+        "origin": 1793387669560.1,
+        "now": 46104.09999990463,
+        "absoluteMinusRunnerMs": 1791772464724.4346,
+        "uncertaintyMs": 0.16712498664855957
+      },
+      {
+        "runnerStartMs": 1615250939.934583,
+        "runnerEndMs": 1615250940.13875,
+        "origin": 1793387669560.1,
+        "now": 46104.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.3635,
+        "uncertaintyMs": 0.10208356380462646
+      },
+      {
+        "runnerStartMs": 1615250940.140916,
+        "runnerEndMs": 1615250940.325708,
+        "origin": 1793387669560.1,
+        "now": 46104.5,
+        "absoluteMinusRunnerMs": 1791772464724.3667,
+        "uncertaintyMs": 0.09239590167999268
+      },
+      {
+        "runnerStartMs": 1615250940.327625,
+        "runnerEndMs": 1615250940.582541,
+        "origin": 1793387669560.1,
+        "now": 46104.700000047684,
+        "absoluteMinusRunnerMs": 1791772464724.345,
+        "uncertaintyMs": 0.12745797634124756
+      },
+      {
+        "runnerStartMs": 1615250940.584041,
+        "runnerEndMs": 1615250940.852583,
+        "origin": 1793387669560.1,
+        "now": 46105,
+        "absoluteMinusRunnerMs": 1791772464724.3818,
+        "uncertaintyMs": 0.13427090644836426
+      },
+      {
+        "runnerStartMs": 1615250940.853833,
+        "runnerEndMs": 1615250941.104125,
+        "origin": 1793387669560.1,
+        "now": 46105.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.4211,
+        "uncertaintyMs": 0.1251460313796997
+      },
+      {
+        "runnerStartMs": 1615250941.106208,
+        "runnerEndMs": 1615250941.483916,
+        "origin": 1793387669560.1,
+        "now": 46105.5,
+        "absoluteMinusRunnerMs": 1791772464724.305,
+        "uncertaintyMs": 0.18885397911071777
+      },
+      {
+        "runnerStartMs": 1615250941.48525,
+        "runnerEndMs": 1615250941.680625,
+        "origin": 1793387669560.1,
+        "now": 46105.799999952316,
+        "absoluteMinusRunnerMs": 1791772464724.3171,
+        "uncertaintyMs": 0.0976874828338623
+      },
+      {
+        "runnerStartMs": 1615250941.682291,
+        "runnerEndMs": 1615250942.023041,
+        "origin": 1793387669560.1,
+        "now": 46106.09999990463,
+        "absoluteMinusRunnerMs": 1791772464724.3474,
+        "uncertaintyMs": 0.17037498950958252
+      },
+      {
+        "runnerStartMs": 1615250942.030791,
+        "runnerEndMs": 1615250942.346916,
+        "origin": 1793387669560.1,
+        "now": 46106.39999985695,
+        "absoluteMinusRunnerMs": 1791772464724.311,
+        "uncertaintyMs": 0.15806245803833008
+      }
+    ]
+  },
+  "samples": [
+    {
+      "index": 1,
+      "selection": {
+        "eventAt": 46204.39999985695,
+        "handledAt": 46206.299999952316,
+        "origin": 1793387669560.1
+      },
+      "popup": {
+        "at": 46356,
+        "origin": 1793387669424.8,
+        "quote": "第一段用于"
+      },
+      "rawCrossRealmMs": 16.299951314926147
+    },
+    {
+      "index": 2,
+      "selection": {
+        "eventAt": 46317.09999990463,
+        "handledAt": 46317.5,
+        "origin": 1793387669560.1
+      },
+      "popup": {
+        "at": 46454.09999990463,
+        "origin": 1793387669424.8,
+        "quote": "一段用于文"
+      },
+      "rawCrossRealmMs": 1.7000489234924316
+    },
+    {
+      "index": 3,
+      "selection": {
+        "eventAt": 46399.5,
+        "handledAt": 46399.89999985695,
+        "origin": 1793387669560.1
+      },
+      "popup": {
+        "at": 46536.09999990463,
+        "origin": 1793387669424.8,
+        "quote": "第一段用于"
+      },
+      "rawCrossRealmMs": 1.300048828125
+    },
+    {
+      "index": 4,
+      "selection": {
+        "eventAt": 46475.5,
+        "handledAt": 46475.799999952316,
+        "origin": 1793387669560.1
+      },
+      "popup": {
+        "at": 46612,
+        "origin": 1793387669424.8,
+        "quote": "一段用于文"
+      },
+      "rawCrossRealmMs": 1.199951171875
+    },
+    {
+      "index": 5,
+      "selection": {
+        "eventAt": 46550.59999990463,
+        "handledAt": 46550.799999952316,
+        "origin": 1793387669560.1
+      },
+      "popup": {
+        "at": 46687.09999990463,
+        "origin": 1793387669424.8,
+        "quote": "第一段用于"
+      },
+      "rawCrossRealmMs": 1.2000489234924316
+    }
+  ],
+  "after": {
+    "top": [
+      {
+        "runnerStartMs": 1615251388.022583,
+        "runnerEndMs": 1615251388.27625,
+        "origin": 1793387669424.8,
+        "now": 46687.699999809265,
+        "absoluteMinusRunnerMs": 1791772464724.3506,
+        "uncertaintyMs": 0.12683343887329102
+      },
+      {
+        "runnerStartMs": 1615251388.283291,
+        "runnerEndMs": 1615251388.532458,
+        "origin": 1793387669424.8,
+        "now": 46688,
+        "absoluteMinusRunnerMs": 1791772464724.392,
+        "uncertaintyMs": 0.12458348274230957
+      },
+      {
+        "runnerStartMs": 1615251388.535791,
+        "runnerEndMs": 1615251388.76275,
+        "origin": 1793387669424.8,
+        "now": 46688.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.451,
+        "uncertaintyMs": 0.11347949504852295
+      },
+      {
+        "runnerStartMs": 1615251388.763333,
+        "runnerEndMs": 1615251388.983416,
+        "origin": 1793387669424.8,
+        "now": 46688.5,
+        "absoluteMinusRunnerMs": 1791772464724.4268,
+        "uncertaintyMs": 0.11004149913787842
+      },
+      {
+        "runnerStartMs": 1615251388.983833,
+        "runnerEndMs": 1615251389.190666,
+        "origin": 1793387669424.8,
+        "now": 46688.59999990463,
+        "absoluteMinusRunnerMs": 1791772464724.313,
+        "uncertaintyMs": 0.10341644287109375
+      },
+      {
+        "runnerStartMs": 1615251389.190916,
+        "runnerEndMs": 1615251389.405791,
+        "origin": 1793387669424.8,
+        "now": 46688.89999985695,
+        "absoluteMinusRunnerMs": 1791772464724.4016,
+        "uncertaintyMs": 0.10743749141693115
+      },
+      {
+        "runnerStartMs": 1615251389.406583,
+        "runnerEndMs": 1615251389.62025,
+        "origin": 1793387669424.8,
+        "now": 46689.09999990463,
+        "absoluteMinusRunnerMs": 1791772464724.3867,
+        "uncertaintyMs": 0.10683345794677734
+      },
+      {
+        "runnerStartMs": 1615251389.62075,
+        "runnerEndMs": 1615251389.821,
+        "origin": 1793387669424.8,
+        "now": 46689.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.3792,
+        "uncertaintyMs": 0.10012507438659668
+      },
+      {
+        "runnerStartMs": 1615251389.821291,
+        "runnerEndMs": 1615251390.003166,
+        "origin": 1793387669424.8,
+        "now": 46689.5,
+        "absoluteMinusRunnerMs": 1791772464724.388,
+        "uncertaintyMs": 0.09093749523162842
+      },
+      {
+        "runnerStartMs": 1615251390.003375,
+        "runnerEndMs": 1615251390.161708,
+        "origin": 1793387669424.8,
+        "now": 46689.699999809265,
+        "absoluteMinusRunnerMs": 1791772464724.4175,
+        "uncertaintyMs": 0.07916653156280518
+      }
+    ],
+    "frame": [
+      {
+        "runnerStartMs": 1615251390.162625,
+        "runnerEndMs": 1615251390.398916,
+        "origin": 1793387669560.1,
+        "now": 46554.59999990463,
+        "absoluteMinusRunnerMs": 1791772464724.4194,
+        "uncertaintyMs": 0.11814546585083008
+      },
+      {
+        "runnerStartMs": 1615251390.401791,
+        "runnerEndMs": 1615251390.573291,
+        "origin": 1793387669560.1,
+        "now": 46554.799999952316,
+        "absoluteMinusRunnerMs": 1791772464724.4126,
+        "uncertaintyMs": 0.08574998378753662
+      },
+      {
+        "runnerStartMs": 1615251390.57375,
+        "runnerEndMs": 1615251390.739708,
+        "origin": 1793387669560.1,
+        "now": 46554.89999985695,
+        "absoluteMinusRunnerMs": 1791772464724.3433,
+        "uncertaintyMs": 0.08297896385192871
+      },
+      {
+        "runnerStartMs": 1615251390.740125,
+        "runnerEndMs": 1615251390.925916,
+        "origin": 1793387669560.1,
+        "now": 46555.09999990463,
+        "absoluteMinusRunnerMs": 1791772464724.3672,
+        "uncertaintyMs": 0.0928955078125
+      },
+      {
+        "runnerStartMs": 1615251390.92625,
+        "runnerEndMs": 1615251391.120333,
+        "origin": 1793387669560.1,
+        "now": 46555.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.377,
+        "uncertaintyMs": 0.09704148769378662
+      },
+      {
+        "runnerStartMs": 1615251391.120625,
+        "runnerEndMs": 1615251391.306916,
+        "origin": 1793387669560.1,
+        "now": 46555.5,
+        "absoluteMinusRunnerMs": 1791772464724.3862,
+        "uncertaintyMs": 0.09314548969268799
+      },
+      {
+        "runnerStartMs": 1615251391.307083,
+        "runnerEndMs": 1615251391.488875,
+        "origin": 1793387669560.1,
+        "now": 46555.700000047684,
+        "absoluteMinusRunnerMs": 1791772464724.402,
+        "uncertaintyMs": 0.09089601039886475
+      },
+      {
+        "runnerStartMs": 1615251391.489083,
+        "runnerEndMs": 1615251391.674333,
+        "origin": 1793387669560.1,
+        "now": 46555.89999985695,
+        "absoluteMinusRunnerMs": 1791772464724.4182,
+        "uncertaintyMs": 0.09262502193450928
+      },
+      {
+        "runnerStartMs": 1615251391.674541,
+        "runnerEndMs": 1615251391.857958,
+        "origin": 1793387669560.1,
+        "now": 46556.09999990463,
+        "absoluteMinusRunnerMs": 1791772464724.4338,
+        "uncertaintyMs": 0.09170854091644287
+      },
+      {
+        "runnerStartMs": 1615251391.858791,
+        "runnerEndMs": 1615251392.038333,
+        "origin": 1793387669560.1,
+        "now": 46556.299999952316,
+        "absoluteMinusRunnerMs": 1791772464724.4517,
+        "uncertaintyMs": 0.08977091312408447
+      }
+    ]
+  },
+  "success": true
+}

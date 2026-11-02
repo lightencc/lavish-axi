@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-10-30T18:30:02.810666+00:00",
+  "files": {
+    "dist/pi-extension.mjs": "42df7b9b36303f65bfcfcd7823d4b0e1ae004775af6edc113a4d549479b7c31a",
+    "dist/polish": "082f2ae2783b306caf28e4b7d1ed835c44cd8996944c3e3e8d51b571a188dcd2",
+    "dist/chrome-client.js": "6348cf9f6c26506ce49b840d24ad45f215f1dd38dbc5734176e2b3a71958fe4a",
+    "dist/polish-client.js": "c1c752b8eae05d360a002a8e931c6d4db54708b0c1a47fb3cc0cefca66c19dfb",
+    "dist/polish.css": "75dbd3cef9c1ad235a4fdf463b56b413d6c193879db53d28d5c3c9d3db9faf81",
+    "dist/server.mjs": "93e5aff4c7b0713ea052f27a4a414aa77e18f22fade5bc6e6c5298f1c0d34cab"
+  },
+  "artifact_sdk": "No standalone dist/artifact-sdk.js; bundled in production extension/server"
+}

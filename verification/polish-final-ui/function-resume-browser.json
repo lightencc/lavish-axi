@@ -1,0 +1,16 @@
+{
+  "portFile": "/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/agent-browser-chrome-623cfbc0-0689-4243-af9b-17d32c2976ea/DevToolsActivePort",
+  "port": "51495",
+  "target": {
+    "description": "",
+    "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@ef35003457e93c278f911a334b06e4a5f8967e06/inspector.html?ws=127.0.0.1:51495/devtools/page/BB8FCCD4BB16383F5DA16D77B80A4B5D",
+    "faviconUrl": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%92%8E</text></svg>",
+    "id": "BB8FCCD4BB16383F5DA16D77B80A4B5D",
+    "title": "Polish final verification · Polish",
+    "type": "page",
+    "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:51495/devtools/page/BB8FCCD4BB16383F5DA16D77B80A4B5D"
+  },
+  "daemonPid": 22855,
+  "chromePid": 22856
+}

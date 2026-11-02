@@ -1,0 +1,11 @@
+✔ host admission deduplicates exact identity; wrong binding, digest, attempt and payload reject (26.071875ms)
+✔ positive query recovers durable queued fact with no history; absence is never safe to resend (31.303667ms)
+✔ consumption requires full identity; query validates exact host input and reply IDs (45.9195ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142.686875

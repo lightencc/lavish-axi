@@ -1,0 +1,18 @@
+{
+  "verification/polish-pi-prewindow-m0/host.js": "5c96185dcf36d3fc09532ccba2f0d5f6e1351f43cbcf2555f745dd0c17d7827b",
+  "verification/polish-pi-prewindow-m0/runtime.js": "fa3cf640f9c3dca2a0c732c0306d9fb6319cae56de3ca28891f0e4151d589f4e",
+  "verification/polish-pi-prewindow-m0/page.js": "8199c70fed7f5222f5bc660ea84279920e9423d20c81972eeb858d6f9a65a590",
+  "verification/polish-pi-prewindow-m0/web.js": "14a0832ce9e696efca73fa671efdaa6549bf31386a1e3695fd54aac07d18a9bd",
+  "verification/polish-pi-prewindow-m0/window.test.js": "f5251ad82024aa0d5520ede75d48245bbdb9a4df135dd0aea1e51a0b09bcdad9",
+  "verification/polish-pi-prewindow-m0/window.js": "9b38623e405f5342ef72f111d5fcf45d268b328a32db72f7b52468bd56f7855c",
+  "verification/polish-pi-prewindow-m0/client.test.js": "1cde9864dfe713fef02609708695395c7bb7326c1135eb5b9ce436a9251d088f",
+  "verification/polish-pi-prewindow-m0/host-extension.js": "67780320a6293bfab825937f40ec730d82355e6eb98758cf13c0a581d977cda9",
+  "verification/polish-pi-prewindow-m0/web.test.js": "8dad6c60ab2befcd6fd0aa262d3a0906ab79b8db691dca33f938d05a95b0d4fc",
+  "verification/polish-pi-prewindow-m0/serve-prepared.js": "a4857e109416c1b4b613ff58707a250111ba5684175dd236e2e46d023968fb8d",
+  "verification/polish-pi-prewindow-m0/peer.js": "70b5bee93b9b332c4cae66e8402ee00610106ecf9fd453d57db16bbf2593921f",
+  "verification/polish-pi-prewindow-m0/probe.js": "db522cbcc2fdcc8cf371f3cd81392bcdd4ef0ff2a3aae95a2f6ac18df85b9db4",
+  "src/server.js": "6aa5e4e39cb49d9e1420d17590c867257ccbe5d058a36ad831b4d28cb6ab7b41",
+  "src/session-store.js": "ca369c5ae70cf2239146f95bfe0a053cca36ede3ef0b708bfa5793c9e7d3e42e",
+  "src/feedback-delivery.js": "bed485e2f000ca3aa4836ac9d8946625e93b560ad85591c686d52f520705581d",
+  "src/cli.js": "7b8ebf88bed9e56b85b20076db46f29aa01944e13243fa2ae874ea2d1ae00e70"
+}

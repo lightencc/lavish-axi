@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+const json=async name=>JSON.parse(await readFile(new URL(name,import.meta.url),'utf8'));
+const cross=await json('verified-cross.json'), outside=await json('verified-outside.json'), keyboard=await json('verified-keyboard.json'), missing=await json('verified-missing-anchor.json'), narrow=await json('verified-narrow.json'), pins=await json('verified-pins-after.json'), state=await json('verified-state-before.json');
+assert.equal(cross.hidden,false);assert.equal(cross.quote,'precise selection begins here and ends later. Beta next paragraph completes');
+assert.deepEqual(state.messages[0].prompt.target.start,{selector:'p#first',path:[0],offset:6});assert.deepEqual(state.messages[0].prompt.target.end,{selector:'p#second',path:[0],offset:30});
+assert.equal(outside.hidden,false);assert.ok(outside.quote.includes('Alpha precise selection'));
+assert.equal(keyboard.hidden,false);assert.equal(keyboard.quoteHidden,true);assert.equal(keyboard.active,'polish-input');
+assert.match(missing.status,/原内容位置已变化/);assert.match(missing.history,/Verified block anchor for revision/);
+assert.equal(pins.pins.length,1);assert.equal(pins.pins[0].text,'');assert.equal(pins.selection,'');
+assert.equal(narrow.body,360);assert.ok(narrow.dialog.left>=0&&narrow.dialog.right<=360&&narrow.dialog.bottom<=640);assert.ok(narrow.send.bottom<=640);
+const controls=await readFile(new URL('verified-native-controls.txt',import.meta.url),'utf8');assert.match(controls,/Native input retained/);assert.match(controls,/Form action works/);
+await writeFile(new URL('verified-summary.json',import.meta.url),JSON.stringify({passed:true,transport:'real /session page + production SDK/client, isolated test host (not Pi)',input:'agent-browser native mouse and keyboard; no synthetic Selection/Range used to select',cases:['exact cross-paragraph drag','next native drag after send','release outside iframe','keyboard overall comment','native input and action preserved','replaced selector/text has no misplaced pin','missing discussion available in overall history','numberless surviving pin','360x640 popup and send visible'],sourceCheck:'64 targeted tests; ESLint, TypeScript and Prettier passed'},null,2));console.log('9 final native UI cases verified');

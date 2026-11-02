@@ -1,0 +1,105 @@
+{
+  "at_utc": "2026-10-30T12:51:22.729162+00:00",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/authority.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/authority.test.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/drain.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/drain.test.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/owner-child.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/ownership.test.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/probe-receipt-windows.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/receipt-extension.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/receipt.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-pi-recovery-m0/receipt.test.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "all_previous_unchanged": true,
+  "previous_manifest_entries": 95,
+  "local_tests": {
+    "passed": 23,
+    "failed": 0,
+    "file": "final-tests.txt"
+  },
+  "local_markdown_links": "passed",
+  "port_49793_unbound": true,
+  "new_listener_started": false,
+  "production_checks": "not run: no production source changed",
+  "browser": "NOT RUN: no listener permission"
+}

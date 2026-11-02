@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": [
+    "Real Pi streaming before 3 concurrent submissions",
+    "Actual WS terminated and reconnected after >=1500ms",
+    "All 3 original replies observed on new WS with single host admission and Pi input each",
+    "Owned service stopped"
+  ],
+  "outageMs": 1505.072265625,
+  "ids": [
+    "9e0a5c4e-28d9-4139-8de6-88972d20bc2e",
+    "9f34d7c2-85b2-4c67-a09f-b3f29bf93bc0",
+    "1f7a7e7b-7f0a-4578-a9db-7a0d5c234015"
+  ],
+  "source": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/74606518-21c5-4df0-8590-2fe687f7a05d/launches/602af5f3-6a1b-4195-a51f-741e7057b469/client.jsonl"
+}

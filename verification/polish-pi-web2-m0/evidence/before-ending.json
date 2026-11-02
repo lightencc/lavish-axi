@@ -1,0 +1,24 @@
+{
+  "now": 1793377409618,
+  "remainingMs": 78914,
+  "lifecycle": "open",
+  "mode": "poll",
+  "version": 21,
+  "messages": [
+    {
+      "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+      "state": "replied",
+      "consumed": true
+    },
+    {
+      "id": "r3-e531dc66-d7a0-46d4-a66a-ec4377a61b1e",
+      "state": "replied",
+      "consumed": true
+    },
+    {
+      "id": "r3-e7dd8719-876c-49ae-92f0-cc94089574e6",
+      "state": "replied",
+      "consumed": true
+    }
+  ]
+}

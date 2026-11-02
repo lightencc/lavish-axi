@@ -1,0 +1,7 @@
+{
+  "stage": "accepted_durable",
+  "match": {
+    "id": "fault-accepted_durable"
+  },
+  "occurrence": 1
+}

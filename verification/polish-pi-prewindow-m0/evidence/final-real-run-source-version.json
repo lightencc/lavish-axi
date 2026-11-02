@@ -1,0 +1,20 @@
+{
+  "verification/polish-pi-prewindow-m0/host.js": "5c96185dcf36d3fc09532ccba2f0d5f6e1351f43cbcf2555f745dd0c17d7827b",
+  "verification/polish-pi-prewindow-m0/runtime.js": "fa3cf640f9c3dca2a0c732c0306d9fb6319cae56de3ca28891f0e4151d589f4e",
+  "verification/polish-pi-prewindow-m0/page.js": "8199c70fed7f5222f5bc660ea84279920e9423d20c81972eeb858d6f9a65a590",
+  "verification/polish-pi-prewindow-m0/web.js": "aa9a87a529f8b1e0637da6d3716aeebfb0506895c1eb639cde8b9f8bfb5681e2",
+  "verification/polish-pi-prewindow-m0/window.test.js": "a863eb8e255b10d89b985df5a9e3a6206b7f68412bfc0b07e84fad069774078d",
+  "verification/polish-pi-prewindow-m0/window.js": "0d5927addc205c02b712d47fca6e3cf5ba755910f620d3a7143231b115695e87",
+  "verification/polish-pi-prewindow-m0/peer.test.js": "16852a88880d524be4ac952b8889f8f309015542b5895ce9151f5b9b29af0d85",
+  "verification/polish-pi-prewindow-m0/client.test.js": "1cde9864dfe713fef02609708695395c7bb7326c1135eb5b9ce436a9251d088f",
+  "verification/polish-pi-prewindow-m0/host-extension.js": "67780320a6293bfab825937f40ec730d82355e6eb98758cf13c0a581d977cda9",
+  "verification/polish-pi-prewindow-m0/web.test.js": "8dad6c60ab2befcd6fd0aa262d3a0906ab79b8db691dca33f938d05a95b0d4fc",
+  "verification/polish-pi-prewindow-m0/serve-prepared.js": "e6abab5771dde2db716747c1666b41713b3bb6ed510d6a88736eecd613d3a75e",
+  "verification/polish-pi-prewindow-m0/peer.js": "bb0bd478447f133867d437f1ca5279bf07df4e937edb110fc2a1484e2ef2cdad",
+  "verification/polish-pi-prewindow-m0/probe.js": "6a4cfe94fcdaea97a4de5783868c1811c906e2e98148f22d1fca978b74f75934",
+  "verification/polish-pi-prewindow-m0/no-listen-guard.js": "168f87ea62042f04fec5bed3441e70af7b1fcd69c8f4f3dbb06687358bbd34d2",
+  "src/server.js": "7d5ee4ab605160c82401c882025820c4a4f0f490a9843c52cd49f6ff32a961a8",
+  "src/session-store.js": "71017524fcb67058a6d8a8c68dc07def4daa99d56ac841618be8fade18d5d59a",
+  "src/feedback-delivery.js": "52f72bc396d0beed406d141eeba26ac7bcafdf258b2de27a97304029ebe66f57",
+  "src/cli.js": "b11a449a9e27a2c5f245fbe6dac49fe944f1a4967095f0f421f96a36fc585c18"
+}

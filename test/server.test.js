@@ -5432,7 +5432,7 @@ test("SSE agent-presence returns to waiting when poll feedback storage fails", a
 test("long-poll response cleanup is guarded against storage failures", async () => {
   const source = await readFile(new URL("../src/server.js", import.meta.url), "utf8");
 
-  assert.match(source, /try \{\s*const result = await store\.takeFeedback\(key\)/);
+  assert.match(source, /try \{\s*const result = await store\.takeFeedback\(key, holder\.deliveryLease\)/);
   assert.match(source, /finally \{\s*cleanup\(\);\s*\}/);
 });
 

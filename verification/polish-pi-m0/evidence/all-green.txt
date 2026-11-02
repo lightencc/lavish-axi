@@ -1,0 +1,18 @@
+✔ foreign origin and foreign host cannot reach the host adapter (32.039708ms)
+✔ client cannot override bound session or inject an element selector (23.689625ms)
+✔ missing host receipt preserves dispatch and duplicate performs query only (76.55575ms)
+✔ business receipt from a different instance is rejected (52.665834ms)
+✔ durable admission survives reopening, same payload dedups, conflict rejects (47.296875ms)
+✔ unresolved dispatch survives restart and cannot be claimed again (59.439958ms)
+✔ second writer and wrong instance cannot take ownership (28.880917ms)
+✔ empty host history never proves a dispatched message was not accepted (56.610125ms)
+✔ structured input history is positive evidence, not proof of processing or reply (32.043667ms)
+✔ processing evidence must match identity; reply requires persisted host entry id (45.721ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 307.997125

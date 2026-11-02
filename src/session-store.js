@@ -1,5 +1,6 @@
 import crypto from "node:crypto";
-import { readFile, realpath, writeFile } from "node:fs/promises";
+import { readFile, realpath, writeFile, open, rename, unlink } from "node:fs/promises";
+import * as feedbackDelivery from "./feedback-delivery.js";
 import path from "node:path";
 
 import {
@@ -125,9 +126,11 @@ export class SessionStore {
     const state = await this.readState();
     const existing = state.sessions[key] || {};
     const existingPrompts = existing.prompts || [];
+    if (existing.review_delivery?.lifecycle === "ended") throw new Error("BOUND_REOPEN_REQUIRES_NEW_REVIEW");
     const existingStatus = existing.status === "ended" ? "open" : existing.status || "open";
     const session = {
       key,
+      ...(existing.review_delivery ? { review_delivery: existing.review_delivery } : {}),
       file: absolute,
       url,
       status: existingStatus === "feedback" && existingPrompts.length === 0 ? "open" : existingStatus,
@@ -189,6 +192,12 @@ export class SessionStore {
       return null;
     }
     const prompts = Array.isArray(payload.prompts) ? payload.prompts : [];
+    if (
+      session.review_delivery &&
+      payload.review_epoch !== undefined &&
+      payload.review_epoch !== session.review_delivery.epoch
+    )
+      throw new Error("EPOCH");
     const shouldEndSession = Boolean(payload.endSession || payload.end_session);
     // `options.restore` re-queues a batch `takeFeedback` already removed (a poll whose client
     // disconnected before its response was written). Those prompts were accepted once already, so
@@ -209,7 +218,13 @@ export class SessionStore {
     if (alreadyEnded && !restoring) {
       return { ended: true, ended_by: session.ended_by };
     }
+    if (session.review_delivery && restoring) throw new Error("BOUND_RESTORE_REQUIRES_RECEIPT");
+    if (session.review_delivery && shouldEndSession) throw new Error("BOUND_END_REQUIRES_FIXED_BATCH");
     let normalized = prompts.map(normalizePrompt);
+    feedbackDelivery.validateFeedback(
+      session,
+      normalized.map(({ prompt }) => prompt),
+    );
     if (!restoring) {
       const acknowledgedIds = new Set(
         [
@@ -311,8 +326,14 @@ export class SessionStore {
       ? []
       : acceptedPrompts.map((prompt) => chatEntryForPrompt(prompt, at)).filter(Boolean);
     const existingPrompts = Array.isArray(session.prompts) ? session.prompts : [];
-    const storedPrompts = restoring ? acceptedPrompts : acceptedPrompts.map(agentFacingPrompt);
+    const storedPrompts =
+      restoring || session.review_delivery ? acceptedPrompts : acceptedPrompts.map(agentFacingPrompt);
+    if (session.review_delivery) {
+      feedbackDelivery.appendFeedback(session, storedPrompts);
+      session.review_delivery.version++;
+    }
     session.prompts = restoring ? [...storedPrompts, ...existingPrompts] : [...existingPrompts, ...storedPrompts];
+    if (session.review_delivery && payload.end_request) feedbackDelivery.beginFeedbackEnd(session, payload.end_request);
     session.chat = [...(session.chat || []), ...userMessages];
     applyTranscriptBound(session);
     if (userMessages.length > 0) session.chat_revision = normalizeRevision(session.chat_revision) + 1;
@@ -617,12 +638,20 @@ export class SessionStore {
   }
 
   /** @returns {Promise<any>} */
-  async takeFeedback(key) {
+  async takeFeedback(key, lease = null) {
     return this.runExclusive(async () => {
       const state = await this.readState();
       const session = state.sessions[key];
       if (!session) {
         return { status: "missing" };
+      }
+      if (session.review_delivery) {
+        const result = feedbackDelivery.takeBoundFeedback(session, lease);
+        if (result.status === "feedback") {
+          session.review_delivery.version++;
+          await this.writeState(state);
+        }
+        return result;
       }
       // Prompts queued before the session ended (a browser send-and-end) must still reach the
       // agent, so deliver them before reporting the ended state; the next poll then sees ended.
@@ -687,6 +716,117 @@ export class SessionStore {
     });
   }
 
+  async bindFeedback(key, binding) {
+    return this.mutateFeedback(key, (session) => feedbackDelivery.bindFeedback(session, binding));
+  }
+
+  async feedbackSnapshot(key) {
+    const session = await this.findByKey(key);
+    return session?.review_delivery || null;
+  }
+
+  async feedbackLease(key, mode) {
+    return feedbackDelivery.feedbackLease(await this.findByKey(key), mode);
+  }
+
+  async setFeedbackMode(key, mode) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.setFeedbackMode(s, mode));
+  }
+
+  // Internal server-owner handoff only; never a public PID/lease-timeout takeover API.
+  async recoverFeedback(key) {
+    return this.mutateFeedback(key, feedbackDelivery.recoverFeedback);
+  }
+
+  async recordFeedback(key, token, proof) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.reconcileFeedback(s, proof, token));
+  }
+
+  // Same receipt boundary as Lavish's Seen state: poll response delivery, not a
+  // claim that an external model has consumed context or finished execution.
+  async finishPolishPoll(key, result) {
+    const state = await this.feedbackSnapshot(key);
+    if (state?.binding.inputEvidence !== "poll_response") return null;
+    return this.recordFeedback(key, result.delivery, {
+      ...result.delivery,
+      kind: "consumed",
+      evidenceId: crypto.randomUUID(),
+      inputEvidence: "poll_response",
+    });
+  }
+
+  async reconcileFeedback(key, proof) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.reconcileFeedback(s, proof));
+  }
+
+  async markFeedbackUnknown(key, token) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.markFeedbackUnknown(s, token));
+  }
+
+  async restorePolishPoll(key, token) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.restorePollFeedback(s, token));
+  }
+
+  async reserveFeedbackHost(key, token) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.reserveFeedbackHost(s, token));
+  }
+
+  async beginFeedbackEnd(key, request) {
+    return this.mutateFeedback(key, async (s) => {
+      if (request.confirm && !s.review_delivery.end) {
+        if (request.state_version !== s.review_delivery.version) throw new Error("STALE_REVIEW");
+        await this.verifyReviewedArtifact(s, request);
+      }
+      feedbackDelivery.beginFeedbackEnd(s, request);
+    });
+  }
+
+  async completeFeedback(key, request) {
+    return this.mutateFeedback(key, async (s) => {
+      if (request.artifact_load_token !== undefined) await this.verifyReviewedArtifact(s, request);
+      feedbackDelivery.completeFeedback(s, request);
+    });
+  }
+
+  async verifyReviewedArtifact(session, request) {
+    const d = session.review_delivery;
+    if (
+      !request.artifact_load_token ||
+      request.artifact_load_token !== session.artifact_load?.artifact_load_token ||
+      request.artifact_load_token !== d.artifact_load_token ||
+      request.artifact_digest !== d.artifact_digest
+    )
+      throw new Error("STALE_ARTIFACT");
+    const digest = crypto
+      .createHash("sha256")
+      .update(await readFile(session.file))
+      .digest("hex");
+    if (digest !== request.artifact_digest) throw new Error("STALE_ARTIFACT");
+  }
+
+  async recordReviewArtifact(key, token, html) {
+    return this.mutateFeedback(key, (s) => {
+      if (!token || token !== s.artifact_load?.artifact_load_token) throw new Error("STALE_ARTIFACT");
+      s.review_delivery.artifact_load_token = token;
+      s.review_delivery.artifact_digest = crypto.createHash("sha256").update(html).digest("hex");
+    });
+  }
+
+  async reopenFeedback(key, binding) {
+    return this.mutateFeedback(key, (s) => feedbackDelivery.reopenFeedback(s, binding));
+  }
+
+  async mutateFeedback(key, update) {
+    return this.runExclusive(async () => {
+      const state = await this.readState();
+      const session = state.sessions[key];
+      if (!session) throw new Error("MISSING_SESSION");
+      if ((await update(session)) !== false) session.review_delivery.version++;
+      await this.writeState(state);
+      return session.review_delivery;
+    });
+  }
+
   // `endedBy` distinguishes a human ending review from the browser chrome ("user") from an
   // agent explicitly closing the loop via `lavish-axi end` ("agent"). Only a user-initiated end
   // blocks a plain reopen - see `SessionStore` callers in server.js.
@@ -696,6 +836,12 @@ export class SessionStore {
       const session = state.sessions[key];
       if (!session) {
         return null;
+      }
+      if (session.review_delivery) {
+        if (session.review_delivery.binding.inputEvidence !== "poll_response")
+          throw new Error("BOUND_END_REQUIRES_FIXED_BATCH");
+        session.review_delivery.lifecycle = "ended";
+        session.review_delivery.version++;
       }
       const existingEndedBy = session.status === "ended" ? session.ended_by : undefined;
       const nextEndedBy = endedBy === "user" || existingEndedBy === "user" ? "user" : "agent";
@@ -714,7 +860,27 @@ export class SessionStore {
       if (!session) {
         return null;
       }
+      const delivery = session.review_delivery;
+      if (delivery && delivery.binding.inputEvidence !== "poll_response")
+        throw new Error("BOUND_REPLY_REQUIRES_IDENTITY");
       if (requireOpen && session.status === "ended") return session;
+      if (delivery) {
+        // Lavish replies answer the feedback delivered since the previous reply.
+        // Never attach a reply to queued inputs or manufacture a model receipt.
+        for (const message of delivery.messages.filter((m) => m.consumed && !m.reply && m.kind !== "end")) {
+          feedbackDelivery.reconcileFeedback(session, {
+            ...message.claim,
+            kind: "reply",
+            replyTo: message.id,
+            comment_id: message.prompt.comment_id,
+            round_id: message.prompt.round_id,
+            text: String(text || ""),
+            evidenceId: crypto.randomUUID(),
+            inputEvidence: "poll_response",
+          });
+        }
+        delivery.version++;
+      }
       const at = new Date().toISOString();
       // Done (docs/delivery-acks.md): the reply answers what the agent has seen. Stamped in the same
       // write as the reply, with the reply's own time, and never on an entry no poll has delivered.
@@ -772,6 +938,9 @@ export class SessionStore {
           if (attachment && attachment.id) referenced.add(`${session.key}/${attachment.id}`);
         }
       }
+      for (const message of session.review_delivery?.messages || []) {
+        for (const attachment of message.prompt.attachments || []) referenced.add(`${session.key}/${attachment.id}`);
+      }
       for (const delivered of session.delivered_attachments || []) {
         if (!delivered || !delivered.id) continue;
         if (now - Number(delivered.at) <= ATTACHMENT_DELIVERY_GRACE_MS) {
@@ -783,6 +952,7 @@ export class SessionStore {
   }
 
   async readState() {
+    if (this.deliveryWriteFailed) throw new Error("DELIVERY_STORE_UNAVAILABLE");
     try {
       const raw = await readFile(this.file, "utf8");
       const parsed = JSON.parse(raw);
@@ -814,7 +984,32 @@ export class SessionStore {
   }
 
   async writeState(state) {
-    await writeFile(this.file, `${JSON.stringify(state, null, 2)}\n`);
+    const text = `${JSON.stringify(state, null, 2)}\n`;
+    if (!Object.values(state.sessions).some((s) => s.review_delivery)) {
+      await writeFile(this.file, text);
+      return;
+    }
+    const temporary = this.file + "." + crypto.randomUUID() + ".tmp";
+    try {
+      const handle = await open(temporary, "wx", 0o600);
+      try {
+        await handle.writeFile(text);
+        await handle.sync();
+      } finally {
+        await handle.close();
+      }
+      await rename(temporary, this.file);
+      const directory = await open(path.dirname(this.file), "r");
+      try {
+        await directory.sync();
+      } finally {
+        await directory.close();
+      }
+    } catch (error) {
+      this.deliveryWriteFailed = true;
+      await unlink(temporary).catch(() => {});
+      throw error;
+    }
   }
 }
 
@@ -845,17 +1040,36 @@ function applyTranscriptBound(session) {
 // `attachments` field exists but cannot be honored as written, which fails the
 // whole batch rather than being normalized away (C4, see queuePrompts).
 function normalizePrompt(prompt) {
-  const normalized = {
+  const normalized = /** @type {any} */ ({
     uid: String(prompt.uid || ""),
     prompt: String(prompt.prompt || ""),
     selector: String(prompt.selector || ""),
     tag: String(prompt.tag || ""),
     text: String(prompt.text || ""),
-  };
+  });
+  if (prompt.scope !== undefined) {
+    normalized.scope = String(prompt.scope);
+    if (prompt.comment_id) normalized.comment_id = String(prompt.comment_id).slice(0, 128);
+    if (prompt.round_id) normalized.round_id = String(prompt.round_id).slice(0, 128);
+    if (normalized.scope === "session") {
+      delete normalized.selector;
+      delete normalized.tag;
+      delete normalized.text;
+    }
+  }
   const promptId = normalizePromptId(prompt.prompt_id);
   if (promptId) normalized.prompt_id = promptId;
   const target = normalizeTarget(prompt.target);
-  if (target) normalized.target = target;
+  if (target && normalized.scope !== "session") normalized.target = target;
+  // Warning IDs describe a repair batch, not a fabricated DOM anchor for a global message.
+  if (
+    normalized.scope === "session" &&
+    prompt.tag === "layout-warnings" &&
+    target?.type === LAYOUT_WARNINGS_TARGET_TYPE
+  ) {
+    normalized.tag = "layout-warnings";
+    normalized.target = target;
+  }
   const { refs, malformed } = normalizeAttachmentRefs(prompt.attachments);
   if (refs.length > 0) normalized.attachments = refs;
   return { prompt: normalized, malformed };

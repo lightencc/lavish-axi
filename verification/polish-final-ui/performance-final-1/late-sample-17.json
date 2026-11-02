@@ -1,0 +1,785 @@
+{
+  "original": {
+    "index": 17,
+    "kind": "session",
+    "label": "POLISH_UI_17_a3814b",
+    "runnerClock": "ui-runner:64153:d7038508-c93b-4a38-aa15-850d80e12805",
+    "browserClock": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+    "status": "failed",
+    "startedRunnerMs": 1613923425.59625,
+    "baseline": {
+      "at": 694444.7000000477,
+      "status": "当前会话",
+      "messageStatus": "草稿 · 尚未发送",
+      "hidden": false,
+      "disabled": false,
+      "error": ""
+    },
+    "nativeClickDispatchRunnerMs": 1613945542.70825,
+    "submitBrowserMs": 699452,
+    "id": "345d78de-fbce-4098-9d40-0b5691fc76d2",
+    "error": "Error: Timed out waiting for real UI/reply\n    at until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:16:153)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/benchmark-ui.mjs:57:14",
+    "finishedRunnerMs": 1614041214.771083
+  },
+  "observed": {
+    "at": 878075.2000000477,
+    "status": "有新回复 · 请刷新查看",
+    "events": [
+      {
+        "at": 694444.7000000477,
+        "status": "当前会话",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": false,
+        "disabled": false,
+        "error": ""
+      },
+      {
+        "at": 699455,
+        "status": "当前会话",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": false,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 699508.3000001907,
+        "status": "已保存 · 等待 agent 接收",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 699510.3000001907,
+        "status": "正在投递",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 699567.8000001907,
+        "status": "agent 正忙，已排队",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 699579.600000143,
+        "status": "agent 正在处理",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      },
+      {
+        "at": 810339.3000001907,
+        "status": "有新回复 · 请刷新查看",
+        "messageStatus": "草稿 · 尚未发送",
+        "hidden": true,
+        "disabled": true,
+        "error": ""
+      }
+    ],
+    "click": 699452
+  },
+  "review": {
+    "binding": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+      "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+      "session": "01a18e12-942e-7785-aa90-41587c940bbb"
+    },
+    "epoch": 1,
+    "generation": 2,
+    "mode": "bridge",
+    "version": 122,
+    "lifecycle": "open",
+    "messages": [
+      {
+        "id": "a40af770-c6c8-47ad-b5e2-690572ad4506",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_1_680018，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"e0d52fd3-1740-4074-ab75-19a38253d8a5\",\"round_id\":\"d78ba762-2491-43ba-bf55-d57aee873459\"}",
+        "digest": "0bc8d8a6ada5390c212f493b2e4a40599893d18748bcae9a4ea9387449274fba",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_1_680018，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "e0d52fd3-1740-4074-ab75-19a38253d8a5",
+          "round_id": "d78ba762-2491-43ba-bf55-d57aee873459",
+          "prompt_id": "a40af770-c6c8-47ad-b5e2-690572ad4506"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "a40af770-c6c8-47ad-b5e2-690572ad4506",
+          "digest": "0bc8d8a6ada5390c212f493b2e4a40599893d18748bcae9a4ea9387449274fba",
+          "attempt": "d640e098-2da9-4572-8211-74dde1952dc7"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "ce33a31c-5748-44ab-92eb-95f125d6ae40",
+        "inputEvidence": "4f2c4ff8",
+        "replyEvidence": "4f2c4ff8",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_1_680018",
+          "version": 1,
+          "evidenceId": "4f2c4ff8",
+          "reply_to": "a40af770-c6c8-47ad-b5e2-690572ad4506"
+        }
+      },
+      {
+        "id": "57b2a47d-0535-40a2-8965-13548ca724a3",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_2_77295a，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"5772895d-a7f9-4dbb-a6e8-78685599ffe8\",\"round_id\":\"933e5412-ecbc-494c-bb7f-ee26358eccf9\"}",
+        "digest": "17764aa1c7bb8b0c78efaa249463b1b8e78070f6b9ea0736cb623c2b353e6b8b",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_2_77295a，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "5772895d-a7f9-4dbb-a6e8-78685599ffe8",
+          "round_id": "933e5412-ecbc-494c-bb7f-ee26358eccf9",
+          "prompt_id": "57b2a47d-0535-40a2-8965-13548ca724a3"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "57b2a47d-0535-40a2-8965-13548ca724a3",
+          "digest": "17764aa1c7bb8b0c78efaa249463b1b8e78070f6b9ea0736cb623c2b353e6b8b",
+          "attempt": "830c2bfc-a402-41e4-92e2-9c4730e0ff40"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "e89460a1-2c23-49fa-b559-839e128fbd62",
+        "inputEvidence": "3276f2f9",
+        "replyEvidence": "3276f2f9",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_2_77295a",
+          "version": 1,
+          "evidenceId": "3276f2f9",
+          "reply_to": "57b2a47d-0535-40a2-8965-13548ca724a3"
+        }
+      },
+      {
+        "id": "b46c04d3-27c8-4904-b032-0b2bf4d4c24f",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_3_cc1e6b，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"22cafb19-c4c0-4c5f-bf88-dca6b953a18c\",\"round_id\":\"ff0d023f-55b7-4afc-bb22-f1d8c70ca0e4\"}",
+        "digest": "89b7042f78b148c71b7bce9f65826ed86aed4a08a7b01d61b55e51c3e01505e4",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_3_cc1e6b，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "22cafb19-c4c0-4c5f-bf88-dca6b953a18c",
+          "round_id": "ff0d023f-55b7-4afc-bb22-f1d8c70ca0e4",
+          "prompt_id": "b46c04d3-27c8-4904-b032-0b2bf4d4c24f"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "b46c04d3-27c8-4904-b032-0b2bf4d4c24f",
+          "digest": "89b7042f78b148c71b7bce9f65826ed86aed4a08a7b01d61b55e51c3e01505e4",
+          "attempt": "b4e209eb-ba49-4cdd-b673-d0ab856d8e15"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "37b7e121-c265-4a00-bd99-e1e3764d2914",
+        "inputEvidence": "96860bb9",
+        "replyEvidence": "96860bb9",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_3_cc1e6b",
+          "version": 1,
+          "evidenceId": "96860bb9",
+          "reply_to": "b46c04d3-27c8-4904-b032-0b2bf4d4c24f"
+        }
+      },
+      {
+        "id": "63526563-4799-43dd-969f-ce74acb4b1cb",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_4_843efd，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"227b96ef-7053-4bc8-b796-c74e47eb7abf\",\"round_id\":\"eea880e9-df4b-4c52-a7f0-d009ffad822b\"}",
+        "digest": "0a82c082f3726e69ccff6526ecb91610f397e60b81cf83b11d7a4cc41d6b6c87",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_4_843efd，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "227b96ef-7053-4bc8-b796-c74e47eb7abf",
+          "round_id": "eea880e9-df4b-4c52-a7f0-d009ffad822b",
+          "prompt_id": "63526563-4799-43dd-969f-ce74acb4b1cb"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "63526563-4799-43dd-969f-ce74acb4b1cb",
+          "digest": "0a82c082f3726e69ccff6526ecb91610f397e60b81cf83b11d7a4cc41d6b6c87",
+          "attempt": "8601525e-5748-4ee4-806c-747a5ae01896"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "80d22f6c-6844-4889-8b05-e5e8de597034",
+        "inputEvidence": "2d0c1fa2",
+        "replyEvidence": "2d0c1fa2",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_4_843efd",
+          "version": 1,
+          "evidenceId": "2d0c1fa2",
+          "reply_to": "63526563-4799-43dd-969f-ce74acb4b1cb"
+        }
+      },
+      {
+        "id": "78c0ef6a-d503-4e22-97d8-1d11e23aaead",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_5_760745，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"c4bbd691-3010-4896-b466-b6d84d00e20b\",\"round_id\":\"9e1a4b38-cb5c-44e3-b9bd-b1fbc81a1c52\"}",
+        "digest": "7df517b748db6ebebf5a211273e5fe8a829b62c358af5a820480f476771c5cd0",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_5_760745，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "c4bbd691-3010-4896-b466-b6d84d00e20b",
+          "round_id": "9e1a4b38-cb5c-44e3-b9bd-b1fbc81a1c52",
+          "prompt_id": "78c0ef6a-d503-4e22-97d8-1d11e23aaead"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "78c0ef6a-d503-4e22-97d8-1d11e23aaead",
+          "digest": "7df517b748db6ebebf5a211273e5fe8a829b62c358af5a820480f476771c5cd0",
+          "attempt": "99046c16-ab27-4eef-b6fe-ad798a41016f"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "a0226397-474e-4b65-a32d-468abe6c8011",
+        "inputEvidence": "51492a2f",
+        "replyEvidence": "51492a2f",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_5_760745",
+          "version": 1,
+          "evidenceId": "51492a2f",
+          "reply_to": "78c0ef6a-d503-4e22-97d8-1d11e23aaead"
+        }
+      },
+      {
+        "id": "ecfa542f-bd80-41db-95d1-0baed6669828",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_6_24a80c，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"278127e6-f27b-4615-acd1-52926b78e2f4\",\"round_id\":\"f096f138-2391-4107-bae4-818e7f4bcae8\"}",
+        "digest": "0bc2adffa163b589ff5613f12687a3f6257f2ba53f393c42c8a9e27fd5696bc4",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_6_24a80c，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "278127e6-f27b-4615-acd1-52926b78e2f4",
+          "round_id": "f096f138-2391-4107-bae4-818e7f4bcae8",
+          "prompt_id": "ecfa542f-bd80-41db-95d1-0baed6669828"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "ecfa542f-bd80-41db-95d1-0baed6669828",
+          "digest": "0bc2adffa163b589ff5613f12687a3f6257f2ba53f393c42c8a9e27fd5696bc4",
+          "attempt": "c227f53d-117e-4665-8efe-39152a6d4858"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "d647439f-26d1-48ff-aec9-7ed1d1120d32",
+        "inputEvidence": "5c0bb09d",
+        "replyEvidence": "5c0bb09d",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_6_24a80c",
+          "version": 1,
+          "evidenceId": "5c0bb09d",
+          "reply_to": "ecfa542f-bd80-41db-95d1-0baed6669828"
+        }
+      },
+      {
+        "id": "fbd8e402-5c9f-4fc0-ab5c-8325046a39d0",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_7_4ea4ba，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"6cca8144-4e00-42f4-8c1d-53ccbeff932b\",\"round_id\":\"046c6628-e217-43ad-b8a2-9dd1fd223f30\"}",
+        "digest": "b7c770c30693f5287da2cbcf19410a79fc702a931378eb81678832f1a144b742",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_7_4ea4ba，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "6cca8144-4e00-42f4-8c1d-53ccbeff932b",
+          "round_id": "046c6628-e217-43ad-b8a2-9dd1fd223f30",
+          "prompt_id": "fbd8e402-5c9f-4fc0-ab5c-8325046a39d0"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "fbd8e402-5c9f-4fc0-ab5c-8325046a39d0",
+          "digest": "b7c770c30693f5287da2cbcf19410a79fc702a931378eb81678832f1a144b742",
+          "attempt": "56b9515c-0495-4ef3-bf5b-eafe7f8fe411"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "2972886b-be66-4dcd-b17f-405b6b6cb626",
+        "inputEvidence": "8ac5954e",
+        "replyEvidence": "8ac5954e",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_7_4ea4ba",
+          "version": 1,
+          "evidenceId": "8ac5954e",
+          "reply_to": "fbd8e402-5c9f-4fc0-ab5c-8325046a39d0"
+        }
+      },
+      {
+        "id": "749ccb37-4eb3-495c-ab41-af1c6031b3d6",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_8_7fccbc，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"da3b460a-e656-4540-b7f6-7c82a9bdd2c5\",\"round_id\":\"fc55f602-3120-41a4-ae5d-0eb272b9b8f2\"}",
+        "digest": "08f56b25eb79467ee1506feb53e77ac845a60dcdf60b4620d856104397ac3163",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_8_7fccbc，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "da3b460a-e656-4540-b7f6-7c82a9bdd2c5",
+          "round_id": "fc55f602-3120-41a4-ae5d-0eb272b9b8f2",
+          "prompt_id": "749ccb37-4eb3-495c-ab41-af1c6031b3d6"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "749ccb37-4eb3-495c-ab41-af1c6031b3d6",
+          "digest": "08f56b25eb79467ee1506feb53e77ac845a60dcdf60b4620d856104397ac3163",
+          "attempt": "5f58eda5-b876-45ca-bfa5-035bdcd73ba5"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "5e47c83b-d57e-4287-96d2-8568b936ca1a",
+        "inputEvidence": "c640ec64",
+        "replyEvidence": "c640ec64",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_8_7fccbc",
+          "version": 1,
+          "evidenceId": "c640ec64",
+          "reply_to": "749ccb37-4eb3-495c-ab41-af1c6031b3d6"
+        }
+      },
+      {
+        "id": "6b7dc376-34ff-4c02-9cdb-24e5a630de36",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_9_b9691a，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"d63954e4-5b80-4782-b477-beca0f70a703\",\"round_id\":\"a25df4d8-e9e5-4985-a57a-807cbfbd3128\"}",
+        "digest": "6270302c024b15151f1a477ad64893d99cb561a8126c7e4fa21da778b75608a8",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_9_b9691a，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "d63954e4-5b80-4782-b477-beca0f70a703",
+          "round_id": "a25df4d8-e9e5-4985-a57a-807cbfbd3128",
+          "prompt_id": "6b7dc376-34ff-4c02-9cdb-24e5a630de36"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "6b7dc376-34ff-4c02-9cdb-24e5a630de36",
+          "digest": "6270302c024b15151f1a477ad64893d99cb561a8126c7e4fa21da778b75608a8",
+          "attempt": "6101497a-3126-4bf0-8dc8-a6a080a5764e"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "55319b4c-6898-4975-bd24-f19832a6c684",
+        "inputEvidence": "9f59c000",
+        "replyEvidence": "9f59c000",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_9_b9691a",
+          "version": 1,
+          "evidenceId": "9f59c000",
+          "reply_to": "6b7dc376-34ff-4c02-9cdb-24e5a630de36"
+        }
+      },
+      {
+        "id": "547a3c34-0ffc-4d83-afc5-210b0fd7b6f1",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_10_5dd0d6，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"8fdd85c2-617b-4843-8d0b-9a0e668e54d2\",\"round_id\":\"09225d18-be71-4a7c-8c86-b8bf673c8250\"}",
+        "digest": "cb1bf88210dec359239680fa11414873ef14d3c149e9491cd8eb8dbb42625851",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_10_5dd0d6，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "8fdd85c2-617b-4843-8d0b-9a0e668e54d2",
+          "round_id": "09225d18-be71-4a7c-8c86-b8bf673c8250",
+          "prompt_id": "547a3c34-0ffc-4d83-afc5-210b0fd7b6f1"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "547a3c34-0ffc-4d83-afc5-210b0fd7b6f1",
+          "digest": "cb1bf88210dec359239680fa11414873ef14d3c149e9491cd8eb8dbb42625851",
+          "attempt": "bb3fcb68-b790-4198-b3a0-f6a036e4ad2e"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "003168f8-0eef-43e4-9d59-d2695f8f281a",
+        "inputEvidence": "3376852f",
+        "replyEvidence": "3376852f",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_10_5dd0d6",
+          "version": 1,
+          "evidenceId": "3376852f",
+          "reply_to": "547a3c34-0ffc-4d83-afc5-210b0fd7b6f1"
+        }
+      },
+      {
+        "id": "45177af2-bdf5-4855-a76a-028f87a50042",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_11_482e54，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"c5549d42-1227-45f7-829d-3acbaf89659b\",\"round_id\":\"acfd5554-36ab-4978-9175-42e737454732\"}",
+        "digest": "15bfcc53f1164f9dbed0e77a9f12da2929f3edaf138960c0cfce91c3b9ad2a58",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_11_482e54，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "c5549d42-1227-45f7-829d-3acbaf89659b",
+          "round_id": "acfd5554-36ab-4978-9175-42e737454732",
+          "prompt_id": "45177af2-bdf5-4855-a76a-028f87a50042"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "45177af2-bdf5-4855-a76a-028f87a50042",
+          "digest": "15bfcc53f1164f9dbed0e77a9f12da2929f3edaf138960c0cfce91c3b9ad2a58",
+          "attempt": "11dbf720-44c5-4fa5-bd10-09fac5694b23"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "bab6c5f6-abb0-4568-8155-18433019249b",
+        "inputEvidence": "521fef6b",
+        "replyEvidence": "521fef6b",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_11_482e54",
+          "version": 1,
+          "evidenceId": "521fef6b",
+          "reply_to": "45177af2-bdf5-4855-a76a-028f87a50042"
+        }
+      },
+      {
+        "id": "593c9b88-6eb7-4020-bd7a-4e92f0ffcd90",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_12_722e00，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"d890ae08-99dc-4253-a1e9-5e60cfed7499\",\"round_id\":\"2a7e8439-5c29-4964-9d96-d0e29ed8699e\"}",
+        "digest": "0912a541127fe7c092e6138912d363231e2d0f9f06f041f7f8a38f584dfdcb6b",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_12_722e00，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "d890ae08-99dc-4253-a1e9-5e60cfed7499",
+          "round_id": "2a7e8439-5c29-4964-9d96-d0e29ed8699e",
+          "prompt_id": "593c9b88-6eb7-4020-bd7a-4e92f0ffcd90"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "593c9b88-6eb7-4020-bd7a-4e92f0ffcd90",
+          "digest": "0912a541127fe7c092e6138912d363231e2d0f9f06f041f7f8a38f584dfdcb6b",
+          "attempt": "887f63d2-43dd-4cb6-86b2-188bd150a273"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "86182204-b369-4433-909a-5638b2f03518",
+        "inputEvidence": "c2112fb3",
+        "replyEvidence": "c2112fb3",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_12_722e00",
+          "version": 1,
+          "evidenceId": "c2112fb3",
+          "reply_to": "593c9b88-6eb7-4020-bd7a-4e92f0ffcd90"
+        }
+      },
+      {
+        "id": "232c03d3-b840-417a-b032-66c689714c4e",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_13_c7673b，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"8fb7b43f-e09c-4f49-8baa-74ef8a2f0c5a\",\"round_id\":\"ad9c2d22-d68a-46fe-9500-be4a1be648e0\"}",
+        "digest": "8d9724d38529ff4c677b0e834c249f3c6829c587b2c2dc45b61993840f944ab1",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_13_c7673b，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "8fb7b43f-e09c-4f49-8baa-74ef8a2f0c5a",
+          "round_id": "ad9c2d22-d68a-46fe-9500-be4a1be648e0",
+          "prompt_id": "232c03d3-b840-417a-b032-66c689714c4e"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "232c03d3-b840-417a-b032-66c689714c4e",
+          "digest": "8d9724d38529ff4c677b0e834c249f3c6829c587b2c2dc45b61993840f944ab1",
+          "attempt": "89aa02bb-7678-4fea-acd9-bb5d006eabad"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "f2720dd3-60a4-450b-83e5-99c8fc44ff48",
+        "inputEvidence": "3e0ee22c",
+        "replyEvidence": "3e0ee22c",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_13_c7673b",
+          "version": 1,
+          "evidenceId": "3e0ee22c",
+          "reply_to": "232c03d3-b840-417a-b032-66c689714c4e"
+        }
+      },
+      {
+        "id": "99fbbe0e-261d-4696-ae11-cd30d71af5b6",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_14_4d2bfa，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"156d85fd-09ed-406d-b84c-55763c22f656\",\"round_id\":\"7b04cce5-f686-49a1-b6cc-a06719512cb5\"}",
+        "digest": "62c4ac30f00d07970252a6c8e6e7775498ddf8b8fba0324ac069c33a5ece0b7d",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_14_4d2bfa，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "156d85fd-09ed-406d-b84c-55763c22f656",
+          "round_id": "7b04cce5-f686-49a1-b6cc-a06719512cb5",
+          "prompt_id": "99fbbe0e-261d-4696-ae11-cd30d71af5b6"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "99fbbe0e-261d-4696-ae11-cd30d71af5b6",
+          "digest": "62c4ac30f00d07970252a6c8e6e7775498ddf8b8fba0324ac069c33a5ece0b7d",
+          "attempt": "e8e68e14-a6af-424d-b4b9-3018d00146b8"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "78fe2e41-9dbd-4c85-aa6a-a52fe804dfcd",
+        "inputEvidence": "b0e5b4cf",
+        "replyEvidence": "b0e5b4cf",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_14_4d2bfa",
+          "version": 1,
+          "evidenceId": "b0e5b4cf",
+          "reply_to": "99fbbe0e-261d-4696-ae11-cd30d71af5b6"
+        }
+      },
+      {
+        "id": "5baa2e52-5b3f-478f-a8c4-45ed8897daf0",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_15_619f1a，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"27325e9c-4101-4697-938e-1d36b555aea7\",\"round_id\":\"850f83d2-f587-46a7-ba2e-4b4ac790eb1c\"}",
+        "digest": "f694bcf691ede22d955450f97f83798a631bdaf0b451a12ea29711878dfd0509",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_15_619f1a，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "27325e9c-4101-4697-938e-1d36b555aea7",
+          "round_id": "850f83d2-f587-46a7-ba2e-4b4ac790eb1c",
+          "prompt_id": "5baa2e52-5b3f-478f-a8c4-45ed8897daf0"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "5baa2e52-5b3f-478f-a8c4-45ed8897daf0",
+          "digest": "f694bcf691ede22d955450f97f83798a631bdaf0b451a12ea29711878dfd0509",
+          "attempt": "b45c5ca9-9903-4b30-95a1-187addb11667"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "1300bc4b-6be8-42bc-8b70-7f0eeb5760af",
+        "inputEvidence": "4837a96f",
+        "replyEvidence": "4837a96f",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_15_619f1a",
+          "version": 1,
+          "evidenceId": "4837a96f",
+          "reply_to": "5baa2e52-5b3f-478f-a8c4-45ed8897daf0"
+        }
+      },
+      {
+        "id": "0af5cd39-30d6-46db-856f-ee805f22da29",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_16_10dceb，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"55d80556-2313-4260-8d6c-023a674c9563\",\"round_id\":\"946650cf-12ff-491c-a8f4-9f570dad6a26\"}",
+        "digest": "04b58ef625d983d62345a5c2de0b9e6ed575de763d40fb0d08603e4c5535694c",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_16_10dceb，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "55d80556-2313-4260-8d6c-023a674c9563",
+          "round_id": "946650cf-12ff-491c-a8f4-9f570dad6a26",
+          "prompt_id": "0af5cd39-30d6-46db-856f-ee805f22da29"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "0af5cd39-30d6-46db-856f-ee805f22da29",
+          "digest": "04b58ef625d983d62345a5c2de0b9e6ed575de763d40fb0d08603e4c5535694c",
+          "attempt": "3da799cc-20e4-4f63-b60f-7724e3022b9e"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "6c69093d-2b19-41c9-8586-d9dad2441ebe",
+        "inputEvidence": "626336b7",
+        "replyEvidence": "626336b7",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_16_10dceb",
+          "version": 1,
+          "evidenceId": "626336b7",
+          "reply_to": "0af5cd39-30d6-46db-856f-ee805f22da29"
+        }
+      },
+      {
+        "id": "345d78de-fbce-4098-9d40-0b5691fc76d2",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_17_a3814b，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"4e42fb91-e8cf-40ff-85ae-056aeef40c0b\",\"round_id\":\"eea56667-4625-41dd-a5dd-9ef08d1504c4\"}",
+        "digest": "c16a460ae99abc05d4483c3d0c4385a1b08dbced08728e4e64e749d40934a706",
+        "prompt": {
+          "uid": "",
+          "prompt": "请只回复 POLISH_UI_17_a3814b，不要修改文件或调用工具。",
+          "scope": "session",
+          "comment_id": "4e42fb91-e8cf-40ff-85ae-056aeef40c0b",
+          "round_id": "eea56667-4625-41dd-a5dd-9ef08d1504c4",
+          "prompt_id": "345d78de-fbce-4098-9d40-0b5691fc76d2"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "resolved": false,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+          "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+          "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+          "epoch": 1,
+          "generation": 2,
+          "mode": "bridge",
+          "id": "345d78de-fbce-4098-9d40-0b5691fc76d2",
+          "digest": "c16a460ae99abc05d4483c3d0c4385a1b08dbced08728e4e64e749d40934a706",
+          "attempt": "9fba7473-9590-46f1-9d03-cdcd4e2956a0"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "f894aaf9-b596-4fe8-bb22-d73f0a4e98c9",
+        "inputEvidence": "2af18ead",
+        "replyEvidence": "2af18ead",
+        "executionUnknown": false,
+        "reply": {
+          "text": "POLISH_UI_17_a3814b",
+          "version": 1,
+          "evidenceId": "2af18ead",
+          "reply_to": "345d78de-fbce-4098-9d40-0b5691fc76d2"
+        }
+      }
+    ],
+    "end": null,
+    "artifact_load_token": "4vq4xcvIsLLpub_ELat2rULoA6JS4SZ-",
+    "artifact_digest": "c1ab2883b1f4aa7a8abb8ee39593f57c30fcd5480c32ecaeb2013bcfacf2f234",
+    "artifact_revision": 18
+  }
+}

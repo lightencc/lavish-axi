@@ -1,0 +1,8 @@
+{
+  "run": "e1d577f1",
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "startedAt": 1617063343.328708,
+  "success": false,
+  "error": "Error: CDP timeout Page.captureScreenshot\n    at Timeout._onTimeout (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/cdp.mjs:9:146)\n    at listOnTimeout (node:internal/timers:685:17)\n    at process.processTimers (node:internal/timers:618:7)",
+  "finishedAt": 1617102086.562833
+}

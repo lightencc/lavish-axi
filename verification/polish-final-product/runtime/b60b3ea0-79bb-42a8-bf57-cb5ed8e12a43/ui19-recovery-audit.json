@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+  "state": "replied",
+  "reply": {
+    "text": "POLISH_UI_19_10ec37",
+    "version": 1,
+    "evidenceId": "720fd31d",
+    "reply_to": "c03c89d3-f2df-44b1-9390-9d7365330d32"
+  },
+  "input_count_before": 19,
+  "input_count_after": 19,
+  "same_exact_input_entries": true,
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "new_launch": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/launches/c4212554-dbab-4e1e-b1b1-96d553159883"
+}

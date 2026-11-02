@@ -1,0 +1,7 @@
+{
+  "stage": "host_reply_persisted",
+  "match": {
+    "id": "fault-host_reply_persisted"
+  },
+  "occurrence": 1
+}

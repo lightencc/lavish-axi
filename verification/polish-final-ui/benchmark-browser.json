@@ -1,0 +1,17 @@
+{
+  "daemonPid": 351,
+  "chromePid": 427,
+  "profile": "/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/agent-browser-chrome-b990d307-0db5-4542-8169-5c7e45e835f1",
+  "portFile": "/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/agent-browser-chrome-b990d307-0db5-4542-8169-5c7e45e835f1/DevToolsActivePort",
+  "port": 62593,
+  "target": {
+    "description": "",
+    "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@ef35003457e93c278f911a334b06e4a5f8967e06/inspector.html?ws=127.0.0.1:62593/devtools/page/AF9BFDF56B85E66AF2DE3209DB4BE64A",
+    "faviconUrl": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%92%8E</text></svg>",
+    "id": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+    "title": "Polish final verification · Polish",
+    "type": "page",
+    "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:62593/devtools/page/AF9BFDF56B85E66AF2DE3209DB4BE64A"
+  }
+}

@@ -1,0 +1,1 @@
+test/poll-delivery-output.test.js(17,27): error TS2339: Property 'delivery' does not exist on type '{ session: { file: string; status: string; session_ended?: boolean; ended_by?: string; }; prompts?: any[]; artifact_failures?: any[]; next_step?: string; dom_snapshot?: string; }'.

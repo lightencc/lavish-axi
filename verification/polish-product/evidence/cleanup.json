@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-31T01:38:56.247527",
+  "test_ports_listening": {
+    "51324": false,
+    "52260": false,
+    "59232": false,
+    "56947": false
+  },
+  "processes_observed": {
+    "13392": "",
+    "63080": "",
+    "67173": "",
+    "68512": "",
+    "33191": "",
+    "95933": "node"
+  },
+  "note": "Original prototype processes were never signalled. PID 33191 was already absent on observation; PID 95933 remains running."
+}

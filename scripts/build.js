@@ -24,6 +24,45 @@ await esbuild.build({
 await chmod("dist/cli.mjs", 0o755);
 
 await esbuild.build({
+  entryPoints: ["bin/polish.js"],
+  outfile: "dist/polish",
+  bundle: true,
+  packages: "external",
+  platform: "node",
+  format: "esm",
+  target: "node22",
+});
+await chmod("dist/polish", 0o755);
+await esbuild.build({
+  entryPoints: ["bin/polish-claude.js"],
+  outfile: "dist/claude-channel.mjs",
+  bundle: true,
+  packages: "external",
+  platform: "node",
+  format: "esm",
+  target: "node22",
+});
+await esbuild.build({
+  entryPoints: ["bin/polish-claude-launch.js"],
+  outfile: "dist/polish-claude",
+  bundle: true,
+  packages: "external",
+  platform: "node",
+  format: "esm",
+  target: "node22",
+});
+await chmod("dist/polish-claude", 0o755);
+await esbuild.build({
+  entryPoints: ["src/pi-extension.js"],
+  outfile: "dist/pi-extension.mjs",
+  bundle: true,
+  packages: "external",
+  platform: "node",
+  format: "esm",
+  target: "node22",
+});
+
+await esbuild.build({
   entryPoints: ["bin/lavish-axi-server.js"],
   outfile: "dist/server.mjs",
   bundle: true,
@@ -47,6 +86,8 @@ await chmod("dist/server.mjs", 0o755);
 
 await copyFile("src/chrome-client.js", "dist/chrome-client.js");
 await copyFile("src/chrome.css", "dist/chrome.css");
+await copyFile("src/polish-client.js", "dist/polish-client.js");
+await copyFile("src/polish.css", "dist/polish.css");
 await mkdir("dist/design", { recursive: true });
 await copyFile("node_modules/daisyui/daisyui.css", "dist/design/daisyui.css");
 await copyFile("node_modules/daisyui/themes.css", "dist/design/daisyui-themes.css");
@@ -82,4 +123,20 @@ for (const family of fontFamilies) {
   await cp(`node_modules/@excalidraw/excalidraw/dist/prod/fonts/${family}`, `dist/whiteboard/fonts/${family}`, {
     recursive: true,
   });
+}
+
+// Separate Claude layout; never reinterpret the root Agent Plugins manifest.
+await cp("integrations/claude", "dist/claude-plugin", { recursive: true });
+await cp("integrations/claude/.claude/skills", "dist/claude-plugin/skills", { recursive: true });
+await mkdir("dist/claude-plugin/runtime", { recursive: true });
+for (const asset of [
+  "claude-channel.mjs",
+  "chrome-client.js",
+  "chrome.css",
+  "polish-client.js",
+  "polish.css",
+  "design",
+  "whiteboard",
+]) {
+  await cp(`dist/${asset}`, `dist/claude-plugin/runtime/${asset}`, { recursive: true });
 }

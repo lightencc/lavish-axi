@@ -1,0 +1,14 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/72da5867-9009-40b4-abd9-64056256fb76",
+  "stage": "accepted_durable",
+  "id": "fault-accepted_durable",
+  "capturedAt": "2026-10-30T19:17:34.311Z",
+  "pass": true,
+  "checks": [
+    "real crash fired at exact requested source stage",
+    "same session and same URL endpoint after owned restart",
+    "single durable logical message and single exact Pi input",
+    "exact reply recovered",
+    "crash preceded dispatch"
+  ]
+}

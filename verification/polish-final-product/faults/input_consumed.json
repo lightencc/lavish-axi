@@ -1,0 +1,7 @@
+{
+  "stage": "input_consumed",
+  "match": {
+    "id": "fault-input_consumed"
+  },
+  "occurrence": 1
+}

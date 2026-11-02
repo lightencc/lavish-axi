@@ -1,0 +1,1580 @@
+{
+  "startedAt": "2026-10-30T12:09:44.386Z",
+  "samples": [
+    {
+      "n": 0,
+      "marker": "webperf-ae66cb52-0d08-4ccc-b08c-4aa032bc34e4",
+      "start": 97712.70000004768,
+      "at": "2026-10-30T12:09:44.386Z",
+      "expected": "ACK_0",
+      "sendingUiMs": 2.0999999046325684,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6",
+        "digest": "7d5cb0c95238ef9ce125c3622ced17d088ba0742f88e4ca45499547309b58cce",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 66.09999990463257,
+      "id": "pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6",
+      "submitResource": {
+        "startTime": 97714.59999990463,
+        "responseEnd": 97766.5,
+        "duration": 51.90000009536743,
+        "clickToResponseMs": 53.799999952316284
+      },
+      "processingUiMs": 168,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "7d5cb0c95238ef9ce125c3622ced17d088ba0742f88e4ca45499547309b58cce",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "6749f1af"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "91fb00cd",
+          "text": "ACK_0",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 8
+      },
+      "totalMs": 1200.5,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 1,
+      "marker": "webperf-621300e8-46e6-49a8-9ad0-4352bfdef20d",
+      "start": 98913.89999985695,
+      "at": "2026-10-30T12:09:45.587Z",
+      "expected": "ACK_1",
+      "sendingUiMs": 0.7000000476837158,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-d13d94be-34c9-4f80-ad31-25e20ec9dfd0",
+        "digest": "279884e50b37c41bc8ae4c9619d7fdb9901166f46453c58c5309d720f4eff8d8",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 45.5,
+      "id": "pi3-d13d94be-34c9-4f80-ad31-25e20ec9dfd0",
+      "submitResource": {
+        "startTime": 98914.59999990463,
+        "responseEnd": 98950.89999985695,
+        "duration": 36.299999952316284,
+        "clickToResponseMs": 37
+      },
+      "processingUiMs": 250.90000009536743,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-d13d94be-34c9-4f80-ad31-25e20ec9dfd0",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "279884e50b37c41bc8ae4c9619d7fdb9901166f46453c58c5309d720f4eff8d8",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "bc44bb98"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "4ef0fa3b",
+          "text": "ACK_1",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 12
+      },
+      "totalMs": 1584.9000000953674,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 2,
+      "marker": "webperf-152d685b-cc5f-4dd1-9e3b-4138ee6db2fd",
+      "start": 100498.79999995232,
+      "at": "2026-10-30T12:09:47.172Z",
+      "expected": "ACK_2",
+      "sendingUiMs": 4.900000095367432,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-967d05d5-8f87-4b99-bc6d-f8a09c2a4202",
+        "digest": "0d72cbc83f3c5c7a9f5b0f22769b5189f1daf83bde3e4ed679874ba432370c1c",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 47.700000047683716,
+      "id": "pi3-967d05d5-8f87-4b99-bc6d-f8a09c2a4202",
+      "submitResource": {
+        "startTime": 100503.5,
+        "responseEnd": 100542,
+        "duration": 38.5,
+        "clickToResponseMs": 43.200000047683716
+      },
+      "processingUiMs": 249.90000009536743,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-967d05d5-8f87-4b99-bc6d-f8a09c2a4202",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "0d72cbc83f3c5c7a9f5b0f22769b5189f1daf83bde3e4ed679874ba432370c1c",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "1ab5767e"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "41f96de2",
+          "text": "ACK_2",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 16
+      },
+      "totalMs": 1375.7999999523163,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 3,
+      "marker": "webperf-fbf991c9-1283-4d1d-89c7-94ca7150183b",
+      "start": 101874.70000004768,
+      "at": "2026-10-30T12:09:48.548Z",
+      "expected": "ACK_3",
+      "sendingUiMs": 1.6999998092651367,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-030c69e7-1215-49d6-8bfe-5b5477d82cec",
+        "digest": "f4edade418ea50fc729db8a5c49a58a17849909fd038bafc854cbf4d9e7fecd9",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 67,
+      "id": "pi3-030c69e7-1215-49d6-8bfe-5b5477d82cec",
+      "submitResource": {
+        "startTime": 101876.20000004768,
+        "responseEnd": 101923.89999985695,
+        "duration": 47.69999980926514,
+        "clickToResponseMs": 49.19999980926514
+      },
+      "processingUiMs": 169.09999990463257,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-030c69e7-1215-49d6-8bfe-5b5477d82cec",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "f4edade418ea50fc729db8a5c49a58a17849909fd038bafc854cbf4d9e7fecd9",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "6bb16cf4"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "82c861d6",
+          "text": "ACK_3",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 20
+      },
+      "totalMs": 1400.3999998569489,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 4,
+      "marker": "webperf-bb1bd9c9-2ea3-49f6-896c-00892cdc2f88",
+      "start": 103275.09999990463,
+      "at": "2026-10-30T12:09:49.949Z",
+      "expected": "ACK_4",
+      "sendingUiMs": 1.6000001430511475,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-06089a24-12e7-4b4e-8d01-2169ec759481",
+        "digest": "ee643596d2f68302f9aa93676a104e112efadd8cff227655359ff86455b59841",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.40000009536743,
+      "id": "pi3-06089a24-12e7-4b4e-8d01-2169ec759481",
+      "submitResource": {
+        "startTime": 103276.39999985695,
+        "responseEnd": 103318,
+        "duration": 41.60000014305115,
+        "clickToResponseMs": 42.90000009536743
+      },
+      "processingUiMs": 246.60000014305115,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-06089a24-12e7-4b4e-8d01-2169ec759481",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "ee643596d2f68302f9aa93676a104e112efadd8cff227655359ff86455b59841",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "77a42145"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "067b0edb",
+          "text": "ACK_4",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 24
+      },
+      "totalMs": 1374.4000000953674,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 5,
+      "marker": "webperf-46e1a846-814a-4eb6-95df-1a0a983e1019",
+      "start": 104649.59999990463,
+      "at": "2026-10-30T12:09:51.323Z",
+      "expected": "ACK_5",
+      "sendingUiMs": 2.1000001430511475,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-d9a0dbff-1481-4abd-afe9-ff864c9df214",
+        "digest": "8e08444d13aedf8e3ec876ceb9dd2056510406f24bbe4cfe6e48ff879e81751e",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 45.5,
+      "id": "pi3-d9a0dbff-1481-4abd-afe9-ff864c9df214",
+      "submitResource": {
+        "startTime": 104651.39999985695,
+        "responseEnd": 104690.20000004768,
+        "duration": 38.80000019073486,
+        "clickToResponseMs": 40.60000014305115
+      },
+      "processingUiMs": 249.79999995231628,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-d9a0dbff-1481-4abd-afe9-ff864c9df214",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "8e08444d13aedf8e3ec876ceb9dd2056510406f24bbe4cfe6e48ff879e81751e",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "cce321ea"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "ea199225",
+          "text": "ACK_5",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 28
+      },
+      "totalMs": 1378.2000000476837,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 6,
+      "marker": "webperf-28443883-519a-4447-82b6-6ad90b68ff5e",
+      "start": 106027.79999995232,
+      "at": "2026-10-30T12:09:52.701Z",
+      "expected": "ACK_6",
+      "sendingUiMs": 0.5999999046325684,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-854af88b-44ee-4544-96d1-ef9a8e9b0c0a",
+        "digest": "99e1cc833c7c687c39414fb12eee31514904a7cb75670ed14bb5e5b911bb8e26",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 42.59999990463257,
+      "id": "pi3-854af88b-44ee-4544-96d1-ef9a8e9b0c0a",
+      "submitResource": {
+        "startTime": 106028.29999995232,
+        "responseEnd": 106061.70000004768,
+        "duration": 33.40000009536743,
+        "clickToResponseMs": 33.90000009536743
+      },
+      "processingUiMs": 144.59999990463257,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-854af88b-44ee-4544-96d1-ef9a8e9b0c0a",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "99e1cc833c7c687c39414fb12eee31514904a7cb75670ed14bb5e5b911bb8e26",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "d0cef797"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "c50b2370",
+          "text": "ACK_6",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 32
+      },
+      "totalMs": 1271.5999999046326,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 7,
+      "marker": "webperf-4550e03d-a6fc-4da9-bb83-1ff03dc237b1",
+      "start": 107299.39999985695,
+      "at": "2026-10-30T12:09:53.973Z",
+      "expected": "ACK_7",
+      "sendingUiMs": 1.6000001430511475,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-6fb4553c-d1f7-4d9d-ae1a-6e1b91d77dbc",
+        "digest": "83ce7d940946ed15dca2112b9cf9d60cb130ccebbfc290f54a463349d8bc5fb6",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.200000047683716,
+      "id": "pi3-6fb4553c-d1f7-4d9d-ae1a-6e1b91d77dbc",
+      "submitResource": {
+        "startTime": 107300.79999995232,
+        "responseEnd": 107341,
+        "duration": 40.200000047683716,
+        "clickToResponseMs": 41.60000014305115
+      },
+      "processingUiMs": 248,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-6fb4553c-d1f7-4d9d-ae1a-6e1b91d77dbc",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "83ce7d940946ed15dca2112b9cf9d60cb130ccebbfc290f54a463349d8bc5fb6",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "9187354e"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "9a267e4f",
+          "text": "ACK_7",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 36
+      },
+      "totalMs": 1477,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 8,
+      "marker": "webperf-9c172c21-132d-4843-94ce-6fffe79aa399",
+      "start": 108776.5,
+      "at": "2026-10-30T12:09:55.450Z",
+      "expected": "ACK_8",
+      "sendingUiMs": 2.0999999046325684,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-6ed0a794-209a-4213-b1e6-4115e3d038a2",
+        "digest": "1cd9646fe1a442fc866530cae72ed001a49de58a42c058754aeb44b24636f224",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 66.59999990463257,
+      "id": "pi3-6ed0a794-209a-4213-b1e6-4115e3d038a2",
+      "submitResource": {
+        "startTime": 108778.20000004768,
+        "responseEnd": 108826.39999985695,
+        "duration": 48.19999980926514,
+        "clickToResponseMs": 49.89999985694885
+      },
+      "processingUiMs": 169.5,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-6ed0a794-209a-4213-b1e6-4115e3d038a2",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "1cd9646fe1a442fc866530cae72ed001a49de58a42c058754aeb44b24636f224",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "c6e9095c"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "f15c3f1d",
+          "text": "ACK_8",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 40
+      },
+      "totalMs": 1194.5999999046326,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 9,
+      "marker": "webperf-13bd283a-9a0d-4353-99c8-a4f55e9f91ed",
+      "start": 109971.09999990463,
+      "at": "2026-10-30T12:09:56.645Z",
+      "expected": "ACK_9",
+      "sendingUiMs": 2,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-25575c86-731a-49df-9371-3a7d197f0045",
+        "digest": "c095b984380e5ab1498165688ecfd5b8382eedabb68568ed1ca613ab8f80d538",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.40000009536743,
+      "id": "pi3-25575c86-731a-49df-9371-3a7d197f0045",
+      "submitResource": {
+        "startTime": 109972.79999995232,
+        "responseEnd": 110014.09999990463,
+        "duration": 41.299999952316284,
+        "clickToResponseMs": 43
+      },
+      "processingUiMs": 248.70000004768372,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-25575c86-731a-49df-9371-3a7d197f0045",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "c095b984380e5ab1498165688ecfd5b8382eedabb68568ed1ca613ab8f80d538",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "6cdd0118"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "6f62e9c4",
+          "text": "ACK_9",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 44
+      },
+      "totalMs": 1374.4000000953674,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 10,
+      "marker": "webperf-88ae78d6-9d4a-4397-9ded-530db7a5c4e6",
+      "start": 111345.5,
+      "at": "2026-10-30T12:09:58.019Z",
+      "expected": "ACK_10",
+      "sendingUiMs": 1.7000000476837158,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-72f40886-f012-436b-b5a8-e1d6a623177c",
+        "digest": "3d248cacc657b50028ce9966dbff5f3b40f74fa5fa84bb93719fd00e854264af",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.799999952316284,
+      "id": "pi3-72f40886-f012-436b-b5a8-e1d6a623177c",
+      "submitResource": {
+        "startTime": 111347,
+        "responseEnd": 111387.20000004768,
+        "duration": 40.200000047683716,
+        "clickToResponseMs": 41.700000047683716
+      },
+      "processingUiMs": 248.70000004768372,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-72f40886-f012-436b-b5a8-e1d6a623177c",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "3d248cacc657b50028ce9966dbff5f3b40f74fa5fa84bb93719fd00e854264af",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "4d79389d"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "12f34ef3",
+          "text": "ACK_10",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 48
+      },
+      "totalMs": 1472,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 11,
+      "marker": "webperf-8f411024-f531-4d40-9be5-ad80cdfeaf88",
+      "start": 112817.59999990463,
+      "at": "2026-10-30T12:09:59.491Z",
+      "expected": "ACK_11",
+      "sendingUiMs": 2.700000047683716,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-7113c0d4-608c-4af1-9c1a-9c6ea2f302a0",
+        "digest": "a49a1d105ee16f83aff869b99630196e272ee19757a681130f74e97d399f09c8",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 45.90000009536743,
+      "id": "pi3-7113c0d4-608c-4af1-9c1a-9c6ea2f302a0",
+      "submitResource": {
+        "startTime": 112820,
+        "responseEnd": 112859.09999990463,
+        "duration": 39.09999990463257,
+        "clickToResponseMs": 41.5
+      },
+      "processingUiMs": 147.79999995231628,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-7113c0d4-608c-4af1-9c1a-9c6ea2f302a0",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "a49a1d105ee16f83aff869b99630196e272ee19757a681130f74e97d399f09c8",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "dc3c00f0"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "e6f6906d",
+          "text": "ACK_11",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 52
+      },
+      "totalMs": 1273.2000000476837,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 12,
+      "marker": "webperf-207cd528-bb68-4e6b-ad1b-236038e4fbcf",
+      "start": 114090.79999995232,
+      "at": "2026-10-30T12:10:00.764Z",
+      "expected": "ACK_12",
+      "sendingUiMs": 1.4000000953674316,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-98cc82aa-c632-4594-bae1-fc5a680759ed",
+        "digest": "361b91ef200c33e709612784343707034a4fcfe253c3324ea24502a38d041983",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 64.5,
+      "id": "pi3-98cc82aa-c632-4594-bae1-fc5a680759ed",
+      "submitResource": {
+        "startTime": 114092,
+        "responseEnd": 114133.79999995232,
+        "duration": 41.799999952316284,
+        "clickToResponseMs": 43
+      },
+      "processingUiMs": 268.90000009536743,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-98cc82aa-c632-4594-bae1-fc5a680759ed",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "361b91ef200c33e709612784343707034a4fcfe253c3324ea24502a38d041983",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "b4a0cbed"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "e4a352ad",
+          "text": "ACK_12",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 56
+      },
+      "totalMs": 1394,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 13,
+      "marker": "webperf-ae426157-d5c1-4902-8f44-5b89824d8b43",
+      "start": 115484.79999995232,
+      "at": "2026-10-30T12:10:02.158Z",
+      "expected": "ACK_13",
+      "sendingUiMs": 2,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-28e4c059-0bd7-4ca5-85cd-cf5f209897ac",
+        "digest": "b74e6492e855c61fc80b2c9d5f801422fc8f179d931d33aef2eca3112b610204",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 43.90000009536743,
+      "id": "pi3-28e4c059-0bd7-4ca5-85cd-cf5f209897ac",
+      "submitResource": {
+        "startTime": 115486.59999990463,
+        "responseEnd": 115526.39999985695,
+        "duration": 39.799999952316284,
+        "clickToResponseMs": 41.59999990463257
+      },
+      "processingUiMs": 248.90000009536743,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-28e4c059-0bd7-4ca5-85cd-cf5f209897ac",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "b74e6492e855c61fc80b2c9d5f801422fc8f179d931d33aef2eca3112b610204",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "b4f10dd8"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "d3c1a266",
+          "text": "ACK_13",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 60
+      },
+      "totalMs": 3214.7000000476837,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 14,
+      "marker": "webperf-ce5bb0d3-b666-45f0-ba2f-96dc8aeeb105",
+      "start": 118699.5,
+      "at": "2026-10-30T12:10:05.373Z",
+      "expected": "ACK_14",
+      "sendingUiMs": 2.0999999046325684,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-d0590875-81a3-477c-a007-d96b9625d419",
+        "digest": "f4e6dbdee7ac944ed945fd100a94704235d8c93a1765b64540c7a51204f866a3",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 67,
+      "id": "pi3-d0590875-81a3-477c-a007-d96b9625d419",
+      "submitResource": {
+        "startTime": 118701.29999995232,
+        "responseEnd": 118749.20000004768,
+        "duration": 47.90000009536743,
+        "clickToResponseMs": 49.700000047683716
+      },
+      "processingUiMs": 169.70000004768372,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-d0590875-81a3-477c-a007-d96b9625d419",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "f4e6dbdee7ac944ed945fd100a94704235d8c93a1765b64540c7a51204f866a3",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "9659ca04"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "6b08a667",
+          "text": "ACK_14",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 64
+      },
+      "totalMs": 1291.8999998569489,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 15,
+      "marker": "webperf-d4a0d49a-47fc-4d58-a677-b959819e41f5",
+      "start": 119991.39999985695,
+      "at": "2026-10-30T12:10:06.665Z",
+      "expected": "ACK_15",
+      "sendingUiMs": 1.8000001907348633,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-df5a0ee3-bcf6-4a38-9769-87f3f753054b",
+        "digest": "1f370bf9f488f54b93092535254c23419caed96ddf6ef574f6c86567b1e10b1b",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 43.5,
+      "id": "pi3-df5a0ee3-bcf6-4a38-9769-87f3f753054b",
+      "submitResource": {
+        "startTime": 119992.89999985695,
+        "responseEnd": 120031.39999985695,
+        "duration": 38.5,
+        "clickToResponseMs": 40
+      },
+      "processingUiMs": 247.20000004768372,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-df5a0ee3-bcf6-4a38-9769-87f3f753054b",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "1f370bf9f488f54b93092535254c23419caed96ddf6ef574f6c86567b1e10b1b",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "aa44d703"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "b04ec645",
+          "text": "ACK_15",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 68
+      },
+      "totalMs": 1273,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 16,
+      "marker": "webperf-dfd6a2d9-335c-4295-ab65-f6817abd1409",
+      "start": 121264.39999985695,
+      "at": "2026-10-30T12:10:07.938Z",
+      "expected": "ACK_16",
+      "sendingUiMs": 2.200000047683716,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-7a8e5889-d83d-4936-82fc-e9512be1a1d5",
+        "digest": "23464660ca586238c5b1e769eec76724f2bf74cca0f5de3e1a0670c3dbc54392",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 67.70000004768372,
+      "id": "pi3-7a8e5889-d83d-4936-82fc-e9512be1a1d5",
+      "submitResource": {
+        "startTime": 121266.29999995232,
+        "responseEnd": 121309,
+        "duration": 42.700000047683716,
+        "clickToResponseMs": 44.60000014305115
+      },
+      "processingUiMs": 273.30000019073486,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-7a8e5889-d83d-4936-82fc-e9512be1a1d5",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "23464660ca586238c5b1e769eec76724f2bf74cca0f5de3e1a0670c3dbc54392",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "f33b1ea0"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "0b868804",
+          "text": "ACK_16",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 72
+      },
+      "totalMs": 1400.8000001907349,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 17,
+      "marker": "webperf-e0573c57-f65a-4563-a8e9-5f146e06aceb",
+      "start": 122665.20000004768,
+      "at": "2026-10-30T12:10:09.339Z",
+      "expected": "ACK_17",
+      "sendingUiMs": 2.1999998092651367,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-feedf73e-199c-41f9-92c6-0ca9c6ec477d",
+        "digest": "cc08ba0cacde30430b9f003356923098151aa9d8f03d12f46fe5f52139c22fa4",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 67.39999985694885,
+      "id": "pi3-feedf73e-199c-41f9-92c6-0ca9c6ec477d",
+      "processingUiMs": 169.09999990463257,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-feedf73e-199c-41f9-92c6-0ca9c6ec477d",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "cc08ba0cacde30430b9f003356923098151aa9d8f03d12f46fe5f52139c22fa4",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "38a4629f"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "df43d68b",
+          "text": "ACK_17",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 76
+      },
+      "totalMs": 1402.1999998092651,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 18,
+      "marker": "webperf-d15f6f66-3fac-4d4c-badb-dc5c68a6322e",
+      "start": 124067.39999985695,
+      "at": "2026-10-30T12:10:10.741Z",
+      "expected": "ACK_18",
+      "sendingUiMs": 2.200000047683716,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-18500861-1eaf-4d3c-bc86-a5c96a466e6e",
+        "digest": "dda6806339ad6001cfbdf565f383584948fbd4164111e3e33c572e923c598e57",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.5,
+      "id": "pi3-18500861-1eaf-4d3c-bc86-a5c96a466e6e",
+      "processingUiMs": 145,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-18500861-1eaf-4d3c-bc86-a5c96a466e6e",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "dda6806339ad6001cfbdf565f383584948fbd4164111e3e33c572e923c598e57",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "56557ff2"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "77936387",
+          "text": "ACK_18",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 80
+      },
+      "totalMs": 1270.7000000476837,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 19,
+      "marker": "webperf-488381b7-b2a3-418a-8f4a-b25fc1955740",
+      "start": 125338.09999990463,
+      "at": "2026-10-30T12:10:12.012Z",
+      "expected": "ACK_19",
+      "sendingUiMs": 2.1000001430511475,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-e7fa54a6-0e3f-436d-9bb1-1f3eb600fe17",
+        "digest": "7f441040aa886a7c66b6b4a5df91f0e4674bcd390b0f9a386817312739b2ae2f",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 46,
+      "id": "pi3-e7fa54a6-0e3f-436d-9bb1-1f3eb600fe17",
+      "processingUiMs": 250.29999995231628,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-e7fa54a6-0e3f-436d-9bb1-1f3eb600fe17",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "7f441040aa886a7c66b6b4a5df91f0e4674bcd390b0f9a386817312739b2ae2f",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "63257a9c"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "f8f74528",
+          "text": "ACK_19",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 84
+      },
+      "totalMs": 1377.9000000953674,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 20,
+      "marker": "webperf-a13d02cd-6680-439c-9060-59465cda5084",
+      "start": 126716,
+      "at": "2026-10-30T12:10:13.390Z",
+      "expected": "ACK_20",
+      "sendingUiMs": 1.7999999523162842,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-cb3306d4-49fe-472c-9d42-2999b51722c7",
+        "digest": "80ecffed61bd9e75c26486e3a189059c59f043ba1575a4d5c91f0c3238f269a2",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 67.79999995231628,
+      "id": "pi3-cb3306d4-49fe-472c-9d42-2999b51722c7",
+      "processingUiMs": 169.89999985694885,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-cb3306d4-49fe-472c-9d42-2999b51722c7",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "80ecffed61bd9e75c26486e3a189059c59f043ba1575a4d5c91f0c3238f269a2",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "bb581a61"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "5287916a",
+          "text": "ACK_20",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 88
+      },
+      "totalMs": 1400.7000000476837,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 21,
+      "marker": "webperf-fa056d34-7ad0-4f17-98f4-c2d0230f5f98",
+      "start": 128116.70000004768,
+      "at": "2026-10-30T12:10:14.790Z",
+      "expected": "ACK_21",
+      "sendingUiMs": 2.1999998092651367,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-2f063e70-0303-4c7a-9fa8-a2913fd47ff6",
+        "digest": "32b546155119269bbc0cf41130a7559409308c5cae7bad601cd96bc133bc0a24",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.59999990463257,
+      "id": "pi3-2f063e70-0303-4c7a-9fa8-a2913fd47ff6",
+      "processingUiMs": 247.89999985694885,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-2f063e70-0303-4c7a-9fa8-a2913fd47ff6",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "32b546155119269bbc0cf41130a7559409308c5cae7bad601cd96bc133bc0a24",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "85993c64"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "d39e23cc",
+          "text": "ACK_21",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 92
+      },
+      "totalMs": 1579.1999998092651,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 22,
+      "marker": "webperf-d4b3f39f-0ace-46e6-9a2b-d7cddfe711bb",
+      "start": 129695.89999985695,
+      "at": "2026-10-30T12:10:16.370Z",
+      "expected": "ACK_22",
+      "sendingUiMs": 1.9000000953674316,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-74973081-e3e1-4fa2-b411-fca9b0ec5ef0",
+        "digest": "de0bb05ddde3dbdb0a0f7512e77dd7e60a5b60c42edaf5aebf215bcf2138316c",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.60000014305115,
+      "id": "pi3-74973081-e3e1-4fa2-b411-fca9b0ec5ef0",
+      "processingUiMs": 248.90000009536743,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-74973081-e3e1-4fa2-b411-fca9b0ec5ef0",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "de0bb05ddde3dbdb0a0f7512e77dd7e60a5b60c42edaf5aebf215bcf2138316c",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "2af8e311"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "c8827f24",
+          "text": "ACK_22",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 96
+      },
+      "totalMs": 2396.800000190735,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 23,
+      "marker": "webperf-db219476-02dc-4c84-9e7b-287af2a05cc6",
+      "start": 132092.70000004768,
+      "at": "2026-10-30T12:10:18.766Z",
+      "expected": "ACK_23",
+      "sendingUiMs": 1.2999999523162842,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-668962f2-ba57-435f-86c8-8a9fd30c7fcb",
+        "digest": "cbec71075fa809bc345e1370b1059b30fb7a13ad95125f2cf7c7151a860fc552",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 43.59999990463257,
+      "id": "pi3-668962f2-ba57-435f-86c8-8a9fd30c7fcb",
+      "processingUiMs": 247.89999985694885,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-668962f2-ba57-435f-86c8-8a9fd30c7fcb",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "cbec71075fa809bc345e1370b1059b30fb7a13ad95125f2cf7c7151a860fc552",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "121f128e"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "52d4bd1a",
+          "text": "ACK_23",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 100
+      },
+      "totalMs": 1271.7999999523163,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 24,
+      "marker": "webperf-1446d154-0fb7-42a7-bd57-b9e18992ab84",
+      "start": 133364.5,
+      "at": "2026-10-30T12:10:20.038Z",
+      "expected": "ACK_24",
+      "sendingUiMs": 1.2000000476837158,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-403ffea1-f751-4c47-bb36-8dd19c523606",
+        "digest": "8801e2121b2740342ce479f7f056dc151a8be6f6a30e5a3b2ccaa184b4b75741",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.799999952316284,
+      "id": "pi3-403ffea1-f751-4c47-bb36-8dd19c523606",
+      "processingUiMs": 248,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-403ffea1-f751-4c47-bb36-8dd19c523606",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "8801e2121b2740342ce479f7f056dc151a8be6f6a30e5a3b2ccaa184b4b75741",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "872bce4f"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "646bd685",
+          "text": "ACK_24",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 104
+      },
+      "totalMs": 1475.0999999046326,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 25,
+      "marker": "webperf-3843788b-781c-4c27-9fec-84a6e250d1e8",
+      "start": 134839.59999990463,
+      "at": "2026-10-30T12:10:21.513Z",
+      "expected": "ACK_25",
+      "sendingUiMs": 1.7999999523162842,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-181490b4-e968-4705-a8eb-0e47b48d27a3",
+        "digest": "639058fc0b340f1eb2c0e3a6ca8a17f4d9b312e4047b09d4e83e3c1a8e8674f5",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 42.799999952316284,
+      "id": "pi3-181490b4-e968-4705-a8eb-0e47b48d27a3",
+      "processingUiMs": 246,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-181490b4-e968-4705-a8eb-0e47b48d27a3",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "639058fc0b340f1eb2c0e3a6ca8a17f4d9b312e4047b09d4e83e3c1a8e8674f5",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "c92388ac"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "5d34b902",
+          "text": "ACK_25",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 108
+      },
+      "totalMs": 1370.5,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 26,
+      "marker": "webperf-4b4546a5-d38e-440b-8d8f-1eaf148a7a25",
+      "start": 136210.09999990463,
+      "at": "2026-10-30T12:10:22.884Z",
+      "expected": "ACK_26",
+      "sendingUiMs": 2.200000047683716,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-d4de37ad-f187-4e0e-b2d6-f01578591879",
+        "digest": "7bf966d925031289af0a6ec83203a83feddaadc21a08613662c57ee6bfa70dda",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 66.5,
+      "id": "pi3-d4de37ad-f187-4e0e-b2d6-f01578591879",
+      "processingUiMs": 167.5,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-d4de37ad-f187-4e0e-b2d6-f01578591879",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "7bf966d925031289af0a6ec83203a83feddaadc21a08613662c57ee6bfa70dda",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "79fbacb5"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "656394e6",
+          "text": "ACK_26",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 112
+      },
+      "totalMs": 1396.7000000476837,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 27,
+      "marker": "webperf-4486911d-a814-4dd1-a858-8cd156a905c5",
+      "start": 137606.79999995232,
+      "at": "2026-10-30T12:10:24.281Z",
+      "expected": "ACK_27",
+      "sendingUiMs": 1.5999999046325684,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-402cd496-cac8-4354-8ad5-28a170720fa6",
+        "digest": "41e313018ed519d67d4f27fadb22e59caf401868b8ea90345c8ae1dba391c109",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 44.200000047683716,
+      "id": "pi3-402cd496-cac8-4354-8ad5-28a170720fa6",
+      "processingUiMs": 247.90000009536743,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-402cd496-cac8-4354-8ad5-28a170720fa6",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "41e313018ed519d67d4f27fadb22e59caf401868b8ea90345c8ae1dba391c109",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "a9e0227a"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "404fac34",
+          "text": "ACK_27",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 116
+      },
+      "totalMs": 1474.5999999046326,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 28,
+      "marker": "webperf-1338e403-f8fe-4c73-b4c7-6ca823e55d42",
+      "start": 139081.5,
+      "at": "2026-10-30T12:10:25.755Z",
+      "expected": "ACK_28",
+      "sendingUiMs": 1.3999998569488525,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-d397ca7a-5674-4da1-a76f-2eb1f2d604d8",
+        "digest": "d28779d6802ca2e703ca4ecef48504ba653e92d2bd7d23ab175c3f664fd18f00",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 66,
+      "id": "pi3-d397ca7a-5674-4da1-a76f-2eb1f2d604d8",
+      "processingUiMs": 272.2999999523163,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-d397ca7a-5674-4da1-a76f-2eb1f2d604d8",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "d28779d6802ca2e703ca4ecef48504ba653e92d2bd7d23ab175c3f664fd18f00",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "f21587a1"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "1e0ae307",
+          "text": "ACK_28",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 120
+      },
+      "totalMs": 1400,
+      "matched": true,
+      "result": "pass"
+    },
+    {
+      "n": 29,
+      "marker": "webperf-09160f81-b3ae-47e5-bc2b-b30014ba4aa1",
+      "start": 140481.59999990463,
+      "at": "2026-10-30T12:10:27.155Z",
+      "expected": "ACK_29",
+      "sendingUiMs": 1.2000000476837158,
+      "admission": {
+        "fresh": true,
+        "id": "pi3-feae7b4a-e1d8-4e73-ad2b-0e0a25720507",
+        "digest": "6c20654f4ba7f9dc93bc2121a9a6f28acd3bbf31593fbaa6409e483fca43947f",
+        "hostQueued": true,
+        "state": "accepted",
+        "evidence": "host_extension_fsynced_inbox",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        }
+      },
+      "admissionUiMs": 65.20000004768372,
+      "id": "pi3-feae7b4a-e1d8-4e73-ad2b-0e0a25720507",
+      "processingUiMs": 166.10000014305115,
+      "processingColor": "rgb(212, 107, 8)",
+      "reply": {
+        "id": "pi3-feae7b4a-e1d8-4e73-ad2b-0e0a25720507",
+        "binding": {
+          "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+          "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+        },
+        "digest": "6c20654f4ba7f9dc93bc2121a9a6f28acd3bbf31593fbaa6409e483fca43947f",
+        "state": "replied",
+        "inputStored": true,
+        "inputEntryIds": [
+          "f5d9e14c"
+        ],
+        "delivery": "input_witnessed",
+        "replyVerified": true,
+        "reply": {
+          "entryId": "9f447ec4",
+          "text": "ACK_29",
+          "stopReason": "stop"
+        },
+        "safeToResend": false,
+        "version": 124
+      },
+      "totalMs": 2312.100000143051,
+      "matched": true,
+      "result": "pass"
+    }
+  ],
+  "running": false,
+  "scope": "30 real DOM submissions; query sampling 100ms; no realtime notification claim",
+  "finishedAt": "2026-10-30T12:10:29.467Z"
+}

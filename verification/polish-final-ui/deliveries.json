@@ -1,0 +1,69 @@
+[
+  {
+    "message": {
+      "id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"Verified exact native cross-paragraph selection\",\"selector\":\"main#content\",\"tag\":\"text\",\"text\":\"precise selection begins here and ends later. Beta next paragraph completes\",\"scope\":\"anchored\",\"comment_id\":\"31624bdb-2fd4-4ba3-bb1e-229b87b211be\",\"round_id\":\"b6835056-3fb2-4be4-a0e7-f0131f90f281\",\"target\":{\"type\":\"text-range\",\"text\":\"precise selection begins here and ends later. Beta next paragraph completes\",\"rangeText\":\"precise selection begins here and ends later.Beta next paragraph completes\",\"selector\":\"main#content\",\"commonAncestorSelector\":\"main#content\",\"start\":{\"selector\":\"p#first\",\"path\":[0],\"offset\":6},\"end\":{\"selector\":\"p#second\",\"path\":[0],\"offset\":30}}}",
+      "digest": "c37fe081f253d7bad47e6e10e5aa4b9f7c9827c31c6c3017d40b166417da1437",
+      "prompt": {
+        "uid": "",
+        "prompt": "Verified exact native cross-paragraph selection",
+        "selector": "main#content",
+        "tag": "text",
+        "text": "precise selection begins here and ends later. Beta next paragraph completes",
+        "scope": "anchored",
+        "comment_id": "31624bdb-2fd4-4ba3-bb1e-229b87b211be",
+        "round_id": "b6835056-3fb2-4be4-a0e7-f0131f90f281",
+        "prompt_id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+        "target": {
+          "type": "text-range",
+          "text": "precise selection begins here and ends later. Beta next paragraph completes",
+          "rangeText": "precise selection begins here and ends later.Beta next paragraph completes",
+          "selector": "main#content",
+          "commonAncestorSelector": "main#content",
+          "start": {
+            "selector": "p#first",
+            "path": [
+              0
+            ],
+            "offset": 6
+          },
+          "end": {
+            "selector": "p#second",
+            "path": [
+              0
+            ],
+            "offset": 30
+          }
+        }
+      },
+      "kind": "message",
+      "state": "dispatching",
+      "consumed": false,
+      "resolved": false,
+      "claim": {
+        "artifact": "/private/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-final-ui-gPVgHL/artifact.html",
+        "instance": "isolated-ui",
+        "session": "isolated-ui-session",
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+        "digest": "c37fe081f253d7bad47e6e10e5aa4b9f7c9827c31c6c3017d40b166417da1437",
+        "attempt": "844e4c82-7045-4f2e-84dc-9cbe25bf4f59"
+      },
+      "host_dispatched": true
+    },
+    "claim": {
+      "artifact": "/private/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-final-ui-gPVgHL/artifact.html",
+      "instance": "isolated-ui",
+      "session": "isolated-ui-session",
+      "epoch": 1,
+      "generation": 1,
+      "mode": "bridge",
+      "id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+      "digest": "c37fe081f253d7bad47e6e10e5aa4b9f7c9827c31c6c3017d40b166417da1437",
+      "attempt": "844e4c82-7045-4f2e-84dc-9cbe25bf4f59"
+    }
+  }
+]

@@ -9,6 +9,35 @@ export const SKILL_DESCRIPTION =
 // instructions. The CLI (`lavish-axi --help`, `design`, `playbook`) is the source of truth.
 export const MAX_SKILL_MARKDOWN_CHARS = 4000;
 
+export function createPolishSkillMarkdown() {
+  // Reuse Lavish's discovery/request workflow; only the local command and
+  // existing-file branch differ. The CLI remains the workflow source of truth.
+  return createSkillMarkdown()
+    .replaceAll("name: lavish", "name: polish")
+    .replaceAll("npx -y lavish-axi", "polish")
+    .replaceAll("lavish-axi", "polish")
+    .replaceAll("/lavish", "/polish")
+    .replace("# Lavish Editor", "# Polish")
+    .replace("Lavish Editor opens", "Polish opens")
+    .replace(
+      "for design-direction priority and current snippets",
+      "for Polish-specific visual and interaction guidance",
+    )
+    .replace("for focused artifact guidance", "for Polish-specific artifact guidance")
+    .replace(
+      "You do not need polish installed globally - invoke it with",
+      "Use this fork's local executable (on PATH or its absolute path), never an unrelated upstream package. Invoke it with",
+    )
+    .replace(
+      "If polish output shows a follow-up command starting with `polish`, run it as `polish ...` instead.",
+      "When CLI guidance says `lavish-axi`, run that command with this same local `polish` executable instead. Do not fetch an upstream package.",
+    )
+    .replace(
+      "If the request above is non-empty,",
+      "If the request identifies an existing HTML file, open that existing HTML without regenerating it. Otherwise, if the request above is non-empty,",
+    );
+}
+
 // Agent Skills allows only these top-level frontmatter keys; the reference validator
 // (skills-ref) rejects anything else outright, and an Agent Plugins client skips a skill
 // it cannot validate. Everything else we want to publish has to live under `metadata`.

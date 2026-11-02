@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "scenario": "undurable-new-session-refused-before-binding",
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/1e5f9243-dc7d-4995-a70b-695bd2563b90",
+  "http": {
+    "stage": "http_response",
+    "metadata": {
+      "route": "/api/sessions",
+      "status": 409,
+      "elapsedMs": 23.344482421875,
+      "result": {
+        "error": "PI_SESSION_NOT_DURABLE: 请先在当前 Pi 会话开始一条实际对话，再打开 HTML 评审。"
+      }
+    },
+    "clockID": "supervisor:30030:865d97c8-3c4e-4429-841d-b87f174a3571",
+    "at": 1793387848442.1655,
+    "pid": 30030
+  },
+  "sessions": {},
+  "pi_session_file_exists": false,
+  "own_service_stopped": true
+}

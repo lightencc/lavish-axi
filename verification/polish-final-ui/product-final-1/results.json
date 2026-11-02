@@ -1,0 +1,10 @@
+{
+  "run": "1f43e6fa",
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "startedAt": 1615315896.167541,
+  "pinCompletion": [],
+  "pinStates": [],
+  "success": false,
+  "error": "Error: Timed out\n    at until (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/product-flow.mjs:12:128)\n    at async submit (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/product-flow.mjs:25:179)\n    at async file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/product-flow.mjs:33:16",
+  "finishedAt": 1615423105.1355
+}

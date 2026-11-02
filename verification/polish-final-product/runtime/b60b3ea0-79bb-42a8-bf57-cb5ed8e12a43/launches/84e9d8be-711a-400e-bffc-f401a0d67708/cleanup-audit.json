@@ -1,0 +1,39 @@
+{
+  "pass": true,
+  "at": "2026-10-30T20:15:54.339053+00:00",
+  "ownPidsGone": [
+    42944,
+    42958
+  ],
+  "manifestLivePid": null,
+  "lifecycle": "ended",
+  "sealedConsumed": 34,
+  "uiMessages": 33,
+  "cleanupMarkers": 1,
+  "inputs": {
+    "oldBeforeReopen": 27,
+    "uiNew": 33,
+    "cleanupNew": 1,
+    "total": 61,
+    "allPrevious60Unchanged": true
+  },
+  "stopBeforeDeadlineMs": 1468597.4448242188,
+  "exit": {
+    "stage": "pi_exit",
+    "metadata": {
+      "code": 143,
+      "signal": null,
+      "pid": 42958
+    },
+    "clockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+    "at": 1793391354048.7156,
+    "pid": 42944
+  },
+  "frozenSourceSummarySHA256": "ae1c5b89f8456c5d8217e9e431969d70d1534bf2a75c1e348a2ba051f2e405b0",
+  "sourceSummaryRecomputedAfterCleanup": {
+    "sameExact33Intervals": true,
+    "uiSamples": 33,
+    "uiEnough": true,
+    "reason": "Clarified RPC-only review_sample fields; excluded end marker through exact artifact/epoch/id filter"
+  }
+}

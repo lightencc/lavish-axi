@@ -1,0 +1,10 @@
+{
+  "dist/pi-extension.mjs": "ae3028b6958b8e3c78e20bf1de7e32e7f38b6037fecd118ca763b3538579fdba",
+  "dist/polish.mjs": "040acc3b475c630fa878651a20385a0ef06c72805a92dc3eed7b97ab13e6b0b5",
+  "dist/chrome-client.js": "88cbb648c27c595803276e785d38076cc637c149bb1048f30e92b2df2f734432",
+  "dist/server.mjs": "93e5aff4c7b0713ea052f27a4a414aa77e18f22fade5bc6e6c5298f1c0d34cab",
+  "dist/polish-client.js": "b1866648540f28273637bee8bc8475e23008c26a63d95ce17c4d713d5d4d41a3",
+  "dist/chrome.css": "85bca4f9d3760ae320b4b5ec21b963b6ca16c10c6d4953f0d728ac1d66ff99aa",
+  "dist/cli.mjs": "2051cdf713209cbf8b05ac76658b8b99c81ce375a3fa029972532b357908792a",
+  "dist/polish.css": "2c4c087da4b78ac9b0c09d2719ae11d9b6e00d5802c1c61474b9de4dc3417d95"
+}

@@ -1,0 +1,12 @@
+✔ bound take uses one persistent arbiter: mode and generation reject; response is not consumption (59.339917ms)
+✔ restart preserves unknown attempt; positive query can recover but empty or mismatched evidence cannot (57.546042ms)
+✔ end seals existing/final/marker; only consumption ends; delivered reply-unknown does not block (123.514333ms)
+✔ same ID different payload conflicts; bound restore never bypasses dispatch ledger; legacy stays unbound (36.644791ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 320.583708

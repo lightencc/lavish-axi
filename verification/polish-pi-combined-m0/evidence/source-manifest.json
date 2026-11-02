@@ -1,0 +1,9 @@
+{
+  "src/cli.js": "0eed6140c5c0a6a3ab95cb5e64fcf906977c54ff4192250f0d4fdcd3195b929b",
+  "src/server.js": "c47b1f705d22c0096a102c3f66faf70cc543d4274bc2189d0bf5860914785d1d",
+  "src/session-store.js": "8701bff31977e2fefa4c23fdb9d0fe3ba194630efdfa6e1569b7a044efae28dd",
+  "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/package.json": "df6883685382d6a914e5797232744c26579fe7db5576ea0e9c859d018ca2d54e",
+  "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/core/agent-session.js": "436e8be3bbab2db475ce30bb5d0bb30f0046b19a3476f8cd57b8133e68891162",
+  "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/core/session-manager.js": "046b6a1109ac3f0ed893bb85bf0648709362fa926a5da75761216cf2fcf9d926",
+  "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/docs/rpc.md": "37a03d180115460a0a275022f4aeabef1e5345458df6a9b6e8a6de18474de720"
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "polish-final-product-v1",
+  "runID": "160fb06a-f190-456b-b404-f0123ad8eb5c",
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c",
+  "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/artifact.html",
+  "livePid": null,
+  "launch": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/launches/42cc8e79-3094-4dc3-a68b-a8f8a3987836",
+  "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/sessions/2026-10-30T18-31-28-740Z_01a18e14-c6e4-758f-860d-a8a86ff94d01.jsonl",
+  "session": "01a18e14-c6e4-758f-860d-a8a86ff94d01"
+}

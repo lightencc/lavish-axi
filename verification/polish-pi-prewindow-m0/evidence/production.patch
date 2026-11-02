@@ -1,0 +1,1419 @@
+diff --git a/README.md b/README.md
+index ded6c58..0e04f8d 100644
+--- a/README.md
++++ b/README.md
+@@ -268,6 +268,8 @@ pnpm link
+ 
+ ## CLI Reference
+ 
++The isolated Polish Pi M0 harness can explicitly bind a fresh artifact session to a shared delivery ledger. For those sessions only, poll output includes a `delivery` identity, and writing the response does not confirm agent consumption. The harness handles exact host receipts and final-batch ending; unassociated legacy reply/end/reopen operations are refused. There is no public CLI flag enabling this experimental mode. Ordinary Lavish sessions retain the commands below.
++
+ | Command                         | Description                                                                                                                                                                                                                                                                                                                                               |
+ | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | `lavish-axi`                    | Show current sessions and usage guidance.                                                                                                                                                                                                                                                                                                                 |
+diff --git a/docs/invariants.md b/docs/invariants.md
+index f052ffd..95c49c3 100644
+--- a/docs/invariants.md
++++ b/docs/invariants.md
+@@ -26,6 +26,12 @@ That makes the session key **derived, not secret**: anyone who learns the artifa
+ 
+ ### Request flow
+ 
++Polish Pi M0 uses an explicit, internal `SessionStore.bindFeedback` on a fresh artifact session. `review_delivery` is persisted in the same state file as prompts, under the same store lock. `createPollHandler` is the production `/api/poll` handler extracted for non-listening tests; both its immediate and event-driven takes pass a store-issued poll mode/generation lease. The bridge uses the same `takeFeedback` with a bridge lease. Binding is opt-in; ordinary sessions keep legacy batch delivery and restore semantics.
++
++For bound sessions, a take atomically persists the exact message/attempt before removing it from the pending queue, and a separate durable host reservation prevents duplicated poll responses from calling the host twice. Response bytes and host admission are not consumption. Only trusted in-process `recordFeedback`/`reconcileFeedback` adapters can record a matching binding/epoch/id/digest/attempt and `context_with_system` evidence; there is no public receipt route. A disconnected take becomes unknown, never restored to accepted. Recovery increments the generation and retains unknown attempts; positive host queries may reconcile original attempts without restoring stale write authority. `recoverFeedback` assumes the existing single server-owner model and is not a PID-only takeover or a cross-process locking API. Bound-state writes use fsync/rename/directory-fsync and fail closed after a write error. Unresolved attachment references remain retained in the ledger.
++
++Bound ending uses `beginFeedbackEnd`: existing accepted messages, final feedback, and the marker are fixed together. Only all members consumed makes it ended; missing reply association does not undo consumption. Unassociated legacy end/reply and bound reopen are refused rather than emitting premature terminal events. `upsertSession` preserves the ledger. Tests in `test/feedback-delivery.test.js` and `test/poll-delivery.test.js` exercise the real store and handler with an explicit HTTP boundary fake; they do not establish TCP/browser behavior. Full M0 status and window scope are maintained in the Polish verification reports.
++
+ 1. `lavish-axi <file.html>` (`openCommand`) -> POST `/api/sessions` -> `SessionStore.upsertSession` -> the CLI opens the returned session URL in the browser.
+    `--no-gate` sends `noGate`, returns a one-open URL with `?no-gate=1`, and leaves the stored canonical session URL unchanged.
+    Sessions record who ended them: `ended_by: "user"` for browser-initiated ends (including the composer's send-and-end, which posts final prompts and the `endSession` flag to `/api/:key/prompts` atomically) and `ended_by: "agent"` for `lavish-axi end <file>`.
+diff --git a/src/cli.js b/src/cli.js
+index 8a2b1ae..287bbb1 100644
+--- a/src/cli.js
++++ b/src/cli.js
+@@ -585,6 +585,7 @@ export function startPollWaitReporter({
+  *   session: { file: string, status: string, session_ended?: boolean, ended_by?: string },
+  *   prompts?: any[],
+  *   artifact_failures?: any[],
++ *   delivery?: Record<string, unknown>,
+  *   next_step?: string,
+  *   dom_snapshot?: string,
+  * }}
+@@ -608,6 +609,7 @@ export function createPollOutput({ file, response, agent = "generic" }) {
+       prompts: response.prompts || [],
+       ...(artifactFailures.length > 0 ? { artifact_failures: artifactFailures } : {}),
+       next_step: createFeedbackNextStep(file, artifactFailures, sessionEnded, endedBy, response.prompts || [], agent),
++      ...(response.delivery ? { delivery: response.delivery } : {}),
+       dom_snapshot: response.dom_snapshot || "",
+     };
+   }
+diff --git a/src/server.js b/src/server.js
+index d673a91..9d9a4b1 100644
+--- a/src/server.js
++++ b/src/server.js
+@@ -537,7 +537,7 @@ export async function serve({
+   }
+ 
+   function finishFeedbackDelivery(key, result) {
+-    if (result.status !== "feedback") return;
++    if (result.status !== "feedback" || result.delivery) return;
+     markFeedbackDelivered(key, activePolls, deliveredFeedback, events);
+     // The take already stamped the batch Seen in state.json (docs/delivery-acks.md); tell the open
+     // tabs only now, on the path that is about to write the response, never from the destructive
+@@ -554,15 +554,6 @@ export async function serve({
+     }
+   }
+ 
+-  // What the agent receives. `delivery_seq` is the store's own bookkeeping for undoing a take's Seen
+-  // stamps on a closed poll; it means nothing to an agent and stays off the wire.
+-  function agentFacingFeedback(result) {
+-    if (!result || result.status !== "feedback" || !("delivery_seq" in result)) return result;
+-    const rest = { ...result };
+-    delete rest.delivery_seq;
+-    return rest;
+-  }
+-
+   // `takeFeedback` is destructive: it clears the batch from `state.json` before anything is
+   // written to the response. A client that disconnected while that take was in flight would
+   // otherwise lose the feedback for good, so put it back verbatim through the store's `restore`
+@@ -576,6 +567,7 @@ export async function serve({
+   // feedback that is sitting in `state.json`. Emitting wakes it exactly like a fresh `/prompts`.
+   async function restoreClosedFeedback(key, result) {
+     if (result.status !== "feedback") return;
++    if (await restoreClaimedFeedback(store, key, result)) return;
+     const prompts = Array.isArray(result.prompts) ? result.prompts : [];
+     let session = null;
+     let restoreError = null;
+@@ -878,261 +870,22 @@ export async function serve({
+     return session;
+   }
+ 
+-  const handlePoll = async (req, res, next) => {
+-    const takeover = req.query.takeover === "1";
+-    const agentReply =
+-      req.method === "POST" && req.body?.agent_reply !== undefined ? String(req.body.agent_reply) : null;
+-    if (takeover && req.method !== "POST") {
+-      res.status(405).json({ error: "poll takeover requires POST" });
+-      return;
+-    }
+-    if (req.method === "POST" && (agentReply === null ? !takeover : !agentReply.trim())) {
+-      res.status(405).json({ error: "POST /api/poll requires agent_reply or takeover=1" });
+-      return;
+-    }
+-    // `close` is subscribed before the first `await` and re-checked after the listeners are armed,
+-    // because a client that disconnects while `takeFeedback` is in flight would otherwise arrive
+-    // too late for its own cleanup: the handler marks the poll active afterwards and nothing left
+-    // would clear it, leaving presence stuck on "listening" for an agent that is already gone.
+-    let requestClosed = Boolean(req.aborted || (req.method !== "POST" && req.destroyed));
+-    let cleanupPoll = null;
+-    let claimedHolder = null;
+-    const onRequestClose = () => {
+-      // A POST request emits `close` when its JSON body stream ends, before the long-poll
+-      // response has been written. `aborted` distinguishes that normal parser lifecycle from a
+-      // client that actually went away.
+-      if (req.method === "POST" && !req.aborted) return;
+-      requestClosed = true;
+-      cleanupPoll?.();
+-    };
+-    const onResponseClose = () => {
+-      // Once the body has been parsed, a POST request's close event is no longer useful: the
+-      // response socket is the authoritative signal for a client that aborts its long-poll.
+-      if (req.method === "POST" && !res.writableEnded) {
+-        requestClosed = true;
+-        cleanupPoll?.();
+-      }
+-    };
+-    res.on("close", onResponseClose);
+-    const detachRequestClose = () => req.off("close", onRequestClose);
+-    req.on("close", onRequestClose);
+-    try {
+-      const file = await canonicalFile(String(req.query.file || ""));
+-      const key = sessionKey(file);
+-      const ownerValue = typeof req.query.owner === "string" ? req.query.owner.trim() : "";
+-      if (ownerValue.toLowerCase() === "none" || ownerValue.startsWith("-")) {
+-        detachRequestClose();
+-        res.status(400).json({
+-          status: "error",
+-          code: "VALIDATION_ERROR",
+-          error: "--owner none is reserved; pass a different listener label",
+-        });
+-        return;
+-      }
+-      const owner = ownerValue || null;
+-      if (hasPresentOriginOrReferer(req) && !isSameOriginRequest(req, allowedHostnames, allowAnyHostname)) {
+-        detachRequestClose();
+-        res.status(403).json({ error: "cross-origin poll takeover rejected" });
+-        return;
+-      }
+-      const { holder, previousPresence, conflict, missing } = await pollOwnershipLock.runExclusive(async () => {
+-        const currentHolder = activePolls.get(key);
+-        if (currentHolder && !takeover) return { conflict: listenerConflict(currentHolder, "LISTENER_ACTIVE") };
+-        const nextHolder = { key, owner, startedAt: Date.now(), replaced: false, replace: null };
+-        claimedHolder = nextHolder;
+-        const priorPresence = presenceSignature(key, activePolls, deliveredFeedback);
+-        if (currentHolder) {
+-          // Install the successor before releasing the old response so its cleanup cannot emit a
+-          // transient "waiting" state or clear the successor's listener ownership.
+-          currentHolder.replaced = true;
+-          activePolls.set(key, nextHolder);
+-          currentHolder.replace?.();
+-        } else {
+-          activePolls.set(key, nextHolder);
+-        }
+-        // Attaching a fresh round retires the prior delivery marker; releasing a poll never does.
+-        deliveredFeedback.delete(key);
+-        if (agentReply !== null) {
+-          const session = await publishAgentReply(key, agentReply);
+-          if (!session) {
+-            activePolls.delete(key);
+-            return { missing: true };
+-          }
+-        }
+-        return { holder: nextHolder, previousPresence: priorPresence };
+-      });
+-      if (conflict) {
+-        detachRequestClose();
+-        res.status(409).json(conflict);
+-        return;
+-      }
+-      if (missing) {
+-        detachRequestClose();
+-        res.status(404).json({ error: "session not found" });
+-        return;
+-      }
+-      const timeoutMs =
+-        req.query.timeoutMs === undefined ? null : Math.max(0, Math.min(Number(req.query.timeoutMs || 0), 2147483647));
+-      const immediate = await store.takeFeedback(key);
+-      if (immediate.status !== "waiting") {
+-        if (holder.replaced) {
+-          await restoreClosedFeedback(key, immediate);
+-          detachRequestClose();
+-          res.json(listenerConflict(holder, "LISTENER_REPLACED"));
+-          releasePollListener(holder, activePolls, deliveredFeedback, events);
+-          return;
+-        }
+-        if (requestClosed || res.writableEnded) {
+-          await restoreClosedFeedback(key, immediate);
+-          releasePollListener(holder, activePolls, deliveredFeedback, events);
+-          detachRequestClose();
+-          return;
+-        }
+-        finishFeedbackDelivery(key, immediate);
+-        releasePollListener(holder, activePolls, deliveredFeedback, events);
+-        if (immediate.session_ended) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
+-        detachRequestClose();
+-        res.json(agentFacingFeedback(immediate));
+-        return;
+-      }
+-      if (holder.replaced) {
+-        detachRequestClose();
+-        res.json(listenerConflict(holder, "LISTENER_REPLACED"));
+-        releasePollListener(holder, activePolls, deliveredFeedback, events);
+-        return;
+-      }
+-      if (requestClosed || res.writableEnded) {
+-        releasePollListener(holder, activePolls, deliveredFeedback, events);
+-        detachRequestClose();
+-        return;
+-      }
+-      const streamHeartbeat = timeoutMs === null;
+-      let heartbeat = null;
+-      if (streamHeartbeat) {
+-        res.status(200).type("application/json").set("Lavish-Poll-State", "listening");
+-        res.write(" ");
+-        heartbeat = setInterval(() => {
+-          if (!res.writableEnded) res.write(" ");
+-        }, pollHeartbeatMs);
+-        heartbeat.unref?.();
+-      }
+-      refreshIdleTimer();
+-      let timer = null;
+-      let cleaned = false;
+-      let responding = false;
+-      const cleanup = () => {
+-        if (cleaned) return;
+-        cleaned = true;
+-        if (timer) clearTimeout(timer);
+-        if (heartbeat) clearInterval(heartbeat);
+-        events.off("feedback", onFeedback);
+-        events.off("ended", onFeedback);
+-        events.off("browser-disconnected", onBrowserDisconnected);
+-        releasePollListener(holder, activePolls, deliveredFeedback, events);
+-        if (!activePolls.has(key)) {
+-          clearBrowserDisconnectTimer(key);
+-          browserDisconnectPending.delete(key);
+-        }
+-        refreshIdleTimer();
+-        cleanupPoll = null;
+-        detachRequestClose();
+-        res.off("close", onResponseClose);
+-      };
+-      const respondReplacement = () => {
+-        if (responding || res.writableEnded) return;
+-        responding = true;
+-        try {
+-          const replacement = listenerConflict(holder, "LISTENER_REPLACED");
+-          if (streamHeartbeat) res.end(JSON.stringify(replacement));
+-          else res.json(replacement);
+-        } finally {
+-          cleanup();
+-        }
+-      };
+-      holder.replace = respondReplacement;
+-      const respond = async (forcedResult = null) => {
+-        if (responding || res.writableEnded) return;
+-        responding = true;
+-        let finalSessionEnded = false;
+-        try {
+-          const result = await store.takeFeedback(key);
+-          // Feedback or an explicit end that raced the grace timer wins. The disconnect result
+-          // is only the non-terminal replacement for a poll that would otherwise keep waiting.
+-          const responseResult = forcedResult && result.status === "waiting" ? forcedResult : result;
+-          finalSessionEnded = responseResult?.session_ended === true;
+-          if (holder.replaced) {
+-            if (responseResult.status !== "waiting") await restoreClosedFeedback(key, responseResult);
+-            if (!requestClosed && !res.writableEnded) {
+-              if (streamHeartbeat) res.end(JSON.stringify(listenerConflict(holder, "LISTENER_REPLACED")));
+-              else res.json(listenerConflict(holder, "LISTENER_REPLACED"));
+-            }
+-            return;
+-          }
+-          if (requestClosed || res.writableEnded) {
+-            await restoreClosedFeedback(key, responseResult);
+-            return;
+-          }
+-          finishFeedbackDelivery(key, responseResult);
+-          const agentResponse = agentFacingFeedback(responseResult);
+-          if (streamHeartbeat) {
+-            res.end(JSON.stringify(agentResponse));
+-          } else {
+-            res.json(agentResponse);
+-          }
+-        } finally {
+-          cleanup();
+-          if (finalSessionEnded) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
+-        }
+-      };
+-      function handleRespondError(error) {
+-        if (streamHeartbeat) {
+-          cleanup();
+-          if (!res.writableEnded) res.destroy(error);
+-          return;
+-        }
+-        next(error);
+-      }
+-      const onFeedback = (changedKey) => {
+-        if (changedKey !== key || res.writableEnded) {
+-          return;
+-        }
+-        respond().catch(handleRespondError);
+-      };
+-      const onBrowserDisconnected = (changedKey) => {
+-        if (changedKey !== key || res.writableEnded) return;
+-        respond({ status: "browser_disconnected" }).catch(handleRespondError);
+-      };
+-      events.on("feedback", onFeedback);
+-      events.on("ended", onFeedback);
+-      events.on("browser-disconnected", onBrowserDisconnected);
+-      cleanupPoll = cleanup;
+-      if (holder.replaced) {
+-        respondReplacement();
+-        return;
+-      }
+-      if (requestClosed || res.writableEnded) {
+-        cleanup();
+-        return;
+-      }
+-      // A browser can disappear while the initial take is in flight. The disconnect timer may
+-      // have fired before this request installed its event listeners, so reconcile that state now.
+-      if (browserDisconnectPending.has(key)) {
+-        browserDisconnectPending.delete(key);
+-        onBrowserDisconnected(key);
+-        return;
+-      }
+-      const nextPresence = presenceSignature(key, activePolls, deliveredFeedback);
+-      if (nextPresence !== previousPresence) {
+-        events.emit("agent-presence", key, computePresence(key, activePolls, deliveredFeedback));
+-      }
+-      timer = timeoutMs === null ? null : setTimeout(() => respond().catch(handleRespondError), timeoutMs);
+-    } catch (error) {
+-      cleanupPoll?.();
+-      if (claimedHolder) releasePollListener(claimedHolder, activePolls, deliveredFeedback, events);
+-      detachRequestClose();
+-      next(error);
+-    }
+-  };
++  const handlePoll = createPollHandler({
++    store,
++    activePolls,
++    events,
++    pollOwnershipLock,
++    deliveredFeedback,
++    allowedHostnames,
++    allowAnyHostname,
++    publishAgentReply,
++    restoreClosedFeedback,
++    finishFeedbackDelivery,
++    refreshIdleTimer,
++    clearBrowserDisconnectTimer,
++    browserDisconnectPending,
++    pollHeartbeatMs,
++  });
+   app.get("/api/poll", handlePoll);
+   app.post("/api/poll", handlePoll);
+ 
+@@ -3239,3 +2992,292 @@ function jsonScript(value) {
+     .replace(/\u2028/g, "\\u2028")
+     .replace(/\u2029/g, "\\u2029");
+ }
++
++// Shared by the production HTTP route and non-listening integration tests.
++export function createPollHandler({
++  store,
++  activePolls,
++  events,
++  pollOwnershipLock,
++  deliveredFeedback,
++  allowedHostnames,
++  allowAnyHostname,
++  publishAgentReply,
++  restoreClosedFeedback,
++  finishFeedbackDelivery,
++  refreshIdleTimer,
++  clearBrowserDisconnectTimer,
++  browserDisconnectPending,
++  pollHeartbeatMs,
++}) {
++  return async (req, res, next) => {
++    const takeover = req.query.takeover === "1";
++    const agentReply =
++      req.method === "POST" && req.body?.agent_reply !== undefined ? String(req.body.agent_reply) : null;
++    if (takeover && req.method !== "POST") {
++      res.status(405).json({ error: "poll takeover requires POST" });
++      return;
++    }
++    if (req.method === "POST" && (agentReply === null ? !takeover : !agentReply.trim())) {
++      res.status(405).json({ error: "POST /api/poll requires agent_reply or takeover=1" });
++      return;
++    }
++    // `close` is subscribed before the first `await` and re-checked after the listeners are armed,
++    // because a client that disconnects while `takeFeedback` is in flight would otherwise arrive
++    // too late for its own cleanup: the handler marks the poll active afterwards and nothing left
++    // would clear it, leaving presence stuck on "listening" for an agent that is already gone.
++    let requestClosed = Boolean(req.aborted || (req.method !== "POST" && req.destroyed));
++    let cleanupPoll = null;
++    let claimedHolder = null;
++    const onRequestClose = () => {
++      // A POST request emits `close` when its JSON body stream ends, before the long-poll
++      // response has been written. `aborted` distinguishes that normal parser lifecycle from a
++      // client that actually went away.
++      if (req.method === "POST" && !req.aborted) return;
++      requestClosed = true;
++      cleanupPoll?.();
++    };
++    const onResponseClose = () => {
++      // Once the body has been parsed, a POST request's close event is no longer useful: the
++      // response socket is the authoritative signal for a client that aborts its long-poll.
++      if (req.method === "POST" && !res.writableEnded) {
++        requestClosed = true;
++        cleanupPoll?.();
++      }
++    };
++    res.on("close", onResponseClose);
++    const detachRequestClose = () => req.off("close", onRequestClose);
++    req.on("close", onRequestClose);
++    try {
++      const file = await canonicalFile(String(req.query.file || ""));
++      const key = sessionKey(file);
++      const ownerValue = typeof req.query.owner === "string" ? req.query.owner.trim() : "";
++      if (ownerValue.toLowerCase() === "none" || ownerValue.startsWith("-")) {
++        detachRequestClose();
++        res.status(400).json({
++          status: "error",
++          code: "VALIDATION_ERROR",
++          error: "--owner none is reserved; pass a different listener label",
++        });
++        return;
++      }
++      const owner = ownerValue || null;
++      if (hasPresentOriginOrReferer(req) && !isSameOriginRequest(req, allowedHostnames, allowAnyHostname)) {
++        detachRequestClose();
++        res.status(403).json({ error: "cross-origin poll takeover rejected" });
++        return;
++      }
++      const { holder, previousPresence, conflict, missing } = await pollOwnershipLock.runExclusive(async () => {
++        const deliveryLease = await store.feedbackLease(key, "poll");
++        const currentHolder = activePolls.get(key);
++        if (currentHolder && !takeover) return { conflict: listenerConflict(currentHolder, "LISTENER_ACTIVE") };
++        const nextHolder = { key, owner, deliveryLease, startedAt: Date.now(), replaced: false, replace: null };
++        claimedHolder = nextHolder;
++        const priorPresence = presenceSignature(key, activePolls, deliveredFeedback);
++        if (currentHolder) {
++          // Install the successor before releasing the old response so its cleanup cannot emit a
++          // transient "waiting" state or clear the successor's listener ownership.
++          currentHolder.replaced = true;
++          activePolls.set(key, nextHolder);
++          currentHolder.replace?.();
++        } else {
++          activePolls.set(key, nextHolder);
++        }
++        // Attaching a fresh round retires the prior delivery marker; releasing a poll never does.
++        deliveredFeedback.delete(key);
++        if (agentReply !== null) {
++          const session = await publishAgentReply(key, agentReply);
++          if (!session) {
++            activePolls.delete(key);
++            return { missing: true };
++          }
++        }
++        return { holder: nextHolder, previousPresence: priorPresence };
++      });
++      if (conflict) {
++        detachRequestClose();
++        res.status(409).json(conflict);
++        return;
++      }
++      if (missing) {
++        detachRequestClose();
++        res.status(404).json({ error: "session not found" });
++        return;
++      }
++      const timeoutMs =
++        req.query.timeoutMs === undefined ? null : Math.max(0, Math.min(Number(req.query.timeoutMs || 0), 2147483647));
++      const immediate = await store.takeFeedback(key, holder.deliveryLease);
++      if (immediate.status !== "waiting") {
++        if (holder.replaced) {
++          await restoreClosedFeedback(key, immediate);
++          detachRequestClose();
++          res.json(listenerConflict(holder, "LISTENER_REPLACED"));
++          releasePollListener(holder, activePolls, deliveredFeedback, events);
++          return;
++        }
++        if (requestClosed || res.writableEnded) {
++          await restoreClosedFeedback(key, immediate);
++          releasePollListener(holder, activePolls, deliveredFeedback, events);
++          detachRequestClose();
++          return;
++        }
++        finishFeedbackDelivery(key, immediate);
++        releasePollListener(holder, activePolls, deliveredFeedback, events);
++        if (immediate.session_ended) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
++        detachRequestClose();
++        res.json(agentFacingFeedback(immediate));
++        return;
++      }
++      if (holder.replaced) {
++        detachRequestClose();
++        res.json(listenerConflict(holder, "LISTENER_REPLACED"));
++        releasePollListener(holder, activePolls, deliveredFeedback, events);
++        return;
++      }
++      if (requestClosed || res.writableEnded) {
++        releasePollListener(holder, activePolls, deliveredFeedback, events);
++        detachRequestClose();
++        return;
++      }
++      const streamHeartbeat = timeoutMs === null;
++      let heartbeat = null;
++      if (streamHeartbeat) {
++        res.status(200).type("application/json").set("Lavish-Poll-State", "listening");
++        res.write(" ");
++        heartbeat = setInterval(() => {
++          if (!res.writableEnded) res.write(" ");
++        }, pollHeartbeatMs);
++        heartbeat.unref?.();
++      }
++      refreshIdleTimer();
++      let timer = null;
++      let cleaned = false;
++      let responding = false;
++      const cleanup = () => {
++        if (cleaned) return;
++        cleaned = true;
++        if (timer) clearTimeout(timer);
++        if (heartbeat) clearInterval(heartbeat);
++        events.off("feedback", onFeedback);
++        events.off("ended", onFeedback);
++        events.off("browser-disconnected", onBrowserDisconnected);
++        releasePollListener(holder, activePolls, deliveredFeedback, events);
++        if (!activePolls.has(key)) {
++          clearBrowserDisconnectTimer(key);
++          browserDisconnectPending.delete(key);
++        }
++        refreshIdleTimer();
++        cleanupPoll = null;
++        detachRequestClose();
++        res.off("close", onResponseClose);
++      };
++      const respondReplacement = () => {
++        if (responding || res.writableEnded) return;
++        responding = true;
++        try {
++          const replacement = listenerConflict(holder, "LISTENER_REPLACED");
++          if (streamHeartbeat) res.end(JSON.stringify(replacement));
++          else res.json(replacement);
++        } finally {
++          cleanup();
++        }
++      };
++      holder.replace = respondReplacement;
++      const respond = async (forcedResult = null) => {
++        if (responding || res.writableEnded) return;
++        responding = true;
++        let finalSessionEnded = false;
++        try {
++          const result = await store.takeFeedback(key, holder.deliveryLease);
++          // Feedback or an explicit end that raced the grace timer wins. The disconnect result
++          // is only the non-terminal replacement for a poll that would otherwise keep waiting.
++          const responseResult = forcedResult && result.status === "waiting" ? forcedResult : result;
++          finalSessionEnded = responseResult?.session_ended === true;
++          if (holder.replaced) {
++            if (responseResult.status !== "waiting") await restoreClosedFeedback(key, responseResult);
++            if (!requestClosed && !res.writableEnded) {
++              if (streamHeartbeat) res.end(JSON.stringify(listenerConflict(holder, "LISTENER_REPLACED")));
++              else res.json(listenerConflict(holder, "LISTENER_REPLACED"));
++            }
++            return;
++          }
++          if (requestClosed || res.writableEnded) {
++            await restoreClosedFeedback(key, responseResult);
++            return;
++          }
++          finishFeedbackDelivery(key, responseResult);
++          const agentResponse = agentFacingFeedback(responseResult);
++          if (streamHeartbeat) {
++            res.end(JSON.stringify(agentResponse));
++          } else {
++            res.json(agentResponse);
++          }
++        } finally {
++          cleanup();
++          if (finalSessionEnded) clearFeedbackDelivery(key, activePolls, deliveredFeedback, events);
++        }
++      };
++      function handleRespondError(error) {
++        if (streamHeartbeat) {
++          cleanup();
++          if (!res.writableEnded) res.destroy(error);
++          return;
++        }
++        next(error);
++      }
++      const onFeedback = (changedKey) => {
++        if (changedKey !== key || res.writableEnded) {
++          return;
++        }
++        respond().catch(handleRespondError);
++      };
++      const onBrowserDisconnected = (changedKey) => {
++        if (changedKey !== key || res.writableEnded) return;
++        respond({ status: "browser_disconnected" }).catch(handleRespondError);
++      };
++      events.on("feedback", onFeedback);
++      events.on("ended", onFeedback);
++      events.on("browser-disconnected", onBrowserDisconnected);
++      cleanupPoll = cleanup;
++      if (holder.replaced) {
++        respondReplacement();
++        return;
++      }
++      if (requestClosed || res.writableEnded) {
++        cleanup();
++        return;
++      }
++      // A browser can disappear while the initial take is in flight. The disconnect timer may
++      // have fired before this request installed its event listeners, so reconcile that state now.
++      if (browserDisconnectPending.has(key)) {
++        browserDisconnectPending.delete(key);
++        onBrowserDisconnected(key);
++        return;
++      }
++      const nextPresence = presenceSignature(key, activePolls, deliveredFeedback);
++      if (nextPresence !== previousPresence) {
++        events.emit("agent-presence", key, computePresence(key, activePolls, deliveredFeedback));
++      }
++      timer = timeoutMs === null ? null : setTimeout(() => respond().catch(handleRespondError), timeoutMs);
++    } catch (error) {
++      cleanupPoll?.();
++      if (claimedHolder) releasePollListener(claimedHolder, activePolls, deliveredFeedback, events);
++      detachRequestClose();
++      next(error);
++    }
++  };
++}
++
++export async function restoreClaimedFeedback(store, key, result) {
++  if (!result.delivery) return false;
++  await store.markFeedbackUnknown(key, result.delivery);
++  return true;
++}
++
++// `delivery_seq` only undoes legacy Seen stamps; the bound delivery identity stays on the wire.
++function agentFacingFeedback(result) {
++  if (!result || result.status !== "feedback" || !("delivery_seq" in result)) return result;
++  const rest = { ...result };
++  delete rest.delivery_seq;
++  return rest;
++}
+diff --git a/src/session-store.js b/src/session-store.js
+index 49c0d93..de79afb 100644
+--- a/src/session-store.js
++++ b/src/session-store.js
+@@ -1,5 +1,6 @@
+ import crypto from "node:crypto";
+-import { readFile, realpath, writeFile } from "node:fs/promises";
++import { readFile, realpath, writeFile, open, rename, unlink } from "node:fs/promises";
++import * as feedbackDelivery from "./feedback-delivery.js";
+ import path from "node:path";
+ 
+ import {
+@@ -125,9 +126,11 @@ export class SessionStore {
+     const state = await this.readState();
+     const existing = state.sessions[key] || {};
+     const existingPrompts = existing.prompts || [];
++    if (existing.review_delivery?.lifecycle === "ended") throw new Error("BOUND_REOPEN_REQUIRES_NEW_REVIEW");
+     const existingStatus = existing.status === "ended" ? "open" : existing.status || "open";
+     const session = {
+       key,
++      ...(existing.review_delivery ? { review_delivery: existing.review_delivery } : {}),
+       file: absolute,
+       url,
+       status: existingStatus === "feedback" && existingPrompts.length === 0 ? "open" : existingStatus,
+@@ -209,7 +212,13 @@ export class SessionStore {
+     if (alreadyEnded && !restoring) {
+       return { ended: true, ended_by: session.ended_by };
+     }
++    if (session.review_delivery && restoring) throw new Error("BOUND_RESTORE_REQUIRES_RECEIPT");
++    if (session.review_delivery && shouldEndSession) throw new Error("BOUND_END_REQUIRES_FIXED_BATCH");
+     let normalized = prompts.map(normalizePrompt);
++    feedbackDelivery.validateFeedback(
++      session,
++      normalized.map(({ prompt }) => prompt),
++    );
+     if (!restoring) {
+       const acknowledgedIds = new Set(
+         [
+@@ -311,7 +320,12 @@ export class SessionStore {
+       ? []
+       : acceptedPrompts.map((prompt) => chatEntryForPrompt(prompt, at)).filter(Boolean);
+     const existingPrompts = Array.isArray(session.prompts) ? session.prompts : [];
+-    const storedPrompts = restoring ? acceptedPrompts : acceptedPrompts.map(agentFacingPrompt);
++    const storedPrompts =
++      restoring || session.review_delivery ? acceptedPrompts : acceptedPrompts.map(agentFacingPrompt);
++    if (session.review_delivery) {
++      feedbackDelivery.appendFeedback(session, storedPrompts);
++      session.review_delivery.version++;
++    }
+     session.prompts = restoring ? [...storedPrompts, ...existingPrompts] : [...existingPrompts, ...storedPrompts];
+     session.chat = [...(session.chat || []), ...userMessages];
+     applyTranscriptBound(session);
+@@ -617,13 +631,21 @@ export class SessionStore {
+   }
+ 
+   /** @returns {Promise<any>} */
+-  async takeFeedback(key) {
++  async takeFeedback(key, lease = null) {
+     return this.runExclusive(async () => {
+       const state = await this.readState();
+       const session = state.sessions[key];
+       if (!session) {
+         return { status: "missing" };
+       }
++      if (session.review_delivery) {
++        const result = feedbackDelivery.takeBoundFeedback(session, lease);
++        if (result.status === "feedback") {
++          session.review_delivery.version++;
++          await this.writeState(state);
++        }
++        return result;
++      }
+       // Prompts queued before the session ended (a browser send-and-end) must still reach the
+       // agent, so deliver them before reporting the ended state; the next poll then sees ended.
+       const prompts = session.prompts || [];
+@@ -687,6 +709,60 @@ export class SessionStore {
+     });
+   }
+ 
++  async bindFeedback(key, binding) {
++    return this.mutateFeedback(key, (session) => feedbackDelivery.bindFeedback(session, binding));
++  }
++
++  async feedbackSnapshot(key) {
++    const session = await this.findByKey(key);
++    return session?.review_delivery || null;
++  }
++
++  async feedbackLease(key, mode) {
++    return feedbackDelivery.feedbackLease(await this.findByKey(key), mode);
++  }
++
++  async setFeedbackMode(key, mode) {
++    return this.mutateFeedback(key, (s) => feedbackDelivery.setFeedbackMode(s, mode));
++  }
++
++  // Internal server-owner handoff only; never a public PID/lease-timeout takeover API.
++  async recoverFeedback(key) {
++    return this.mutateFeedback(key, feedbackDelivery.recoverFeedback);
++  }
++
++  async recordFeedback(key, token, proof) {
++    return this.mutateFeedback(key, (s) => feedbackDelivery.reconcileFeedback(s, proof, token));
++  }
++
++  async reconcileFeedback(key, proof) {
++    return this.mutateFeedback(key, (s) => feedbackDelivery.reconcileFeedback(s, proof));
++  }
++
++  async markFeedbackUnknown(key, token) {
++    return this.mutateFeedback(key, (s) => feedbackDelivery.markFeedbackUnknown(s, token));
++  }
++
++  async reserveFeedbackHost(key, token) {
++    return this.mutateFeedback(key, (s) => feedbackDelivery.reserveFeedbackHost(s, token));
++  }
++
++  async beginFeedbackEnd(key, request) {
++    return this.mutateFeedback(key, (s) => feedbackDelivery.beginFeedbackEnd(s, request));
++  }
++
++  async mutateFeedback(key, update) {
++    return this.runExclusive(async () => {
++      const state = await this.readState();
++      const session = state.sessions[key];
++      if (!session) throw new Error("MISSING_SESSION");
++      update(session);
++      session.review_delivery.version++;
++      await this.writeState(state);
++      return session.review_delivery;
++    });
++  }
++
+   // `endedBy` distinguishes a human ending review from the browser chrome ("user") from an
+   // agent explicitly closing the loop via `lavish-axi end` ("agent"). Only a user-initiated end
+   // blocks a plain reopen - see `SessionStore` callers in server.js.
+@@ -697,6 +773,7 @@ export class SessionStore {
+       if (!session) {
+         return null;
+       }
++      if (session.review_delivery) throw new Error("BOUND_END_REQUIRES_FIXED_BATCH");
+       const existingEndedBy = session.status === "ended" ? session.ended_by : undefined;
+       const nextEndedBy = endedBy === "user" || existingEndedBy === "user" ? "user" : "agent";
+       session.status = "ended";
+@@ -714,6 +791,7 @@ export class SessionStore {
+       if (!session) {
+         return null;
+       }
++      if (session.review_delivery) throw new Error("BOUND_REPLY_REQUIRES_IDENTITY");
+       if (requireOpen && session.status === "ended") return session;
+       const at = new Date().toISOString();
+       // Done (docs/delivery-acks.md): the reply answers what the agent has seen. Stamped in the same
+@@ -772,6 +850,9 @@ export class SessionStore {
+           if (attachment && attachment.id) referenced.add(`${session.key}/${attachment.id}`);
+         }
+       }
++      for (const message of session.review_delivery?.messages || []) {
++        for (const attachment of message.prompt.attachments || []) referenced.add(`${session.key}/${attachment.id}`);
++      }
+       for (const delivered of session.delivered_attachments || []) {
+         if (!delivered || !delivered.id) continue;
+         if (now - Number(delivered.at) <= ATTACHMENT_DELIVERY_GRACE_MS) {
+@@ -783,6 +864,7 @@ export class SessionStore {
+   }
+ 
+   async readState() {
++    if (this.deliveryWriteFailed) throw new Error("DELIVERY_STORE_UNAVAILABLE");
+     try {
+       const raw = await readFile(this.file, "utf8");
+       const parsed = JSON.parse(raw);
+@@ -814,7 +896,32 @@ export class SessionStore {
+   }
+ 
+   async writeState(state) {
+-    await writeFile(this.file, `${JSON.stringify(state, null, 2)}\n`);
++    const text = `${JSON.stringify(state, null, 2)}\n`;
++    if (!Object.values(state.sessions).some((s) => s.review_delivery)) {
++      await writeFile(this.file, text);
++      return;
++    }
++    const temporary = this.file + "." + crypto.randomUUID() + ".tmp";
++    try {
++      const handle = await open(temporary, "wx", 0o600);
++      try {
++        await handle.writeFile(text);
++        await handle.sync();
++      } finally {
++        await handle.close();
++      }
++      await rename(temporary, this.file);
++      const directory = await open(path.dirname(this.file), "r");
++      try {
++        await directory.sync();
++      } finally {
++        await directory.close();
++      }
++    } catch (error) {
++      this.deliveryWriteFailed = true;
++      await unlink(temporary).catch(() => {});
++      throw error;
++    }
+   }
+ }
+ 
+diff --git a/src/feedback-delivery.js b/src/feedback-delivery.js
+new file mode 100644
+index 0000000..df1a7ca
+--- /dev/null
++++ b/src/feedback-delivery.js
+@@ -0,0 +1,198 @@
++import { createHash, randomUUID } from "node:crypto";
++
++const digest = (text) => createHash("sha256").update(text).digest("hex");
++const unsettled = (m) => ["dispatching", "host_queued", "unknown"].includes(m.state);
++const identityKeys = ["artifact", "instance", "session", "epoch", "id", "digest", "attempt"];
++
++// Canonical normalized prompt data, excluding transport-only image metadata and settlement ID.
++export function feedbackText(prompt) {
++  return JSON.stringify({
++    uid: prompt.uid || "",
++    prompt: prompt.prompt || "",
++    selector: prompt.selector || "",
++    tag: prompt.tag || "",
++    text: prompt.text || "",
++    ...(prompt.target ? { target: prompt.target } : {}),
++    ...(prompt.attachments?.length ? { attachments: prompt.attachments.map(({ id, name }) => ({ id, name })) } : {}),
++  });
++}
++
++export function bindFeedback(session, binding) {
++  if (binding.artifact !== session.file || !binding.instance || !binding.session) throw new Error("BINDING");
++  if (session.review_delivery) {
++    if (!["artifact", "instance", "session"].every((k) => session.review_delivery.binding[k] === binding[k]))
++      throw new Error("BINDING");
++    return;
++  }
++  if (session.prompts.length || session.chat.length || session.status === "ended")
++    throw new Error("BIND_REQUIRES_EMPTY_OPEN_SESSION");
++  session.review_delivery = {
++    binding,
++    epoch: 1,
++    generation: 1,
++    mode: "bridge",
++    version: 0,
++    lifecycle: "open",
++    messages: [],
++    end: null,
++  };
++}
++
++export function validateFeedback(session, prompts) {
++  const d = session.review_delivery;
++  if (!d) return;
++  for (const p of prompts) {
++    if (typeof p.prompt_id !== "string" || !p.prompt_id) throw new Error("MESSAGE_ID_REQUIRED");
++    const old = d.messages.find((m) => m.id === p.prompt_id);
++    if (old && old.digest !== digest(feedbackText(p))) throw new Error("CONFLICT");
++    if (!old && d.lifecycle !== "open") throw new Error("CLOSED");
++  }
++}
++
++export function appendFeedback(session, prompts, kind = "message") {
++  const d = session.review_delivery;
++  validateFeedback(session, prompts);
++  for (const p of prompts) {
++    if (d.messages.some((m) => m.id === p.prompt_id)) continue;
++    const text = feedbackText(p);
++    d.messages.push({
++      id: p.prompt_id,
++      epoch: d.epoch,
++      text,
++      digest: digest(text),
++      prompt: p,
++      kind,
++      state: "accepted",
++      consumed: false,
++    });
++  }
++}
++
++export function feedbackLease(session, mode) {
++  const d = session?.review_delivery;
++  if (!d) return null;
++  if (d.mode !== mode) throw new Error("MODE");
++  return { mode, generation: d.generation };
++}
++
++export function setFeedbackMode(session, mode) {
++  const d = session.review_delivery;
++  if (!["bridge", "poll"].includes(mode)) throw new Error("MODE");
++  if (d.messages.some(unsettled)) throw new Error("UNSETTLED");
++  d.mode = mode;
++  d.generation++;
++}
++
++export function recoverFeedback(session) {
++  const d = session.review_delivery;
++  d.generation++;
++  for (const m of d.messages) if (unsettled(m)) m.state = "unknown";
++}
++
++export function takeBoundFeedback(session, lease) {
++  const d = session.review_delivery;
++  if (!lease) throw new Error("LEASE_REQUIRED");
++  if (lease.generation !== d.generation) throw new Error("STALE");
++  if (lease.mode !== d.mode) throw new Error("MODE");
++  if (d.lifecycle === "ended") return { status: "ended", ended_by: "user" };
++  if (d.messages.some(unsettled)) return { status: "waiting" };
++  const m = d.messages.find((m) => m.state === "accepted");
++  if (!m) return { status: "waiting" };
++  if (m.kind === "end" && d.messages.some((other) => other !== m && !other.consumed)) return { status: "waiting" };
++  const token = {
++    ...d.binding,
++    epoch: d.epoch,
++    generation: d.generation,
++    mode: d.mode,
++    id: m.id,
++    digest: m.digest,
++    attempt: randomUUID(),
++  };
++  m.state = "dispatching";
++  m.claim = token;
++  session.prompts = session.prompts.filter((p) => p.prompt_id !== m.id);
++  session.pending_prompts = session.prompts.length;
++  return { status: "feedback", prompts: [m.prompt], dom_snapshot: session.dom_snapshot || "", delivery: token };
++}
++
++function validateToken(session, token) {
++  const d = session.review_delivery;
++  if (token.generation !== d.generation || token.mode !== d.mode) throw new Error("STALE");
++  const m = d.messages.find((m) => m.id === token.id);
++  if (!m?.claim || !identityKeys.every((k) => token[k] === m.claim[k])) throw new Error("IDENTITY");
++  return m;
++}
++
++export function markFeedbackUnknown(session, token) {
++  const m = validateToken(session, token);
++  if (m.state === "replied") return;
++  if (m.consumed) m.executionUnknown = true;
++  else m.state = "unknown";
++}
++
++export function reserveFeedbackHost(session, token) {
++  const m = validateToken(session, token);
++  if (m.state !== "dispatching" || m.host_dispatched) throw new Error("HOST_ALREADY_DISPATCHED_OR_UNKNOWN");
++  m.host_dispatched = true;
++}
++
++// Only a trusted in-process host adapter may call this. There is no browser receipt route.
++export function reconcileFeedback(session, proof, token = null) {
++  if (token) validateToken(session, token);
++  const d = session.review_delivery;
++  const m = d.messages.find((m) => m.id === proof.id);
++  if (!m?.claim || !identityKeys.every((k) => proof[k] === m.claim[k]) || (token && token.id !== proof.id))
++    throw new Error("IDENTITY");
++  if (
++    !["queued", "consumed", "reply"].includes(proof.kind) ||
++    !proof.evidenceId ||
++    (proof.kind !== "queued" && proof.inputEvidence !== "context_with_system")
++  )
++    throw new Error("EVIDENCE");
++  if (proof.kind === "queued" && !m.consumed) {
++    m.state = "host_queued";
++    m.queueEvidence = proof.evidenceId;
++  }
++  if (proof.kind !== "queued") {
++    m.consumed = true;
++    m.inputEvidence = proof.evidenceId;
++    if (m.state !== "replied") m.state = "delivered";
++  }
++  if (proof.kind === "reply") {
++    m.state = "replied";
++    m.replyEvidence = proof.evidenceId;
++    m.executionUnknown = false;
++  }
++  if (d.lifecycle === "ending" && d.end.ids.every((id) => d.messages.find((m) => m.id === id).consumed)) {
++    d.lifecycle = "ended";
++    session.status = "ended";
++    session.ended_by = "user";
++  }
++}
++
++export function beginFeedbackEnd(session, request) {
++  const d = session.review_delivery;
++  if (request.epoch !== d.epoch || (request.final && request.final.epoch !== d.epoch)) throw new Error("EPOCH");
++  const hash = digest(
++    JSON.stringify({
++      id: request.id,
++      epoch: request.epoch,
++      final: request.final ? { id: request.final.id, text: request.final.text, epoch: request.final.epoch } : null,
++    }),
++  );
++  if (d.end) {
++    if (d.end.id !== request.id || d.end.digest !== hash) throw new Error("CONFLICT");
++    return;
++  }
++  if (d.lifecycle !== "open") throw new Error("CLOSED");
++  const prompts = [];
++  if (request.final) prompts.push({ prompt_id: request.final.id, prompt: request.final.text });
++  const marker = { prompt_id: request.id + "-marker", prompt: "Review ended: " + request.id };
++  if (d.messages.some((m) => m.id === marker.prompt_id)) throw new Error("CONFLICT");
++  appendFeedback(session, prompts);
++  appendFeedback(session, [marker], "end");
++  session.prompts.push(...prompts.filter((p) => !session.prompts.some((old) => old.prompt_id === p.prompt_id)), marker);
++  session.pending_prompts = session.prompts.length;
++  d.end = { id: request.id, digest: hash, ids: d.messages.map((m) => m.id) };
++  d.lifecycle = "ending";
++}
+diff --git a/test/feedback-delivery.test.js b/test/feedback-delivery.test.js
+new file mode 100644
+index 0000000..f12df27
+--- /dev/null
++++ b/test/feedback-delivery.test.js
+@@ -0,0 +1,110 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import { mkdtemp, writeFile, rm } from "node:fs/promises";
++import { tmpdir } from "node:os";
++import path from "node:path";
++import { SessionStore } from "../src/session-store.js";
++
++async function fixture(t) {
++  const dir = await mkdtemp(path.join(tmpdir(), "polish-delivery-"));
++  t.after(() => rm(dir, { recursive: true, force: true }));
++  const file = path.join(dir, "fixture.html");
++  await writeFile(file, "<!doctype html><p>Isolated review</p>");
++  const store = new SessionStore(path.join(dir, "state.json"));
++  const session = await store.upsertSession(file, "http://127.0.0.1:49793/");
++  const binding = { artifact: session.file, instance: "owned-pi", session: "owned-session" };
++  await store.bindFeedback(session.key, binding);
++  return { store, key: session.key, binding };
++}
++const prompt = (id, text = "Whole page feedback") => ({ prompt_id: id, prompt: text });
++const proof = (delivery, kind = "consumed") => ({
++  ...delivery,
++  kind,
++  evidenceId: "host-input",
++  inputEvidence: "context_with_system",
++});
++
++test("bound take uses one persistent arbiter: mode and generation reject; response is not consumption", async (t) => {
++  const { store, key } = await fixture(t);
++  await store.queuePrompts(key, { prompts: [prompt("r3-first"), prompt("r3-second")] });
++  await assert.rejects(store.feedbackLease(key, "poll"), /MODE/);
++  const lease = await store.feedbackLease(key, "bridge");
++  const [first, race] = await Promise.all([store.takeFeedback(key, lease), store.takeFeedback(key, lease)]);
++  assert.equal(first.status, "feedback");
++  assert.equal(race.status, "waiting");
++  await store.reserveFeedbackHost(key, first.delivery);
++  await assert.rejects(store.reserveFeedbackHost(key, first.delivery), /HOST_ALREADY_DISPATCHED/);
++  assert.equal((await store.feedbackSnapshot(key)).messages[0].consumed, false);
++  await assert.rejects(store.setFeedbackMode(key, "poll"), /UNSETTLED/);
++  await assert.rejects(store.takeFeedback(key), /LEASE/);
++  await store.recordFeedback(key, first.delivery, proof(first.delivery));
++  await store.setFeedbackMode(key, "poll");
++  await assert.rejects(store.takeFeedback(key, lease), /STALE/);
++  await assert.rejects(store.recordFeedback(key, first.delivery, proof(first.delivery)), /STALE/);
++  const second = await store.takeFeedback(key, await store.feedbackLease(key, "poll"));
++  assert.equal(second.delivery.id, "r3-second");
++});
++
++test("restart preserves unknown attempt; positive query can recover but empty or mismatched evidence cannot", async (t) => {
++  const { store, key } = await fixture(t);
++  await store.queuePrompts(key, { prompts: [prompt("r3-lost"), prompt("r3-pending")] });
++  const first = await store.takeFeedback(key, await store.feedbackLease(key, "bridge"));
++  const reopened = new SessionStore(store.file);
++  await reopened.recoverFeedback(key);
++  const snapshot = await reopened.feedbackSnapshot(key);
++  assert.equal(snapshot.messages[0].state, "unknown");
++  assert.equal(snapshot.messages[1].state, "accepted");
++  assert.equal((await reopened.takeFeedback(key, await reopened.feedbackLease(key, "bridge"))).status, "waiting");
++  await assert.rejects(reopened.reconcileFeedback(key, { ...proof(first.delivery), attempt: "wrong" }), /IDENTITY/);
++  await assert.rejects(
++    reopened.reconcileFeedback(key, { ...proof(first.delivery), inputEvidence: "http-200" }),
++    /EVIDENCE/,
++  );
++  await reopened.reconcileFeedback(key, proof(first.delivery));
++  const next = await reopened.takeFeedback(key, await reopened.feedbackLease(key, "bridge"));
++  assert.equal(next.delivery.id, "r3-pending");
++  assert.equal((await reopened.feedbackSnapshot(key)).messages[0].claim.attempt, first.delivery.attempt);
++});
++
++test("end seals existing/final/marker; only consumption ends; delivered reply-unknown does not block", async (t) => {
++  const { store, key } = await fixture(t);
++  await store.queuePrompts(key, { prompts: [prompt("r3-existing")] });
++  const end = { id: "r3-end", epoch: 1, final: { id: "r3-final", text: "Final feedback", epoch: 1 } };
++  await store.beginFeedbackEnd(key, end);
++  await store.beginFeedbackEnd(key, end);
++  await assert.rejects(store.endSession(key), /BOUND_END_REQUIRES_FIXED_BATCH/);
++  await assert.rejects(store.addAgentReply(key, "unassociated reply"), /BOUND_REPLY_REQUIRES_IDENTITY/);
++  await assert.rejects(store.queuePrompts(key, { prompts: [prompt("r3-late")] }), /CLOSED/);
++  for (const id of ["r3-existing", "r3-final", "r3-end-marker"]) {
++    assert.equal((await store.feedbackSnapshot(key)).lifecycle, "ending");
++    const result = await store.takeFeedback(key, await store.feedbackLease(key, "bridge"));
++    assert.equal(result.delivery.id, id);
++    await store.recordFeedback(key, result.delivery, proof(result.delivery));
++    await store.markFeedbackUnknown(key, result.delivery);
++  }
++  const snapshot = await store.feedbackSnapshot(key);
++  assert.equal(snapshot.lifecycle, "ended");
++  assert.ok(snapshot.messages.every((m) => m.consumed && m.executionUnknown));
++  assert.equal((await store.takeFeedback(key, await store.feedbackLease(key, "bridge"))).status, "ended");
++});
++
++test("same ID different payload conflicts; bound restore never bypasses dispatch ledger; legacy stays unbound", async (t) => {
++  const { store, key } = await fixture(t);
++  await store.queuePrompts(key, { prompts: [prompt("r3-id")] });
++  await assert.rejects(store.queuePrompts(key, { prompts: [prompt("r3-id", "Changed")] }), /CONFLICT/);
++  const result = await store.takeFeedback(key, await store.feedbackLease(key, "bridge"));
++  await assert.rejects(store.queuePrompts(key, { prompts: result.prompts }, { restore: true }), /BOUND_RESTORE/);
++  await store.markFeedbackUnknown(key, result.delivery);
++  assert.equal((await store.feedbackSnapshot(key)).messages[0].state, "unknown");
++});
++
++test("late transport uncertainty cannot erase a verified reply", async (t) => {
++  const { store, key } = await fixture(t);
++  await store.queuePrompts(key, { prompts: [prompt("r3-replied")] });
++  const result = await store.takeFeedback(key, await store.feedbackLease(key, "bridge"));
++  await store.recordFeedback(key, result.delivery, proof(result.delivery, "reply"));
++  await store.markFeedbackUnknown(key, result.delivery);
++  const message = (await store.feedbackSnapshot(key)).messages[0];
++  assert.equal(message.state, "replied");
++  assert.equal(message.executionUnknown, false);
++});
+diff --git a/test/poll-delivery.test.js b/test/poll-delivery.test.js
+new file mode 100644
+index 0000000..a92352a
+--- /dev/null
++++ b/test/poll-delivery.test.js
+@@ -0,0 +1,199 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import { EventEmitter } from "node:events";
++import { mkdtemp, writeFile, rm } from "node:fs/promises";
++import path from "node:path";
++import { tmpdir } from "node:os";
++import { SessionStore } from "../src/session-store.js";
++import { AsyncMutex } from "../src/async-mutex.js";
++import { createPollHandler, restoreClaimedFeedback } from "../src/server.js";
++
++// Only HTTP request/response boundaries are fakes. Handler and store are production code.
++function harness(store) {
++  const activePolls = new Map(),
++    events = new EventEmitter();
++  const handler = createPollHandler({
++    store,
++    activePolls,
++    events,
++    pollOwnershipLock: new AsyncMutex(),
++    deliveredFeedback: new Set(),
++    allowedHostnames: new Set(["127.0.0.1"]),
++    allowAnyHostname: false,
++    publishAgentReply: (key, text) => store.addAgentReply(key, text),
++    restoreClosedFeedback: (key, result) => restoreClaimedFeedback(store, key, result),
++    finishFeedbackDelivery: () => {},
++    refreshIdleTimer: () => {},
++    clearBrowserDisconnectTimer: () => {},
++    browserDisconnectPending: new Set(),
++    pollHeartbeatMs: 15000,
++  });
++  function invoke(file, method = "GET", extra = {}) {
++    let resolveResponse;
++    const finished = new Promise((resolve) => {
++      resolveResponse = resolve;
++    });
++    const req = Object.assign(new EventEmitter(), {
++      method,
++      query: { file, timeoutMs: "1", ...extra },
++      body: {},
++      headers: {},
++      get(name) {
++        return this.headers[name.toLowerCase()];
++      },
++      aborted: false,
++      destroyed: false,
++    });
++    const res = Object.assign(new EventEmitter(), {
++      writableEnded: false,
++      value: undefined,
++      error: undefined,
++      status() {
++        return this;
++      },
++      type() {
++        return this;
++      },
++      set() {
++        return this;
++      },
++      write() {},
++      json(value) {
++        this.value = value;
++        this.writableEnded = true;
++        resolveResponse();
++      },
++      end(value) {
++        this.json(JSON.parse(value));
++      },
++      destroy(error) {
++        this.error = error;
++        resolveResponse();
++      },
++    });
++    let error;
++    const done = handler(req, res, (e) => {
++      error = e;
++      resolveResponse();
++    });
++    return {
++      req,
++      res,
++      done,
++      finished,
++      get error() {
++        return error;
++      },
++    };
++  }
++  return { invoke, activePolls, events };
++}
++
++async function fixture(t, bound = true) {
++  const dir = await mkdtemp(path.join(tmpdir(), "polish-poll-"));
++  t.after(() => rm(dir, { recursive: true, force: true }));
++  const file = path.join(dir, "fixture.html");
++  await writeFile(file, "<p>Isolated</p>");
++  const store = new SessionStore(path.join(dir, "state.json"));
++  const session = await store.upsertSession(file, "http://127.0.0.1:49793/");
++  if (bound) await store.bindFeedback(session.key, { artifact: session.file, instance: "owned", session: "same" });
++  return { store, key: session.key, file: session.file, ...harness(store) };
++}
++
++test("actual poll handler and bridge share mode/claim; output never proves Pi consumption", async (t) => {
++  const f = await fixture(t);
++  await f.store.queuePrompts(f.key, { prompts: [{ prompt_id: "r3-poll", prompt: "whole-page" }] });
++  const denied = f.invoke(f.file);
++  await denied.done;
++  assert.match(denied.error.message, /MODE/);
++  assert.equal(f.activePolls.size, 0);
++  const oldBridge = await f.store.feedbackLease(f.key, "bridge");
++  await f.store.setFeedbackMode(f.key, "poll");
++  const poll = f.invoke(f.file);
++  await poll.done;
++  assert.equal(poll.res.value.delivery.id, "r3-poll");
++  assert.equal((await f.store.feedbackSnapshot(f.key)).messages[0].consumed, false);
++  await assert.rejects(f.store.takeFeedback(f.key, oldBridge), /STALE/);
++  assert.equal(f.activePolls.size, 0);
++});
++
++test("disconnect after real destructive take preserves same unknown attempt, never restores to deliverable queue", async (t) => {
++  const f = await fixture(t);
++  await f.store.setFeedbackMode(f.key, "poll");
++  await f.store.queuePrompts(f.key, { prompts: [{ prompt_id: "r3-close", prompt: "test" }] });
++  const take = f.store.takeFeedback.bind(f.store);
++  let req;
++  f.store.takeFeedback = async (...args) => {
++    const result = await take(...args);
++    req.emit("close");
++    return result;
++  };
++  const poll = f.invoke(f.file);
++  req = poll.req;
++  await poll.done;
++  assert.equal(poll.res.value, undefined);
++  assert.equal(f.activePolls.size, 0);
++  const s = await f.store.feedbackSnapshot(f.key);
++  assert.equal(s.messages[0].state, "unknown");
++  assert.equal(s.messages[0].consumed, false);
++  assert.equal((await f.store.findByKey(f.key)).prompts.length, 0);
++  const attempt = s.messages[0].claim.attempt;
++  await f.store.reconcileFeedback(f.key, {
++    ...s.messages[0].claim,
++    kind: "consumed",
++    inputEvidence: "context_with_system",
++    evidenceId: "host-positive",
++  });
++  assert.equal((await f.store.feedbackSnapshot(f.key)).messages[0].claim.attempt, attempt);
++});
++
++test("unbound legacy GET and POST takeover retain native feedback and listener cleanup", async (t) => {
++  const f = await fixture(t, false);
++  for (const method of ["GET", "POST"]) {
++    await f.store.queuePrompts(f.key, { prompts: [{ prompt: method }] });
++    const poll = f.invoke(f.file, method, method === "POST" ? { takeover: "1" } : {});
++    await poll.done;
++    assert.equal(poll.error, undefined);
++    assert.equal(poll.res.value.status, "feedback");
++    assert.equal(poll.res.value.delivery, undefined);
++    assert.equal(poll.res.value.prompts[0].prompt, method);
++    assert.equal(f.activePolls.size, 0);
++  }
++});
++
++test(
++  "event-driven actual poll takes through the same lease and leaves input unconsumed",
++  { timeout: 2000 },
++  async (t) => {
++    const f = await fixture(t);
++    await f.store.setFeedbackMode(f.key, "poll");
++    const poll = f.invoke(f.file, "GET", { timeoutMs: "1500" });
++    await poll.done;
++    assert.equal(f.activePolls.size, 1);
++    await f.store.queuePrompts(f.key, { prompts: [{ prompt_id: "r3-event", prompt: "later feedback" }] });
++    f.events.emit("feedback", f.key);
++    await poll.finished;
++    assert.equal(poll.error, undefined);
++    assert.equal(poll.res.value.delivery.id, "r3-event");
++    assert.equal((await f.store.feedbackSnapshot(f.key)).messages[0].consumed, false);
++    assert.equal(f.activePolls.size, 0);
++  },
++);
++
++test(
++  "mode switch fences an already-waiting actual poll before its later destructive take",
++  { timeout: 2000 },
++  async (t) => {
++    const f = await fixture(t);
++    await f.store.setFeedbackMode(f.key, "poll");
++    const poll = f.invoke(f.file, "GET", { timeoutMs: "1500" });
++    await poll.done;
++    await f.store.setFeedbackMode(f.key, "bridge");
++    await f.store.queuePrompts(f.key, { prompts: [{ prompt_id: "r3-fenced", prompt: "bridge only" }] });
++    f.events.emit("feedback", f.key);
++    await poll.finished;
++    assert.match(poll.error.message, /STALE/);
++    assert.equal((await f.store.feedbackSnapshot(f.key)).messages[0].state, "accepted");
++    assert.equal(f.activePolls.size, 0);
++  },
++);
+diff --git a/test/poll-delivery-output.test.js b/test/poll-delivery-output.test.js
+new file mode 100644
+index 0000000..ba96d90
+--- /dev/null
++++ b/test/poll-delivery-output.test.js
+@@ -0,0 +1,26 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import { createPollOutput } from "../src/cli.js";
++
++test("bound poll output preserves the delivery identity without moving next_step behind DOM", () => {
++  const delivery = { id: "r3-message", attempt: "unique-attempt", generation: 3 };
++  const output = createPollOutput({
++    file: "/isolated/fixture.html",
++    response: {
++      status: "feedback",
++      prompts: [{ prompt: "Whole page" }],
++      delivery,
++      artifact_failures: [{ kind: "artifact-unavailable" }],
++      dom_snapshot: "large DOM",
++    },
++  });
++  assert.deepEqual(output.delivery, delivery);
++  const keys = Object.keys(output);
++  assert.ok(keys.indexOf("prompts") < keys.indexOf("artifact_failures"));
++  assert.ok(keys.indexOf("artifact_failures") < keys.indexOf("next_step"));
++  assert.ok(keys.indexOf("next_step") < keys.indexOf("dom_snapshot"));
++  assert.equal(
++    "delivery" in createPollOutput({ file: "/isolated/fixture.html", response: { status: "feedback", prompts: [] } }),
++    false,
++  );
++});

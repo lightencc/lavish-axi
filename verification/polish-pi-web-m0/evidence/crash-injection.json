@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-10-30T12:14:43.000301+00:00",
+  "pid": 28022,
+  "process": "28022 28007 pi                  \n",
+  "parent": "node verification/polish-pi-m0/serve.js\n",
+  "signal": "SIGKILL",
+  "active": {
+    "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+    "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47",
+    "id": "pi3-d9590feb-5785-42ec-8bf1-72b21a622158",
+    "digest": "be515dee49611557ff8cb487a3115dd78a696c5201e52e8fc00e084af28c6d97",
+    "state": "processing",
+    "admittedAt": "2026-10-30T12:14:42.667Z",
+    "dispatchAt": "2026-10-30T12:14:42.715Z",
+    "inputAt": "2026-10-30T12:14:42.737Z",
+    "inputEvidence": "context_with_system"
+  },
+  "queued": {
+    "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+    "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47",
+    "id": "pi3-0c5cabc9-e051-44b9-a121-622e596cdc7b",
+    "digest": "870a3f73373f907d73cdd28b314cf15b0df3fb89fcda8664d819e0824aa15211",
+    "state": "accepted",
+    "admittedAt": "2026-10-30T12:14:42.778Z"
+  },
+  "reason": "Kill owned Pi after input witness and durable queue admission; no replay"
+}

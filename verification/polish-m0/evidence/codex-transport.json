@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-30T10:35:43.877137+00:00",
+  "checks": [
+    {
+      "command": [
+        "ps",
+        "-p",
+        "36272",
+        "-o",
+        "pid=,args="
+      ],
+      "exit_code": 0,
+      "stdout": "36272 /Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex -c features.code_mode_host=true app-server --analytics-default-enabled -c plugins.codex-app-tools@openai-bundled.mcp_servers.codex_app.enabled=true\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "lsof",
+        "-a",
+        "-p",
+        "36272",
+        "-iTCP",
+        "-sTCP:LISTEN",
+        "-Pn"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "lsof",
+        "-a",
+        "-p",
+        "36272",
+        "-U",
+        "-Fn"
+      ],
+      "exit_code": 0,
+      "stdout": "p36272\nf0\nn->0x765a50199a83890b\nf1\nn->0xb2a6d589d8bcbe5d\nf2\nn->0xcaf955bc4194cbbf\nf7\nn->0xe8b3d70d11404757\nf8\nn->0xeb78e36d733a5d7d\nf9\nn->0xe8b3d70d11404757\nf25\nn->0x7a0aa41e7bc00d6\nf26\nn->0x8c3e8b9cf8bf659c\nf32\nn->0xb76fe6f764b82c33\n",
+      "stderr": ""
+    }
+  ]
+}

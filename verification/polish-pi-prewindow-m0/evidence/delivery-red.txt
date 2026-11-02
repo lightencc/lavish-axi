@@ -1,0 +1,46 @@
+✖ bound take uses one persistent arbiter: mode and generation reject; response is not consumption (3.857292ms)
+✖ restart preserves unknown attempt; positive query can recover but empty or mismatched evidence cannot (1.581042ms)
+✖ end seals existing/final/marker; only consumption ends; delivered reply-unknown does not block (1.190459ms)
+✖ same ID different payload conflicts; bound restore never bypasses dispatch ledger; legacy stays unbound (1.038ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 47.481959
+
+✖ failing tests:
+
+test at test/feedback-delivery.test.js:22:1
+✖ bound take uses one persistent arbiter: mode and generation reject; response is not consumption (3.857292ms)
+  TypeError: store.bindFeedback is not a function
+      at fixture (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:16:15)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:23:26)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at test/feedback-delivery.test.js:40:1
+✖ restart preserves unknown attempt; positive query can recover but empty or mismatched evidence cannot (1.581042ms)
+  TypeError: store.bindFeedback is not a function
+      at fixture (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:16:15)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:41:26)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at test/feedback-delivery.test.js:58:1
+✖ end seals existing/final/marker; only consumption ends; delivered reply-unknown does not block (1.190459ms)
+  TypeError: store.bindFeedback is not a function
+      at fixture (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:16:15)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:59:26)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at test/feedback-delivery.test.js:77:1
+✖ same ID different payload conflicts; bound restore never bypasses dispatch ledger; legacy stays unbound (1.038ms)
+  TypeError: store.bindFeedback is not a function
+      at fixture (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:16:15)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/test/feedback-delivery.test.js:78:26)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)

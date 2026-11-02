@@ -1,0 +1,131 @@
+{
+  "requested": 33,
+  "timelySuccess": 33,
+  "timeout": 0,
+  "lateCompleted": 0,
+  "incomplete": 0,
+  "failed": 0,
+  "deadlineMs": 180000,
+  "percentileMethod": "nearest rank",
+  "inputEngine": "agent-browser native controls; real click capture, no fetch sends",
+  "browserClock": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+  "groups": {
+    "session": {
+      "n": 30,
+      "metricsMs": {
+        "uiFeedbackMs": {
+          "n": 30,
+          "p50": 2.6000001430511475,
+          "p95": 4.799999952316284,
+          "max": 5.700000047683716
+        },
+        "uiAckMs": {
+          "n": 30,
+          "p50": 58.09999990463257,
+          "p95": 64,
+          "max": 65.5
+        },
+        "consumedVisibleMs": {
+          "n": 30,
+          "p50": 137.29999995231628,
+          "p95": 149.10000014305115,
+          "max": 171.29999995231628
+        },
+        "replyVisibleMs": {
+          "n": 30,
+          "p50": 1745.2000000476837,
+          "p95": 3545.0999999046326,
+          "max": 3779.7999999523163
+        }
+      }
+    },
+    "anchored": {
+      "n": 3,
+      "metricsMs": {
+        "uiFeedbackMs": {
+          "n": 3,
+          "p50": 3.4000000953674316,
+          "p95": 5,
+          "max": 5
+        },
+        "uiAckMs": {
+          "n": 3,
+          "p50": 61.09999990463257,
+          "p95": 75.5,
+          "max": 75.5
+        },
+        "consumedVisibleMs": {
+          "n": 3,
+          "p50": 145.70000004768372,
+          "p95": 167.70000004768372,
+          "max": 167.70000004768372
+        },
+        "replyVisibleMs": {
+          "n": 3,
+          "p50": 1631.4000000953674,
+          "p95": 1638.2999999523163,
+          "max": 1638.2999999523163
+        }
+      }
+    }
+  },
+  "anchoredPinProof": [
+    {
+      "index": 31,
+      "id": "c7114980-dbcd-47d7-b3c2-bf0689228753",
+      "orangeColors": [
+        "rgb(255, 152, 23)"
+      ],
+      "allPinsNumberless": true,
+      "replyClaim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 2,
+        "generation": 5,
+        "mode": "bridge",
+        "id": "c7114980-dbcd-47d7-b3c2-bf0689228753",
+        "digest": "dbc3e8a98cb41b086897931e4731c9bf95895ca2a6c6a09592e851199c19b536",
+        "attempt": "c33638a5-8364-432e-a533-02ed5d995e20"
+      }
+    },
+    {
+      "index": 32,
+      "id": "046e29f4-f161-4df9-a163-ecb3951a5f7d",
+      "orangeColors": [
+        "rgb(255, 152, 23)"
+      ],
+      "allPinsNumberless": true,
+      "replyClaim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 2,
+        "generation": 5,
+        "mode": "bridge",
+        "id": "046e29f4-f161-4df9-a163-ecb3951a5f7d",
+        "digest": "b4da33332f727501ae00de79f139be2be6b1499ac1ebdfa9145323f8a15021be",
+        "attempt": "479c6018-98ae-4d3b-802e-6308d7ddf4f4"
+      }
+    },
+    {
+      "index": 33,
+      "id": "f931315e-9e53-4085-b5ff-72285fe5e4c7",
+      "orangeColors": [
+        "rgb(255, 152, 23)"
+      ],
+      "allPinsNumberless": true,
+      "replyClaim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 2,
+        "generation": 5,
+        "mode": "bridge",
+        "id": "f931315e-9e53-4085-b5ff-72285fe5e4c7",
+        "digest": "5fa704a0afe2169e6764d06a1bbd66bee01ae7a0d77c40b0e0b14f754fc34cf5",
+        "attempt": "9d4c2ef3-535d-452d-b1e6-5871c3ce1e6d"
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "httpStatus": 409,
+  "body": {
+    "error": "MODE"
+  },
+  "afterHttp": {
+    "binding": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+      "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+      "session": "01a18d97-a652-715c-8d56-71655bfa011d"
+    },
+    "epoch": 1,
+    "generation": 1,
+    "mode": "bridge",
+    "version": 7,
+    "lifecycle": "open",
+    "messages": [
+      {
+        "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+        "epoch": 1,
+        "text": "{\"uid\":\"\",\"prompt\":\"[WEB2 first-reply] Isolated performance test. Reply exactly W2_ACK. No tools or file changes.\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+        "digest": "aaa6fe2e8d0030ea8a8acec62c1cd46655806a1cc1c3d150f505665ff1612371",
+        "prompt": {
+          "uid": "",
+          "prompt": "[WEB2 first-reply] Isolated performance test. Reply exactly W2_ACK. No tools or file changes.",
+          "selector": "",
+          "tag": "",
+          "text": "",
+          "prompt_id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847"
+        },
+        "kind": "message",
+        "state": "replied",
+        "consumed": true,
+        "claim": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-prewindow-m0/runtime/9ea931bb-2c1f-41a9-89d1-bfdaef21fad1/fixture.html",
+          "instance": "16003ca8-81c5-49a8-8d2f-eff47a0c1866",
+          "session": "01a18d97-a652-715c-8d56-71655bfa011d",
+          "epoch": 1,
+          "generation": 1,
+          "mode": "bridge",
+          "id": "r3-36b83e27-089e-4ad6-9576-78557d9a7847",
+          "digest": "aaa6fe2e8d0030ea8a8acec62c1cd46655806a1cc1c3d150f505665ff1612371",
+          "attempt": "d84500a3-a05f-4bc7-bbc4-0e57d09336f2"
+        },
+        "host_dispatched": true,
+        "queueEvidence": "9149c78b-aad6-4d52-816d-dfe9f1b9d007",
+        "inputEvidence": "ed0df9c3",
+        "replyEvidence": "ed0df9c3",
+        "executionUnknown": false
+      }
+    ],
+    "end": null
+  },
+  "deliveredToAdapter": false
+}

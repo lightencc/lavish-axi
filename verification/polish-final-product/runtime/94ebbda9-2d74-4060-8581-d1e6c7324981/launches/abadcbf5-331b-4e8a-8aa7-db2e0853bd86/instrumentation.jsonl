@@ -1,0 +1,9 @@
+{"stage":"harness_ready","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388565842.3691,"durableWriteMs":3.5990409999999997}
+{"stage":"accepted_durable","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388567257.7146,"durableWriteMs":3.828708000000006}
+{"stage":"dispatch_reserved","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388567279.7026,"durableWriteMs":3.954041999999845}
+{"stage":"host_admitted","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388567291.7026,"durableWriteMs":3.9303749999999127}
+{"stage":"host_dispatching","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388567303.7021,"durableWriteMs":4.003291999999874}
+{"stage":"input_consumed","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388567316.7578,"durableWriteMs":3.9793750000001182}
+{"stage":"model_start","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388567338.7385,"durableWriteMs":4.062290999999959}
+{"stage":"first_token","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388568864.295,"durableWriteMs":5.908374999999978}
+{"stage":"host_reply_persisted","clockID":"pi:3745:1f6853c3-f64b-4407-9cd5-1c8af0a2ad66","at":1793388568931.4587,"durableWriteMs":3.972124999999778}

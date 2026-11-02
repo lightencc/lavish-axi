@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+// Disposable review prototype. The installed Lavish CLI owns the actual feedback queue.
+import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { createServer } from "node:http";
+import { realpathSync } from "node:fs";
+import { mkdir, readFile } from "node:fs/promises";
+import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+
+const directory = path.dirname(fileURLToPath(import.meta.url));
+const artifact = path.join(directory, "index.html");
+const stateDirectory = path.resolve(directory, "../../.lavish/polish-prototype");
+const key = createHash("sha256").update(artifact).digest("hex").slice(0, 16);
+const backend = "http://127.0.0.1:49791";
+const origin = "http://127.0.0.1:49792";
+const env = {
+  ...process.env,
+  LAVISH_AXI_STATE_DIR: stateDirectory,
+  LAVISH_AXI_PORT: "49791",
+  LAVISH_AXI_HOST: "127.0.0.1",
+  LAVISH_AXI_TELEMETRY: "0",
+};
+const installedCli = spawnSync("which", ["lavish-axi"], { encoding: "utf8" }).stdout.trim();
+const WebSocket = createRequire(realpathSync(installedCli))("ws");
+const [command = "serve", ...args] = process.argv.slice(2);
+function cli(values) {
+  const result = spawnSync("lavish-axi", values, { env, stdio: "inherit" });
+  if (result.error) throw result.error;
+  return result.status ?? 1;
+}
+
+if (command === "poll") process.exit(cli(["poll", artifact, ...args]));
+if (command === "reply") {
+  const [thread, ...words] = args;
+  if (!thread || !words.length) throw new Error('Usage: polish reply <comment-id> "reply text"');
+  process.exit(cli(["reply", artifact, "--agent-reply", `[polish:${thread}]\n${words.join(" ")}`]));
+}
+if (command === "end") process.exit(cli(["end", artifact]));
+if (command !== "serve") {
+  console.log("polish serve | poll | reply <comment-id> <text> | end");
+  process.exit(command === "--help" ? 0 : 1);
+}
+
+await mkdir(stateDirectory, { recursive: true });
+if (cli([artifact, "--no-open"]) !== 0) process.exit(1);
+let socket;
+let presence = "waiting";
+let lastBrowserSeen = 0;
+function connect() {
+  if (socket && socket.readyState < 2) return;
+  socket = new WebSocket(`${backend.replace("http:", "ws:")}/events/${key}`, { origin: backend });
+  socket.addEventListener("message", ({ data }) => {
+    const event = JSON.parse(String(data));
+    if (event.type === "agent-presence" || event.event === "agent-presence") presence = event.data?.state || "waiting";
+  });
+  socket.addEventListener("error", () => {
+    presence = "disconnected";
+  });
+}
+setInterval(() => {
+  if (Date.now() - lastBrowserSeen < 15000) connect();
+  else socket?.close();
+}, 5000).unref();
+
+createServer(async (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
+  const json = (status, value) => {
+    res.writeHead(status, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(value));
+  };
+  if (req.headers.host !== "127.0.0.1:49792") return json(403, { error: "Unexpected host" });
+  try {
+    if (req.method === "GET" && (req.url === "/" || req.url === "/index.html")) {
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      return res.end(await readFile(artifact));
+    }
+    if (req.method === "GET" && req.url === "/api/state") {
+      lastBrowserSeen = Date.now();
+      connect();
+      const state = JSON.parse(await readFile(path.join(stateDirectory, "state.json"), "utf8"));
+      const session = state.sessions[key];
+      return json(200, {
+        chat: session?.chat || [],
+        presence,
+        connected: socket?.readyState === WebSocket.OPEN,
+        ended: session?.status === "ended",
+      });
+    }
+    if (req.method === "POST" && req.url === "/api/send") {
+      if (req.headers.origin !== origin) return json(403, { error: "Origin rejected" });
+      let body = "";
+      for await (const chunk of req) {
+        body += chunk;
+        if (body.length > 24000) return json(413, { error: "评论过长" });
+      }
+      const note = JSON.parse(body);
+      if (
+        !/^[a-z0-9-]{1,60}$/i.test(note.id) ||
+        !/^[a-z0-9-]{1,60}$/i.test(note.messageId) ||
+        typeof note.text !== "string" ||
+        !note.text.trim()
+      )
+        return json(400, { error: "评论不能为空" });
+      const target =
+        note.scope === "session"
+          ? { tag: "message" }
+          : {
+              tag: "polish-comment",
+              selector: `#${String(note.block).replace(/[^a-z0-9-]/gi, "")}`,
+              text: String(note.quote || "").slice(0, 3000),
+            };
+      const response = await fetch(`${backend}/api/${key}/prompts`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Origin: backend },
+        body: JSON.stringify({
+          prompts: [
+            { prompt_id: note.messageId, uid: note.id, ...target, prompt: `[polish:${note.id}]\n${note.text}` },
+          ],
+        }),
+        signal: AbortSignal.timeout(10000),
+      });
+      return json(response.status, await response.json());
+    }
+    if (req.url === "/favicon.ico") {
+      res.writeHead(204);
+      return res.end();
+    }
+    json(404, { error: "Not found" });
+  } catch (error) {
+    json(502, { error: error.message });
+  }
+}).listen(49792, "127.0.0.1", () =>
+  console.log(`Polish prototype: ${origin}\nFeedback: prototypes/polish/polish poll`),
+);

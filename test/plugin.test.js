@@ -133,12 +133,14 @@ test("the package root is itself a discoverable Agent Plugin", async () => {
   );
   assert.deepEqual(
     discovered.map((entry) => entry.name),
-    ["lavish"],
-    "exactly the lavish skill is discovered",
+    ["lavish", "polish"],
+    "the upstream compatibility skill and current-session Polish skill are discovered",
   );
 
   const skill = await readFile(path.join(root, "skills", "lavish", "SKILL.md"), "utf8");
   assert.deepEqual(validateSkillMarkdown(skill, { directoryName: "lavish" }).errors, []);
+  const polish = await readFile(path.join(root, "skills", "polish", "SKILL.md"), "utf8");
+  assert.deepEqual(validateSkillMarkdown(polish, { directoryName: "polish" }).errors, []);
 });
 
 test("the plugin declares no MCP servers", async () => {

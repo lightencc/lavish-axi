@@ -1,0 +1,15 @@
+{"stage":"harness_ready","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956244.083,"durableWriteMs":5.312541999999979}
+{"stage":"dispatch_reserved","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956264.8027,"durableWriteMs":3.9465409999999963}
+{"stage":"host_admitted","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956277.055,"durableWriteMs":4.004916000000009}
+{"stage":"host_dispatching","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956289.037,"durableWriteMs":3.9548340000000053}
+{"stage":"input_consumed","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956304.052,"durableWriteMs":3.983249999999998}
+{"stage":"model_start","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956334.9287,"durableWriteMs":3.8657499999999914}
+{"stage":"dispatch_reserved","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956362.9426,"durableWriteMs":3.9126249999999914}
+{"stage":"host_admitted","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387956374.9836,"durableWriteMs":4.096167000000037}
+{"stage":"first_token","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957759.7302,"durableWriteMs":4.6007079999999405}
+{"stage":"host_reply_persisted","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957778.5222,"durableWriteMs":3.9090830000000096}
+{"stage":"reply_persisted","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957792.587,"durableWriteMs":4.0252080000000205}
+{"stage":"host_dispatching","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957806.544,"durableWriteMs":3.935207999999875}
+{"stage":"input_consumed","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957820.5955,"durableWriteMs":4.059584000000086}
+{"stage":"model_start","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957836.593,"durableWriteMs":4.33137499999998}
+{"stage":"end_sealed","clockID":"pi:40255:c30ad3e7-5c43-4e9c-be5a-635fb2a10f35","at":1793387957875.5752,"durableWriteMs":3.9198750000000473}

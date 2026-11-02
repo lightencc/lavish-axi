@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-30T12:17:26.896560+00:00",
+  "binding": {
+    "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+    "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+  },
+  "message_count": 38,
+  "dispatch_count": 37,
+  "persisted_input_count": 37,
+  "reply_count": 36,
+  "all_dispatch_counts_one": true,
+  "thirty_browser_samples_matched": true,
+  "busy_order": {
+    "active_input": "2026-10-30T12:11:13.814Z",
+    "queued_admission": "2026-10-30T12:11:13.970Z",
+    "active_reply": "2026-10-30T12:11:17.952Z",
+    "queued_dispatch": "2026-10-30T12:11:18.038Z"
+  },
+  "abort_recovered_without_resubmit": true,
+  "duplicate_queried_only": true,
+  "conflict_status": 409,
+  "forged_binding_status": 400,
+  "refresh": {
+    "before": 33,
+    "after": 0,
+    "server_record_preserved": true
+  },
+  "remaining": [
+    {
+      "id": "pi3-d9590feb-5785-42ec-8bf1-72b21a622158",
+      "state": "processing",
+      "digest": "be515dee49611557ff8cb487a3115dd78a696c5201e52e8fc00e084af28c6d97"
+    },
+    {
+      "id": "pi3-0c5cabc9-e051-44b9-a121-622e596cdc7b",
+      "state": "accepted",
+      "digest": "870a3f73373f907d73cdd28b314cf15b0df3fb89fcda8664d819e0824aa15211"
+    }
+  ],
+  "no_resume_or_replay": true
+}

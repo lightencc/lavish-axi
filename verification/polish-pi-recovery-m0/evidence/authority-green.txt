@@ -1,0 +1,19 @@
+✔ bridge and poll share arbitration; claim marks dispatch before returning (77.735875ms)
+✔ same ID is idempotent; changed payload and wrong review epoch reject (30.799167ms)
+✔ host queue is not consumption; unknown blocks dispatch and end (60.844792ms)
+✔ ending atomically seals final batch, rejects late submissions, and drains marker last (101.083583ms)
+✔ restart keeps ending set and monotonic version; old generation cannot write (84.471583ms)
+✔ reopen advances review epoch; old replies cannot overwrite current review (57.896917ms)
+✔ wrong binding, digest and attempt never resolve an unknown request (53.020791ms)
+✔ subscription before snapshot covers changes on either side of snapshot read (41.831667ms)
+✔ out of order, duplicate, stale snapshot and old connection cannot roll state back (40.931042ms)
+✔ disconnected replica recovers reply and ended from a durable snapshot (125.487917ms)
+✔ new epoch requires a snapshot rather than applying its event onto old epoch (66.567ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 795.37725

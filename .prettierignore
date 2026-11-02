@@ -11,3 +11,13 @@ plugin.json
 .claude/settings.local.json
 # Canonical two-line @AGENTS.md pointer; prettier would add a blank line.
 CLAUDE.md
+# Historical verification captures retain their recorded bytes and hashes.
+/verification/
+/docs/polish-m0-report.md
+/docs/polish-m0-supplement-report.md
+/docs/polish-pi-combined-m0-report.md
+/docs/polish-pi-m0-report.md
+/docs/polish-pi-prewindow-m0-report.md
+/docs/polish-pi-recovery-m0-report.md
+/docs/polish-pi-web-m0-report.md
+/docs/polish-pi-web2-m0-report.md

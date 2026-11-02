@@ -1,0 +1,7 @@
+{
+  "stage": "host_admitted",
+  "match": {
+    "id": "fault-host_admitted"
+  },
+  "occurrence": 1
+}

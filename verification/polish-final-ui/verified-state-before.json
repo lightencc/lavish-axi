@@ -1,0 +1,98 @@
+{
+  "binding": {
+    "artifact": "/private/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-final-ui-gPVgHL/artifact.html",
+    "instance": "isolated-ui",
+    "session": "isolated-ui-session"
+  },
+  "epoch": 1,
+  "generation": 1,
+  "mode": "bridge",
+  "version": 7,
+  "lifecycle": "open",
+  "messages": [
+    {
+      "id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"Verified exact native cross-paragraph selection\",\"selector\":\"main#content\",\"tag\":\"text\",\"text\":\"precise selection begins here and ends later. Beta next paragraph completes\",\"scope\":\"anchored\",\"comment_id\":\"31624bdb-2fd4-4ba3-bb1e-229b87b211be\",\"round_id\":\"b6835056-3fb2-4be4-a0e7-f0131f90f281\",\"target\":{\"type\":\"text-range\",\"text\":\"precise selection begins here and ends later. Beta next paragraph completes\",\"rangeText\":\"precise selection begins here and ends later.Beta next paragraph completes\",\"selector\":\"main#content\",\"commonAncestorSelector\":\"main#content\",\"start\":{\"selector\":\"p#first\",\"path\":[0],\"offset\":6},\"end\":{\"selector\":\"p#second\",\"path\":[0],\"offset\":30}}}",
+      "digest": "c37fe081f253d7bad47e6e10e5aa4b9f7c9827c31c6c3017d40b166417da1437",
+      "prompt": {
+        "uid": "",
+        "prompt": "Verified exact native cross-paragraph selection",
+        "selector": "main#content",
+        "tag": "text",
+        "text": "precise selection begins here and ends later. Beta next paragraph completes",
+        "scope": "anchored",
+        "comment_id": "31624bdb-2fd4-4ba3-bb1e-229b87b211be",
+        "round_id": "b6835056-3fb2-4be4-a0e7-f0131f90f281",
+        "prompt_id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+        "target": {
+          "type": "text-range",
+          "text": "precise selection begins here and ends later. Beta next paragraph completes",
+          "rangeText": "precise selection begins here and ends later.Beta next paragraph completes",
+          "selector": "main#content",
+          "commonAncestorSelector": "main#content",
+          "start": {
+            "selector": "p#first",
+            "path": [
+              0
+            ],
+            "offset": 6
+          },
+          "end": {
+            "selector": "p#second",
+            "path": [
+              0
+            ],
+            "offset": 30
+          }
+        }
+      },
+      "kind": "message",
+      "state": "host_queued",
+      "consumed": false,
+      "resolved": false,
+      "claim": {
+        "artifact": "/private/var/folders/xz/9qyrflss7fj87621xq7wpj_r0000gn/T/polish-final-ui-gPVgHL/artifact.html",
+        "instance": "isolated-ui",
+        "session": "isolated-ui-session",
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "id": "9f6e0b90-6da7-4081-8ab6-094983ba12b2",
+        "digest": "c37fe081f253d7bad47e6e10e5aa4b9f7c9827c31c6c3017d40b166417da1437",
+        "attempt": "844e4c82-7045-4f2e-84dc-9cbe25bf4f59"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "queued-9f6e0b90-6da7-4081-8ab6-094983ba12b2"
+    },
+    {
+      "id": "dcc92c4e-b222-4b92-b97f-cd72a6884e70",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"Verified block anchor for revision\",\"selector\":\"p#replace\",\"tag\":\"p\",\"text\":\"Original block for missing anchor verification.\",\"scope\":\"anchored\",\"comment_id\":\"4ab13d7a-3682-4297-8a6a-1e20392ef66f\",\"round_id\":\"54dff11a-0abf-489b-b2b5-dc90a5f57123\",\"target\":{\"type\":\"block\",\"text\":\"Original block for missing anchor verification.\"}}",
+      "digest": "96a4b8426527637f3260c20bccae4730481fc19dd426f8ecc0f6e6661a7e659b",
+      "prompt": {
+        "uid": "",
+        "prompt": "Verified block anchor for revision",
+        "selector": "p#replace",
+        "tag": "p",
+        "text": "Original block for missing anchor verification.",
+        "scope": "anchored",
+        "comment_id": "4ab13d7a-3682-4297-8a6a-1e20392ef66f",
+        "round_id": "54dff11a-0abf-489b-b2b5-dc90a5f57123",
+        "prompt_id": "dcc92c4e-b222-4b92-b97f-cd72a6884e70",
+        "target": {
+          "type": "block",
+          "text": "Original block for missing anchor verification."
+        }
+      },
+      "kind": "message",
+      "state": "accepted",
+      "consumed": false,
+      "resolved": false
+    }
+  ],
+  "end": null,
+  "artifact_load_token": "sUIXChJLFPtjYRLKqmUL0uGnAK3vuq0F",
+  "artifact_digest": "c848af4ae72127086e786286a7b76a7dd9ef8069fc448a9c3706da68235ed867",
+  "artifact_revision": 1
+}

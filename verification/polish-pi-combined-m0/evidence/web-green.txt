@@ -1,0 +1,11 @@
+✔ whole-page submit has no anchor; origin, binding, epoch, extra fields and query methods checked (13.724792ms)
+✔ refresh snapshot restores list; reconnect SSE starts with full state including ended and replies (1.717125ms)
+✔ end forwards fixed final submission, does not infer completion from no pending browser request (0.569583ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 55.558833

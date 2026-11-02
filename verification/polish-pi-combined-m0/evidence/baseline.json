@@ -1,0 +1,809 @@
+{
+  "checks": [
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "docs/polish-pi-recovery-m0-report.md",
+      "sha256": "27d4f8cda491805bd5ff0e1146f90dd55cd879cdcb65f697d5ed6b0abcdd2a6b",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "docs/polish-pi-web-m0-errata.md",
+      "sha256": "0dd35e5db2603e394e65fd66110066d162e38855935688b9a497081d13b3bd9e",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/.gitignore",
+      "sha256": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/CONTRACT.md",
+      "sha256": "60292ffcf367829b0cd827bc8a49ddaa6906adaf38900f21864e1037d40a030d",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/README.md",
+      "sha256": "143541fac289f537e75ca08fe73c1a15f652804db888b2e6392919323b7c49a5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/authority.js",
+      "sha256": "582beed13593892571c8fb164740c129e76f7e2e9eff463d1032ca14e7020941",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/authority.test.js",
+      "sha256": "2ab76112a2adb769e3e4838cba4a8137dcc3c659ea9a3b8a1a0840cb72600f64",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/drain.js",
+      "sha256": "bd0bf378e22740433017885ef68f21524801d76fb6c8635362017eb66332d5ad",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/drain.test.js",
+      "sha256": "4f9ae820cc5eb9fa9d46bdf319447e7bddab7458519ad9f780861ce16ca68902",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-green.txt",
+      "sha256": "f9bf9eda8ff8f8458907b0fb09da1946150d247715c7eab0fd2050a170ad9b41",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-order-failure.txt",
+      "sha256": "b713497447c19eccff858db420137097a11e8ed9d5bf473539f502874d88efb0",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-red.txt",
+      "sha256": "6628a7755a31e38559cb23db28a5674ca2b44e07820713647ae8ec7f2563c499",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-syntax-failure.txt",
+      "sha256": "5327a4942fd1a9229260cf42b6c2a62d3c1a5cc9f1ad4241b84e1a95523d3472",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/baseline.json",
+      "sha256": "1b09477d60769a5acce5c279a11e63b03d3acaf07002d5b276d2df2361d6f418",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/cleanup-and-assertions.json",
+      "sha256": "8fd906aa073e4d76863c6fa72f35adef62407c1f00e986d8214d95b8b320ce64",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/code-version.json",
+      "sha256": "be0395c66ec6d608017826400def56b74480eb4a3a51591a1962e7f1f4c6aaf6",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/drain-green.txt",
+      "sha256": "87d66f57049477d6dbdb83456a46779a8eb4cdfe707198f99ec9f407557811c5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/drain-red.txt",
+      "sha256": "81be9ca1a4a413bafb2d4c6038fd26910484fe4d20c5dcd8c18489bc125503ee",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/environment.json",
+      "sha256": "8c7c375a5758fd2c1e7371c0e94746641da5d5542c80b12c6f244a055d9964dc",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/fencing-idempotence-red.txt",
+      "sha256": "13aee164cd61ab8137a2c4b6afecff26b000f328ce2f72daf585e983f897420a",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/final-checks.json",
+      "sha256": "1606f006a196774cc5263282e0081c40529806dc1f2cbf5b5b9241f0f596f310",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/final-tests.txt",
+      "sha256": "92e0b74f9e888bb6d6c5ef8b324fe385b2874e3ed72e70cdba13d07acc137aa9",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/mechanism-green.txt",
+      "sha256": "370f75c1e61d3ba7cf5b98912512ed04502cf66ae0caa20a180aba9a84cf442f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/missing-attempt-red.txt",
+      "sha256": "7a9ffce25d6f26a399fdcba9a44d9ee9ccbd2f0b4a23f7f681e56bee8957ae5e",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/ownership-green.txt",
+      "sha256": "35445553ea169a4f13b01198252875d96b268d2b89d5f682d539a4f7faf7f928",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/ownership-red.txt",
+      "sha256": "7495650846fcf587d3d33abee27ca32effb7a00764ee0c37b0d75f749fedc947",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-gap-result.json",
+      "sha256": "6741e15df6b7c5591857e95b8f6a1d0c70cffdaf1e8ea64427542f9aca3546a3",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-receipt-result.json",
+      "sha256": "6893e2720bf5f3d471990625b7e12768406409f4e72d8c7889dc501f4dbf54cf",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-source-manifest.json",
+      "sha256": "11bd3cd7632ca72475167c790f308335105dfb225662c8bd13916e7b9a229c19",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-window-events.jsonl",
+      "sha256": "93fbd768dd28e6a88f3bd8054ecef9abecaa8ec2267ec5f8868fca933d90f413",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/receipt-green.txt",
+      "sha256": "328d67acd6558b9e708858c981333e9099cf6e66f74113073af7f9329aa59631",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/receipt-red.txt",
+      "sha256": "e3900a99ae9dcb2c7fe97bf709d56319681f1eaba8a10682e4297c38e229a43d",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/evidence/web-report-original.md",
+      "sha256": "a366f6a5e0eb0c45c87414a7b126d8b50fb6e63798e6d2e1e0f4288dfc07498d",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/owner-child.js",
+      "sha256": "a1bd8445ff15c2420a8a1776c61ba899007eefabbffbff0ddef9a3dfd12c0877",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/ownership.test.js",
+      "sha256": "ede4a4d43958de800dcffa5cac5a6736a39e579f36cced2959ec2d0a4c7fd44e",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/probe-receipt-windows.js",
+      "sha256": "5711143776e8240368a3b01a7d41ded863b6ca2551d1cb0a81456e79f5ead690",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/receipt-extension.js",
+      "sha256": "d9eed915133608db623c4f2f64bd2cad309d7c9b21c09f3007c8f13774bba6d6",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/receipt.js",
+      "sha256": "3c734f9a1cac03449d1e6eec2469443acc5e4bd8f4cd92272ac8edbe06c0cc88",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-recovery-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-recovery-m0/receipt.test.js",
+      "sha256": "352f76885a2b3d89fdcadd30bde3dce9d7d4423f5b1d9a3b104444100f36060a",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "docs/polish-pi-web-m0-report.md",
+      "sha256": "a366f6a5e0eb0c45c87414a7b126d8b50fb6e63798e6d2e1e0f4288dfc07498d",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/README.md",
+      "sha256": "277ec78d46204280ddf85d4040387fdedcedbabb6b478c3c5c59e7556e41cb4c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/after-reload.json",
+      "sha256": "ff67cde5e2f118ea54ac6f5b59253fbe0aca16a45a7fbbc950c05006022ad525",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/assertions.json",
+      "sha256": "97da341532c3f6bab84042bafa5c933ed7b9bfef4dfd994285f29c3b88a18b6d",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/baseline.json",
+      "sha256": "8f76f5c5ba08167ace3265c367cb1cd5c4ddc53d5e9e90a6834c17ef012c48ec",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/before-reload.json",
+      "sha256": "b34f17ae1bef04b2b817e39497ab1eecc3707a20f2955fd733b7526061b4d1f3",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/bridge-state.json",
+      "sha256": "cfcdec9bdf9b53e8c3f57f3734bf620c4a2214e80346dc7832b08540e04aae99",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/browser-abort.json",
+      "sha256": "a5a7e45cc17351698535df6f5abde21e73e1d10536f38c43bfbe3fdea3a2b864",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/browser-after-crash.json",
+      "sha256": "0f94fbb87dc6449b69be1ff1788c8f1f6b8b40e949b4d2cf0c8f2ffdc7f0e82c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/browser-busy.json",
+      "sha256": "dc0045f72c08fbc71ecfffe98c54d94727ed2f01c717a20bbfbd5656203d6c15",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/browser-duplicate-security.json",
+      "sha256": "4ed046aff40df8da4a5edbeec834989b068ed068e9aaaaaf407926a746afc6f9",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/browser-latency.json",
+      "sha256": "9da3bd97210cbccc781fb78b8a09ae5be1b48b8bc433a647cacc88eb668dbefc",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/browser-samples.json",
+      "sha256": "02099b1acccef8db5b7871a28b7a1b50dfc12ee9e8aaca6ef191d673efe72978",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/busy-page.png",
+      "sha256": "5fde3f54c23c4330bd8bf52d7690e6865285c1fd87590e93e079972b6b772a98",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/cleanup-and-recovery.json",
+      "sha256": "f06615089081846298b0311920c109515f64b1474310af902eb4eeced100168d",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/console-before-crash.json",
+      "sha256": "47e76ab7a26af8c203cc64b21f3b5fd180df8c4bb1d39934812009230b9b471f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/console-first.json",
+      "sha256": "d5031875aad57adb68084ee18b33fbdf4c468cb4c018510095f0ccef94c7e383",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/crash-browser.json",
+      "sha256": "5f10c4828441286b6f0e2d98198820f25945765f3f96ed63c1b116a603abe711",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/crash-injection.json",
+      "sha256": "386a35d5d0acf54955329ae244c37b740a9da3e70672ea73d4f3846edbcd28a2",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/crash-window-missed-browser.json",
+      "sha256": "3f2e233b8b71bcc19d989fc336944326c1d980b3c6a14a7198db5768d45cdce2",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/final-checks.json",
+      "sha256": "7a7c51f4b54de78a95812b1374253dc9e87f1ac88f439ace2718638d1baa2e5c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/first-submit-network.json",
+      "sha256": "aa7d591f6bed58cd367d142b5a6d25fecd7035f0d1a6bb7067064a63434dfa66",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/first-web-reply.png",
+      "sha256": "5fde3f54c23c4330bd8bf52d7690e6865285c1fd87590e93e079972b6b772a98",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/host-events.jsonl",
+      "sha256": "4524820954aeccefb60e851317f4dd51724e499ce2e63f4b76658c0e43d545d5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/identity.json",
+      "sha256": "424ef59b39547ca813c59a6ef24e4a53a7464940f5b2ed091a4bd512e0c91135",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/network-after-crash.json",
+      "sha256": "af0c76513d7b533ece3e58c1755041340818b938cbc4be0c998c603429b9e157",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/network-before-reload.json",
+      "sha256": "0de53fbabc8ddf4ce6c19fc52eab5319161095ac2685d45cc82ed7d485d2cb39",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-web-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-web-m0/evidence/versions.json",
+      "sha256": "b216bbe6ed23fb9ac5757b40551d34a1ee95cd6f3e3c6c64adc616520e51af72",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "docs/polish-m0-supplement-report.md",
+      "sha256": "e4950f5666e4f71e77b3464157d9d47964a08d0421abe04a7f04b5109b91314e",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/.gitignore",
+      "sha256": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/README.md",
+      "sha256": "670a19b99974bd9d34bd8b34eaa22f5ecd5b68017fc80bc952b1639d623c83cd",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/cli-readonly.json",
+      "sha256": "d0c16ebf9416bbf649f858100f0354d482150b060a702b6a79d3530b13112633",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/experiment-summary.json",
+      "sha256": "1e4faeccfd16a83f14eb6556f164ffe1333feec20761dcdabf534b5953824afc",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/extension-events.jsonl",
+      "sha256": "c30aaa33f5115015ce5c1aa92cc73a21f6eab7519a46ba8dfefd43e5690e125b",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/final-checks.json",
+      "sha256": "87d1a29c5c3a7531edf6671b0b1a1a2a60c740cf2b31def3632cf4b05d7cb8ce",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/first-round-preserved-after.json",
+      "sha256": "2ee4c02f964d87c348063f553658bc558d245ae4c127a1e70e7a49226b2f7064",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/first-round-preserved-before.json",
+      "sha256": "efc0094e6419ed9d20e0ddb669039daef7edad365813428c94b757bb1e24eacc",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/pi-source-manifest.json",
+      "sha256": "b27c908bb958d9630acf7a6f41eb937df4df6e7fe6be00a30439978c7decf618",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/unit-cleanup-failure.txt",
+      "sha256": "9a75cabd1580acc2a45f2b050348906a46452317b777d284a9aabef29f9e8f4f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/unit-green.txt",
+      "sha256": "98f5ecfc7abd40cc3f779662d8b6e8e6d5ca13b1d7981dab9725050f7be516c4",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/evidence/unit-red.txt",
+      "sha256": "f87d630850280a13faf9ddc1f6ad8af6335ad598f08a89b51a2b414c694eb390",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/ledger.js",
+      "sha256": "94d17c942b9f696c062a5faf63b08dcd6caad962d8a36d91e15eb60d21d671ba",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/ledger.test.js",
+      "sha256": "19c181c3ea4e0cf04691e2b0e539b1e0ace5276dd38d3e4532d03e2a78d88ebb",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/pi-extension.js",
+      "sha256": "38544fd8d0dd7dc844152b0461059e8e5fa575f04ec2e672b30535ee742bd409",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0-supplement/evidence/manifest.json",
+      "path": "verification/polish-m0-supplement/run-extension-probe.js",
+      "sha256": "5839d00c8adbd4d38a9e087d0334c33aec77217f6a9c1958ff6bcbb16ac86b19",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/.gitignore",
+      "sha256": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/README.md",
+      "sha256": "78871ae1328f91eea2eafc03888eddc28ca61701e3e760959663e46b3198d7a6",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/analyze.py",
+      "sha256": "f20db7971b20ee42d3b07a5f57e2a9055a4656906982daae7a5515bd9ab9ce19",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/cleanup.json",
+      "sha256": "a296327e31fc7d602ac2c0dd4fdcc9cf75fd8871271fdeb4f6ce590a0de3d3df",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/codex-capability.json",
+      "sha256": "874c6986dc889cc95f509263ea525b1c4496917c8f3361da00347cd5491182b4",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/codex-thread-identity.json",
+      "sha256": "322ab61512afc9c7790fe07a9b99a6951eea38d0a0b05c88546e88bd631b6225",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/codex-transport.json",
+      "sha256": "59847f80b7fcc459229cae899745d31fb977980780e061006f8dccd20e3904a0",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/duplicate-evidence.json",
+      "sha256": "53b34becbbde8d8c9542f70d655d93de54bdf21028f805a114b91830a79f1428",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/environment.json",
+      "sha256": "870d44433e774094164726df0251f2540c3dfd2cc0852a41b7f3b17fd18811a5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/pi-crash-events.jsonl",
+      "sha256": "d3be822fa3a485195c8f33daff17d964ca87639cc1a3d4b369c188939ddebed1",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/pi-events.jsonl",
+      "sha256": "403784b6082f50d12bd47610ae57f8de7fa7ce0aa5d8b992697010d9bac19677",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/pi-latency.json",
+      "sha256": "4138a6858d36c3d72cc12c1b239eb70a89cfbb64a0367c94c0924f4cbb2aac90",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/pi-persisted-user-entries.json",
+      "sha256": "a9e33396abcf15e6d12746ece965b1fbc9fe7ee1548dbee1e3195f8c490ab81c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/pi-source-manifest.json",
+      "sha256": "a237a50da451f1f21347db07b7862fb6e7206320108fbaa73bfddd8337ca33f5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/test-green.txt",
+      "sha256": "37cc10031d26e0ca8a93fd6e14d2aed5347f078db6283341852f2bc75a6beaf5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/evidence/test-red.txt",
+      "sha256": "dce188fc5f79bafa1fcfd3677cc4230984d13eb66052cadce5b61cde92cef19c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/pi-crash-probe.js",
+      "sha256": "827fe4bccaba712023b362f48fed53c5b42550398431fe0c9d2cf04a42f2839b",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/pi-probe.js",
+      "sha256": "c59637adc271eb8258132e2e9dbe6fd16634dcdcbb63b80057b6ac41b386b745",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/probe-support.js",
+      "sha256": "049aef1312753d6c0cd42fd029c841c8fe569ddc04b6f535e5ef03d88a65bcf7",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "verification/polish-m0/probe.test.js",
+      "sha256": "57c8a46f7c8c774fdd9703aa4646e129e1294629c1a22b8df3aeb00d2a4cfee2",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-m0/evidence/manifest.json",
+      "path": "docs/polish-m0-report.md",
+      "sha256": "2988ca98150a871cc0e83dd4db667b022e7d012a2ae52aca714cba0f2707bf92",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "docs/polish-development-spec.md",
+      "sha256": "fd14b8e2ea5b79e14c50dceead0dba950c1045e32d7783befeda5a45a0fc9fa5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "docs/polish-pi-m0-report.md",
+      "sha256": "b2e149544e19de93c94d94245112b510e262da6ead328d1c1c843e2de735f942",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/.gitignore",
+      "sha256": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/PLAN.md",
+      "sha256": "d8827617f74f158078d7dbdcb9d1ac63d719703cd527c3da5f8d1525b2f09559",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/README.md",
+      "sha256": "c8f670560f3321884019a55b89021b0535cb7353700220f15bea5f5f16751c38",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/bridge.js",
+      "sha256": "3ae590460897ed5e2cdd117cfdfb584a5c0dbcdefb1dcfe6145003dad1d157e4",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/bridge.test.js",
+      "sha256": "deb6ebd343f5d4d0506eda8f1c13d0134f0af8723be51c1c3357e84820c7eaab",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/all-green.txt",
+      "sha256": "c9a50afb579b799ac61c3370d0dfde0ec1dfda4962e9b77bf56364eed14008d8",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/assertions.json",
+      "sha256": "605d873844b9586d4a526525667fc7ce45b93e3cf9b2786a8f2a978e4cbca419",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/bridge-green.txt",
+      "sha256": "81b1cb04dc57979a7c80e18f7e8c96268831d6b4987f30e42802536498a92744",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/bridge-red.txt",
+      "sha256": "fa02b11a1a580bc0098a6a922ec0729cf01bcf02af652bc7d3c8f45f82686c22",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/checks.json",
+      "sha256": "4f0e4746d19d3fa47c3c785b47d3b2c59c6c521db69a83f11ded55cac73d80ad",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/component-events.jsonl",
+      "sha256": "aa1d90cbea25bf45bbc8bdba0f3a60b1d93a9b30e3378113224b255c39689fd7",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/component-summary.json",
+      "sha256": "c1315bb5136aaabe1812af6bca7c23160f44a81dbaebc872e7d18160237e752c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/development-spec-v1.1.md",
+      "sha256": "a378fe3b29818ceb1a691d68f45561f304bcb29aa0ebb77045610deb9069df77",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/pi-source-manifest.json",
+      "sha256": "b27c908bb958d9630acf7a6f41eb937df4df6e7fe6be00a30439978c7decf618",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/preserved-after.json",
+      "sha256": "cfce53aebd9990deff96701e72fe6b38f932b72614b30a115f78b1151a3509dd",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/preserved-before.json",
+      "sha256": "3aedb8ebf3e898853d7fa80c659a9dd775ba8cddeb53f55351637891911db24c",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/referer-red.txt",
+      "sha256": "583acbd2a14d647b6e41b752f6c4f797c38f72a9af49b1bcc559f469b2a21abd",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/test-green.txt",
+      "sha256": "a6ce5aa9cf71542ef04656f3cdf757bc02bc63b7f72781a9d84991f89ab2ed14",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/evidence/test-red.txt",
+      "sha256": "5f3f5d47769da7e6e37c7be70f20ec04a490bfa015dbf078e4925c0f6054d0fb",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/host-extension.js",
+      "sha256": "6c517b21be7d5565d2f010a3a5a094a3278bc4c044e67965ac4e2d9c1ae77136",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/inbox.js",
+      "sha256": "e87d3c523158acda98f2195d75dec81fee6b3669d4a4dac2f26617477cebea76",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/inbox.test.js",
+      "sha256": "6da8e42519155ebe751457129b437e9e74c70227efab368ae4d3c62be97222cb",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/index.html",
+      "sha256": "ffa83aac7121b18a78853f18e04847727202f1027cadd0e8ef6fbc6d358249f5",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/page.js",
+      "sha256": "ef602bff08cbbda6150ca67aa44dcb33a3f26bb527f1faaedbd3f1efd9d6a5f4",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/peer.js",
+      "sha256": "b02136239a1f68951801584e16049cd2779373dd3cc66043df470815ff7d0004",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/probe.js",
+      "sha256": "7ace6eb7785c1a8e820784ef5bf5f5d2d6b3570372ba601c334e04ab711b579a",
+      "ok": true
+    },
+    {
+      "manifest": "verification/polish-pi-m0/evidence/manifest.json",
+      "path": "verification/polish-pi-m0/serve.js",
+      "sha256": "9917ccfbcb6c99fae91630ed731a3e1f3ae0dfec23667edf1e3018590cc2d29f",
+      "ok": true
+    }
+  ],
+  "ports": "COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    33191 lightencc   12u  IPv4 0xafe5a639111ce755      0t0  TCP 127.0.0.1:49791 (LISTEN)\nnode    95933 lightencc   12u  IPv4 0xfd547ebf36b2c1fc      0t0  TCP 127.0.0.1:49792 (LISTEN)\n"
+}

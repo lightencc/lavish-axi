@@ -1,0 +1,14 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/c637207f-3cd7-4247-b6fe-19625b4f38ca",
+  "stage": "host_admitted",
+  "id": "fault-host_admitted",
+  "capturedAt": "2026-10-30T19:19:21.579Z",
+  "pass": true,
+  "checks": [
+    "real crash fired at exact requested source stage",
+    "same session and same URL endpoint after owned restart",
+    "single durable logical message and single exact Pi input",
+    "exact reply recovered",
+    "admission persisted before lost receipt"
+  ]
+}

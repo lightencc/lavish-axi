@@ -1,0 +1,137 @@
+{
+  "host": {
+    "claim": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+      "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+      "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+      "epoch": 1,
+      "generation": 2,
+      "mode": "bridge",
+      "id": "c03c89d3-f2df-44b1-9390-9d7365330d32",
+      "digest": "4ada8beabf33d2f58edbf773baef6b6dfd0c5d62c5ded9f5af775f7cdc6fd03a",
+      "attempt": "b583ea31-375a-4c9f-982f-1cac0dc2514f"
+    },
+    "text": "{\"uid\":\"\",\"prompt\":\"请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"058255cc-4e7d-43f2-9a08-94cdcb9a09cc\",\"round_id\":\"1c0cf97c-9714-407e-9913-8b04fe225b5b\"}",
+    "prompt": {
+      "uid": "",
+      "prompt": "请只回复 POLISH_UI_19_10ec37，不要修改文件或调用工具。",
+      "scope": "session",
+      "comment_id": "058255cc-4e7d-43f2-9a08-94cdcb9a09cc",
+      "round_id": "1c0cf97c-9714-407e-9913-8b04fe225b5b",
+      "prompt_id": "c03c89d3-f2df-44b1-9390-9d7365330d32"
+    },
+    "kind": "message",
+    "admissionId": "c76be79d-b9d9-4700-8fcf-a038597c1792",
+    "state": "replied",
+    "inputEntryId": "c7168a7b",
+    "failure": {
+      "entryId": "a04b6b3b",
+      "error": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)"
+    },
+    "reply": {
+      "entryId": "720fd31d",
+      "text": "POLISH_UI_19_10ec37"
+    }
+  },
+  "events": [
+    {
+      "at": 1793386739081.4065,
+      "type": "message_end",
+      "message": {
+        "role": "assistant",
+        "stopReason": "error",
+        "durationMs": 47587,
+        "errorMessage": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)",
+        "responseId": "resp_18e363bcc77bc44000000042"
+      },
+      "details": {}
+    },
+    {
+      "at": 1793386739112.6287,
+      "type": "auto_retry_start",
+      "message": {
+        "role": null,
+        "stopReason": null,
+        "durationMs": null,
+        "errorMessage": null,
+        "responseId": null
+      },
+      "details": {
+        "attempt": 1,
+        "maxAttempts": 3,
+        "delayMs": 2000,
+        "errorMessage": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)"
+      }
+    },
+    {
+      "at": 1793386778398.1313,
+      "type": "message_end",
+      "message": {
+        "role": "assistant",
+        "stopReason": "error",
+        "durationMs": 37249,
+        "errorMessage": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)",
+        "responseId": "resp_18e363c5ef49aad800000045"
+      },
+      "details": {}
+    },
+    {
+      "at": 1793386778424.7197,
+      "type": "auto_retry_start",
+      "message": {
+        "role": null,
+        "stopReason": null,
+        "durationMs": null,
+        "errorMessage": null,
+        "responseId": null
+      },
+      "details": {
+        "attempt": 2,
+        "maxAttempts": 3,
+        "delayMs": 4000,
+        "errorMessage": "server_error: Grok (SuperGrok): ECONNRESET: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch() (502: you can retry your request)"
+      }
+    },
+    {
+      "at": 1793386818394.367,
+      "type": "message_end",
+      "message": {
+        "role": "assistant",
+        "stopReason": "stop",
+        "durationMs": 35927,
+        "errorMessage": null,
+        "responseId": "8d2ef4d1-0150-9e9c-975b-49169c5b5266"
+      },
+      "details": {}
+    },
+    {
+      "at": 1793386818394.8079,
+      "type": "auto_retry_end",
+      "message": {
+        "role": null,
+        "stopReason": null,
+        "durationMs": null,
+        "errorMessage": null,
+        "responseId": null
+      },
+      "details": {
+        "success": true,
+        "attempt": 2
+      }
+    },
+    {
+      "at": 1793386818432.318,
+      "type": "agent_settled",
+      "message": {
+        "role": null,
+        "stopReason": null,
+        "durationMs": null,
+        "errorMessage": null,
+        "responseId": null
+      },
+      "details": {
+        "aborted": false
+      }
+    }
+  ]
+}

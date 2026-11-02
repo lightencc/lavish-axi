@@ -1,0 +1,342 @@
+{
+  "at": "2026-10-30T12:46:02.252769+00:00",
+  "owned_pids_exited": [
+    27647,
+    27697,
+    47459,
+    47462,
+    47463,
+    47465,
+    47466
+  ],
+  "port_49793_unbound": true,
+  "prototype_listeners": "COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    33191 lightencc   12u  IPv4 0xafe5a639111ce755      0t0  TCP 127.0.0.1:49791 (LISTEN)\nnode    95933 lightencc   12u  IPv4 0xfd547ebf36b2c1fc      0t0  TCP 127.0.0.1:49792 (LISTEN)\n",
+  "ownership_test_diagnostics": [
+    {
+      "evidence": "owned-child-crash-recovery",
+      "mode": "accepted",
+      "pid": 47459,
+      "signal": "SIGKILL",
+      "oldNonce": "54e30a38-2963-4c80-a783-72235d8a1311",
+      "before": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 1,
+        "epoch": 1,
+        "version": 2,
+        "lifecycle": "open",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-6952b2f6-841e-4886-9e4e-20548d5c8e9b",
+            "text": "new isolated local fixture",
+            "digest": "92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe",
+            "epoch": 1,
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false
+          }
+        ],
+        "end": null
+      },
+      "after": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 2,
+        "epoch": 1,
+        "version": 3,
+        "lifecycle": "open",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-6952b2f6-841e-4886-9e4e-20548d5c8e9b",
+            "text": "new isolated local fixture",
+            "digest": "92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe",
+            "epoch": 1,
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false
+          }
+        ],
+        "end": null
+      },
+      "oldToken": null
+    },
+    {
+      "evidence": "owned-child-crash-recovery",
+      "mode": "dispatch",
+      "pid": 47462,
+      "signal": "SIGKILL",
+      "oldNonce": "f0712553-24ea-4569-b120-03b1f536094f",
+      "before": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 1,
+        "epoch": 1,
+        "version": 3,
+        "lifecycle": "open",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-15e962cb-80d6-4055-b82c-d7fefd0e7a43",
+            "text": "new isolated local fixture",
+            "digest": "92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe",
+            "epoch": 1,
+            "kind": "message",
+            "state": "dispatching",
+            "consumed": false,
+            "claim": {
+              "id": "r1-15e962cb-80d6-4055-b82c-d7fefd0e7a43",
+              "epoch": 1,
+              "generation": 1,
+              "nonce": "f0712553-24ea-4569-b120-03b1f536094f",
+              "attempt": "a0a3ffc2-7a9d-4316-9d2a-80f019060a66"
+            }
+          }
+        ],
+        "end": null
+      },
+      "after": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 2,
+        "epoch": 1,
+        "version": 4,
+        "lifecycle": "open",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-15e962cb-80d6-4055-b82c-d7fefd0e7a43",
+            "text": "new isolated local fixture",
+            "digest": "92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe",
+            "epoch": 1,
+            "kind": "message",
+            "state": "unknown",
+            "consumed": false,
+            "claim": {
+              "id": "r1-15e962cb-80d6-4055-b82c-d7fefd0e7a43",
+              "epoch": 1,
+              "generation": 1,
+              "nonce": "f0712553-24ea-4569-b120-03b1f536094f",
+              "attempt": "a0a3ffc2-7a9d-4316-9d2a-80f019060a66"
+            }
+          }
+        ],
+        "end": null
+      },
+      "oldToken": {
+        "id": "r1-15e962cb-80d6-4055-b82c-d7fefd0e7a43",
+        "epoch": 1,
+        "generation": 1,
+        "nonce": "f0712553-24ea-4569-b120-03b1f536094f",
+        "attempt": "a0a3ffc2-7a9d-4316-9d2a-80f019060a66"
+      }
+    },
+    {
+      "evidence": "owned-child-crash-recovery",
+      "mode": "ending",
+      "pid": 47463,
+      "signal": "SIGKILL",
+      "oldNonce": "9230e9a2-3e07-4ff5-abd0-661356bfe162",
+      "before": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 1,
+        "epoch": 1,
+        "version": 3,
+        "lifecycle": "ending",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-6e56ca65-21c4-4fcc-bcbe-c899a98042ab",
+            "text": "new isolated local fixture",
+            "digest": "92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe",
+            "epoch": 1,
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false
+          },
+          {
+            "id": "end-ad303e30-6344-46f5-8206-24fff9d91804-marker",
+            "text": "Review ended: end-ad303e30-6344-46f5-8206-24fff9d91804",
+            "digest": "28796567a50c1a522288b1ce390978d74477e2c66d99f68b92798eb60763e3dc",
+            "epoch": 1,
+            "kind": "end",
+            "state": "accepted",
+            "consumed": false
+          }
+        ],
+        "end": {
+          "id": "end-ad303e30-6344-46f5-8206-24fff9d91804",
+          "digest": "410ec7904a60ff4a28fb720165f7a04a33d9aefdc99623bcb2036664acd057b4",
+          "ids": [
+            "r1-6e56ca65-21c4-4fcc-bcbe-c899a98042ab",
+            "end-ad303e30-6344-46f5-8206-24fff9d91804-marker"
+          ]
+        }
+      },
+      "after": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 2,
+        "epoch": 1,
+        "version": 4,
+        "lifecycle": "ending",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-6e56ca65-21c4-4fcc-bcbe-c899a98042ab",
+            "text": "new isolated local fixture",
+            "digest": "92f4f33358567a517c8c49fdbf3da3b395ba28429692de918222b1da6afc0ffe",
+            "epoch": 1,
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false
+          },
+          {
+            "id": "end-ad303e30-6344-46f5-8206-24fff9d91804-marker",
+            "text": "Review ended: end-ad303e30-6344-46f5-8206-24fff9d91804",
+            "digest": "28796567a50c1a522288b1ce390978d74477e2c66d99f68b92798eb60763e3dc",
+            "epoch": 1,
+            "kind": "end",
+            "state": "accepted",
+            "consumed": false
+          }
+        ],
+        "end": {
+          "id": "end-ad303e30-6344-46f5-8206-24fff9d91804",
+          "digest": "410ec7904a60ff4a28fb720165f7a04a33d9aefdc99623bcb2036664acd057b4",
+          "ids": [
+            "r1-6e56ca65-21c4-4fcc-bcbe-c899a98042ab",
+            "end-ad303e30-6344-46f5-8206-24fff9d91804-marker"
+          ]
+        }
+      },
+      "oldToken": null
+    },
+    {
+      "evidence": "shared-arbitration",
+      "pids": [
+        47465,
+        47466
+      ],
+      "results": [
+        {
+          "mode": "poll",
+          "granted": false,
+          "error": "MODE"
+        },
+        {
+          "mode": "bridge",
+          "granted": true,
+          "token": {
+            "id": "r1-race",
+            "epoch": 1,
+            "generation": 1,
+            "nonce": "2f6c5d99-9bd8-46d1-972d-86ec377799c8",
+            "attempt": "90123f11-3897-4b0b-9dec-c3a2b4f83756"
+          }
+        }
+      ],
+      "snapshot": {
+        "binding": {
+          "artifact": "m0-artifact",
+          "instance": "owned-pi",
+          "session": "owned-session"
+        },
+        "generation": 1,
+        "epoch": 1,
+        "version": 3,
+        "lifecycle": "open",
+        "mode": "bridge",
+        "messages": [
+          {
+            "id": "r1-race",
+            "text": "local arbitration fixture",
+            "digest": "3d937c5324575aa57c76a3f8b779e2fda48f3708bc383df8cb5f17f1e66c33ef",
+            "epoch": 1,
+            "kind": "message",
+            "state": "dispatching",
+            "consumed": false,
+            "claim": {
+              "id": "r1-race",
+              "epoch": 1,
+              "generation": 1,
+              "nonce": "2f6c5d99-9bd8-46d1-972d-86ec377799c8",
+              "attempt": "90123f11-3897-4b0b-9dec-c3a2b4f83756"
+            }
+          }
+        ],
+        "end": null
+      }
+    }
+  ],
+  "pi_cases": {
+    "receipt": {
+      "pid": 27647,
+      "binding": {
+        "artifact": "recovery-m0-artifact",
+        "instance": "eb7cc00b-3d3e-4933-bc73-5e604a6a9812",
+        "session": "01a18cd4-7b75-77a4-8001-02c304697a34"
+      },
+      "id": "r1-a61c11ae-3824-4904-8063-fead91cdb9ab",
+      "result": {
+        "status": "verified_reply",
+        "safeToResend": false,
+        "proof": {
+          "artifact": "recovery-m0-artifact",
+          "instance": "eb7cc00b-3d3e-4933-bc73-5e604a6a9812",
+          "session": "01a18cd4-7b75-77a4-8001-02c304697a34",
+          "id": "r1-a61c11ae-3824-4904-8063-fead91cdb9ab",
+          "epoch": 1,
+          "digest": "f5512e4ab366fdc96fc5c4de0e20978667cad30ad2df098b0ec40bc94fd3c924",
+          "attempt": "2db03e06-e99c-41c8-8863-aa5ea863e95c",
+          "kind": "reply",
+          "evidenceId": "f3ce9c8a",
+          "inputEvidence": "context_with_system",
+          "replyEntryId": "b055fc11"
+        }
+      },
+      "after_state": "replied",
+      "executionUnknown": false,
+      "resends": 0,
+      "session_file_sha256": "ad775184a2c212d5bc17e0020fae639503d74aadf09e0b4dda02dc2b5187801c"
+    },
+    "gap": {
+      "pid": 27697,
+      "binding": {
+        "artifact": "recovery-m0-artifact",
+        "instance": "da66cc6f-df80-46cb-882e-5d81701845de",
+        "session": "01a18cd4-8408-733c-8920-67ee83e3c60e"
+      },
+      "id": "r1-a81fc59b-b833-44c0-8755-659a97874379",
+      "result": {
+        "status": "unknown",
+        "reason": "missing_or_ambiguous_receipt",
+        "safeToResend": false
+      },
+      "after_state": "delivered",
+      "executionUnknown": true,
+      "resends": 0,
+      "session_file_sha256": "7869d634c44d15e3cf66c12c410c7243ad23680f6a531fe1858bc5038986561d"
+    }
+  }
+}

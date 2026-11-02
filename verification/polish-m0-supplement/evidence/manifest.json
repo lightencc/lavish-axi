@@ -1,0 +1,19 @@
+{
+  "docs/polish-m0-supplement-report.md": "e4950f5666e4f71e77b3464157d9d47964a08d0421abe04a7f04b5109b91314e",
+  "verification/polish-m0-supplement/.gitignore": "fdcd0183a4babd894e7cce83ec87bd24f385c424cc83571009ed07ab34722d9f",
+  "verification/polish-m0-supplement/README.md": "670a19b99974bd9d34bd8b34eaa22f5ecd5b68017fc80bc952b1639d623c83cd",
+  "verification/polish-m0-supplement/evidence/cli-readonly.json": "d0c16ebf9416bbf649f858100f0354d482150b060a702b6a79d3530b13112633",
+  "verification/polish-m0-supplement/evidence/experiment-summary.json": "1e4faeccfd16a83f14eb6556f164ffe1333feec20761dcdabf534b5953824afc",
+  "verification/polish-m0-supplement/evidence/extension-events.jsonl": "c30aaa33f5115015ce5c1aa92cc73a21f6eab7519a46ba8dfefd43e5690e125b",
+  "verification/polish-m0-supplement/evidence/final-checks.json": "87d1a29c5c3a7531edf6671b0b1a1a2a60c740cf2b31def3632cf4b05d7cb8ce",
+  "verification/polish-m0-supplement/evidence/first-round-preserved-after.json": "2ee4c02f964d87c348063f553658bc558d245ae4c127a1e70e7a49226b2f7064",
+  "verification/polish-m0-supplement/evidence/first-round-preserved-before.json": "efc0094e6419ed9d20e0ddb669039daef7edad365813428c94b757bb1e24eacc",
+  "verification/polish-m0-supplement/evidence/pi-source-manifest.json": "b27c908bb958d9630acf7a6f41eb937df4df6e7fe6be00a30439978c7decf618",
+  "verification/polish-m0-supplement/evidence/unit-cleanup-failure.txt": "9a75cabd1580acc2a45f2b050348906a46452317b777d284a9aabef29f9e8f4f",
+  "verification/polish-m0-supplement/evidence/unit-green.txt": "98f5ecfc7abd40cc3f779662d8b6e8e6d5ca13b1d7981dab9725050f7be516c4",
+  "verification/polish-m0-supplement/evidence/unit-red.txt": "f87d630850280a13faf9ddc1f6ad8af6335ad598f08a89b51a2b414c694eb390",
+  "verification/polish-m0-supplement/ledger.js": "94d17c942b9f696c062a5faf63b08dcd6caad962d8a36d91e15eb60d21d671ba",
+  "verification/polish-m0-supplement/ledger.test.js": "19c181c3ea4e0cf04691e2b0e539b1e0ace5276dd38d3e4532d03e2a78d88ebb",
+  "verification/polish-m0-supplement/pi-extension.js": "38544fd8d0dd7dc844152b0461059e8e5fa575f04ec2e672b30535ee742bd409",
+  "verification/polish-m0-supplement/run-extension-probe.js": "5839d00c8adbd4d38a9e087d0334c33aec77217f6a9c1958ff6bcbb16ac86b19"
+}

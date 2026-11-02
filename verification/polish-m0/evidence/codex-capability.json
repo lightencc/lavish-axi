@@ -1,0 +1,11 @@
+{
+  "schema_source": "verification/polish-m0/runtime/codex-schema/v2/TurnStartParams.json",
+  "clientUserMessageId": {
+    "type": [
+      "string",
+      "null"
+    ]
+  },
+  "request_note": "No idempotency guarantee is specified for this field in the installed schema. No semantic guarantee inferred.",
+  "transport": "Desktop app-server process 36272 has stdio pipes; no --listen endpoint in its observed invocation. Default standalone control socket does not exist. No daemon or alternate app-server started."
+}

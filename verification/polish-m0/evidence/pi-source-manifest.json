@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/docs/rpc.md",
+    "sha256": "37a03d180115460a0a275022f4aeabef1e5345458df6a9b6e8a6de18474de720"
+  },
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/docs/rpc-commands.md",
+    "sha256": "4deeee367852f4633ef594bc079f9e9fb14640a4e3ba8a69b7c89b6f54740838"
+  },
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/docs/json.md",
+    "sha256": "f103191816fdcf3627dfc98b89acad8a28eee737697130ddaeb2581131213543"
+  },
+  {
+    "path": "/Users/lightencc/.homebrew/lib/node_modules/@earendil-works/pi-coding-agent/dist/modes/rpc/rpc-mode.js",
+    "sha256": "631697cd35928fc827f4a423538c43ff227b8cbf63c2a2f11060616f55eba6db"
+  }
+]

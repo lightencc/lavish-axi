@@ -1,0 +1,552 @@
+{
+  "at": "2026-10-30T13:13:03.593422+00:00",
+  "previousManifestChecks": [
+    {
+      "path": "docs/polish-pi-recovery-m0-report.md",
+      "ok": true
+    },
+    {
+      "path": "docs/polish-pi-web-m0-errata.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/.gitignore",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/CONTRACT.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/README.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/authority.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/authority.test.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/drain.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/drain.test.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-order-failure.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/authority-syntax-failure.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/baseline.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/cleanup-and-assertions.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/code-version.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/drain-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/drain-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/environment.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/fencing-idempotence-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/final-checks.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/final-tests.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/mechanism-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/missing-attempt-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/ownership-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/ownership-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-gap-result.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-receipt-result.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-source-manifest.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/pi-window-events.jsonl",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/receipt-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/receipt-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/evidence/web-report-original.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/owner-child.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/ownership.test.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/probe-receipt-windows.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/receipt-extension.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/receipt.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-recovery-m0/receipt.test.js",
+      "ok": true
+    },
+    {
+      "path": "docs/polish-pi-web-m0-report.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/README.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/after-reload.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/assertions.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/baseline.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/before-reload.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/bridge-state.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/browser-abort.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/browser-after-crash.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/browser-busy.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/browser-duplicate-security.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/browser-latency.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/browser-samples.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/busy-page.png",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/cleanup-and-recovery.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/console-before-crash.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/console-first.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/crash-browser.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/crash-injection.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/crash-window-missed-browser.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/final-checks.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/first-submit-network.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/first-web-reply.png",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/host-events.jsonl",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/identity.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/network-after-crash.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/network-before-reload.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-web-m0/evidence/versions.json",
+      "ok": true
+    },
+    {
+      "path": "docs/polish-m0-supplement-report.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/.gitignore",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/README.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/cli-readonly.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/experiment-summary.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/extension-events.jsonl",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/final-checks.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/first-round-preserved-after.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/first-round-preserved-before.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/pi-source-manifest.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/unit-cleanup-failure.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/unit-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/evidence/unit-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/ledger.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/ledger.test.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/pi-extension.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0-supplement/run-extension-probe.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/.gitignore",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/README.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/analyze.py",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/cleanup.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-capability.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-thread-identity.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/codex-transport.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/duplicate-evidence.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/environment.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-crash-events.jsonl",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-events.jsonl",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-latency.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-persisted-user-entries.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/pi-source-manifest.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/test-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/evidence/test-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/pi-crash-probe.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/pi-probe.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/probe-support.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-m0/probe.test.js",
+      "ok": true
+    },
+    {
+      "path": "docs/polish-m0-report.md",
+      "ok": true
+    },
+    {
+      "path": "docs/polish-development-spec.md",
+      "ok": true
+    },
+    {
+      "path": "docs/polish-pi-m0-report.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/.gitignore",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/PLAN.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/README.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/bridge.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/bridge.test.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/all-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/assertions.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/bridge-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/bridge-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/checks.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/component-events.jsonl",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/component-summary.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/development-spec-v1.1.md",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/pi-source-manifest.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/preserved-after.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/preserved-before.json",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/referer-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/test-green.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/evidence/test-red.txt",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/host-extension.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/inbox.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/inbox.test.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/index.html",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/page.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/peer.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/probe.js",
+      "ok": true
+    },
+    {
+      "path": "verification/polish-pi-m0/serve.js",
+      "ok": true
+    }
+  ],
+  "ownedPids": [
+    69225,
+    69248,
+    69291,
+    69942
+  ],
+  "psOutput": "",
+  "ports": "COMMAND   PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    33191 lightencc   12u  IPv4 0xafe5a639111ce755      0t0  TCP 127.0.0.1:49791 (LISTEN)\nnode    95933 lightencc   12u  IPv4 0xfd547ebf36b2c1fc      0t0  TCP 127.0.0.1:49792 (LISTEN)\n",
+  "piVersion": "1.4.0",
+  "nodeVersion": "v26.7.0",
+  "gitDiff": ""
+}

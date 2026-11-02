@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Script ran on page and returned:\n```json\n{\"at\":\"2026-10-30T12:13:29.904Z\",\"binding\":\"测试 session：01a18cb5-ad4e-745f-8bb4-7a5acda50d47 · 实例：c8538c79-f205-4c9c-9187-41e8caee3857\",\"articleCount\":0,\"knownMessageQuery\":{\"status\":200,\"value\":{\"id\":\"pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6\",\"binding\":{\"instance\":\"c8538c79-f205-4c9c-9187-41e8caee3857\",\"session\":\"01a18cb5-ad4e-745f-8bb4-7a5acda50d47\"},\"digest\":\"7d5cb0c95238ef9ce125c3622ced17d088ba0742f88e4ca45499547309b58cce\",\"state\":\"replied\",\"inputStored\":true,\"inputEntryIds\":[\"6749f1af\"],\"delivery\":\"input_witnessed\",\"replyVerified\":true,\"reply\":{\"entryId\":\"91fb00cd\",\"text\":\"ACK_0\",\"stopReason\":\"stop\"},\"safeToResend\":false,\"version\":136}},\"endControls\":[\"发送\"]}\n```"
+    }
+  ]
+}

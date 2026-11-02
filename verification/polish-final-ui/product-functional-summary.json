@@ -1,0 +1,835 @@
+{
+  "success": true,
+  "scope": "Real Pi functional acceptance; not final performance acceptance",
+  "run": "e1d577f1",
+  "url": "http://127.0.0.1:51590/session/308febc0f1e15aee",
+  "sourceRuns": [
+    "product-final-5/results.json",
+    "product-final-11/results.json"
+  ],
+  "hostLaunch": "c4212554-dbab-4e1e-b1b1-96d553159883",
+  "hostExtensionSha256": "b014ab19c23e4e5dfc24a84ed87978610f92f32df43b6964fa1ed0414bb46797",
+  "finalExtensionSha256": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+  "identicalFinalAssets": {
+    "dist/polish": "082f2ae2783b306caf28e4b7d1ed835c44cd8996944c3e3e8d51b571a188dcd2",
+    "dist/chrome-client.js": "ec5f4becf0e212b6d035df8a466cda12c3419dd0ab68821065b60f6eb846da08",
+    "dist/polish-client.js": "0168b4c28611e57c85501932e2bf52adaf09a2f8f12e3743037f03ef15b65b84",
+    "dist/polish.css": "75dbd3cef9c1ad235a4fdf463b56b413d6c193879db53d28d5c3c9d3db9faf81",
+    "dist/server.mjs": "93e5aff4c7b0713ea052f27a4a414aa77e18f22fade5bc6e6c5298f1c0d34cab"
+  },
+  "pinStates": [
+    [
+      {
+        "at": 22226.099999904633,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22229,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22229.200000047684,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22229.299999952316,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22280.5,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22289.799999952316,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin processing",
+            "color": "rgb(255, 152, 23)"
+          }
+        ]
+      },
+      {
+        "at": 25572.099999904633,
+        "origin": 1793388187502.3,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "at": 17093.699999809265,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 17111.699999809265,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22139.39999985695,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22194.89999985695,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22201.39999985695,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22249.699999809265,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22249.799999952316,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22262,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 22272.299999952316,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin processing",
+            "color": "rgb(255, 152, 23)"
+          }
+        ]
+      },
+      {
+        "at": 24467,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "at": 30069.5,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 30082.699999809265,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35100.89999985695,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35156.299999952316,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35162.199999809265,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35162.299999952316,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35162.39999985695,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35221.09999990463,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      },
+      {
+        "at": 35232.299999952316,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin processing",
+            "color": "rgb(255, 152, 23)"
+          }
+        ]
+      },
+      {
+        "at": 38501.5,
+        "origin": 1793388349087.5,
+        "pins": [
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          },
+          {
+            "text": "",
+            "cls": "polish-pin replied",
+            "color": "rgb(51, 112, 255)"
+          }
+        ]
+      }
+    ]
+  ],
+  "pinCompletion": [
+    {
+      "id": "6cb0927d-b232-47e1-afd2-811ed25fc915",
+      "pins": [
+        {
+          "text": "",
+          "cls": "polish-pin replied",
+          "color": "rgb(51, 112, 255)"
+        },
+        {
+          "text": "",
+          "cls": "polish-pin replied",
+          "color": "rgb(51, 112, 255)"
+        },
+        {
+          "text": "",
+          "cls": "polish-pin replied",
+          "color": "rgb(51, 112, 255)"
+        }
+      ]
+    },
+    {
+      "id": "2db0add8-b7fd-4fed-974d-384a5a434367",
+      "pins": [
+        {
+          "text": "",
+          "cls": "polish-pin replied",
+          "color": "rgb(51, 112, 255)"
+        },
+        {
+          "text": "",
+          "cls": "polish-pin replied",
+          "color": "rgb(51, 112, 255)"
+        }
+      ]
+    },
+    {
+      "id": "675859f6-e2b8-4c68-bb19-8b198109975d",
+      "pins": [
+        {
+          "text": "",
+          "cls": "polish-pin replied",
+          "color": "rgb(51, 112, 255)"
+        }
+      ]
+    }
+  ],
+  "anchoredRevision": {
+    "message": {
+      "id": "674f9eb1-6e92-446b-9a6d-0076a6c483f8",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"请把所选标题的文字改为“Polish 最终标题 e1d577f1”，仅修改当前 HTML 的这个标题并保存。修改后只简短回复完成。\",\"selector\":\"h2#heading\",\"tag\":\"h2\",\"text\":\"可修订的标题\",\"scope\":\"anchored\",\"comment_id\":\"5d09016a-d59f-4a91-a76a-7d70c81d98d4\",\"round_id\":\"833a3e14-fe51-447d-ae80-9963a5dc7066\",\"target\":{\"type\":\"block\",\"text\":\"可修订的标题\"}}",
+      "digest": "78b70a3a13955a0d2e3c69bc75e809179cba7861a9e245c516a427e48c7f19fd",
+      "prompt": {
+        "uid": "",
+        "prompt": "请把所选标题的文字改为“Polish 最终标题 e1d577f1”，仅修改当前 HTML 的这个标题并保存。修改后只简短回复完成。",
+        "selector": "h2#heading",
+        "tag": "h2",
+        "text": "可修订的标题",
+        "scope": "anchored",
+        "comment_id": "5d09016a-d59f-4a91-a76a-7d70c81d98d4",
+        "round_id": "833a3e14-fe51-447d-ae80-9963a5dc7066",
+        "prompt_id": "674f9eb1-6e92-446b-9a6d-0076a6c483f8",
+        "target": {
+          "type": "block",
+          "text": "可修订的标题"
+        }
+      },
+      "kind": "message",
+      "state": "replied",
+      "consumed": true,
+      "resolved": false,
+      "claim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 3,
+        "mode": "bridge",
+        "id": "674f9eb1-6e92-446b-9a6d-0076a6c483f8",
+        "digest": "78b70a3a13955a0d2e3c69bc75e809179cba7861a9e245c516a427e48c7f19fd",
+        "attempt": "8f535f38-1e44-4bac-a5e4-c2026bcb4b57"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "2bbbf77d-7db0-4012-834d-c42dbb803133",
+      "inputEvidence": "cb1c6706",
+      "executionUnknown": false,
+      "replyEvidence": "cb1c6706",
+      "reply": {
+        "text": "完成。标题已改为「Polish 最终标题 e1d577f1」。",
+        "version": 1,
+        "evidenceId": "cb1c6706",
+        "reply_to": "674f9eb1-6e92-446b-9a6d-0076a6c483f8"
+      }
+    },
+    "marker": "Polish 最终标题 e1d577f1",
+    "beforeRevision": 29,
+    "afterRevision": 30,
+    "beforeHash": "c1ab2883b1f4aa7a8abb8ee39593f57c30fcd5480c32ecaeb2013bcfacf2f234",
+    "afterHash": "a68e5d2bb31933596abe450113de6ad24d2b71ff74156cbaa573e1c83a7aaaaf",
+    "discussion": {
+      "history": "你\n请把所选标题的文字改为“Polish 最终标题 e1d577f1”，仅修改当前 HTML 的这个标题并保存。修改后只简短回复完成。agent\n完成。标题已改为「Polish 最终标题 e1d577f1」。",
+      "status": "原内容位置已变化 · 已回复 · 待你确认",
+      "quoteHidden": false
+    },
+    "pins": []
+  },
+  "sessionRevision": {
+    "message": {
+      "id": "eca40a17-41f1-4eba-8c57-3f11f4846c77",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"请把当前 HTML 的 #alpha 介绍段落文字改为“最终整体修订介绍 e1d577f1”，仅修改这一段并保存。修改后只简短回复完成。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"comment_id\":\"fa40b80c-3702-4c0b-b631-46655b0a6d87\",\"round_id\":\"3fa67795-0dcb-4e65-92b5-18e5dea8586d\"}",
+      "digest": "74091978f2d83e06701efb3e52a7b4dccb4a5d7d9bb784abdda6d50c68fc3f12",
+      "prompt": {
+        "uid": "",
+        "prompt": "请把当前 HTML 的 #alpha 介绍段落文字改为“最终整体修订介绍 e1d577f1”，仅修改这一段并保存。修改后只简短回复完成。",
+        "scope": "session",
+        "comment_id": "fa40b80c-3702-4c0b-b631-46655b0a6d87",
+        "round_id": "3fa67795-0dcb-4e65-92b5-18e5dea8586d",
+        "prompt_id": "eca40a17-41f1-4eba-8c57-3f11f4846c77"
+      },
+      "kind": "message",
+      "state": "replied",
+      "consumed": true,
+      "resolved": false,
+      "claim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 3,
+        "mode": "bridge",
+        "id": "eca40a17-41f1-4eba-8c57-3f11f4846c77",
+        "digest": "74091978f2d83e06701efb3e52a7b4dccb4a5d7d9bb784abdda6d50c68fc3f12",
+        "attempt": "9584f613-854b-4568-a551-0d668a829075"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "603a60ad-4902-43fe-8644-b87941063a29",
+      "inputEvidence": "93b07b3a",
+      "executionUnknown": false,
+      "replyEvidence": "93b07b3a",
+      "reply": {
+        "text": "完成。#alpha 段落已改为「最终整体修订介绍 e1d577f1」。",
+        "version": 1,
+        "evidenceId": "93b07b3a",
+        "reply_to": "eca40a17-41f1-4eba-8c57-3f11f4846c77"
+      }
+    },
+    "marker": "最终整体修订介绍 e1d577f1",
+    "beforeRevision": 30,
+    "afterRevision": 31,
+    "beforeHash": "a68e5d2bb31933596abe450113de6ad24d2b71ff74156cbaa573e1c83a7aaaaf",
+    "afterHash": "00da8933bb5fc6fe21cb66850ad2d26606a4f8e98cd88e494486c0fd94eb5818",
+    "discussion": {
+      "history": "你\n请把当前 HTML 的 #alpha 介绍段落文字改为“最终整体修订介绍 e1d577f1”，仅修改这一段并保存。修改后只简短回复完成。agent\n完成。#alpha 段落已改为「最终整体修订介绍 e1d577f1」。",
+      "status": "已回复 · 待你确认",
+      "quoteHidden": true
+    },
+    "pins": []
+  },
+  "nativeForm": {
+    "id": "69b458b9-b341-49ad-a048-bf8242bdb382",
+    "epoch": 1,
+    "text": "{\"uid\":\"1\",\"prompt\":\"表单反馈：{\\\"verdict\\\":\\\"yes\\\",\\\"selection\\\":\\\"text\\\",\\\"note\\\":\\\"最终原生表单验收 e1d577f1：只回复已收到，不修改文件。\\\"}\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"69b458b9-b341-49ad-a048-bf8242bdb382\"}",
+    "digest": "672a8aacddf8593400555cf85521c157c812c9869f6f6a154ab980508e62316b",
+    "prompt": {
+      "uid": "1",
+      "prompt": "表单反馈：{\"verdict\":\"yes\",\"selection\":\"text\",\"note\":\"最终原生表单验收 e1d577f1：只回复已收到，不修改文件。\"}",
+      "scope": "session",
+      "round_id": "69b458b9-b341-49ad-a048-bf8242bdb382",
+      "prompt_id": "69b458b9-b341-49ad-a048-bf8242bdb382"
+    },
+    "kind": "message",
+    "state": "replied",
+    "consumed": true,
+    "resolved": false,
+    "claim": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+      "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+      "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+      "epoch": 1,
+      "generation": 3,
+      "mode": "bridge",
+      "id": "69b458b9-b341-49ad-a048-bf8242bdb382",
+      "digest": "672a8aacddf8593400555cf85521c157c812c9869f6f6a154ab980508e62316b",
+      "attempt": "8926342a-064a-4a2c-b097-ff2d292ad8cd"
+    },
+    "host_dispatched": true,
+    "queueEvidence": "5e61515d-78e1-4190-9228-eb3c71f553ec",
+    "inputEvidence": "324f191b",
+    "executionUnknown": false,
+    "replyEvidence": "324f191b",
+    "reply": {
+      "text": "已收到",
+      "version": 1,
+      "evidenceId": "324f191b",
+      "reply_to": "69b458b9-b341-49ad-a048-bf8242bdb382"
+    }
+  },
+  "offline": {
+    "mode": "real browser offline + explicitly close previously observed established WebSocket",
+    "socketCount": 1,
+    "offline": {
+      "status": "连接中断 · 正在重新同步",
+      "draft": "A09 未发送保留草稿 e1d577f1A09 未发送保留草稿 e1d577f1A09 未发送保留草稿 e1d577f1A09 未发送保留草稿 e1d577f1",
+      "sockets": [
+        3,
+        3
+      ]
+    },
+    "formBefore": {
+      "radio": true,
+      "checkbox": true,
+      "note": "最终原生表离线保留答案 e1d577f1离线保留答案 e1d577f1离线保留答案 e1d577f1离线保留答案 e1d577f1离线保留答案 e1d577f1单验收 e1d577f1：只回复已收到，不修改文件。"
+    },
+    "formAfter": {
+      "radio": true,
+      "checkbox": true,
+      "note": "最终原生表离线保留答案 e1d577f1离线保留答案 e1d577f1离线保留答案 e1d577f1离线保留答案 e1d577f1离线保留答案 e1d577f1单验收 e1d577f1：只回复已收到，不修改文件。"
+    },
+    "beforeCount": 25,
+    "afterCount": 25,
+    "networkEvents": [
+      {
+        "method": "Network.webSocketClosed",
+        "params": {
+          "requestId": "22888.178",
+          "timestamp": 1617223.895488
+        },
+        "sessionId": "00199751C4F0447AD118F0FE2C63924E"
+      },
+      {
+        "method": "Network.webSocketCreated",
+        "params": {
+          "requestId": "22888.181",
+          "url": "ws://127.0.0.1:51590/events/308febc0f1e15aee",
+          "initiator": {
+            "type": "script",
+            "stack": {
+              "callFrames": [
+                {
+                  "functionName": "window.WebSocket",
+                  "scriptId": "38",
+                  "url": "",
+                  "lineNumber": 0,
+                  "columnNumber": 165
+                },
+                {
+                  "functionName": "connectLiveEvents",
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:51590/chrome-client.js",
+                  "lineNumber": 4791,
+                  "columnNumber": 17
+                }
+              ]
+            }
+          }
+        },
+        "sessionId": "00199751C4F0447AD118F0FE2C63924E"
+      },
+      {
+        "method": "Network.webSocketClosed",
+        "params": {
+          "requestId": "22888.181",
+          "timestamp": 1617224.40175
+        },
+        "sessionId": "00199751C4F0447AD118F0FE2C63924E"
+      },
+      {
+        "method": "Network.webSocketCreated",
+        "params": {
+          "requestId": "22888.182",
+          "url": "ws://127.0.0.1:51590/events/308febc0f1e15aee",
+          "initiator": {
+            "type": "script",
+            "stack": {
+              "callFrames": [
+                {
+                  "functionName": "window.WebSocket",
+                  "scriptId": "38",
+                  "url": "",
+                  "lineNumber": 0,
+                  "columnNumber": 165
+                },
+                {
+                  "functionName": "connectLiveEvents",
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:51590/chrome-client.js",
+                  "lineNumber": 4791,
+                  "columnNumber": 17
+                }
+              ]
+            }
+          }
+        },
+        "sessionId": "00199751C4F0447AD118F0FE2C63924E"
+      }
+    ]
+  },
+  "twoTabs": {
+    "closed": "BB8FCCD4BB16383F5DA16D77B80A4B5D",
+    "remaining": "86D0856835A7BCC6F7B741851A6EE4D6",
+    "lifecycle": "open"
+  },
+  "ending": {
+    "lifecycle": "ended",
+    "end": {
+      "id": "75a16658-cd4e-424e-95f0-61caaacad505",
+      "digest": "42c69703247d1b3960c0bfc5e85f7eea21a3eb733bc77216a8e8e5671ce56b46",
+      "ids": [
+        "a40af770-c6c8-47ad-b5e2-690572ad4506",
+        "57b2a47d-0535-40a2-8965-13548ca724a3",
+        "b46c04d3-27c8-4904-b032-0b2bf4d4c24f",
+        "63526563-4799-43dd-969f-ce74acb4b1cb",
+        "78c0ef6a-d503-4e22-97d8-1d11e23aaead",
+        "ecfa542f-bd80-41db-95d1-0baed6669828",
+        "fbd8e402-5c9f-4fc0-ab5c-8325046a39d0",
+        "749ccb37-4eb3-495c-ab41-af1c6031b3d6",
+        "6b7dc376-34ff-4c02-9cdb-24e5a630de36",
+        "547a3c34-0ffc-4d83-afc5-210b0fd7b6f1",
+        "45177af2-bdf5-4855-a76a-028f87a50042",
+        "593c9b88-6eb7-4020-bd7a-4e92f0ffcd90",
+        "232c03d3-b840-417a-b032-66c689714c4e",
+        "99fbbe0e-261d-4696-ae11-cd30d71af5b6",
+        "5baa2e52-5b3f-478f-a8c4-45ed8897daf0",
+        "0af5cd39-30d6-46db-856f-ee805f22da29",
+        "345d78de-fbce-4098-9d40-0b5691fc76d2",
+        "b17dc766-0b52-4ef6-b3dc-3d31f7bd6e93",
+        "c03c89d3-f2df-44b1-9390-9d7365330d32",
+        "6cb0927d-b232-47e1-afd2-811ed25fc915",
+        "2db0add8-b7fd-4fed-974d-384a5a434367",
+        "675859f6-e2b8-4c68-bb19-8b198109975d",
+        "674f9eb1-6e92-446b-9a6d-0076a6c483f8",
+        "eca40a17-41f1-4eba-8c57-3f11f4846c77",
+        "69b458b9-b341-49ad-a048-bf8242bdb382",
+        "c8ded125-b84e-424d-9b15-6617087e6004",
+        "75a16658-cd4e-424e-95f0-61caaacad505-marker"
+      ]
+    },
+    "allEndIdsConsumed": true,
+    "finalConfirmation": {
+      "id": "c8ded125-b84e-424d-9b15-6617087e6004",
+      "epoch": 1,
+      "text": "{\"uid\":\"\",\"prompt\":\"我已确认当前 HTML 的整体修订，结束本轮评审通信。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\"}",
+      "digest": "f1b1ed25fb10b16269d30bb782f19f59ba0e84c95abf24346b7bbb47ba1a86ee",
+      "prompt": {
+        "prompt_id": "c8ded125-b84e-424d-9b15-6617087e6004",
+        "prompt": "我已确认当前 HTML 的整体修订，结束本轮评审通信。"
+      },
+      "kind": "message",
+      "state": "replied",
+      "consumed": true,
+      "resolved": false,
+      "claim": {
+        "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        "instance": "54c8530d-4705-413b-bee6-c0961a5104e7",
+        "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+        "epoch": 1,
+        "generation": 3,
+        "mode": "bridge",
+        "id": "c8ded125-b84e-424d-9b15-6617087e6004",
+        "digest": "f1b1ed25fb10b16269d30bb782f19f59ba0e84c95abf24346b7bbb47ba1a86ee",
+        "attempt": "70628006-d06a-474d-bfd5-1f112a12d330"
+      },
+      "host_dispatched": true,
+      "queueEvidence": "c5d99763-1a79-480b-b379-f120425aa207",
+      "inputEvidence": "019132ea",
+      "executionUnknown": false,
+      "replyEvidence": "019132ea",
+      "reply": {
+        "text": "已确认，本轮评审通信结束。",
+        "version": 1,
+        "evidenceId": "019132ea",
+        "reply_to": "c8ded125-b84e-424d-9b15-6617087e6004"
+      }
+    },
+    "unsentDraftNotSubmitted": true,
+    "tabClosed": false,
+    "fallback": "通信已结束 · 可以关闭此页",
+    "uiEvidence": "product-final-11/ended-ui.json"
+  },
+  "notes": [
+    "Initial run stopped at test-harness observer/reload preparation after functional assertions. Remaining phases resumed without replaying successful prompts.",
+    "Anchored title rewrite invalidated its original content anchor. Missing-position label and history completion were verified; do not attribute disappearance solely to completion.",
+    "Checkbox completion pins may update asynchronously; final DOM asserted zero.",
+    "Offline run uses actual native WebSocket close, then browser network offline before reconnect, then online recovery; retains real network events.",
+    "Draft and note contain harness-created repeated test text from unsuccessful select-all; full actual before/after strings preserved, no such draft submitted.",
+    "Browser refused automatic window close; real ended fallback was read before explicit owned-browser cleanup.",
+    "Final extension adds durable-empty-session guard and ended-request status fixes; UI/server asset hashes identical. Final build model performance still pending."
+  ]
+}

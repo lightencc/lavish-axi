@@ -1,0 +1,71 @@
+{
+  "criterion": "Same RPC request id must not be assumed idempotent",
+  "observed_prompt_responses": 2,
+  "observed_user_inputs": 2,
+  "events": [
+    {
+      "line": 125,
+      "at": "2026-10-30T10:22:57.097Z",
+      "kind": "response",
+      "event": {
+        "id": "m0-pi-duplicate-005",
+        "type": "response",
+        "command": "prompt",
+        "success": true,
+        "data": {
+          "disposition": "started"
+        }
+      }
+    },
+    {
+      "line": 128,
+      "at": "2026-10-30T10:22:57.109Z",
+      "kind": "message_start",
+      "event": {
+        "type": "message_start",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "[POLISH-M0 pi-duplicate-005] Deliberate duplicate-request fault probe with no side effects. Reply exactly M0_ACK_pi-duplicate-005. No tools, file changes, or other sessions."
+            }
+          ],
+          "timestamp": 1793355777093
+        }
+      }
+    },
+    {
+      "line": 152,
+      "at": "2026-10-30T10:23:08.725Z",
+      "kind": "response",
+      "event": {
+        "id": "m0-pi-duplicate-005",
+        "type": "response",
+        "command": "prompt",
+        "success": true,
+        "data": {
+          "disposition": "started"
+        }
+      }
+    },
+    {
+      "line": 155,
+      "at": "2026-10-30T10:23:08.737Z",
+      "kind": "message_start",
+      "event": {
+        "type": "message_start",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "[POLISH-M0 pi-duplicate-005] Deliberate duplicate-request fault probe with no side effects. Reply exactly M0_ACK_pi-duplicate-005. No tools, file changes, or other sessions."
+            }
+          ],
+          "timestamp": 1793355788721
+        }
+      }
+    }
+  ]
+}

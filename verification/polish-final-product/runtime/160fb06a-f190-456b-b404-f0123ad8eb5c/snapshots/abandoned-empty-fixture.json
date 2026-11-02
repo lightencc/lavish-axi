@@ -1,0 +1,39 @@
+{
+  "capturedAt": "2026-10-30T18:37:31.075Z",
+  "manifest": {
+    "schema": "polish-final-product-v1",
+    "runID": "160fb06a-f190-456b-b404-f0123ad8eb5c",
+    "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c",
+    "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/artifact.html",
+    "livePid": null,
+    "launch": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/launches/42cc8e79-3094-4dc3-a68b-a8f8a3987836",
+    "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/sessions/2026-10-30T18-31-28-740Z_01a18e14-c6e4-758f-860d-a8a86ff94d01.jsonl",
+    "session": "01a18e14-c6e4-758f-860d-a8a86ff94d01"
+  },
+  "files": {
+    "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/polish-state/01a18e14-c6e4-758f-860d-a8a86ff94d01/state.json": "255dcff154de196954eeff410cbe7208ef4cd7bcca2393d7790a59a94fdf3638",
+    "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/polish-state/01a18e14-c6e4-758f-860d-a8a86ff94d01/host/host.json": "5be6758872092056be67844ec31fc960bada8b8028c9423fb62a4008b22254ef"
+  },
+  "review": {
+    "binding": {
+      "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/160fb06a-f190-456b-b404-f0123ad8eb5c/artifact.html",
+      "instance": "2d6107a2-42e8-4524-80ad-4a4686887990",
+      "session": "01a18e14-c6e4-758f-860d-a8a86ff94d01"
+    },
+    "epoch": 1,
+    "generation": 1,
+    "mode": "bridge",
+    "version": 1,
+    "lifecycle": "open",
+    "messages": [],
+    "end": null
+  },
+  "host": {
+    "instance": "2d6107a2-42e8-4524-80ad-4a4686887990",
+    "session": "01a18e14-c6e4-758f-860d-a8a86ff94d01",
+    "messages": [],
+    "port": 53007
+  },
+  "inputs": [],
+  "assistants": []
+}

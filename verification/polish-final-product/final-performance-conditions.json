@@ -1,0 +1,23 @@
+{
+  "session": "01a18e12-942e-7785-aa90-41587c940bbb",
+  "launch": "84e9d8be-711a-400e-bffc-f401a0d67708",
+  "modelEvidence": [
+    {
+      "type": "model_change",
+      "timestamp": "2026-10-30T18:29:04.824Z",
+      "provider": "magpie",
+      "modelId": "grok/grok-4.7"
+    },
+    {
+      "type": "thinking_level_change",
+      "timestamp": "2026-10-30T18:29:04.824Z",
+      "thinkingLevel": "medium"
+    }
+  ],
+  "sessionFileSha256AtCapture": "09505be6e65d727f7ceb5b011f17c63f019045b1052185f55b1ed2b9a3e36d1b",
+  "node": "v26.7.0",
+  "piVersion": "1.4.0",
+  "network": "Real configured provider requests; local Polish bridge on 127.0.0.1. No provider-internal timing or controlled bandwidth/latency measurement. Browser offline fault test finished before this performance run.",
+  "workload": "Warm existing Pi session; direct30 then UI30 global plus3 anchored; serial simple fixed-label replies with no requested tools or file edits; transcript context grows across runs. No concurrent build or browser regression suite.",
+  "clockMethod": "Source and browser each bracketed against the same supervisor,10 samples before and10 after; raw files retained. Measured durations include instrumentation."
+}

@@ -1,0 +1,11 @@
+✔ JSONL preserves embedded Unicode separators and partial frames (0.970375ms)
+✔ host success or queue acknowledgement is not consumption (0.072417ms)
+✔ lost transport remains unknown, explicit rejection is distinct (0.040667ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 36.184041

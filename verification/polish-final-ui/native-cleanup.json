@@ -1,0 +1,13 @@
+{
+  "testServer": "http://127.0.0.1:53632",
+  "pid": 37981,
+  "signal": "SIGTERM",
+  "browserSessionsClosed": [
+    "polish-final-ui-anchors",
+    "polish-final-ui-clean",
+    "polish-final-ui-final",
+    "polish-native-verified"
+  ],
+  "benchmarkSessionRetained": "polish-final-benchmark",
+  "artifactPreserved": "verified-artifact.html"
+}

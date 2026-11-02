@@ -1,0 +1,19 @@
+{
+  "spec_version": "1.2",
+  "mechanism_version": "r1.1",
+  "production": false,
+  "at_utc": "2026-10-30T12:51:22.242204+00:00",
+  "sources": {
+    "verification/polish-pi-recovery-m0/authority.js": "582beed13593892571c8fb164740c129e76f7e2e9eff463d1032ca14e7020941",
+    "verification/polish-pi-recovery-m0/authority.test.js": "2ab76112a2adb769e3e4838cba4a8137dcc3c659ea9a3b8a1a0840cb72600f64",
+    "verification/polish-pi-recovery-m0/drain.js": "bd0bf378e22740433017885ef68f21524801d76fb6c8635362017eb66332d5ad",
+    "verification/polish-pi-recovery-m0/drain.test.js": "4f9ae820cc5eb9fa9d46bdf319447e7bddab7458519ad9f780861ce16ca68902",
+    "verification/polish-pi-recovery-m0/owner-child.js": "a1bd8445ff15c2420a8a1776c61ba899007eefabbffbff0ddef9a3dfd12c0877",
+    "verification/polish-pi-recovery-m0/ownership.test.js": "ede4a4d43958de800dcffa5cac5a6736a39e579f36cced2959ec2d0a4c7fd44e",
+    "verification/polish-pi-recovery-m0/probe-receipt-windows.js": "5711143776e8240368a3b01a7d41ded863b6ca2551d1cb0a81456e79f5ead690",
+    "verification/polish-pi-recovery-m0/receipt-extension.js": "d9eed915133608db623c4f2f64bd2cad309d7c9b21c09f3007c8f13774bba6d6",
+    "verification/polish-pi-recovery-m0/receipt.js": "3c734f9a1cac03449d1e6eec2469443acc5e4bd8f4cd92272ac8edbe06c0cc88",
+    "verification/polish-pi-recovery-m0/receipt.test.js": "352f76885a2b3d89fdcadd30bde3dce9d7d4423f5b1d9a3b104444100f36060a"
+  },
+  "execution_note": "Pi probes executed before final missing-attempt guard hardening in Authority.reconcile; both actual probes carried valid persisted attempts. Final guard passed RED/GREEN and final 23-test suite; no model rerun or input replay."
+}

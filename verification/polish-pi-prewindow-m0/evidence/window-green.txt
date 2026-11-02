@@ -1,0 +1,17 @@
+✔ window waits for owned host identity before review and bind; schedules exactly 600000 ms after bind (2.111917ms)
+✔ EADDRINUSE stops only the owned startup; no retry or alternate binding (0.389542ms)
+✔ deadline closes listener then review then host; concurrent repeated stop is idempotent (0.803625ms)
+✔ host exit closes the active listener and review without waiting for deadline (0.208084ms)
+✔ review child exit closes listener and owned host without waiting for deadline (0.215417ms)
+✔ host exit before ready rejects startup and never opens review or binds (0.244791ms)
+✔ already-exited host cannot bind even when ready is already resolved (0.142709ms)
+✔ host exit during pending bind closes late listener and never returns a live window (0.322042ms)
+✔ host ready rejection preserves failure and cleans its owned startup without binding (0.144417ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 35.522583

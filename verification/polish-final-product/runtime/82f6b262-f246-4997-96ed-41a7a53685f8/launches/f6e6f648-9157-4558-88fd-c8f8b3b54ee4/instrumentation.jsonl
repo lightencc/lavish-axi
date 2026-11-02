@@ -1,0 +1,9 @@
+{"stage":"harness_ready","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387964403.052,"durableWriteMs":4.1932079999999985}
+{"stage":"accepted_durable","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387966342.5356,"durableWriteMs":3.8308750000001055}
+{"stage":"dispatch_reserved","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387966363.7136,"durableWriteMs":4.098540999999841}
+{"stage":"host_admitted","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387966375.999,"durableWriteMs":4.034084000000348}
+{"stage":"host_dispatching","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387966387.8113,"durableWriteMs":3.8989580000002206}
+{"stage":"input_consumed","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387966400.589,"durableWriteMs":3.951958999999988}
+{"stage":"model_start","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387966424.5312,"durableWriteMs":3.951499999999669}
+{"stage":"first_token","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387967399.1985,"durableWriteMs":5.007125000000087}
+{"stage":"host_reply_persisted","clockID":"pi:40863:e809cc04-8f5c-4840-9b13-8267937fa909","at":1793387967458.0999,"durableWriteMs":3.9876250000002074}

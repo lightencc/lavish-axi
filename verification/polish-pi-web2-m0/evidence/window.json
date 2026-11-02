@@ -1,0 +1,12 @@
+{
+  "startedAt": 1793376888532,
+  "deadline": 1793377488532,
+  "startedUTC": "2026-10-30T16:14:48.532Z",
+  "deadlineUTC": "2026-10-30T16:24:48.532Z",
+  "address": {
+    "address": "127.0.0.1",
+    "family": "IPv4",
+    "port": 49793
+  },
+  "supervisorPid": 89379
+}

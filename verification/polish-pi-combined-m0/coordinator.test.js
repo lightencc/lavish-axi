@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { Authority } from '../polish-pi-recovery-m0/authority.js';
+import { startCoordinator } from './coordinator-peer.js';
+
+test('owned coordinator crash preserves accepted; restart drains once; old generation and wrong mode reject (fake host)', async t => {
+  const dir = mkdtempSync(join(tmpdir(), 'polish-r2-owner-'));
+  const binding = { artifact: 'fixture', instance: 'fake-host', session: 'fake-session' };
+  let calls = 0;
+  const host = async (message, token) => { calls++; return { ...binding, ...message, attempt: token.attempt, kind: 'consumed', evidenceId: 'fake-input', inputEvidence: 'context_with_system' }; };
+  const peers = [];
+  t.after(async () => { for (const p of peers) { if (p.child.exitCode === null && p.child.signalCode === null) p.child.kill('SIGTERM'); await p.exited; } rmSync(dir, { recursive: true, force: true }); });
+  const first = startCoordinator(dir, binding, host); peers.push(first);
+  const ready = await first.ready;
+  await first.call('admit', { id: 'r2-test', text: 'local fake test', epoch: 1 });
+  assert.equal(calls, 0);
+  first.child.kill('SIGKILL'); await first.exited;
+  const recovered = Authority.recoverOwned(dir, binding, first.child, ready.nonce); recovered.close();
+  const second = startCoordinator(dir, binding, host); peers.push(second); await second.ready;
+  await assert.rejects(second.call('claim', { mode: 'poll', id: 'r2-test' }), /MODE/);
+  await second.call('start');
+  const s = await second.call('snapshot');
+  assert.equal(s.messages[0].consumed, true); assert.equal(calls, 1);
+  await second.call('mode', { mode: 'poll' });
+  await assert.rejects(second.call('record', { token: s.messages[0].claim, proof: {} }), /STALE/);
+  await second.call('start'); assert.equal(calls, 1);
+  await second.call('close'); await second.exited;
+});

@@ -1,0 +1,82 @@
+! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.1.1.tgz
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +391
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 391, reused 263, downloaded 0, added 253
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │      Update available! 11.1.1 → 12.16.1.      │
+   │     Changelog: https://pnpm.io/v/12.16.1      │
+   │   To update, run: corepack use pnpm@12.16.1   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Progress: resolved 391, reused 263, downloaded 64, added 326
+Progress: resolved 391, reused 263, downloaded 117, added 380
+Progress: resolved 391, reused 263, downloaded 126, added 389
+Progress: resolved 391, reused 263, downloaded 128, added 391, done
+.../esbuild@0.28.0/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.0/node_modules/esbuild postinstall: Done
+
+dependencies:
++ @tailwindcss/browser 4.2.4
++ axi-sdk-js 0.1.8
++ chokidar 4.0.3
++ cross-spawn 7.0.6
++ daisyui 5.5.19
++ express 5.2.1
++ open 10.2.0
++ parse5 8.0.1
++ ws 8.21.3
+
+devDependencies:
++ @eslint/js 10.0.1
++ @excalidraw/excalidraw 0.18.1
++ @excalidraw/mermaid-to-excalidraw 2.2.2
++ @types/node 25.7.0
++ esbuild 0.28.0
++ eslint 10.3.0
++ eslint-config-prettier 10.1.8
++ globals 17.6.0
++ mermaid 11.12.1
++ prettier 3.8.3
++ react 18.3.1
++ react-dom 18.3.1
++ typescript 5.9.3
+
+. prepare$ npm run build
+. prepare: > lavish-axi@0.1.96 build
+. prepare: > node scripts/build.js
+. prepare: node:internal/fs/promises:1337
+. prepare:   return await PromisePrototypeThen(
+. prepare:          ^
+. prepare: Error: ENOENT: no such file or directory, copyfile 'node_modules/@excalidraw/excalidraw/dist/prod/fonts/Assistant/Assistant-SemiBold.woff2' -> 'dist/whiteboard/fonts/Assistant/Assistant-SemiBold.woff2'
+. prepare:     at async copyFile (node:internal/fs/promises:1337:10)
+. prepare:     at async _copyFile (node:internal/fs/cp/cp:261:3)
+. prepare:     at async copyDir (node:internal/fs/cp/cp:330:19)
+. prepare:     at async mkDirAndCopy (node:internal/fs/cp/cp:319:3)
+. prepare:     at async file:///Users/lightencc/Documents/Projects/polish-axi/scripts/build.js:82:3 {
+. prepare:   errno: -2,
+. prepare:   code: 'ENOENT',
+. prepare:   syscall: 'copyfile',
+. prepare:   path: 'node_modules/@excalidraw/excalidraw/dist/prod/fonts/Assistant/Assistant-SemiBold.woff2',
+. prepare:   dest: 'dist/whiteboard/fonts/Assistant/Assistant-SemiBold.woff2'
+. prepare: }
+. prepare: Node.js v26.7.0
+. prepare: Failed
+[ELIFECYCLE] Command failed with exit code 1.
+[ERROR] Command failed with exit code 1: /Users/lightencc/.hermes/node/bin/node /Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/bin/pnpm.mjs install
+
+pnpm: Command failed with exit code 1: /Users/lightencc/.hermes/node/bin/node /Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/bin/pnpm.mjs install
+    at getFinalError (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:28661:14)
+    at makeError (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:30968:21)
+    at getSyncResult (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:32812:10)
+    at spawnSubprocessSync (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:32772:14)
+    at execaCoreSync (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:32702:23)
+    at callBoundExeca (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:35230:23)
+    at boundExeca (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:35207:49)
+    at sync (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:35366:10)
+    at runPnpmCli (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:211039:5)
+    at runDepsStatusCheck (file:///Users/lightencc/.cache/node/corepack/v1/pnpm/11.1.1/dist/pnpm.mjs:212745:7)

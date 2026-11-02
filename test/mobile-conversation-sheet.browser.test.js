@@ -239,6 +239,9 @@ test(
         );
       }
 
+      // A fresh isolated browser has no selected page; select a blank target before emulation.
+      run("chrome-devtools-axi", ["open", "about:blank#mobile-sheet-e2e"], chromeEnv);
+
       // ---- Portrait phone ----
       emulate("390x844x3,mobile,touch");
       open(url);

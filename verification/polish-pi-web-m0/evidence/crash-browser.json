@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-30T12:14:42.611Z",
+  "marker": "crash-final-3357e2e1-5a30-413a-bf6e-9ac3823bf889",
+  "first": {
+    "fresh": true,
+    "id": "pi3-d9590feb-5785-42ec-8bf1-72b21a622158",
+    "digest": "be515dee49611557ff8cb487a3115dd78a696c5201e52e8fc00e084af28c6d97",
+    "hostQueued": true,
+    "state": "accepted",
+    "evidence": "host_extension_fsynced_inbox",
+    "binding": {
+      "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+      "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+    }
+  },
+  "active": {
+    "id": "pi3-d9590feb-5785-42ec-8bf1-72b21a622158",
+    "binding": {
+      "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+      "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+    },
+    "digest": "be515dee49611557ff8cb487a3115dd78a696c5201e52e8fc00e084af28c6d97",
+    "state": "processing",
+    "inputStored": true,
+    "inputEntryIds": [
+      "38ac3068"
+    ],
+    "delivery": "input_witnessed",
+    "replyVerified": false,
+    "reply": null,
+    "safeToResend": false,
+    "version": 147
+  },
+  "queued": {
+    "fresh": true,
+    "id": "pi3-0c5cabc9-e051-44b9-a121-622e596cdc7b",
+    "digest": "870a3f73373f907d73cdd28b314cf15b0df3fb89fcda8664d819e0824aa15211",
+    "hostQueued": true,
+    "state": "accepted",
+    "evidence": "host_extension_fsynced_inbox",
+    "binding": {
+      "instance": "c8538c79-f205-4c9c-9187-41e8caee3857",
+      "session": "01a18cb5-ad4e-745f-8bb4-7a5acda50d47"
+    }
+  },
+  "readyAt": "2026-10-30T12:14:42.807Z"
+}

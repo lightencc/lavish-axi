@@ -1,0 +1,48 @@
+✖ owned process crash in accepted: durable state and fenced recovery (29.064458ms)
+✖ owned process crash in dispatch: durable state and fenced recovery (29.558667ms)
+✖ owned process crash in ending: durable state and fenced recovery (24.081167ms)
+✖ two real consumer processes use one persisted arbitration authority (57.274916ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 188.988917
+
+✖ failing tests:
+
+test at verification/polish-pi-recovery-m0/ownership.test.js:12:3
+✖ owned process crash in accepted: durable state and fenced recovery (29.064458ms)
+  Error: CHILD_EARLY_EXIT
+      at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:17:104
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:17:21)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at verification/polish-pi-recovery-m0/ownership.test.js:12:3
+✖ owned process crash in dispatch: durable state and fenced recovery (29.558667ms)
+  Error: CHILD_EARLY_EXIT
+      at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:17:104
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:17:21)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at verification/polish-pi-recovery-m0/ownership.test.js:12:3
+✖ owned process crash in ending: durable state and fenced recovery (24.081167ms)
+  Error: CHILD_EARLY_EXIT
+      at file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:17:104
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:17:21)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at verification/polish-pi-recovery-m0/ownership.test.js:41:1
+✖ two real consumer processes use one persisted arbitration authority (57.274916ms)
+  Error: CONSUMER_EXIT
+      at ChildProcess.<anonymous> (file:///Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/ownership.test.js:55:62)
+      at ChildProcess.emit (node:events:514:20)
+      at ChildProcess._handle.onexit (node:internal/child_process:294:12)

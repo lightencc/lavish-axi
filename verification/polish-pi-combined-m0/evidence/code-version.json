@@ -1,0 +1,24 @@
+{
+  "version": "r2",
+  "productSpec": "v1.2",
+  "files": {
+    "docs/polish-pi-combined-m0-report.md": "6b2a2500f281a30efc8a3094af4e66201c1fde61966fd04c8d9a33df0f793abb",
+    "docs/polish-pi-recovery-m0-errata.md": "7cd6478ff50284fdce69d2945a0f7966648329c096342893be9beda4d7cb6018",
+    "verification/polish-pi-combined-m0/BROWSER-PLAN.md": "85ea615f7010714bc61632ef8dd3e037f8f05c00f0bd6e56ad28c289ea61403c",
+    "verification/polish-pi-combined-m0/CONTRACT.md": "0ffd3175172b6af43244b699fb7513f83283923626b0dc6a24ae9944f46791aa",
+    "verification/polish-pi-combined-m0/README.md": "af1100e1918f59c25b24bfeccc704b852d50272bf736eda8637514ab46c0c819",
+    "verification/polish-pi-combined-m0/coordinator-child.js": "5756b93e34c48d0a2ca6545f26a221c2f29941996b9348eecffce18592245dea",
+    "verification/polish-pi-combined-m0/coordinator-peer.js": "8faeb839f8952f5cee432b1554127daaf5fdb1ac522cd27f243cdf2e3598db4a",
+    "verification/polish-pi-combined-m0/coordinator.test.js": "61f3c98e82e506e8176e33c6fe62766be5685e0067d563dfda6c96663ef0e044",
+    "verification/polish-pi-combined-m0/host-extension.js": "67780320a6293bfab825937f40ec730d82355e6eb98758cf13c0a581d977cda9",
+    "verification/polish-pi-combined-m0/host.js": "a40e983e19ade6f31570f248d79fe9f2fc7aa913e19602086b8ecac7773d263f",
+    "verification/polish-pi-combined-m0/host.test.js": "e4e37a6a68b3405f80b5acb07f50631197f16bc90c91c6db35f3530941c5f9ee",
+    "verification/polish-pi-combined-m0/index.html": "566552f6363f1ef2a6fbeb5a0737828cd495087e04d4a627670f798589360776",
+    "verification/polish-pi-combined-m0/page.js": "4464e5a5424241fc1e90fad62557fdca3a656ae8d942b19a6054d721a534aff6",
+    "verification/polish-pi-combined-m0/peer.js": "dd1f87586cdbdff9f7753c0a7dff97c8fdece6cf8bd851ad701ccfaf45715d3a",
+    "verification/polish-pi-combined-m0/probe.js": "c0c170150a1f2a7f5bbe3154399edc34df18a87adef8985b9d28cc65aa69d311",
+    "verification/polish-pi-combined-m0/serve-prepared.js": "660ceefe680132b928d49359aaeb6b28e89c935c1bc7c7fedd5203a37c4bf6ca",
+    "verification/polish-pi-combined-m0/web.js": "001cb7963e910d784a1d2962cf99768cb0eeb28fc7ae2c3f2e5462d817d42768",
+    "verification/polish-pi-combined-m0/web.test.js": "f2acae7c209ac007f84d03689db92d6f1e917c7a0b1fb267c1bdb2185f0f5292"
+  }
+}

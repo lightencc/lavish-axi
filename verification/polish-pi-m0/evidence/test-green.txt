@@ -1,0 +1,14 @@
+✔ durable admission survives reopening, same payload dedups, conflict rejects (30.852333ms)
+✔ unresolved dispatch survives restart and cannot be claimed again (33.196541ms)
+✔ second writer and wrong instance cannot take ownership (13.509167ms)
+✔ empty host history never proves a dispatched message was not accepted (28.816125ms)
+✔ structured input history is positive evidence, not proof of processing or reply (29.238292ms)
+✔ processing evidence must match identity; reply requires persisted host entry id (44.966959ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 227.503167

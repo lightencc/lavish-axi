@@ -1,0 +1,56 @@
+{
+  "at_utc": "2026-10-30T10:57:29.900527+00:00",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-m0-supplement/ledger.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-m0-supplement/ledger.test.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-m0-supplement/pi-extension.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "verification/polish-m0-supplement/run-extension-probe.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "check": "local Markdown links",
+      "passed": true
+    }
+  ],
+  "unit_test_result": "5 passed; rerun exit 0 on completion",
+  "scope": "Isolated supplemental scripts and documentation; production check suite not run."
+}

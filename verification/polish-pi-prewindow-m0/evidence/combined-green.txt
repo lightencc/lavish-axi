@@ -1,0 +1,31 @@
+✔ bound take uses one persistent arbiter: mode and generation reject; response is not consumption (66.740792ms)
+✔ restart preserves unknown attempt; positive query can recover but empty or mismatched evidence cannot (51.162708ms)
+✔ end seals existing/final/marker; only consumption ends; delivered reply-unknown does not block (191.642333ms)
+✔ same ID different payload conflicts; bound restore never bypasses dispatch ledger; legacy stays unbound (38.245375ms)
+✔ actual poll handler and bridge share mode/claim; output never proves Pi consumption (77.394833ms)
+✔ disconnect after real destructive take preserves same unknown attempt, never restores to deliverable queue (104.956416ms)
+✔ unbound legacy GET and POST takeover retain native feedback and listener cleanup (8.895167ms)
+✔ actual client retries missing reply after first query failure and same-version manual snapshot (5.927375ms)
+✔ actual client rejects stale SSE state without rolling replied/ended UI back to accepted/open (1.49425ms)
+✔ actual client reconnect fills missing reply from same-version SSE snapshot without submitting again (0.9215ms)
+✔ whole-page submit has no anchor; origin, binding, epoch, extra fields and query methods checked (15.624917ms)
+✔ refresh snapshot restores list; reconnect SSE starts with full state including ended and replies (0.545167ms)
+✔ end forwards fixed final submission, does not infer completion from no pending browser request (0.228208ms)
+✔ SSE cancellation while initial snapshot is pending unsubscribes and cannot resurrect stream (0.215709ms)
+✔ window waits for owned host identity before review and bind; schedules exactly 600000 ms after bind (3.298792ms)
+✔ EADDRINUSE stops only the owned startup; no retry or alternate binding (0.6125ms)
+✔ deadline closes listener then review then host; concurrent repeated stop is idempotent (1.423458ms)
+✔ host exit closes the active listener and review without waiting for deadline (0.41175ms)
+✔ review child exit closes listener and owned host without waiting for deadline (0.543791ms)
+✔ host exit before ready rejects startup and never opens review or binds (0.322209ms)
+✔ already-exited host cannot bind even when ready is already resolved (0.420833ms)
+✔ host exit during pending bind closes late listener and never returns a live window (0.664625ms)
+✔ host ready rejection preserves failure and cleans its owned startup without binding (0.137417ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 410.927042

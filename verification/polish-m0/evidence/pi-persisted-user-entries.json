@@ -1,0 +1,546 @@
+{
+  "session_file": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-m0/runtime/pi-sessions/2026-10-30T10-21-14-342Z_01a18c53-f2e2-7504-9859-9fc05b8b33a4.jsonl",
+  "session_sha256": "284370b3cb2e3e171f843cfd13c39353c73182539bc8c0c9240df2a34918d6cf",
+  "users": [
+    {
+      "id": "d6b099e1",
+      "parentId": "aa7bf8fb",
+      "timestamp": "2026-10-30T10:21:42.499Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-idle-001] This is an isolated communication feasibility probe, not a development task. Reply with exactly M0_ACK_pi-idle-001. Do not use tools, change files, or start other sessions."
+          }
+        ],
+        "timestamp": 1793355702495
+      }
+    },
+    {
+      "id": "946f34b4",
+      "parentId": "32f50485",
+      "timestamp": "2026-10-30T10:21:55.069Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-busy-002] Isolated follow-up communication probe. After finishing the preceding response, reply exactly M0_ACK_pi-busy-002. Do not use tools, change files, or start other sessions."
+          }
+        ],
+        "timestamp": 1793355715067
+      }
+    },
+    {
+      "id": "c487bfc8",
+      "parentId": "04ec110d",
+      "timestamp": "2026-10-30T10:22:10.055Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-busy-anchor-003] Isolated queue probe. Reply with exactly M0_ACK_pi-busy-anchor-003. No tools or file changes."
+          }
+        ],
+        "timestamp": 1793355730053
+      }
+    },
+    {
+      "id": "4f77a948",
+      "parentId": "ec932264",
+      "timestamp": "2026-10-30T10:22:11.203Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-busy-followup-004] Isolated queue probe. Reply with exactly M0_ACK_pi-busy-followup-004 after the previous response. No tools or file changes."
+          }
+        ],
+        "timestamp": 1793355730060
+      }
+    },
+    {
+      "id": "66bf8cf0",
+      "parentId": "9703866d",
+      "timestamp": "2026-10-30T10:22:57.096Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-duplicate-005] Deliberate duplicate-request fault probe with no side effects. Reply exactly M0_ACK_pi-duplicate-005. No tools, file changes, or other sessions."
+          }
+        ],
+        "timestamp": 1793355777093
+      }
+    },
+    {
+      "id": "4573e930",
+      "parentId": "374c2ed0",
+      "timestamp": "2026-10-30T10:23:08.725Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-duplicate-005] Deliberate duplicate-request fault probe with no side effects. Reply exactly M0_ACK_pi-duplicate-005. No tools, file changes, or other sessions."
+          }
+        ],
+        "timestamp": 1793355788721
+      }
+    },
+    {
+      "id": "6eb1a2af",
+      "parentId": "49df1bcd",
+      "timestamp": "2026-10-30T10:25:26.976Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-01] Isolated latency sample. Reply exactly M0_ACK_pi-latency-01. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355926972
+      }
+    },
+    {
+      "id": "6f1a98a1",
+      "parentId": "612310e7",
+      "timestamp": "2026-10-30T10:25:33.105Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-02] Isolated latency sample. Reply exactly M0_ACK_pi-latency-02. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355933103
+      }
+    },
+    {
+      "id": "395ff020",
+      "parentId": "c05126ca",
+      "timestamp": "2026-10-30T10:25:39.210Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-03] Isolated latency sample. Reply exactly M0_ACK_pi-latency-03. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355939209
+      }
+    },
+    {
+      "id": "9ba9d0ca",
+      "parentId": "c9f16b39",
+      "timestamp": "2026-10-30T10:25:45.321Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-04] Isolated latency sample. Reply exactly M0_ACK_pi-latency-04. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355945321
+      }
+    },
+    {
+      "id": "5f3fe1c2",
+      "parentId": "88148411",
+      "timestamp": "2026-10-30T10:25:51.439Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-05] Isolated latency sample. Reply exactly M0_ACK_pi-latency-05. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355951438
+      }
+    },
+    {
+      "id": "0af7853a",
+      "parentId": "4f213dda",
+      "timestamp": "2026-10-30T10:25:57.547Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-06] Isolated latency sample. Reply exactly M0_ACK_pi-latency-06. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355957547
+      }
+    },
+    {
+      "id": "120d9f46",
+      "parentId": "7ad95236",
+      "timestamp": "2026-10-30T10:26:03.675Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-07] Isolated latency sample. Reply exactly M0_ACK_pi-latency-07. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355963674
+      }
+    },
+    {
+      "id": "87639dde",
+      "parentId": "c58747d0",
+      "timestamp": "2026-10-30T10:26:09.784Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-08] Isolated latency sample. Reply exactly M0_ACK_pi-latency-08. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355969783
+      }
+    },
+    {
+      "id": "2bf61166",
+      "parentId": "733d50de",
+      "timestamp": "2026-10-30T10:26:15.891Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-09] Isolated latency sample. Reply exactly M0_ACK_pi-latency-09. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355975890
+      }
+    },
+    {
+      "id": "55c0fae0",
+      "parentId": "782e18de",
+      "timestamp": "2026-10-30T10:26:22.004Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-10] Isolated latency sample. Reply exactly M0_ACK_pi-latency-10. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355982003
+      }
+    },
+    {
+      "id": "6a5bfd01",
+      "parentId": "c62bb268",
+      "timestamp": "2026-10-30T10:26:28.117Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-11] Isolated latency sample. Reply exactly M0_ACK_pi-latency-11. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355988116
+      }
+    },
+    {
+      "id": "c861a964",
+      "parentId": "7c22a48e",
+      "timestamp": "2026-10-30T10:26:34.224Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-12] Isolated latency sample. Reply exactly M0_ACK_pi-latency-12. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793355994223
+      }
+    },
+    {
+      "id": "d27a8b18",
+      "parentId": "c82b2c62",
+      "timestamp": "2026-10-30T10:26:40.340Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-13] Isolated latency sample. Reply exactly M0_ACK_pi-latency-13. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356000339
+      }
+    },
+    {
+      "id": "430680a5",
+      "parentId": "382ccc2f",
+      "timestamp": "2026-10-30T10:26:46.449Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-14] Isolated latency sample. Reply exactly M0_ACK_pi-latency-14. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356006448
+      }
+    },
+    {
+      "id": "d84dbc50",
+      "parentId": "2904ffec",
+      "timestamp": "2026-10-30T10:26:52.568Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-15] Isolated latency sample. Reply exactly M0_ACK_pi-latency-15. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356012566
+      }
+    },
+    {
+      "id": "91892837",
+      "parentId": "c3f15c12",
+      "timestamp": "2026-10-30T10:26:58.680Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-16] Isolated latency sample. Reply exactly M0_ACK_pi-latency-16. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356018679
+      }
+    },
+    {
+      "id": "e42a451b",
+      "parentId": "c35bc097",
+      "timestamp": "2026-10-30T10:27:04.790Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-17] Isolated latency sample. Reply exactly M0_ACK_pi-latency-17. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356024789
+      }
+    },
+    {
+      "id": "35bc2895",
+      "parentId": "b338dbdf",
+      "timestamp": "2026-10-30T10:27:05.893Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-18] Isolated latency sample. Reply exactly M0_ACK_pi-latency-18. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356025893
+      }
+    },
+    {
+      "id": "8783dd53",
+      "parentId": "09149a94",
+      "timestamp": "2026-10-30T10:27:12.004Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-19] Isolated latency sample. Reply exactly M0_ACK_pi-latency-19. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356032004
+      }
+    },
+    {
+      "id": "678342c6",
+      "parentId": "b4405a2d",
+      "timestamp": "2026-10-30T10:27:18.121Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-20] Isolated latency sample. Reply exactly M0_ACK_pi-latency-20. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356038118
+      }
+    },
+    {
+      "id": "8c5b3e79",
+      "parentId": "955b55c8",
+      "timestamp": "2026-10-30T10:27:19.220Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-21] Isolated latency sample. Reply exactly M0_ACK_pi-latency-21. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356039220
+      }
+    },
+    {
+      "id": "3f2829ac",
+      "parentId": "099c9ac0",
+      "timestamp": "2026-10-30T10:27:25.338Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-22] Isolated latency sample. Reply exactly M0_ACK_pi-latency-22. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356045338
+      }
+    },
+    {
+      "id": "5fd75a0c",
+      "parentId": "90ab7a4b",
+      "timestamp": "2026-10-30T10:27:26.444Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-23] Isolated latency sample. Reply exactly M0_ACK_pi-latency-23. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356046443
+      }
+    },
+    {
+      "id": "09ce0e4a",
+      "parentId": "5367f929",
+      "timestamp": "2026-10-30T10:27:32.553Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-24] Isolated latency sample. Reply exactly M0_ACK_pi-latency-24. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356052552
+      }
+    },
+    {
+      "id": "2aa03cbb",
+      "parentId": "3dff0e22",
+      "timestamp": "2026-10-30T10:27:38.672Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-25] Isolated latency sample. Reply exactly M0_ACK_pi-latency-25. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356058671
+      }
+    },
+    {
+      "id": "9f7d75d4",
+      "parentId": "388db4d9",
+      "timestamp": "2026-10-30T10:27:44.792Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-26] Isolated latency sample. Reply exactly M0_ACK_pi-latency-26. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356064791
+      }
+    },
+    {
+      "id": "df72cfd9",
+      "parentId": "f1d1fe07",
+      "timestamp": "2026-10-30T10:27:50.902Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-27] Isolated latency sample. Reply exactly M0_ACK_pi-latency-27. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356070896
+      }
+    },
+    {
+      "id": "e9c3eb91",
+      "parentId": "bd4d1001",
+      "timestamp": "2026-10-30T10:27:57.008Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-28] Isolated latency sample. Reply exactly M0_ACK_pi-latency-28. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356077007
+      }
+    },
+    {
+      "id": "bf8bc0a8",
+      "parentId": "68cb2fa0",
+      "timestamp": "2026-10-30T10:28:03.116Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-29] Isolated latency sample. Reply exactly M0_ACK_pi-latency-29. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356083115
+      }
+    },
+    {
+      "id": "a1437e7e",
+      "parentId": "f10f7293",
+      "timestamp": "2026-10-30T10:28:09.229Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "[POLISH-M0 pi-latency-30] Isolated latency sample. Reply exactly M0_ACK_pi-latency-30. No tools, files, or other sessions."
+          }
+        ],
+        "timestamp": 1793356089228
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "binding": {
+    "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+    "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+  },
+  "originalPid": 56265,
+  "sameLiveInstance": true,
+  "webVerified": false,
+  "messages": [
+    "pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+    "pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+    "pi3-29846f3c-1e46-49ac-8758-8e213ece06e5"
+  ],
+  "replies": [
+    {
+      "id": "pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+      "binding": {
+        "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+        "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+      },
+      "digest": "4bf541c55dee09bddec996a503ac2677c134c40d011e36b0b088c91f03a9f9f2",
+      "state": "replied",
+      "inputStored": true,
+      "inputEntryIds": [
+        "8298b8ee"
+      ],
+      "delivery": "input_witnessed",
+      "replyVerified": true,
+      "reply": {
+        "entryId": "8b830558",
+        "text": "ACK_pi3-27047d06-e6c4-45b5-b496-98666ac4f60a",
+        "stopReason": "stop"
+      },
+      "safeToResend": false,
+      "version": 7
+    },
+    {
+      "id": "pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+      "binding": {
+        "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+        "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+      },
+      "digest": "e967325605787719971b2a657491b5804b7dc91907abaf8b25db394adfc56143",
+      "state": "replied",
+      "inputStored": true,
+      "inputEntryIds": [
+        "b30743b8"
+      ],
+      "delivery": "input_witnessed",
+      "replyVerified": true,
+      "reply": {
+        "entryId": "183207e7",
+        "text": "ACK_pi3-04861c4c-6fe8-4a45-99b3-9bf354a7d1b1",
+        "stopReason": "stop"
+      },
+      "safeToResend": false,
+      "version": 8
+    },
+    {
+      "id": "pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+      "binding": {
+        "instance": "6903cd15-41ce-456f-934f-ae3f3074d93e",
+        "session": "01a18c8b-4d64-77e6-8bdc-b89cafe279c4"
+      },
+      "digest": "32126a321ffdba3c17ec7d1de646733977d458433d1c6214bfe1175167f9e8b0",
+      "state": "replied",
+      "inputStored": true,
+      "inputEntryIds": [
+        "c778f66f"
+      ],
+      "delivery": "input_witnessed",
+      "replyVerified": true,
+      "reply": {
+        "entryId": "8f23f9a1",
+        "text": "ACK_pi3-29846f3c-1e46-49ac-8758-8e213ece06e5",
+        "stopReason": "stop"
+      },
+      "safeToResend": false,
+      "version": 12
+    }
+  ],
+  "sessionFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/runtime/5b0c4a08-0c11-4449-a395-d2ffca51e20e/sessions/2026-10-30T11-21-41-997Z_01a18c8b-4d64-77e6-8bdc-b89cafe279c4.jsonl",
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-m0/runtime/5b0c4a08-0c11-4449-a395-d2ffca51e20e"
+}

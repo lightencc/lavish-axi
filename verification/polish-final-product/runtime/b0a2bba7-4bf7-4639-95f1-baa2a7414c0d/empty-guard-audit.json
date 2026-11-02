@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "scenario": "undurable-new-session-refused-before-binding",
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b0a2bba7-4bf7-4639-95f1-baa2a7414c0d",
+  "http": {
+    "stage": "http_response",
+    "metadata": {
+      "route": "/api/sessions",
+      "status": 409,
+      "elapsedMs": 21.947998046875,
+      "result": {
+        "error": "PI_SESSION_NOT_DURABLE: \u8bf7\u5148\u5728\u5f53\u524d Pi \u4f1a\u8bdd\u5f00\u59cb\u4e00\u6761\u5b9e\u9645\u5bf9\u8bdd\uff0c\u518d\u6253\u5f00 HTML \u8bc4\u5ba1\u3002"
+      }
+    },
+    "clockID": "supervisor:1695:13db2ef7-80a4-4724-83a1-a20e6ff4e9d8",
+    "at": 1793388545065.409,
+    "pid": 1695
+  },
+  "sessions": {},
+  "state_file_exists": false,
+  "pi_session_file_exists": false,
+  "own_service_stopped": true,
+  "build": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247"
+}

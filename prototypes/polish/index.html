@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Polish · 交互确认稿</title>
+    <style>
+      :root {
+        --blue: #3370ff;
+        --blue-soft: #eef4ff;
+        --ink: #1f2329;
+        --muted: #646a73;
+        --line: #e4e7ed;
+        --canvas: #f7f8fa;
+        --green: #27835b;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font:
+          14px/1.65 -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          "PingFang SC",
+          "Microsoft YaHei",
+          sans-serif;
+      }
+      button,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:disabled {
+        cursor: default;
+        opacity: 0.45;
+      }
+      button,
+      a,
+      textarea,
+      input {
+        -webkit-tap-highlight-color: transparent;
+      }
+      :focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 4px;
+      }
+      button {
+        color: inherit;
+      }
+      svg {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      ::selection {
+        background: #bfd4ff;
+      }
+      header {
+        height: 64px;
+        background: white;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 0 28px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 19px;
+        font-weight: 650;
+        letter-spacing: -0.5px;
+      }
+      .logo {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        background: var(--blue);
+        border-radius: 7px;
+        color: white;
+        font-size: 19px;
+        font-weight: 700;
+      }
+      .tag {
+        background: #f2f3f5;
+        color: var(--muted);
+        padding: 2px 7px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 6px 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: white;
+        font-size: 13px;
+        min-height: 34px;
+      }
+      .btn:hover {
+        background: #f5f6f7;
+      }
+      .btn.active {
+        color: var(--blue);
+        background: var(--blue-soft);
+        border-color: #c4d7ff;
+      }
+      .btn.primary {
+        color: white;
+        background: var(--blue);
+        border-color: var(--blue);
+      }
+      .btn.primary:hover {
+        background: #245bdb;
+      }
+      .session {
+        color: var(--muted);
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-right: 12px;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        background: #a3a8b1;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+      .dot.online {
+        background: var(--green);
+      }
+      .layout {
+        max-width: 1260px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 32px;
+        padding: 32px 32px 80px;
+      }
+      nav {
+        position: sticky;
+        top: 98px;
+        align-self: start;
+        font-size: 13px;
+        padding-top: 20px;
+      }
+      .nav-label {
+        font-size: 11px;
+        color: #8f959e;
+        padding: 0 12px;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+      }
+      nav a {
+        display: block;
+        text-decoration: none;
+        color: var(--muted);
+        padding: 8px 12px;
+        margin: 2px 0;
+        border-radius: 5px;
+      }
+      nav a:hover {
+        color: var(--blue);
+        background: #eaf0fc;
+      }
+      nav a:first-of-type {
+        color: var(--blue);
+        background: #eaf0fc;
+      }
+      .nav-bottom {
+        margin: 28px 12px 0;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: #8f959e;
+        font-size: 12px;
+      }
+      .nav-bottom strong {
+        display: block;
+        font-weight: 500;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      main {
+        min-width: 0;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 48px 60px 40px;
+        box-shadow: 0 2px 5px #18243b03;
+      }
+      .eyebrow {
+        font-size: 12px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 30px;
+        line-height: 1.35;
+        letter-spacing: -0.8px;
+        margin: 0 0 12px;
+        font-weight: 650;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 15px;
+        margin: 0;
+      }
+      .meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        color: #8f959e;
+        margin: 24px 0 28px;
+      }
+      .avatar {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #eff0f2;
+        color: var(--muted);
+        display: inline-grid;
+        place-items: center;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+      .hint {
+        padding: 13px 16px;
+        border: 1px solid #dce7ff;
+        border-radius: 6px;
+        background: #f7faff;
+        color: #456291;
+        display: flex;
+        gap: 10px;
+        font-size: 13px;
+      }
+      .hint svg {
+        flex-shrink: 0;
+        color: var(--blue);
+        margin-top: 2px;
+      }
+      .hint strong {
+        font-weight: 500;
+        color: #2c4d82;
+      }
+      .steps {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+        font-size: 12px;
+        color: #8f959e;
+      }
+      .steps span {
+        color: var(--muted);
+      }
+      .steps b {
+        display: inline-grid;
+        place-items: center;
+        width: 18px;
+        height: 18px;
+        background: #f0f2f5;
+        border-radius: 50%;
+        font-size: 10px;
+        font-weight: 500;
+        margin-right: 4px;
+      }
+      section {
+        scroll-margin-top: 92px;
+        margin-top: 36px;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 16px;
+        letter-spacing: -0.2px;
+      }
+      .number {
+        color: #a5abb5;
+        font-size: 12px;
+        margin-right: 10px;
+        font-weight: 400;
+      }
+      .block {
+        position: relative;
+        border-radius: 5px;
+        outline: 1.5px solid transparent;
+        outline-offset: 7px;
+        transition: outline-color 0.12s;
+      }
+      body.annotating .block:hover {
+        outline-color: #c5d5f8;
+      }
+      main .selected {
+        outline: 1.5px solid var(--blue) !important;
+        outline-offset: 7px;
+        border-radius: 5px;
+      }
+      .block p {
+        margin: 0 0 12px;
+      }
+      .block p:last-child {
+        margin-bottom: 0;
+      }
+      .callout {
+        background: #f7f8fa;
+        border-left: 3px solid #cad6ed;
+        padding: 18px 20px;
+        margin: 20px 0;
+      }
+      .callout strong {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 7px;
+      }
+      .callout p {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .feature {
+        display: grid;
+        grid-template-columns: 132px minmax(0, 1fr);
+        border-top: 1px solid #edf0f3;
+        padding: 15px 0;
+        gap: 16px;
+        font-size: 13px;
+      }
+      .feature:first-child {
+        border-top: 0;
+      }
+      .feature .label {
+        font-weight: 500;
+      }
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .check {
+        color: var(--green);
+        display: inline-block;
+        margin-right: 6px;
+      }
+      .scope {
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+      .scope p {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .scope strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .footer {
+        margin-top: 36px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .footer p {
+        color: var(--muted);
+        font-size: 12px;
+        margin: 0;
+      }
+      .footer strong {
+        color: var(--ink);
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+      .document-end {
+        text-align: center;
+        font-size: 11px;
+        color: #9da3ad;
+        margin-top: 30px;
+      }
+      .confirmation {
+        margin-top: 24px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+      .confirmation h3 {
+        font-size: 15px;
+        margin: 0 0 4px;
+        font-weight: 600;
+      }
+      .confirmation > p {
+        color: var(--muted);
+        font-size: 12px;
+        margin: 0 0 18px;
+      }
+      .confirmation fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0 0 16px;
+      }
+      .confirmation legend {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+      }
+      .options label {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .options input {
+        accent-color: var(--blue);
+        margin: 0;
+      }
+      .confirmation textarea {
+        resize: vertical;
+        min-height: 68px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 10px;
+        margin: 8px 0 14px;
+      }
+      .confirmation textarea:focus {
+        border-color: var(--blue);
+      }
+      #confirmation-status {
+        font-size: 12px;
+        color: var(--muted);
+        margin-left: 10px;
+      }
+      #pins {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 25;
+      }
+      .pin {
+        pointer-events: auto;
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        background: white;
+        border: 2px solid var(--blue);
+        border-radius: 50%;
+        color: var(--blue);
+        box-shadow: 0 2px 8px #1d376019;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .pin:hover {
+        background: var(--blue-soft);
+        transform: scale(1.08);
+      }
+      .pin.replied::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: 2px solid white;
+        background: var(--green);
+        border-radius: 50%;
+        right: -2px;
+        top: -2px;
+      }
+      .pin.draft {
+        border-style: dashed;
+        color: var(--muted);
+        border-color: #a7b7d1;
+      }
+      .pin.processing {
+        color: #b85b00;
+        background: #fff4e6;
+        border-color: #f59a23;
+      }
+      #popover {
+        position: fixed;
+        z-index: 40;
+        width: 360px;
+        max-width: calc(100vw - 24px);
+        background: white;
+        border: 1px solid #dee2e8;
+        border-radius: 10px;
+        box-shadow:
+          0 8px 32px #25385821,
+          0 2px 6px #2538580a;
+        overflow: hidden;
+      }
+      .pop-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 16px 9px;
+        gap: 12px;
+      }
+      .pop-title {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .icon-btn {
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        background: transparent;
+        border: 0;
+        border-radius: 5px;
+        color: #8f959e;
+        padding: 4px;
+      }
+      .icon-btn:hover {
+        background: #f2f4f7;
+        color: var(--ink);
+      }
+      .pop-tools {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .resolve {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .resolve input {
+        accent-color: var(--blue);
+        width: 15px;
+        height: 15px;
+        margin: 0;
+      }
+      .resolve:has(input:disabled) {
+        opacity: 0.45;
+        cursor: default;
+      }
+      #quote {
+        color: #8f959e;
+        font-size: 12px;
+        border-left: 2px solid #d9dee7;
+        padding-left: 9px;
+        margin: 0 16px 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.6;
+      }
+      #history {
+        padding: 0 16px;
+        overflow: auto;
+        max-height: 220px;
+        overscroll-behavior: contain;
+      }
+      .message {
+        padding: 0 0 18px;
+      }
+      .message-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+      .message-head .avatar {
+        width: 23px;
+        height: 23px;
+        font-size: 10px;
+      }
+      .message-head time {
+        color: #a5abb5;
+        margin-left: auto;
+        font-size: 10px;
+      }
+      .message-text {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-left: 31px;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      .agent-avatar {
+        background: #eaf1ff;
+        color: var(--blue);
+      }
+      #thread-status {
+        margin: 0 16px 12px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      #form {
+        padding: 0 12px 12px;
+      }
+      .compose {
+        border: 1px solid #c4d5f7;
+        border-radius: 7px;
+        padding: 10px 11px 8px;
+      }
+      .compose:focus-within {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 2px #3370ff0b;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        min-height: 64px;
+        max-height: 140px;
+        resize: vertical;
+        border: 0;
+        outline: none !important;
+        color: var(--ink);
+        background: transparent;
+        font-size: 13px;
+        line-height: 1.7;
+        padding: 0;
+      }
+      textarea::placeholder {
+        color: #a5abb5;
+      }
+      .compose-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      .compose-foot span {
+        color: #a5abb5;
+        font-size: 10px;
+      }
+      #send {
+        border: 0;
+        background: var(--blue);
+        color: white;
+        border-radius: 5px;
+        width: 29px;
+        height: 29px;
+        display: grid;
+        place-items: center;
+      }
+      #send:disabled {
+        background: #d9e4ff;
+        opacity: 1;
+      }
+      #error {
+        color: #c43c3c;
+        font-size: 12px;
+        margin: 8px 4px 0;
+      }
+      #toast {
+        position: fixed;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 60;
+        padding: 10px 18px;
+        background: #283444;
+        color: white;
+        border-radius: 7px;
+        box-shadow: 0 4px 16px #1f29371a;
+        font-size: 13px;
+        max-width: calc(100vw - 32px);
+      }
+      #update {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: white;
+        padding: 11px 14px;
+        border: 1px solid #d2e0ff;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px #22335412;
+        z-index: 30;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      #update button {
+        color: var(--blue);
+        background: none;
+        border: 0;
+        margin-left: 8px;
+      }
+      @media (max-width: 1050px) {
+        .layout {
+          grid-template-columns: 160px minmax(0, 1fr);
+          gap: 20px;
+          padding: 24px 24px 60px;
+        }
+        main {
+          padding: 40px 36px;
+        }
+      }
+      @media (max-width: 760px) {
+        header {
+          padding: 0 14px;
+          height: 58px;
+        }
+        .session {
+          display: none;
+        }
+        .btn {
+          padding: 6px 8px;
+        }
+        .brand {
+          font-size: 17px;
+        }
+        .brand .tag {
+          display: none;
+        }
+        .layout {
+          display: block;
+          padding: 16px 12px 50px;
+        }
+        nav {
+          display: none;
+        }
+        main {
+          padding: 28px 24px;
+        }
+        h1 {
+          font-size: 25px;
+        }
+        .feature {
+          grid-template-columns: 100px minmax(0, 1fr);
+          gap: 12px;
+        }
+        .footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        #history {
+          max-height: 180px;
+        }
+        #update {
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
+        }
+        .pin {
+          width: 28px;
+          height: 28px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="annotating">
+    <header>
+      <div class="brand"><span class="logo">p</span>polish<span class="tag">交互原型</span></div>
+      <div class="actions">
+        <span class="session"><i id="connection-dot" class="dot"></i><span id="connection">连接当前会话…</span></span>
+        <button class="btn active" id="mode" aria-pressed="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 4h14v12H9l-4 4z" />
+            <path d="M8 8h8M8 12h5" /></svg
+          >评论<span id="count">0</span>
+        </button>
+        <button class="btn" id="overall">整体意见</button>
+        <button class="btn" id="refresh">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 7v5h-5M4 17v-5h5" />
+            <path d="M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1" /></svg
+          >刷新
+        </button>
+      </div>
+    </header>
+    <div class="layout">
+      <nav aria-label="文档目录">
+        <div class="nav-label">功能确认文档</div>
+        <a href="#overview">概览</a><a href="#selection">01　选区与浮窗</a><a href="#conversation">02　评论与回复</a
+        ><a href="#completion">03　刷新与完成</a><a href="#scope">04　风格与范围</a>
+        <div class="nav-bottom">
+          <strong>直接在内容上交流</strong>点击段落，或选中一段文字。<br />你的意见会发给当前会话。
+        </div>
+      </nav>
+      <main>
+        <div class="eyebrow">
+          <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6" /></svg>HTML artifact
+          <span>／</span> 功能确认
+        </div>
+        <div class="block" id="overview" tabindex="0" aria-label="评论：文档概览">
+          <h1>Polish 交互确认稿</h1>
+          <p class="lead">选中哪里，就在哪里讨论。让每一次修改都有明确的落点。</p>
+        </div>
+        <div class="meta">
+          <span class="avatar">你</span><span>与你的 coding agent 协作</span><span>·</span
+          ><span>2026 年 10 月 30 日</span><span class="tag">v0.1 待确认</span>
+        </div>
+        <div class="hint">
+          <svg viewBox="0 0 24 24"><path d="m4 3 6 17 3-7 7-3z" /></svg>
+          <div>
+            <strong>这份文档就是体验区。</strong> 点击下方内容块，或选中一句话，试着提交修改意见。回复来自当前 Codex
+            会话。
+          </div>
+        </div>
+        <div class="steps" aria-label="修订步骤">
+          <span><b>1</b>选中</span>›<span><b>2</b>评论</span>›<span><b>3</b>收起</span>›<span><b>4</b>刷新查看</span
+          >›<span><b>5</b>勾选完成</span>
+        </div>
+
+        <section id="selection">
+          <h2><span class="number">01</span>选中内容，直接说怎么改</h2>
+          <div class="block" id="select-behavior" tabindex="0" aria-label="评论：选区与浮窗行为">
+            <p>选择一段文字，或者点击一个内容块。页面为目标加上蓝色描边，并在鼠标附近展开评论浮窗。</p>
+            <p>浮窗保留引用内容，你可以直接输入修改意见。靠近页面边缘时，浮窗自动避让，发送按钮始终可见。</p>
+          </div>
+          <div class="callout block" id="try-selection" tabindex="0" aria-label="评论：试用段落">
+            <strong>试着选中这句话，告诉我你希望怎么改。</strong>
+            <p>例如：“这段说明再简短一点”，或“浮窗默认再窄一些”。你也可以直接点击整个灰色区域。</p>
+          </div>
+        </section>
+
+        <section id="conversation">
+          <h2><span class="number">02</span>提交后，留一颗小圆球</h2>
+          <div class="block" id="send-behavior" tabindex="0" aria-label="评论：发送与圆球">
+            <p>点击发送，意见直接交给当前会话。发送成功后，浮窗收成内容旁的小圆球，让页面重新回到阅读状态。</p>
+          </div>
+          <div style="margin-top: 16px">
+            <div class="feature block" id="thread-behavior" tabindex="0" aria-label="评论：继续讨论">
+              <div class="label">继续讨论</div>
+              <p>点击圆球，查看这条评论的上下文和回复；有补充要求，就在同一个浮窗里继续说。</p>
+            </div>
+            <div class="feature block" id="processing-behavior" tabindex="0" aria-label="评论：处理状态">
+              <div class="label">橙色表示处理中</div>
+              <p>agent 确认收到后，圆球变为橙色；收到回复后恢复蓝色并显示新回复标记。尚未接收时保持等待状态。</p>
+            </div>
+            <div class="feature block" id="multiple-behavior" tabindex="0" aria-label="评论：多条评论">
+              <div class="label">多处修改</div>
+              <p>不同位置保留各自的圆球和对话。一次只展开一个浮窗，其他评论继续保留。</p>
+            </div>
+            <div class="feature block" id="draft-behavior" tabindex="0" aria-label="评论：草稿保留">
+              <div class="label">随时收起</div>
+              <p>点空白处或按 Esc 收起，输入不会丢失。未发送的草稿用虚线圆球区分。</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="completion">
+          <h2><span class="number">03</span>你确认了，这一轮才算完成</h2>
+          <div class="block" id="refresh-behavior" tabindex="0" aria-label="评论：刷新查看">
+            <p>
+              收到回复时，页面提示你刷新。点击右上角“刷新”，查看最新内容，再打开圆球阅读回复。页面不会在你阅读时突然跳动。
+            </p>
+          </div>
+          <div class="callout block" id="resolve-behavior" tabindex="0" aria-label="评论：完成规则">
+            <strong>agent 回复 ≠ 修订完成</strong>
+            <p>只有你在浮窗中勾选“完成”，这条评论的圆球才会消失。刷新后也不会重新出现，其他未完成评论不受影响。</p>
+          </div>
+        </section>
+
+        <section id="scope">
+          <h2><span class="number">04</span>已确认的风格与范围</h2>
+          <div class="block scope" id="scope-behavior" tabindex="0" aria-label="评论：实现范围">
+            <p>
+              <span class="check">✓</span
+              ><strong>固定简约飞书风格</strong>：白底、灰色层级、蓝色操作，评论界面和新生成的 HTML 保持一致。
+            </p>
+            <p><span class="check">✓</span><strong>保留已有 HTML</strong>：不自动改变现有文件的设计和排版。</p>
+            <p>
+              <span class="check">✓</span><strong>保留页面内交互</strong>：lavish
+              的选项、单选／多选、输入框和表单提交继续可用。只替换侧边栏会话区，表单操作不触发评论。
+            </p>
+            <p>
+              <span class="check">✓</span><strong>命令使用 polish</strong>：正式版在 Pi agent 中验证；本页先连接当前
+              Codex 会话确认功能。
+            </p>
+            <p><span class="check">✓</span><strong>文字选区 + 内容块</strong>：首版不增加任意矩形拖框。</p>
+          </div>
+        </section>
+        <form class="confirmation" id="confirmation-form">
+          <h3>页面内表单，也照常使用</h3>
+          <p>选择和填写不会发送消息；点击“提交意见”后，结果才会发给当前会话。</p>
+          <fieldset>
+            <legend>这版交互是否符合预期？</legend>
+            <div class="options">
+              <label><input type="radio" name="verdict" value="符合预期" required />符合预期</label
+              ><label><input type="radio" name="verdict" value="仍需调整" />仍需调整</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>希望优先完善哪些部分？（可多选）</legend>
+            <div class="options">
+              <label><input type="checkbox" name="focus" value="文字选区" />文字选区</label
+              ><label><input type="checkbox" name="focus" value="浮窗与圆球" />浮窗与圆球</label
+              ><label><input type="checkbox" name="focus" value="页面内表单" />页面内表单</label>
+            </div>
+          </fieldset>
+          <label for="confirmation-note" style="font-size: 12px; color: var(--muted)">补充说明（选填）</label
+          ><textarea id="confirmation-note" name="note" placeholder="具体希望调整哪里？" maxlength="6000"></textarea>
+          <button class="btn primary" type="submit">提交意见</button
+          ><span id="confirmation-status" role="status"></span>
+        </form>
+        <div class="footer" id="approval">
+          <div>
+            <strong>这就是你想要的修订方式吗？</strong>
+            <p>有调整，直接在对应段落评论；没问题，就确认这一版。</p>
+          </div>
+          <button class="btn primary" id="approve">确认这版功能 <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="document-end">功能确认原型 · 评论真实发送 · 完成状态保存在当前浏览器</div>
+      </main>
+    </div>
+    <div id="pins"></div>
+    <div id="popover" role="dialog" aria-label="就地评论" hidden>
+      <div class="pop-head">
+        <span class="pop-title"><i class="dot online"></i><span id="pop-title">当前会话</span></span>
+        <div class="pop-tools">
+          <label class="resolve" title="查看回复后，由你确认完成"
+            ><input id="resolve" type="checkbox" disabled />完成</label
+          ><button class="icon-btn" id="close" aria-label="收起评论">
+            <svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></svg>
+          </button>
+        </div>
+      </div>
+      <div id="overall-history" hidden></div>
+      <blockquote id="quote"></blockquote>
+      <div id="history"></div>
+      <div id="thread-status" role="status"></div>
+      <form id="form">
+        <div class="compose">
+          <textarea id="input" aria-label="修改意见" placeholder="你希望如何修改这里？" maxlength="8000"></textarea>
+          <div class="compose-foot">
+            <span>⌘ / Ctrl + Enter 发送</span
+            ><button id="send" type="submit" aria-label="发送评论" disabled>
+              <svg viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6" /></svg>
+            </button>
+          </div>
+        </div>
+        <div id="error" role="alert" hidden></div>
+      </form>
+    </div>
+    <div id="toast" role="status" hidden></div>
+    <div id="update" hidden>当前会话有新回复<button id="refresh-reply">刷新查看 ↻</button></div>
+    <script>
+      // Disposable prototype: local review state; real feedback and replies use the Lavish bridge.
+      const $ = (id) => document.getElementById(id);
+      const storageKey = "polish-prototype-review-v1";
+      let threads = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      let active = null,
+        enabled = true,
+        sending = false,
+        loadedChat = [],
+        latestChat = [],
+        toastTimer,
+        anchorPoint;
+      const pop = $("popover"),
+        input = $("input");
+      const save = () => localStorage.setItem(storageKey, JSON.stringify(threads));
+      const escape = (text) =>
+        String(text).replace(
+          /[&<>"']/g,
+          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
+        );
+      const marker = (thread) => `[polish:${thread.id}]\n`;
+      function messages(thread, chat = loadedChat) {
+        return chat.filter((entry) => entry.text?.startsWith(marker(thread)));
+      }
+      function phase(thread) {
+        const last = messages(thread, latestChat).at(-1);
+        if (last?.role === "agent") return "replied";
+        if (last?.delivered_at) return "processing";
+        return thread.sent ? "waiting" : "draft";
+      }
+      function status(thread) {
+        return {
+          draft: "草稿 · 尚未发送",
+          waiting: "已发送 · 等待 agent 接收",
+          processing: "agent 已收到 · 正在处理",
+          replied: "已回复 · 待你确认",
+        }[phase(thread)];
+      }
+      function notify(text) {
+        $("toast").textContent = text;
+        $("toast").hidden = false;
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => ($("toast").hidden = true), 3500);
+      }
+      function renderPins() {
+        $("pins").replaceChildren();
+        const visible = threads.filter((t) => t.scope !== "session" && !t.done && (t.sent || t.draft));
+        $("count").textContent = visible.length;
+        const formThread = threads.findLast((t) => t.source === "form" && t.sent);
+        $("confirmation-status").textContent = formThread ? (formThread.done ? "已确认完成" : status(formThread)) : "";
+        const offsets = {};
+        for (const thread of visible) {
+          const target = $(thread.block);
+          const rect = target?.getBoundingClientRect();
+          const offset = offsets[thread.block] || 0;
+          offsets[thread.block] = offset + 38;
+          const pin = document.createElement("button");
+          pin.className = `pin ${phase(thread)}`;
+          pin.dataset.thread = thread.id;
+          pin.style.top = `${Math.max(70, (rect?.top ?? 90) + scrollY + offset)}px`;
+          pin.style.left = `${Math.min(innerWidth - 36, (rect?.right ?? innerWidth - 60) + 12)}px`;
+          pin.setAttribute("aria-label", `评论 ${threads.indexOf(thread) + 1} · ${status(thread)}`);
+          pin.title = `${target ? "" : "原内容位置已变化 · "}${status(thread)}`;
+          pin.onclick = (event) => {
+            event.stopPropagation();
+            show(thread, event.clientX, event.clientY);
+          };
+          $("pins").append(pin);
+        }
+      }
+      function position() {
+        if (pop.hidden || !anchorPoint) return;
+        const viewport = window.visualViewport;
+        const width = viewport?.width || innerWidth,
+          height = viewport?.height || innerHeight,
+          top = viewport?.offsetTop || 0;
+        const maxHeight = Math.max(180, height - 24);
+        pop.style.maxHeight = `${maxHeight}px`;
+        pop.style.overflowY = "auto";
+        const rect = pop.getBoundingClientRect();
+        let x = anchorPoint.x + 12;
+        if (x + rect.width > width - 12) x = anchorPoint.x - rect.width - 12;
+        pop.style.left = `${Math.max(12, Math.min(x, width - rect.width - 12))}px`;
+        pop.style.top = `${Math.max(top + 12, Math.min(anchorPoint.y + 12, top + height - rect.height - 12))}px`;
+      }
+      function close() {
+        if (!active && pop.hidden) return;
+        if (active && !sending) {
+          active.draft = input.value;
+          save();
+        }
+        pop.hidden = true;
+        document.querySelector("main .selected")?.classList.remove("selected");
+        active = null;
+        renderPins();
+      }
+      function show(thread, x, y) {
+        if (active?.id !== thread.id) close();
+        active = thread;
+        anchorPoint = { x, y };
+        pop.hidden = false;
+        document.querySelector("main .selected")?.classList.remove("selected");
+        const overall = thread.scope === "session";
+        if (!overall) $(thread.block)?.classList.add("selected");
+        $("pop-title").textContent = overall
+          ? "整体意见"
+          : thread.sent
+            ? `评论 ${threads.indexOf(thread) + 1}`
+            : "新评论";
+        $("quote").hidden = overall;
+        $("quote").textContent = overall ? "" : thread.quote;
+        input.placeholder = overall ? "对整页有什么意见？" : "你希望如何修改这里？";
+        $("overall-history").hidden = !overall;
+        $("overall-history").replaceChildren();
+        if (overall)
+          for (const item of threads.filter((t) => t.scope === "session")) {
+            const button = document.createElement("button");
+            button.className = "btn";
+            button.textContent = `${item.done ? "已完成" : status(item)} · ${item.summary || "新意见"}`;
+            button.onclick = () => show(item, x, y);
+            $("overall-history").append(button);
+          }
+        const entries = messages(thread);
+        $("history").innerHTML = entries
+          .map(
+            (entry) =>
+              `<div class="message"><div class="message-head"><span class="avatar ${entry.role === "agent" ? "agent-avatar" : ""}">${entry.role === "agent" ? "✦" : "你"}</span><span>${entry.role === "agent" ? "Codex" : "你"}</span><time>${new Date(entry.at).toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" })}</time></div><div class="message-text">${escape(entry.text.slice(marker(thread).length))}</div></div>`,
+          )
+          .join("");
+        $("thread-status").textContent = status(thread);
+        $("resolve").checked = false;
+        $("resolve").disabled = entries.at(-1)?.role !== "agent" || !!thread.draft;
+        input.value = thread.draft || "";
+        input.disabled = sending;
+        $("send").disabled = sending || !input.value.trim();
+        $("error").hidden = true;
+        position();
+        input.focus({ preventScroll: true });
+        $("history").scrollTop = $("history").scrollHeight;
+      }
+      function newThread(block, quote) {
+        const thread = { id: crypto.randomUUID(), block: block.id, quote, draft: "", sent: false, done: false };
+        threads.push(thread);
+        return thread;
+      }
+      function newOverall(source) {
+        const thread = { id: crypto.randomUUID(), scope: "session", source, draft: "", sent: false, done: false };
+        threads.push(thread);
+        return thread;
+      }
+      document.addEventListener("pointerup", (event) => {
+        if (
+          !enabled ||
+          sending ||
+          event.button !== 0 ||
+          event.target.closest(
+            'button,a,textarea,input,select,option,label,summary,[contenteditable],[role="button"],[role="checkbox"],[role="radio"],[data-lavish-action],#popover,#pins,header,nav',
+          )
+        )
+          return;
+        const selection = getSelection();
+        const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+        const documentArea = document.querySelector("main");
+        const selectedText = selection?.toString().trim();
+        const documentSelection =
+          selectedText &&
+          range &&
+          documentArea.contains(range.startContainer) &&
+          documentArea.contains(range.endContainer);
+        const start =
+          range?.startContainer.nodeType === Node.TEXT_NODE
+            ? range.startContainer.parentElement
+            : range?.startContainer;
+        const block = documentSelection ? start.closest("[id]") || $("overview") : event.target.closest(".block");
+        if (!block) return;
+        const quote = documentSelection ? selectedText : block.innerText.trim();
+        const existing = threads.find((t) => !t.done && t.block === block.id && t.quote === quote);
+        show(existing || newThread(block, quote), event.clientX, event.clientY);
+        selection?.removeAllRanges();
+      });
+      document.addEventListener("pointerdown", (event) => {
+        if (!event.target.closest("#popover,#pins,.block")) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") close();
+        if ((event.metaKey || event.ctrlKey) && event.key === "Enter" && !pop.hidden) {
+          event.preventDefault();
+          $("form").requestSubmit();
+        }
+        if (event.key === "Enter" && enabled && event.target.matches(".block")) {
+          const block = event.target,
+            rect = block.getBoundingClientRect();
+          const existing = threads.find((t) => !t.done && t.block === block.id);
+          show(existing || newThread(block, block.innerText.trim()), rect.right, rect.top);
+        }
+      });
+      input.oninput = () => {
+        if (active) {
+          active.draft = input.value;
+          save();
+        }
+        $("send").disabled = sending || !input.value.trim();
+        $("resolve").disabled = !!input.value.trim() || messages(active).at(-1)?.role !== "agent";
+      };
+      $("close").onclick = close;
+      $("mode").onclick = () => {
+        enabled = !enabled;
+        document.body.classList.toggle("annotating", enabled);
+        $("mode").classList.toggle("active", enabled);
+        $("mode").setAttribute("aria-pressed", enabled);
+        close();
+        notify(enabled ? "评论模式：点击内容或选中文字" : "阅读模式：页面内容可正常操作");
+      };
+      async function load(initial = false) {
+        try {
+          const response = await fetch("/api/state");
+          if (!response.ok) throw new Error("连接暂不可用");
+          const state = await response.json();
+          $("connection").textContent = state.ended
+            ? "会话已结束"
+            : !state.connected
+              ? "反馈通道正在重连…"
+              : state.presence === "listening"
+                ? "当前会话正在接收"
+                : "当前会话 · 反馈通道已连接";
+          $("connection-dot").classList.toggle("online", !state.ended && state.connected);
+          const previousPhases = threads.map((t) => phase(t)).join(",");
+          latestChat = state.chat;
+          if (initial) {
+            loadedChat = state.chat;
+            renderPins();
+          } else {
+            if (previousPhases !== threads.map((t) => phase(t)).join(",")) renderPins();
+            $("update").hidden = !threads.some(
+              (t) =>
+                !t.done &&
+                messages(t, latestChat).some(
+                  (entry) =>
+                    entry.role === "agent" && !loadedChat.some((old) => old.at === entry.at && old.text === entry.text),
+                ),
+            );
+            if (active)
+              $("thread-status").textContent =
+                phase(active) === "replied" && messages(active).at(-1)?.role !== "agent"
+                  ? "已收到回复 · 请刷新查看"
+                  : status(active);
+          }
+          return state;
+        } catch {
+          $("connection").textContent = "连接已断开 · 请检查服务";
+          $("connection-dot").classList.remove("online");
+          return null;
+        }
+      }
+      $("form").onsubmit = async (event) => {
+        event.preventDefault();
+        const thread = active,
+          text = input.value.trim();
+        if (!thread || !text || sending) return;
+        sending = true;
+        input.disabled = true;
+        $("send").disabled = true;
+        $("thread-status").textContent = "正在发送…";
+        thread.messageId ||= crypto.randomUUID();
+        save();
+        try {
+          const target =
+            thread.scope === "session"
+              ? { scope: "session" }
+              : { scope: "anchored", block: thread.block, quote: thread.quote };
+          const response = await fetch("/api/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: thread.id, messageId: thread.messageId, ...target, text }),
+          });
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error || "发送失败");
+          thread.sent = true;
+          thread.draft = "";
+          thread.summary ||= text.slice(0, 32);
+          delete thread.messageId;
+          save();
+          const state = await load(true);
+          if (!state) notify("已发送；连接恢复后刷新查看");
+          input.value = "";
+          sending = false;
+          input.disabled = false;
+          close();
+          notify(
+            thread.scope === "session"
+              ? "已发送到当前会话 · 从整体意见查看回复"
+              : "已发送到当前会话 · 点击圆球可继续讨论",
+          );
+        } catch (error) {
+          sending = false;
+          input.disabled = false;
+          $("send").disabled = false;
+          $("error").textContent = `${error.message}，输入已保留，请重试。`;
+          $("error").hidden = false;
+          $("thread-status").textContent = "发送失败";
+        }
+      };
+      $("resolve").onchange = () => {
+        if (!active || !$("resolve").checked) return;
+        active.done = true;
+        active.draft = "";
+        save();
+        input.value = "";
+        close();
+        notify("这条修订已完成");
+      };
+      async function refresh() {
+        close();
+        const state = await load();
+        if (state) location.reload();
+        else notify("服务暂不可用，评论已保留");
+      }
+      $("refresh").onclick = refresh;
+      $("refresh-reply").onclick = refresh;
+      $("overall").onclick = () => {
+        const rect = $("overall").getBoundingClientRect();
+        show(newOverall("overall"), rect.left, rect.top);
+        save();
+      };
+      $("approve").onclick = () => {
+        const rect = $("approve").getBoundingClientRect();
+        const thread = newOverall("approval");
+        thread.draft = "确认这版功能，请按本页范围实现正式版本，并在 Pi agent 中验证。";
+        show(thread, rect.left, rect.top);
+        save();
+      };
+      $("confirmation-form").onsubmit = (event) => {
+        event.preventDefault();
+        if (sending) return;
+        const values = new FormData(event.currentTarget);
+        const focus = values.getAll("focus");
+        const thread = newOverall("form");
+        thread.draft = `确认意见：${values.get("verdict")}\n优先完善：${focus.join("、") || "未指定"}\n补充说明：${values.get("note") || "无"}`;
+        const rect = event.submitter.getBoundingClientRect();
+        show(thread, rect.left, rect.top);
+        save();
+        $("form").requestSubmit();
+      };
+      const formStorageKey = `${storageKey}:form`;
+      const savedForm = JSON.parse(localStorage.getItem(formStorageKey) || "{}");
+      for (const control of $("confirmation-form").elements) {
+        if (control.type === "radio") control.checked = savedForm.verdict === control.value;
+        if (control.type === "checkbox") control.checked = (savedForm.focus || []).includes(control.value);
+        if (control.name === "note") control.value = savedForm.note || "";
+      }
+      $("confirmation-form").oninput = () => {
+        const data = new FormData($("confirmation-form"));
+        localStorage.setItem(
+          formStorageKey,
+          JSON.stringify({ verdict: data.get("verdict"), focus: data.getAll("focus"), note: data.get("note") }),
+        );
+      };
+      addEventListener("resize", () => {
+        renderPins();
+        position();
+      });
+      addEventListener(
+        "scroll",
+        () => {
+          if (active) {
+            close();
+          }
+        },
+        { passive: true },
+      );
+      window.visualViewport?.addEventListener("resize", position);
+      addEventListener("beforeunload", () => {
+        if (active) {
+          active.draft = input.value;
+          save();
+        }
+      });
+      renderPins();
+      load(true);
+      setInterval(() => load(), 4000);
+    </script>
+  </body>
+</html>

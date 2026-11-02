@@ -974,15 +974,35 @@ test(
         idleTimeoutMs: null,
       });
       try {
-        const output = await withEnv(cliEnv(dir, port, unresolvable), () =>
-          captureCli(["open", artifact, "--no-open"]),
+        // Some DNS proxies resolve even .invalid names. Inject ENOTFOUND only into this
+        // CLI child and the replacement daemon it starts, not the test runner or OS.
+        const dnsFixture = new URL("./fixtures/discovery-dns-enotfound.js", import.meta.url);
+        const child = spawn(
+          process.execPath,
+          [fileURLToPath(new URL("../bin/lavish-axi.js", import.meta.url)), "open", artifact, "--no-open"],
+          {
+            env: {
+              ...process.env,
+              ...cliEnv(dir, port, unresolvable),
+              NODE_OPTIONS: `${process.env.NODE_OPTIONS || ""} --import=${dnsFixture.href}`.trim(),
+            },
+            stdio: ["ignore", "pipe", "pipe"],
+            timeout: 20_000,
+          },
         );
+        let output = "",
+          stderr = "";
+        child.stdout.on("data", (chunk) => (output += chunk));
+        child.stderr.on("data", (chunk) => (stderr += chunk));
+        const [code] = await once(child, "close");
+        assert.equal(code, 0, stderr);
         assert.equal(await isResolved(loopbackOnly.done), true, "a server that never asked for the host was adopted");
         assert.match(output, /network_warning/);
         assert.ok(output.includes(unresolvable), `expected the unresolved host in ${output}`);
         const replacement = await health("127.0.0.1", port, "?reconcile_network=1");
         assert.ok(replacement.requested_hosts.includes(unresolvable));
         assert.ok(replacement.network_warning.includes(unresolvable));
+        assert.match(replacement.network_warning, /ENOTFOUND/);
         const log = await readFile(path.join(dir, "server.log"), "utf8");
         assert.ok(log.includes(`WARNING: Could not bind ${unresolvable}`), log);
         assert.deepEqual(await stateSessions(dir), [artifact]);

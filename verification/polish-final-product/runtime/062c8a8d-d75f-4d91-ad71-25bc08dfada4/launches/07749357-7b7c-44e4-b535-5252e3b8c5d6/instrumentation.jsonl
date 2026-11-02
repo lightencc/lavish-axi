@@ -1,0 +1,6 @@
+{"stage":"harness_ready","clockID":"pi:3413:83c50369-3c69-4839-9f82-37e83cc32071","at":1793388563631.9531,"durableWriteMs":3.835125000000005}
+{"stage":"accepted_durable","clockID":"pi:3413:83c50369-3c69-4839-9f82-37e83cc32071","at":1793388565018.4333,"durableWriteMs":3.8255420000000413}
+{"stage":"dispatch_reserved","clockID":"pi:3413:83c50369-3c69-4839-9f82-37e83cc32071","at":1793388565039.6604,"durableWriteMs":4.121291999999812}
+{"stage":"host_admitted","clockID":"pi:3413:83c50369-3c69-4839-9f82-37e83cc32071","at":1793388565052.6396,"durableWriteMs":4.073624999999993}
+{"stage":"host_dispatching","clockID":"pi:3413:83c50369-3c69-4839-9f82-37e83cc32071","at":1793388565065.6934,"durableWriteMs":3.90754099999981}
+{"stage":"input_consumed","clockID":"pi:3413:83c50369-3c69-4839-9f82-37e83cc32071","at":1793388565078.4429,"durableWriteMs":3.7345840000000408}

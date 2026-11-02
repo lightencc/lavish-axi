@@ -1,0 +1,1417 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43",
+  "measurement": "Raw stage durations subtract only matching clockIDs. model_start is Pi before_provider_request, not provider processing start. Calibration retains bounded source-minus-supervisor offsets separately.",
+  "launches": [
+    {
+      "name": "200c1eb2-9216-4c27-9cee-620ec68b6e0a",
+      "builds": [
+        {
+          "bundle": "/Users/lightencc/Documents/Projects/polish-axi/dist/pi-extension.mjs",
+          "sha256": "a7636f6936373e93a4a37aa8ed5de2eac98f457dc81f01b6df41e353ee7190fb",
+          "resume": true
+        }
+      ],
+      "directEnough": true,
+      "directAttempts": 30,
+      "directSuccessful": 30,
+      "directFailed": [],
+      "directIncomplete": [],
+      "directBatches": [
+        {
+          "batchID": "f444a862-3246-4eb7-9416-2525dbdd4b60",
+          "requested": 30,
+          "started": 30,
+          "successful": 30,
+          "notStarted": 0
+        }
+      ],
+      "clockCalibration": [
+        {
+          "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+          "samples": [
+            {
+              "nonce": "6295fad0-9fd5-4cd8-a9f5-b1ca66cf2992",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638725.3384,
+              "receivedAt": 1793385638726.386,
+              "sourceAt": 1793385638726.0823,
+              "rttMs": 1.047607421875,
+              "offsetLowerMs": -0.3037109375,
+              "offsetUpperMs": 0.743896484375
+            },
+            {
+              "nonce": "a904e4e6-1dcb-464a-8f77-c4608703adab",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638726.5234,
+              "receivedAt": 1793385638726.7532,
+              "sourceAt": 1793385638726.616,
+              "rttMs": 0.229736328125,
+              "offsetLowerMs": -0.13720703125,
+              "offsetUpperMs": 0.092529296875
+            },
+            {
+              "nonce": "97152fe1-22f8-4e18-8f1b-d5c8a4ea6293",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638726.8726,
+              "receivedAt": 1793385638727.037,
+              "sourceAt": 1793385638726.9648,
+              "rttMs": 0.16455078125,
+              "offsetLowerMs": -0.072265625,
+              "offsetUpperMs": 0.09228515625
+            },
+            {
+              "nonce": "b4acc23c-862b-4fbd-862a-42243c0bb14c",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638727.1511,
+              "receivedAt": 1793385638730.0269,
+              "sourceAt": 1793385638727.2166,
+              "rttMs": 2.875732421875,
+              "offsetLowerMs": -2.810302734375,
+              "offsetUpperMs": 0.0654296875
+            },
+            {
+              "nonce": "4533f674-a54a-4775-ae89-f10cdc44927a",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638730.3047,
+              "receivedAt": 1793385638731.3481,
+              "sourceAt": 1793385638731.228,
+              "rttMs": 1.04345703125,
+              "offsetLowerMs": -0.1201171875,
+              "offsetUpperMs": 0.92333984375
+            },
+            {
+              "nonce": "b29a631a-e91e-403a-9799-b6e70ce41d78",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638731.4663,
+              "receivedAt": 1793385638731.651,
+              "sourceAt": 1793385638731.5254,
+              "rttMs": 0.1845703125,
+              "offsetLowerMs": -0.12548828125,
+              "offsetUpperMs": 0.05908203125
+            },
+            {
+              "nonce": "ae6464f1-915e-42ec-8c6d-1415d42d6ce6",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638731.69,
+              "receivedAt": 1793385638731.877,
+              "sourceAt": 1793385638731.7551,
+              "rttMs": 0.18701171875,
+              "offsetLowerMs": -0.121826171875,
+              "offsetUpperMs": 0.065185546875
+            },
+            {
+              "nonce": "c336496a-afa7-4e48-859b-fa9e567b8dad",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638731.9138,
+              "receivedAt": 1793385638732.0317,
+              "sourceAt": 1793385638731.966,
+              "rttMs": 0.117919921875,
+              "offsetLowerMs": -0.065673828125,
+              "offsetUpperMs": 0.05224609375
+            },
+            {
+              "nonce": "aa952adb-3539-412c-a4fe-1af2de339eae",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638732.105,
+              "receivedAt": 1793385638732.223,
+              "sourceAt": 1793385638732.157,
+              "rttMs": 0.117919921875,
+              "offsetLowerMs": -0.06591796875,
+              "offsetUpperMs": 0.052001953125
+            },
+            {
+              "nonce": "d2761bd2-d113-4bf3-a305-f3d6e22559e9",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793385638732.316,
+              "receivedAt": 1793385638732.518,
+              "sourceAt": 1793385638732.3584,
+              "rttMs": 0.2021484375,
+              "offsetLowerMs": -0.15966796875,
+              "offsetUpperMs": 0.04248046875
+            }
+          ],
+          "best": {
+            "nonce": "c336496a-afa7-4e48-859b-fa9e567b8dad",
+            "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+            "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+            "sentAt": 1793385638731.9138,
+            "receivedAt": 1793385638732.0317,
+            "sourceAt": 1793385638731.966,
+            "rttMs": 0.117919921875,
+            "offsetLowerMs": -0.065673828125,
+            "offsetUpperMs": 0.05224609375
+          },
+          "offsetEstimateMs": -0.0067138671875,
+          "uncertaintyMs": 0.0589599609375
+        },
+        {
+          "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+          "samples": [
+            {
+              "nonce": "de513530-19c3-4159-a2cc-0f907fc2c124",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976612.2026,
+              "receivedAt": 1793386976612.6733,
+              "sourceAt": 1793386976612.5474,
+              "rttMs": 0.470703125,
+              "offsetLowerMs": -0.1259765625,
+              "offsetUpperMs": 0.3447265625
+            },
+            {
+              "nonce": "2658bf3d-95a4-4c4c-b1c7-db959b868392",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976612.772,
+              "receivedAt": 1793386976613.0088,
+              "sourceAt": 1793386976612.907,
+              "rttMs": 0.23681640625,
+              "offsetLowerMs": -0.101806640625,
+              "offsetUpperMs": 0.135009765625
+            },
+            {
+              "nonce": "2979614d-9788-4976-b49a-bcb77d675803",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976613.0825,
+              "receivedAt": 1793386976613.2158,
+              "sourceAt": 1793386976613.128,
+              "rttMs": 0.13330078125,
+              "offsetLowerMs": -0.087890625,
+              "offsetUpperMs": 0.04541015625
+            },
+            {
+              "nonce": "a72d58b2-c486-4bf4-a657-3e0b671aefd6",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976613.2446,
+              "receivedAt": 1793386976613.3977,
+              "sourceAt": 1793386976613.3132,
+              "rttMs": 0.153076171875,
+              "offsetLowerMs": -0.08447265625,
+              "offsetUpperMs": 0.068603515625
+            },
+            {
+              "nonce": "a9f39b40-cda2-4096-a05d-1f9f8959a37e",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976613.483,
+              "receivedAt": 1793386976613.6094,
+              "sourceAt": 1793386976613.527,
+              "rttMs": 0.12646484375,
+              "offsetLowerMs": -0.082275390625,
+              "offsetUpperMs": 0.044189453125
+            },
+            {
+              "nonce": "e9dbeb02-a7d0-43ec-aad9-eed57d551ea0",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976613.6414,
+              "receivedAt": 1793386976613.745,
+              "sourceAt": 1793386976613.6724,
+              "rttMs": 0.103759765625,
+              "offsetLowerMs": -0.07275390625,
+              "offsetUpperMs": 0.031005859375
+            },
+            {
+              "nonce": "1d049453-2bdf-4c66-9318-a703bf7672c7",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976613.772,
+              "receivedAt": 1793386976613.9077,
+              "sourceAt": 1793386976613.8037,
+              "rttMs": 0.1357421875,
+              "offsetLowerMs": -0.10400390625,
+              "offsetUpperMs": 0.03173828125
+            },
+            {
+              "nonce": "31561510-d37f-4f6d-8c7b-e0bd8c9c9948",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976613.9521,
+              "receivedAt": 1793386976614.0693,
+              "sourceAt": 1793386976613.9915,
+              "rttMs": 0.1171875,
+              "offsetLowerMs": -0.077880859375,
+              "offsetUpperMs": 0.039306640625
+            },
+            {
+              "nonce": "6439df68-99f3-458d-8e69-ccceb081905b",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976614.0974,
+              "receivedAt": 1793386976614.205,
+              "sourceAt": 1793386976614.14,
+              "rttMs": 0.107666015625,
+              "offsetLowerMs": -0.065185546875,
+              "offsetUpperMs": 0.04248046875
+            },
+            {
+              "nonce": "d30116ad-2b60-4b18-9026-3220ebca334a",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+              "sentAt": 1793386976614.2346,
+              "receivedAt": 1793386976614.3613,
+              "sourceAt": 1793386976614.2878,
+              "rttMs": 0.126708984375,
+              "offsetLowerMs": -0.073486328125,
+              "offsetUpperMs": 0.05322265625
+            }
+          ],
+          "best": {
+            "nonce": "e9dbeb02-a7d0-43ec-aad9-eed57d551ea0",
+            "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+            "sourceClockID": "pi:58334:de70660b-df30-4d20-bb64-fa39013f5669",
+            "sentAt": 1793386976613.6414,
+            "receivedAt": 1793386976613.745,
+            "sourceAt": 1793386976613.6724,
+            "rttMs": 0.103759765625,
+            "offsetLowerMs": -0.07275390625,
+            "offsetUpperMs": 0.031005859375
+          },
+          "offsetEstimateMs": -0.0208740234375,
+          "uncertaintyMs": 0.0518798828125
+        }
+      ],
+      "browserClockCalibration": [
+        {
+          "method": "browserMinusSupervisor bounded offset via CDP Runtime.evaluate",
+          "samples": [
+            {
+              "index": 1,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848333.5999,
+              "sentAt": 1793385848331.8408,
+              "receivedAt": 1793385848333.8813,
+              "rttMs": 2.04052734375,
+              "offsetLowerMs": -0.281494140625,
+              "offsetUpperMs": 1.759033203125
+            },
+            {
+              "index": 2,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848334.5999,
+              "sentAt": 1793385848334.1228,
+              "receivedAt": 1793385848334.5508,
+              "rttMs": 0.427978515625,
+              "offsetLowerMs": 0.049072265625,
+              "offsetUpperMs": 0.47705078125
+            },
+            {
+              "index": 3,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848335.0999,
+              "sentAt": 1793385848334.6768,
+              "receivedAt": 1793385848335.089,
+              "rttMs": 0.412353515625,
+              "offsetLowerMs": 0.0107421875,
+              "offsetUpperMs": 0.423095703125
+            },
+            {
+              "index": 4,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848335.5999,
+              "sentAt": 1793385848335.1777,
+              "receivedAt": 1793385848335.6394,
+              "rttMs": 0.461669921875,
+              "offsetLowerMs": -0.03955078125,
+              "offsetUpperMs": 0.422119140625
+            },
+            {
+              "index": 5,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848336.0999,
+              "sentAt": 1793385848335.718,
+              "receivedAt": 1793385848336.0208,
+              "rttMs": 0.302734375,
+              "offsetLowerMs": 0.0791015625,
+              "offsetUpperMs": 0.3818359375
+            },
+            {
+              "index": 6,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848336.4,
+              "sentAt": 1793385848336.0989,
+              "receivedAt": 1793385848336.3523,
+              "rttMs": 0.25341796875,
+              "offsetLowerMs": 0.047607421875,
+              "offsetUpperMs": 0.301025390625
+            },
+            {
+              "index": 7,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848336.7,
+              "sentAt": 1793385848336.408,
+              "receivedAt": 1793385848336.6248,
+              "rttMs": 0.216796875,
+              "offsetLowerMs": 0.0751953125,
+              "offsetUpperMs": 0.2919921875
+            },
+            {
+              "index": 8,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848337,
+              "sentAt": 1793385848336.6812,
+              "receivedAt": 1793385848336.8936,
+              "rttMs": 0.21240234375,
+              "offsetLowerMs": 0.1064453125,
+              "offsetUpperMs": 0.31884765625
+            },
+            {
+              "index": 9,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848337.2,
+              "sentAt": 1793385848336.9346,
+              "receivedAt": 1793385848337.1704,
+              "rttMs": 0.23583984375,
+              "offsetLowerMs": 0.029541015625,
+              "offsetUpperMs": 0.265380859375
+            },
+            {
+              "index": 10,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793385848337.5999,
+              "sentAt": 1793385848337.24,
+              "receivedAt": 1793385848337.4612,
+              "rttMs": 0.22119140625,
+              "offsetLowerMs": 0.138671875,
+              "offsetUpperMs": 0.35986328125
+            }
+          ],
+          "best": {
+            "index": 8,
+            "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+            "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+            "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+            "browserTimeOrigin": 1793385715817.4,
+            "browserAt": 1793385848337,
+            "sentAt": 1793385848336.6812,
+            "receivedAt": 1793385848336.8936,
+            "rttMs": 0.21240234375,
+            "offsetLowerMs": 0.1064453125,
+            "offsetUpperMs": 0.31884765625
+          },
+          "offsetEstimateMs": 0.212646484375,
+          "uncertaintyMs": 0.106201171875
+        },
+        {
+          "method": "browserMinusSupervisor bounded offset via CDP Runtime.evaluate",
+          "samples": [
+            {
+              "index": 1,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916540,
+              "sentAt": 1793386916539.0198,
+              "receivedAt": 1793386916540.2117,
+              "rttMs": 1.19189453125,
+              "offsetLowerMs": -0.211669921875,
+              "offsetUpperMs": 0.980224609375
+            },
+            {
+              "index": 2,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916540.7,
+              "sentAt": 1793386916540.3354,
+              "receivedAt": 1793386916540.627,
+              "rttMs": 0.29150390625,
+              "offsetLowerMs": 0.072998046875,
+              "offsetUpperMs": 0.364501953125
+            },
+            {
+              "index": 3,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916541.0999,
+              "sentAt": 1793386916540.7007,
+              "receivedAt": 1793386916540.9163,
+              "rttMs": 0.215576171875,
+              "offsetLowerMs": 0.18359375,
+              "offsetUpperMs": 0.399169921875
+            },
+            {
+              "index": 4,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916541.2998,
+              "sentAt": 1793386916540.9778,
+              "receivedAt": 1793386916541.1873,
+              "rttMs": 0.20947265625,
+              "offsetLowerMs": 0.112548828125,
+              "offsetUpperMs": 0.322021484375
+            },
+            {
+              "index": 5,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916541.5,
+              "sentAt": 1793386916541.2559,
+              "receivedAt": 1793386916541.4595,
+              "rttMs": 0.20361328125,
+              "offsetLowerMs": 0.04052734375,
+              "offsetUpperMs": 0.244140625
+            },
+            {
+              "index": 6,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916541.7998,
+              "sentAt": 1793386916541.5105,
+              "receivedAt": 1793386916541.7063,
+              "rttMs": 0.19580078125,
+              "offsetLowerMs": 0.093505859375,
+              "offsetUpperMs": 0.289306640625
+            },
+            {
+              "index": 7,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916542,
+              "sentAt": 1793386916541.7534,
+              "receivedAt": 1793386916541.9546,
+              "rttMs": 0.201171875,
+              "offsetLowerMs": 0.04541015625,
+              "offsetUpperMs": 0.24658203125
+            },
+            {
+              "index": 8,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916542.2998,
+              "sentAt": 1793386916542.0015,
+              "receivedAt": 1793386916542.3577,
+              "rttMs": 0.356201171875,
+              "offsetLowerMs": -0.057861328125,
+              "offsetUpperMs": 0.29833984375
+            },
+            {
+              "index": 9,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916542.7,
+              "sentAt": 1793386916542.3943,
+              "receivedAt": 1793386916542.6023,
+              "rttMs": 0.2080078125,
+              "offsetLowerMs": 0.09765625,
+              "offsetUpperMs": 0.3056640625
+            },
+            {
+              "index": 10,
+              "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+              "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+              "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+              "browserTimeOrigin": 1793385715817.4,
+              "browserAt": 1793386916542.9,
+              "sentAt": 1793386916542.6426,
+              "receivedAt": 1793386916542.828,
+              "rttMs": 0.185302734375,
+              "offsetLowerMs": 0.072021484375,
+              "offsetUpperMs": 0.25732421875
+            }
+          ],
+          "best": {
+            "index": 10,
+            "targetID": "AF9BFDF56B85E66AF2DE3209DB4BE64A",
+            "supervisorClockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+            "browserClockID": "browser:AF9BFDF56B85E66AF2DE3209DB4BE64A:1793385715817.4",
+            "browserTimeOrigin": 1793385715817.4,
+            "browserAt": 1793386916542.9,
+            "sentAt": 1793386916542.6426,
+            "receivedAt": 1793386916542.828,
+            "rttMs": 0.185302734375,
+            "offsetLowerMs": 0.072021484375,
+            "offsetUpperMs": 0.25732421875
+          },
+          "offsetEstimateMs": 0.1646728515625,
+          "uncertaintyMs": 0.0926513671875
+        }
+      ],
+      "reviewEnough": false,
+      "directFirstTokenMs": {
+        "count": 30,
+        "p50": 1202.892578125,
+        "p95": 1872.418701171875,
+        "max": 2044.91259765625
+      },
+      "directTotalMs": {
+        "count": 30,
+        "p50": 1222.77587890625,
+        "p95": 1905.632080078125,
+        "max": 2055.162109375
+      },
+      "reviewObservedReplyMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "instrumentationDurableWriteMs": {
+        "count": 173,
+        "p50": 3.974958000006154,
+        "p95": 8.528709000092931,
+        "max": 14.897125000017695
+      },
+      "instrumentationLimitation": "Durable write time includes trace JSON encoding/write/fsync, excludes the secondary overhead log and fault-config lookup. Do not subtract this instrumentation cost from reported wall latency.",
+      "intervals": {
+        "accepted_durable->dispatch_reserved": {
+          "count": 19,
+          "p50": 26.026611328125,
+          "p95": 42.828125,
+          "max": 42.828125
+        },
+        "dispatch_reserved->host_admitted": {
+          "count": 19,
+          "p50": 14.083740234375,
+          "p95": 21.433349609375,
+          "max": 21.433349609375
+        },
+        "host_admitted->host_dispatching": {
+          "count": 19,
+          "p50": 13.090087890625,
+          "p95": 15.412353515625,
+          "max": 15.412353515625
+        },
+        "host_dispatching->input_consumed": {
+          "count": 18,
+          "p50": 18.368408203125,
+          "p95": 25.35107421875,
+          "max": 25.35107421875
+        },
+        "input_consumed->model_start": {
+          "count": 18,
+          "p50": 28.491943359375,
+          "p95": 42.718505859375,
+          "max": 42.718505859375
+        },
+        "input_consumed->first_token": {
+          "count": 18,
+          "p50": 1424.28125,
+          "p95": 110657.24047851562,
+          "max": 110657.24047851562
+        },
+        "first_token->host_reply_persisted": {
+          "count": 19,
+          "p50": 84.234375,
+          "p95": 166.02490234375,
+          "max": 166.02490234375
+        },
+        "host_reply_persisted->reply_persisted": {
+          "count": 18,
+          "p50": 16.038818359375,
+          "p95": 21.68701171875,
+          "max": 21.68701171875
+        }
+      },
+      "faults": [],
+      "issues": [
+        {
+          "stage": "pi_exit",
+          "metadata": {
+            "code": 143,
+            "signal": null,
+            "pid": 58334
+          },
+          "clockID": "supervisor:58272:e0e38ab9-b7c6-45f9-8a25-3da1f363f99c",
+          "at": 1793387395055.078,
+          "pid": 58272
+        }
+      ]
+    },
+    {
+      "name": "21c31975-0098-41c7-8b87-20192c7db9c6",
+      "builds": [
+        {
+          "bundle": "/Users/lightencc/Documents/Projects/polish-axi/dist/pi-extension.mjs",
+          "sha256": "42df7b9b36303f65bfcfcd7823d4b0e1ae004775af6edc113a4d549479b7c31a",
+          "resume": false
+        }
+      ],
+      "directEnough": true,
+      "directAttempts": 30,
+      "directSuccessful": 30,
+      "directFailed": [],
+      "directIncomplete": [],
+      "directBatches": [
+        {
+          "batchID": "70132dd7-2c76-484d-977a-4c84c7dc0c3a",
+          "requested": 30,
+          "started": 30,
+          "successful": 30,
+          "notStarted": 0
+        }
+      ],
+      "clockCalibration": [
+        {
+          "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+          "samples": [
+            {
+              "nonce": "bc476b89-f65b-47bc-add8-4d0e8fb97239",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982548.3896,
+              "receivedAt": 1793384982549.466,
+              "sourceAt": 1793384982549.136,
+              "rttMs": 1.076416015625,
+              "offsetLowerMs": -0.330078125,
+              "offsetUpperMs": 0.746337890625
+            },
+            {
+              "nonce": "cb9919ca-9fb8-4bdd-b27b-f15fb9bac50e",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982549.7957,
+              "receivedAt": 1793384982550.9797,
+              "sourceAt": 1793384982549.9397,
+              "rttMs": 1.18408203125,
+              "offsetLowerMs": -1.0400390625,
+              "offsetUpperMs": 0.14404296875
+            },
+            {
+              "nonce": "0cc9b804-95b6-4bfa-b486-4f8c25d5713d",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982551.064,
+              "receivedAt": 1793384982551.3018,
+              "sourceAt": 1793384982551.174,
+              "rttMs": 0.23779296875,
+              "offsetLowerMs": -0.127685546875,
+              "offsetUpperMs": 0.110107421875
+            },
+            {
+              "nonce": "0e8261b1-45af-4738-893d-22d115d1843a",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982551.488,
+              "receivedAt": 1793384982551.7754,
+              "sourceAt": 1793384982551.5862,
+              "rttMs": 0.287353515625,
+              "offsetLowerMs": -0.189208984375,
+              "offsetUpperMs": 0.09814453125
+            },
+            {
+              "nonce": "69683f5e-db9d-43b4-976d-8dd0b00a64de",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982551.9363,
+              "receivedAt": 1793384982552.269,
+              "sourceAt": 1793384982552.0796,
+              "rttMs": 0.332763671875,
+              "offsetLowerMs": -0.189453125,
+              "offsetUpperMs": 0.143310546875
+            },
+            {
+              "nonce": "d46a9081-2503-4156-89dc-26ed239fbc8c",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982552.3936,
+              "receivedAt": 1793384982552.5872,
+              "sourceAt": 1793384982552.4656,
+              "rttMs": 0.193603515625,
+              "offsetLowerMs": -0.12158203125,
+              "offsetUpperMs": 0.072021484375
+            },
+            {
+              "nonce": "f2b50b6c-00c7-43e3-bcb4-46366806f054",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982552.6858,
+              "receivedAt": 1793384982552.8752,
+              "sourceAt": 1793384982552.7769,
+              "rttMs": 0.189453125,
+              "offsetLowerMs": -0.098388671875,
+              "offsetUpperMs": 0.091064453125
+            },
+            {
+              "nonce": "de9f2116-3e06-40d5-b49d-f848c4472136",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982552.9524,
+              "receivedAt": 1793384982553.1438,
+              "sourceAt": 1793384982552.9966,
+              "rttMs": 0.19140625,
+              "offsetLowerMs": -0.147216796875,
+              "offsetUpperMs": 0.044189453125
+            },
+            {
+              "nonce": "148227cc-5e48-42cc-a696-9632fecfda6b",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982553.1992,
+              "receivedAt": 1793384982553.378,
+              "sourceAt": 1793384982553.2769,
+              "rttMs": 0.1787109375,
+              "offsetLowerMs": -0.10107421875,
+              "offsetUpperMs": 0.07763671875
+            },
+            {
+              "nonce": "bf44eb5f-5e58-4475-9ce6-d023ee7aa1ca",
+              "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+              "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+              "sentAt": 1793384982553.478,
+              "receivedAt": 1793384982553.6462,
+              "sourceAt": 1793384982553.5344,
+              "rttMs": 0.168212890625,
+              "offsetLowerMs": -0.11181640625,
+              "offsetUpperMs": 0.056396484375
+            }
+          ],
+          "best": {
+            "nonce": "bf44eb5f-5e58-4475-9ce6-d023ee7aa1ca",
+            "supervisorClockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+            "sourceClockID": "pi:75507:a3fa8cbc-983e-4686-8702-5e0e0d20a006",
+            "sentAt": 1793384982553.478,
+            "receivedAt": 1793384982553.6462,
+            "sourceAt": 1793384982553.5344,
+            "rttMs": 0.168212890625,
+            "offsetLowerMs": -0.11181640625,
+            "offsetUpperMs": 0.056396484375
+          },
+          "offsetEstimateMs": -0.0277099609375,
+          "uncertaintyMs": 0.0841064453125
+        }
+      ],
+      "browserClockCalibration": [],
+      "reviewEnough": false,
+      "directFirstTokenMs": {
+        "count": 30,
+        "p50": 1195.400146484375,
+        "p95": 2055.3203125,
+        "max": 21799.09521484375
+      },
+      "directTotalMs": {
+        "count": 30,
+        "p50": 1201.58544921875,
+        "p95": 2056.244873046875,
+        "max": 21816.876953125
+      },
+      "reviewObservedReplyMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "instrumentationDurableWriteMs": {
+        "count": 1,
+        "p50": 4.162333999999987,
+        "p95": 4.162333999999987,
+        "max": 4.162333999999987
+      },
+      "instrumentationLimitation": "Durable write time includes trace JSON encoding/write/fsync, excludes the secondary overhead log and fault-config lookup. Do not subtract this instrumentation cost from reported wall latency.",
+      "intervals": {
+        "accepted_durable->dispatch_reserved": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "dispatch_reserved->host_admitted": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "host_admitted->host_dispatching": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "host_dispatching->input_consumed": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "input_consumed->model_start": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "input_consumed->first_token": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "first_token->host_reply_persisted": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "host_reply_persisted->reply_persisted": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        }
+      },
+      "faults": [],
+      "issues": [
+        {
+          "stage": "pi_exit",
+          "metadata": {
+            "code": 143,
+            "signal": null,
+            "pid": 75507
+          },
+          "clockID": "supervisor:75493:d99d63e6-9713-4ec9-be0f-acc6239f38d1",
+          "at": 1793385615924.664,
+          "pid": 75493
+        }
+      ]
+    },
+    {
+      "name": "84e9d8be-711a-400e-bffc-f401a0d67708",
+      "builds": [
+        {
+          "bundle": "/Users/lightencc/Documents/Projects/polish-axi/dist/pi-extension.mjs",
+          "sha256": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+          "resume": true
+        }
+      ],
+      "directEnough": true,
+      "directAttempts": 30,
+      "directSuccessful": 30,
+      "directFailed": [],
+      "directIncomplete": [],
+      "directBatches": [
+        {
+          "batchID": "5ab16501-e755-42c2-a461-f516ef8f9c31",
+          "requested": 30,
+          "started": 30,
+          "successful": 30,
+          "notStarted": 0
+        }
+      ],
+      "clockCalibration": [
+        {
+          "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+          "samples": [
+            {
+              "nonce": "cbf33e5c-3c63-4ffa-ad8a-dbcdbbe85753",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154548.963,
+              "receivedAt": 1793390154549.4487,
+              "sourceAt": 1793390154549.2776,
+              "rttMs": 0.48583984375,
+              "offsetLowerMs": -0.171142578125,
+              "offsetUpperMs": 0.314697265625
+            },
+            {
+              "nonce": "26d4abb0-7be7-41b3-a380-3458e1dbfdde",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154549.5933,
+              "receivedAt": 1793390154549.7715,
+              "sourceAt": 1793390154549.6606,
+              "rttMs": 0.17822265625,
+              "offsetLowerMs": -0.11083984375,
+              "offsetUpperMs": 0.0673828125
+            },
+            {
+              "nonce": "15112172-f3e3-4f23-845e-0c8b56ce2737",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154549.8696,
+              "receivedAt": 1793390154549.9954,
+              "sourceAt": 1793390154549.9246,
+              "rttMs": 0.125732421875,
+              "offsetLowerMs": -0.07080078125,
+              "offsetUpperMs": 0.054931640625
+            },
+            {
+              "nonce": "4352daee-156d-4631-8fef-f3757dc47bfe",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.0847,
+              "receivedAt": 1793390154550.2236,
+              "sourceAt": 1793390154550.1323,
+              "rttMs": 0.138916015625,
+              "offsetLowerMs": -0.09130859375,
+              "offsetUpperMs": 0.047607421875
+            },
+            {
+              "nonce": "d1af9efa-a881-4273-971c-64556e135f54",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.3027,
+              "receivedAt": 1793390154550.4172,
+              "sourceAt": 1793390154550.3572,
+              "rttMs": 0.114501953125,
+              "offsetLowerMs": -0.06005859375,
+              "offsetUpperMs": 0.054443359375
+            },
+            {
+              "nonce": "c8163c8d-5cb4-4bde-9816-d858cada8f2b",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.4827,
+              "receivedAt": 1793390154550.6584,
+              "sourceAt": 1793390154550.5212,
+              "rttMs": 0.17578125,
+              "offsetLowerMs": -0.13720703125,
+              "offsetUpperMs": 0.03857421875
+            },
+            {
+              "nonce": "1fd1b7c8-843a-49ec-8c19-fcf00bb3d798",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.6995,
+              "receivedAt": 1793390154550.8552,
+              "sourceAt": 1793390154550.771,
+              "rttMs": 0.15576171875,
+              "offsetLowerMs": -0.084228515625,
+              "offsetUpperMs": 0.071533203125
+            },
+            {
+              "nonce": "9eabd7f4-ac3f-4eec-9db5-1fc04ff69e7d",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.9248,
+              "receivedAt": 1793390154551.0935,
+              "sourceAt": 1793390154550.9858,
+              "rttMs": 0.168701171875,
+              "offsetLowerMs": -0.107666015625,
+              "offsetUpperMs": 0.06103515625
+            },
+            {
+              "nonce": "082f9da6-bdd8-4278-93cd-3de0cd7c92aa",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154551.16,
+              "receivedAt": 1793390154551.291,
+              "sourceAt": 1793390154551.2273,
+              "rttMs": 0.131103515625,
+              "offsetLowerMs": -0.063720703125,
+              "offsetUpperMs": 0.0673828125
+            },
+            {
+              "nonce": "0da42b2b-2f10-43c9-8a05-4bdfe6071c15",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154551.356,
+              "receivedAt": 1793390154551.469,
+              "sourceAt": 1793390154551.4016,
+              "rttMs": 0.113037109375,
+              "offsetLowerMs": -0.0673828125,
+              "offsetUpperMs": 0.045654296875
+            }
+          ],
+          "best": {
+            "nonce": "0da42b2b-2f10-43c9-8a05-4bdfe6071c15",
+            "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+            "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+            "sentAt": 1793390154551.356,
+            "receivedAt": 1793390154551.469,
+            "sourceAt": 1793390154551.4016,
+            "rttMs": 0.113037109375,
+            "offsetLowerMs": -0.0673828125,
+            "offsetUpperMs": 0.045654296875
+          },
+          "offsetEstimateMs": -0.0108642578125,
+          "uncertaintyMs": 0.0565185546875
+        }
+      ],
+      "browserClockCalibration": [
+        {
+          "method": "browserMinusSupervisor bounded offset via CDP Runtime.evaluate",
+          "samples": [
+            {
+              "index": 1,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167707.9,
+              "sentAt": 1793390167705.4727,
+              "receivedAt": 1793390167708.3325,
+              "rttMs": 2.85986328125,
+              "offsetLowerMs": -0.4326171875,
+              "offsetUpperMs": 2.42724609375
+            },
+            {
+              "index": 2,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167709.4,
+              "sentAt": 1793390167708.6357,
+              "receivedAt": 1793390167709.258,
+              "rttMs": 0.622314453125,
+              "offsetLowerMs": 0.141845703125,
+              "offsetUpperMs": 0.76416015625
+            },
+            {
+              "index": 3,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167710.2,
+              "sentAt": 1793390167709.4417,
+              "receivedAt": 1793390167710.0042,
+              "rttMs": 0.5625,
+              "offsetLowerMs": 0.19580078125,
+              "offsetUpperMs": 0.75830078125
+            },
+            {
+              "index": 4,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167710.8,
+              "sentAt": 1793390167710.1506,
+              "receivedAt": 1793390167710.7021,
+              "rttMs": 0.551513671875,
+              "offsetLowerMs": 0.097900390625,
+              "offsetUpperMs": 0.6494140625
+            },
+            {
+              "index": 5,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167711.5,
+              "sentAt": 1793390167710.818,
+              "receivedAt": 1793390167711.2566,
+              "rttMs": 0.4384765625,
+              "offsetLowerMs": 0.243408203125,
+              "offsetUpperMs": 0.681884765625
+            },
+            {
+              "index": 6,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167712,
+              "sentAt": 1793390167711.389,
+              "receivedAt": 1793390167711.8525,
+              "rttMs": 0.463623046875,
+              "offsetLowerMs": 0.1474609375,
+              "offsetUpperMs": 0.611083984375
+            },
+            {
+              "index": 7,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167712.5999,
+              "sentAt": 1793390167711.9453,
+              "receivedAt": 1793390167712.3403,
+              "rttMs": 0.39501953125,
+              "offsetLowerMs": 0.259521484375,
+              "offsetUpperMs": 0.654541015625
+            },
+            {
+              "index": 8,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167713,
+              "sentAt": 1793390167712.4219,
+              "receivedAt": 1793390167712.8286,
+              "rttMs": 0.40673828125,
+              "offsetLowerMs": 0.17138671875,
+              "offsetUpperMs": 0.578125
+            },
+            {
+              "index": 9,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167713.5999,
+              "sentAt": 1793390167712.9526,
+              "receivedAt": 1793390167713.3875,
+              "rttMs": 0.434814453125,
+              "offsetLowerMs": 0.21240234375,
+              "offsetUpperMs": 0.647216796875
+            },
+            {
+              "index": 10,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167714.0999,
+              "sentAt": 1793390167713.4915,
+              "receivedAt": 1793390167713.8945,
+              "rttMs": 0.403076171875,
+              "offsetLowerMs": 0.205322265625,
+              "offsetUpperMs": 0.6083984375
+            }
+          ],
+          "best": {
+            "index": 7,
+            "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+            "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+            "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+            "browserTimeOrigin": 1793390149031.2,
+            "browserAt": 1793390167712.5999,
+            "sentAt": 1793390167711.9453,
+            "receivedAt": 1793390167712.3403,
+            "rttMs": 0.39501953125,
+            "offsetLowerMs": 0.259521484375,
+            "offsetUpperMs": 0.654541015625
+          },
+          "offsetEstimateMs": 0.45703125,
+          "uncertaintyMs": 0.197509765625
+        }
+      ],
+      "reviewEnough": false,
+      "directFirstTokenMs": {
+        "count": 30,
+        "p50": 1272.783447265625,
+        "p95": 2369.80712890625,
+        "max": 2926.9208984375
+      },
+      "directTotalMs": {
+        "count": 30,
+        "p50": 1303.336669921875,
+        "p95": 2373.380126953125,
+        "max": 2929.68212890625
+      },
+      "reviewObservedReplyMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "instrumentationDurableWriteMs": {
+        "count": 1,
+        "p50": 3.9506660000000124,
+        "p95": 3.9506660000000124,
+        "max": 3.9506660000000124
+      },
+      "instrumentationLimitation": "Durable write time includes trace JSON encoding/write/fsync, excludes the secondary overhead log and fault-config lookup. Do not subtract this instrumentation cost from reported wall latency.",
+      "intervals": {
+        "accepted_durable->dispatch_reserved": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "dispatch_reserved->host_admitted": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "host_admitted->host_dispatching": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "host_dispatching->input_consumed": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "input_consumed->model_start": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "input_consumed->first_token": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "first_token->host_reply_persisted": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        },
+        "host_reply_persisted->reply_persisted": {
+          "count": 0,
+          "p50": null,
+          "p95": null,
+          "max": null
+        }
+      },
+      "faults": [],
+      "issues": []
+    },
+    {
+      "name": "c4212554-dbab-4e1e-b1b1-96d553159883",
+      "builds": [
+        {
+          "bundle": "/Users/lightencc/Documents/Projects/polish-axi/dist/pi-extension.mjs",
+          "sha256": "b014ab19c23e4e5dfc24a84ed87978610f92f32df43b6964fa1ed0414bb46797",
+          "resume": true
+        }
+      ],
+      "directEnough": false,
+      "directAttempts": 0,
+      "directSuccessful": 0,
+      "directFailed": [],
+      "directIncomplete": [],
+      "directBatches": [],
+      "clockCalibration": [],
+      "browserClockCalibration": [],
+      "reviewEnough": false,
+      "directFirstTokenMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "directTotalMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "reviewObservedReplyMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "instrumentationDurableWriteMs": {
+        "count": 76,
+        "p50": 3.953999999910593,
+        "p95": 5.8406660000327975,
+        "max": 6.711207999964245
+      },
+      "instrumentationLimitation": "Durable write time includes trace JSON encoding/write/fsync, excludes the secondary overhead log and fault-config lookup. Do not subtract this instrumentation cost from reported wall latency.",
+      "intervals": {
+        "accepted_durable->dispatch_reserved": {
+          "count": 6,
+          "p50": 27.923583984375,
+          "p95": 34.803955078125,
+          "max": 34.803955078125
+        },
+        "dispatch_reserved->host_admitted": {
+          "count": 8,
+          "p50": 15.023681640625,
+          "p95": 23.973876953125,
+          "max": 23.973876953125
+        },
+        "host_admitted->host_dispatching": {
+          "count": 8,
+          "p50": 13.2568359375,
+          "p95": 50555.81298828125,
+          "max": 50555.81298828125
+        },
+        "host_dispatching->input_consumed": {
+          "count": 5,
+          "p50": 16.94482421875,
+          "p95": 18.04150390625,
+          "max": 18.04150390625
+        },
+        "input_consumed->model_start": {
+          "count": 5,
+          "p50": 29.107421875,
+          "p95": 36.26025390625,
+          "max": 36.26025390625
+        },
+        "input_consumed->first_token": {
+          "count": 5,
+          "p50": 2936.128173828125,
+          "p95": 3241.34619140625,
+          "max": 3241.34619140625
+        },
+        "first_token->host_reply_persisted": {
+          "count": 8,
+          "p50": 24.37890625,
+          "p95": 4429.1669921875,
+          "max": 4429.1669921875
+        },
+        "host_reply_persisted->reply_persisted": {
+          "count": 8,
+          "p50": 14.994873046875,
+          "p95": 19.083984375,
+          "max": 19.083984375
+        }
+      },
+      "faults": [],
+      "issues": [
+        {
+          "stage": "pi_exit",
+          "metadata": {
+            "code": 143,
+            "signal": null,
+            "pid": 29833
+          },
+          "clockID": "supervisor:29763:d9f81db4-28a2-4d0e-bad2-be2a4ac43b65",
+          "at": 1793390095233.2178,
+          "pid": 29763
+        }
+      ]
+    }
+  ]
+}

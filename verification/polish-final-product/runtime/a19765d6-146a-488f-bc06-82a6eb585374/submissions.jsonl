@@ -1,0 +1,1 @@
+{"id":"fault-accepted_durable","body":{"review_epoch":1,"prompts":[{"prompt_id":"fault-accepted_durable","round_id":"488e9ca6-4e94-43d0-a8dc-89f4f51d8bca","scope":"session","prompt":"不要修改文件，不要使用工具，只回复 OK。"}]}}

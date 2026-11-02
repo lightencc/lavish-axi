@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "## Console messages\nShowing 1-3 of 3 (Page 1 of 1).\nmsgid=1 [error] Failed to load resource: the server responded with a status of 404 (Not Found) (0 args)\nmsgid=2 [error] Failed to load resource: the server responded with a status of 409 (Conflict) (0 args)\nmsgid=3 [error] Failed to load resource: the server responded with a status of 400 (Bad Request) (0 args)"
+    }
+  ]
+}

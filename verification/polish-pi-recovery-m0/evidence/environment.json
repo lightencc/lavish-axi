@@ -1,0 +1,80 @@
+{
+  "node": "v26.7.0",
+  "pi": "1.4.0",
+  "receipt": {
+    "binding": {
+      "artifact": "recovery-m0-artifact",
+      "instance": "eb7cc00b-3d3e-4933-bc73-5e604a6a9812",
+      "session": "01a18cd4-7b75-77a4-8001-02c304697a34"
+    },
+    "metadata": [
+      {
+        "type": "session",
+        "version": 3,
+        "id": "01a18cd4-7b75-77a4-8001-02c304697a34",
+        "timestamp": "2026-10-30T12:41:37.910Z",
+        "cwd": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/runtime/a03bb623-cd55-4422-afb6-d9f7d22b4ea4/workspace"
+      },
+      {
+        "type": "session_info",
+        "id": "70b0abb1",
+        "parentId": null,
+        "timestamp": "2026-10-30T12:41:37.910Z",
+        "name": "POLISH-RECOVERY-M0-receipt-9a1b59e6-91bc-4bcb-8850-343a082e866b"
+      },
+      {
+        "type": "model_change",
+        "id": "8b22bd98",
+        "parentId": "70b0abb1",
+        "timestamp": "2026-10-30T12:41:37.968Z",
+        "provider": "magpie",
+        "modelId": "grok/grok-4.7"
+      },
+      {
+        "type": "thinking_level_change",
+        "id": "1081d44f",
+        "parentId": "8b22bd98",
+        "timestamp": "2026-10-30T12:41:37.968Z",
+        "thinkingLevel": "medium"
+      }
+    ]
+  },
+  "gap": {
+    "binding": {
+      "artifact": "recovery-m0-artifact",
+      "instance": "da66cc6f-df80-46cb-882e-5d81701845de",
+      "session": "01a18cd4-8408-733c-8920-67ee83e3c60e"
+    },
+    "metadata": [
+      {
+        "type": "session",
+        "version": 3,
+        "id": "01a18cd4-8408-733c-8920-67ee83e3c60e",
+        "timestamp": "2026-10-30T12:41:40.105Z",
+        "cwd": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-pi-recovery-m0/runtime/b584ab61-70f3-4105-8028-c8aa06a36a60/workspace"
+      },
+      {
+        "type": "session_info",
+        "id": "b1d6eef6",
+        "parentId": null,
+        "timestamp": "2026-10-30T12:41:40.105Z",
+        "name": "POLISH-RECOVERY-M0-gap-b28c0cc6-1ed5-438b-bbca-0ad7d919ccc5"
+      },
+      {
+        "type": "model_change",
+        "id": "d0baec8a",
+        "parentId": "b1d6eef6",
+        "timestamp": "2026-10-30T12:41:40.132Z",
+        "provider": "magpie",
+        "modelId": "grok/grok-4.7"
+      },
+      {
+        "type": "thinking_level_change",
+        "id": "ba409f53",
+        "parentId": "d0baec8a",
+        "timestamp": "2026-10-30T12:41:40.132Z",
+        "thinkingLevel": "medium"
+      }
+    ]
+  }
+}

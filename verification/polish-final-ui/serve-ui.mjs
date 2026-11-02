@@ -1,0 +1,16 @@
+import { serve } from '../../src/server.js';
+import { mkdtemp, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+const dir = await mkdtemp(path.join(tmpdir(), 'polish-final-ui-'));
+const artifact = path.join(dir, 'artifact.html');
+await writeFile(artifact, `<!doctype html><html><head><meta charset="utf-8"><title>Polish native selection regression</title><style>body{font:20px/1.8 system-ui;color:#1f2329;margin:40px;max-width:800px}p{margin:20px 0}h1{font-size:28px}input,button{font:inherit}</style></head><body><h1 id="title">Polish native selection regression</h1><main id="content"><p id="first">Alpha precise selection begins here and ends later.</p><p id="second">Beta next paragraph completes the exact selection.</p><p id="replace">Original block for missing anchor verification.</p></main><label>Native form <input id="native" placeholder="Form stays interactive"></label><button data-lavish-action onclick="this.textContent='Form action works'">Native action</button></body></html>`);
+let receive;
+const deliveries=[];
+const polishHost={instance:'isolated-ui',session:'isolated-ui-session',setReceiver(fn){receive=fn},async deliver(message,claim){deliveries.push({message,claim});await writeFile(new URL('./deliveries.json',import.meta.url),JSON.stringify(deliveries,null,2));return {...claim,kind:'queued',evidenceId:'queued-'+claim.id}},async query(){return null}};
+const server=await serve({port:0,hosts:['127.0.0.1'],stateFile:path.join(dir,'state.json'),polishHost,idleTimeoutMs:null,detectTailscale:async()=>null,env:{...process.env,LAVISH_AXI_STATE_DIR:dir,LAVISH_AXI_HOST:'127.0.0.1',LAVISH_AXI_LINK_HOST:'127.0.0.1',LAVISH_AXI_TELEMETRY:'0'}});
+const base='http://127.0.0.1:'+server.port;
+const opened=await fetch(base+'/api/sessions',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({file:artifact})}).then(r=>r.json());
+await writeFile(new URL('./server.json',import.meta.url),JSON.stringify({base,key:opened.key,artifact,dir,pid:process.pid},null,2));
+console.log(JSON.stringify({base,key:opened.key,artifact,pid:process.pid}));
+process.on('SIGTERM',async()=>{await server.close();process.exit(0)});

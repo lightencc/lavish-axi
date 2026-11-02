@@ -1,0 +1,72 @@
+{
+  "sessions": {
+    "17be8c6131a177e0": {
+      "key": "17be8c6131a177e0",
+      "file": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/artifact.html",
+      "url": "http://127.0.0.1:49504/session/17be8c6131a177e0",
+      "status": "feedback",
+      "pending_prompts": 1,
+      "prompts": [
+        {
+          "uid": "",
+          "prompt": "不要修改文件，不要使用工具，只回复 OK。",
+          "scope": "session",
+          "round_id": "8cff73ec-cbdc-427d-86ed-f5b260803021",
+          "prompt_id": "fault-accepted_durable"
+        }
+      ],
+      "layout_warnings": [],
+      "artifact_revision": 0,
+      "artifact_load": null,
+      "artifact_failures": [],
+      "delivered_attachments": [],
+      "dom_snapshot": "",
+      "chat": [
+        {
+          "role": "user",
+          "kind": "annotation",
+          "text": "不要修改文件，不要使用工具，只回复 OK。",
+          "at": "2026-10-30T19:10:54.176Z",
+          "prompt_id": "fault-accepted_durable"
+        }
+      ],
+      "chat_revision": 1,
+      "chat_ack_ids": [],
+      "delivery_seq": 0,
+      "closed_delivery_seq": 0,
+      "updated_at": "2026-10-30T19:10:54.176Z",
+      "review_delivery": {
+        "binding": {
+          "artifact": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/722e22c0-36ea-47f1-8324-1d725f261058/artifact.html",
+          "instance": "05395d50-e96f-4bd3-98c2-888f7258843c",
+          "session": "01a18e38-910e-74e2-9427-b6b4c7244404"
+        },
+        "epoch": 1,
+        "generation": 1,
+        "mode": "bridge",
+        "version": 2,
+        "lifecycle": "open",
+        "messages": [
+          {
+            "id": "fault-accepted_durable",
+            "epoch": 1,
+            "text": "{\"uid\":\"\",\"prompt\":\"不要修改文件，不要使用工具，只回复 OK。\",\"selector\":\"\",\"tag\":\"\",\"text\":\"\",\"scope\":\"session\",\"round_id\":\"8cff73ec-cbdc-427d-86ed-f5b260803021\"}",
+            "digest": "f76aaee96ef83775eee8fab2b2ac1256408a2673fe0aa1534c965ded858ea634",
+            "prompt": {
+              "uid": "",
+              "prompt": "不要修改文件，不要使用工具，只回复 OK。",
+              "scope": "session",
+              "round_id": "8cff73ec-cbdc-427d-86ed-f5b260803021",
+              "prompt_id": "fault-accepted_durable"
+            },
+            "kind": "message",
+            "state": "accepted",
+            "consumed": false,
+            "resolved": false
+          }
+        ],
+        "end": null
+      }
+    }
+  }
+}

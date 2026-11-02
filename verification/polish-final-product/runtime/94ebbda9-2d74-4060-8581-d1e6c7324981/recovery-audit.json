@@ -1,0 +1,14 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/94ebbda9-2d74-4060-8581-d1e6c7324981",
+  "stage": "host_reply_persisted",
+  "id": "fault-host_reply_persisted",
+  "capturedAt": "2026-10-30T19:29:29.537Z",
+  "pass": true,
+  "checks": [
+    "real crash fired at exact requested source stage",
+    "same session and same URL endpoint after owned restart",
+    "single durable logical message and single exact Pi input",
+    "exact reply recovered",
+    "host reply repaired missing review reply without another model turn"
+  ]
+}

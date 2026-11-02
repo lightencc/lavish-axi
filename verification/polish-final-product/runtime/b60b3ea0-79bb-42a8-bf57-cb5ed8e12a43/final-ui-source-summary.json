@@ -1,0 +1,862 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43",
+  "selection": {
+    "uiFile": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-ui/performance-final-3/ui-results.json",
+    "launch": "84e9d8be-711a-400e-bffc-f401a0d67708",
+    "identities": [
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "73d4850d-26dd-4898-8922-c65bf6136d19"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "dbd4490e-3bfa-485a-b35a-009820b828fb"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "e84f0457-9c2b-4cea-8a99-4d4a47ff2a3b"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "43a0b4fa-a48d-4aa4-9597-963348ef64d9"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "58d5db4d-8f1f-49bc-83fb-b1bf98ef498a"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "9dff0d33-9430-42da-91e4-bafa73e330fe"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "ddddc2f2-4c77-48df-9791-bf1fb25d3830"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "49a2ad7b-83ab-4f88-95e2-9bf91af1e3b4"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "bd8e991d-0857-4d15-be2c-08bcab0e7263"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "1923e3e2-945a-43ba-a0b2-b4587ccb728e"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "85f9aba5-f277-468e-9ed1-81154c4a4bfb"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "4a65d878-0c32-4925-ae68-87d79081c751"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "1838441a-bdb3-4c8c-9931-511127b226a0"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "bd885251-e0e5-40f7-a132-00700b3b0731"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "dfabf7c1-1189-4345-a05b-bdbcc49d5632"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "7acbaf19-8052-41ad-8601-87a6d43daf7d"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "e50ab92b-0d05-42da-8984-a368be6dfb04"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "bd6639a3-4017-42c5-afb5-9df3694b9988"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "6c467b47-a099-4191-b8b8-68902dc4b872"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "1d7f164c-bb8d-4839-9c2b-12920645c681"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "1b0ddba6-40dd-458d-aad4-8c94012d3651"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "6c368332-180c-4336-ae04-7d7847a6a652"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "4b4851c1-0ad0-4c7f-9ec6-d71564af37ca"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "fc0d71b0-83c0-4552-94c9-c228ef472263"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "a8a9d5b0-bb2e-4c6c-bb28-8cf65df3dfbc"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "aa376f9c-3827-4749-b399-40a8aa549046"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "e7c73b87-4e60-405e-8cd5-d3cf4e9001b0"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "3e34aec0-5827-4a15-ad4f-d6469ae35edc"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "d8b12747-6ae0-4870-8233-757821a5de6d"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "19a495d1-0561-43da-8949-8c59db7e7d39"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "c7114980-dbcd-47d7-b3c2-bf0689228753"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "046e29f4-f161-4df9-a163-ecb3951a5f7d"
+      ],
+      [
+        "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b60b3ea0-79bb-42a8-bf57-cb5ed8e12a43/artifact.html",
+        2,
+        "f931315e-9e53-4085-b5ff-72285fe5e4c7"
+      ]
+    ],
+    "inputSamples": 33,
+    "unsuccessful": []
+  },
+  "measurement": "Raw stage durations subtract only matching clockIDs. model_start is Pi before_provider_request, not provider processing start. Calibration retains bounded source-minus-supervisor offsets separately.",
+  "launches": [
+    {
+      "name": "84e9d8be-711a-400e-bffc-f401a0d67708",
+      "builds": [
+        {
+          "bundle": "/Users/lightencc/Documents/Projects/polish-axi/dist/pi-extension.mjs",
+          "sha256": "b640508077c88bbfcad74e206dcb1798e126385da904251ad641dc9672baf247",
+          "resume": true
+        }
+      ],
+      "directEnough": true,
+      "directAttempts": 30,
+      "directSuccessful": 30,
+      "directFailed": [],
+      "directIncomplete": [],
+      "directBatches": [
+        {
+          "batchID": "5ab16501-e755-42c2-a461-f516ef8f9c31",
+          "requested": 30,
+          "started": 30,
+          "successful": 30,
+          "notStarted": 0
+        }
+      ],
+      "clockCalibration": [
+        {
+          "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+          "samples": [
+            {
+              "nonce": "cbf33e5c-3c63-4ffa-ad8a-dbcdbbe85753",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154548.963,
+              "receivedAt": 1793390154549.4487,
+              "sourceAt": 1793390154549.2776,
+              "rttMs": 0.48583984375,
+              "offsetLowerMs": -0.171142578125,
+              "offsetUpperMs": 0.314697265625
+            },
+            {
+              "nonce": "26d4abb0-7be7-41b3-a380-3458e1dbfdde",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154549.5933,
+              "receivedAt": 1793390154549.7715,
+              "sourceAt": 1793390154549.6606,
+              "rttMs": 0.17822265625,
+              "offsetLowerMs": -0.11083984375,
+              "offsetUpperMs": 0.0673828125
+            },
+            {
+              "nonce": "15112172-f3e3-4f23-845e-0c8b56ce2737",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154549.8696,
+              "receivedAt": 1793390154549.9954,
+              "sourceAt": 1793390154549.9246,
+              "rttMs": 0.125732421875,
+              "offsetLowerMs": -0.07080078125,
+              "offsetUpperMs": 0.054931640625
+            },
+            {
+              "nonce": "4352daee-156d-4631-8fef-f3757dc47bfe",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.0847,
+              "receivedAt": 1793390154550.2236,
+              "sourceAt": 1793390154550.1323,
+              "rttMs": 0.138916015625,
+              "offsetLowerMs": -0.09130859375,
+              "offsetUpperMs": 0.047607421875
+            },
+            {
+              "nonce": "d1af9efa-a881-4273-971c-64556e135f54",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.3027,
+              "receivedAt": 1793390154550.4172,
+              "sourceAt": 1793390154550.3572,
+              "rttMs": 0.114501953125,
+              "offsetLowerMs": -0.06005859375,
+              "offsetUpperMs": 0.054443359375
+            },
+            {
+              "nonce": "c8163c8d-5cb4-4bde-9816-d858cada8f2b",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.4827,
+              "receivedAt": 1793390154550.6584,
+              "sourceAt": 1793390154550.5212,
+              "rttMs": 0.17578125,
+              "offsetLowerMs": -0.13720703125,
+              "offsetUpperMs": 0.03857421875
+            },
+            {
+              "nonce": "1fd1b7c8-843a-49ec-8c19-fcf00bb3d798",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.6995,
+              "receivedAt": 1793390154550.8552,
+              "sourceAt": 1793390154550.771,
+              "rttMs": 0.15576171875,
+              "offsetLowerMs": -0.084228515625,
+              "offsetUpperMs": 0.071533203125
+            },
+            {
+              "nonce": "9eabd7f4-ac3f-4eec-9db5-1fc04ff69e7d",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154550.9248,
+              "receivedAt": 1793390154551.0935,
+              "sourceAt": 1793390154550.9858,
+              "rttMs": 0.168701171875,
+              "offsetLowerMs": -0.107666015625,
+              "offsetUpperMs": 0.06103515625
+            },
+            {
+              "nonce": "082f9da6-bdd8-4278-93cd-3de0cd7c92aa",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154551.16,
+              "receivedAt": 1793390154551.291,
+              "sourceAt": 1793390154551.2273,
+              "rttMs": 0.131103515625,
+              "offsetLowerMs": -0.063720703125,
+              "offsetUpperMs": 0.0673828125
+            },
+            {
+              "nonce": "0da42b2b-2f10-43c9-8a05-4bdfe6071c15",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793390154551.356,
+              "receivedAt": 1793390154551.469,
+              "sourceAt": 1793390154551.4016,
+              "rttMs": 0.113037109375,
+              "offsetLowerMs": -0.0673828125,
+              "offsetUpperMs": 0.045654296875
+            }
+          ],
+          "best": {
+            "nonce": "0da42b2b-2f10-43c9-8a05-4bdfe6071c15",
+            "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+            "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+            "sentAt": 1793390154551.356,
+            "receivedAt": 1793390154551.469,
+            "sourceAt": 1793390154551.4016,
+            "rttMs": 0.113037109375,
+            "offsetLowerMs": -0.0673828125,
+            "offsetUpperMs": 0.045654296875
+          },
+          "offsetEstimateMs": -0.0108642578125,
+          "uncertaintyMs": 0.0565185546875
+        },
+        {
+          "method": "sourceMinusSupervisor offset bounded by send/receive; no symmetric-delay assumption",
+          "samples": [
+            {
+              "nonce": "9458be39-5393-4a2f-bee1-fdcf94443f45",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257386.4634,
+              "receivedAt": 1793391257387.2761,
+              "sourceAt": 1793391257387.018,
+              "rttMs": 0.812744140625,
+              "offsetLowerMs": -0.258056640625,
+              "offsetUpperMs": 0.5546875
+            },
+            {
+              "nonce": "f711d183-6d26-412a-8f0b-7e6330f84449",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257387.3374,
+              "receivedAt": 1793391257387.7058,
+              "sourceAt": 1793391257387.5618,
+              "rttMs": 0.368408203125,
+              "offsetLowerMs": -0.14404296875,
+              "offsetUpperMs": 0.224365234375
+            },
+            {
+              "nonce": "a140dcae-422c-41d1-a9e2-79bdf64b6367",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257387.8196,
+              "receivedAt": 1793391257387.9722,
+              "sourceAt": 1793391257387.8958,
+              "rttMs": 0.152587890625,
+              "offsetLowerMs": -0.076416015625,
+              "offsetUpperMs": 0.076171875
+            },
+            {
+              "nonce": "bde93b24-fece-4b2a-b93a-004108f9ac4e",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257388.0747,
+              "receivedAt": 1793391257388.2437,
+              "sourceAt": 1793391257388.1616,
+              "rttMs": 0.1689453125,
+              "offsetLowerMs": -0.08203125,
+              "offsetUpperMs": 0.0869140625
+            },
+            {
+              "nonce": "fe83d841-e91d-49a2-a622-488848938aa9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257388.3223,
+              "receivedAt": 1793391257388.4954,
+              "sourceAt": 1793391257388.3784,
+              "rttMs": 0.173095703125,
+              "offsetLowerMs": -0.116943359375,
+              "offsetUpperMs": 0.05615234375
+            },
+            {
+              "nonce": "d9958080-4535-4ecf-a126-779b2df8294f",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257388.5334,
+              "receivedAt": 1793391257388.6814,
+              "sourceAt": 1793391257388.613,
+              "rttMs": 0.14794921875,
+              "offsetLowerMs": -0.068359375,
+              "offsetUpperMs": 0.07958984375
+            },
+            {
+              "nonce": "042817b2-269e-4417-9903-11c2a729337f",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257388.754,
+              "receivedAt": 1793391257390.118,
+              "sourceAt": 1793391257390.017,
+              "rttMs": 1.364013671875,
+              "offsetLowerMs": -0.100830078125,
+              "offsetUpperMs": 1.26318359375
+            },
+            {
+              "nonce": "65dcb995-0abc-41e3-ae53-075e521a70ce",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257390.1587,
+              "receivedAt": 1793391257390.3535,
+              "sourceAt": 1793391257390.2122,
+              "rttMs": 0.19482421875,
+              "offsetLowerMs": -0.141357421875,
+              "offsetUpperMs": 0.053466796875
+            },
+            {
+              "nonce": "9faa148b-418d-41f5-9f86-cd426474bd44",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257390.4097,
+              "receivedAt": 1793391257390.5566,
+              "sourceAt": 1793391257390.4553,
+              "rttMs": 0.14697265625,
+              "offsetLowerMs": -0.101318359375,
+              "offsetUpperMs": 0.045654296875
+            },
+            {
+              "nonce": "7bcef5df-170e-49c3-9273-4ab694825ba8",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+              "sentAt": 1793391257390.6055,
+              "receivedAt": 1793391257390.7595,
+              "sourceAt": 1793391257390.6777,
+              "rttMs": 0.154052734375,
+              "offsetLowerMs": -0.081787109375,
+              "offsetUpperMs": 0.072265625
+            }
+          ],
+          "best": {
+            "nonce": "9faa148b-418d-41f5-9f86-cd426474bd44",
+            "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+            "sourceClockID": "pi:42958:c739f65a-35ca-4e25-9d21-43172f028464",
+            "sentAt": 1793391257390.4097,
+            "receivedAt": 1793391257390.5566,
+            "sourceAt": 1793391257390.4553,
+            "rttMs": 0.14697265625,
+            "offsetLowerMs": -0.101318359375,
+            "offsetUpperMs": 0.045654296875
+          },
+          "offsetEstimateMs": -0.02783203125,
+          "uncertaintyMs": 0.073486328125
+        }
+      ],
+      "browserClockCalibration": [
+        {
+          "method": "browserMinusSupervisor bounded offset via CDP Runtime.evaluate",
+          "samples": [
+            {
+              "index": 1,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167707.9,
+              "sentAt": 1793390167705.4727,
+              "receivedAt": 1793390167708.3325,
+              "rttMs": 2.85986328125,
+              "offsetLowerMs": -0.4326171875,
+              "offsetUpperMs": 2.42724609375
+            },
+            {
+              "index": 2,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167709.4,
+              "sentAt": 1793390167708.6357,
+              "receivedAt": 1793390167709.258,
+              "rttMs": 0.622314453125,
+              "offsetLowerMs": 0.141845703125,
+              "offsetUpperMs": 0.76416015625
+            },
+            {
+              "index": 3,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167710.2,
+              "sentAt": 1793390167709.4417,
+              "receivedAt": 1793390167710.0042,
+              "rttMs": 0.5625,
+              "offsetLowerMs": 0.19580078125,
+              "offsetUpperMs": 0.75830078125
+            },
+            {
+              "index": 4,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167710.8,
+              "sentAt": 1793390167710.1506,
+              "receivedAt": 1793390167710.7021,
+              "rttMs": 0.551513671875,
+              "offsetLowerMs": 0.097900390625,
+              "offsetUpperMs": 0.6494140625
+            },
+            {
+              "index": 5,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167711.5,
+              "sentAt": 1793390167710.818,
+              "receivedAt": 1793390167711.2566,
+              "rttMs": 0.4384765625,
+              "offsetLowerMs": 0.243408203125,
+              "offsetUpperMs": 0.681884765625
+            },
+            {
+              "index": 6,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167712,
+              "sentAt": 1793390167711.389,
+              "receivedAt": 1793390167711.8525,
+              "rttMs": 0.463623046875,
+              "offsetLowerMs": 0.1474609375,
+              "offsetUpperMs": 0.611083984375
+            },
+            {
+              "index": 7,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167712.5999,
+              "sentAt": 1793390167711.9453,
+              "receivedAt": 1793390167712.3403,
+              "rttMs": 0.39501953125,
+              "offsetLowerMs": 0.259521484375,
+              "offsetUpperMs": 0.654541015625
+            },
+            {
+              "index": 8,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167713,
+              "sentAt": 1793390167712.4219,
+              "receivedAt": 1793390167712.8286,
+              "rttMs": 0.40673828125,
+              "offsetLowerMs": 0.17138671875,
+              "offsetUpperMs": 0.578125
+            },
+            {
+              "index": 9,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167713.5999,
+              "sentAt": 1793390167712.9526,
+              "receivedAt": 1793390167713.3875,
+              "rttMs": 0.434814453125,
+              "offsetLowerMs": 0.21240234375,
+              "offsetUpperMs": 0.647216796875
+            },
+            {
+              "index": 10,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793390167714.0999,
+              "sentAt": 1793390167713.4915,
+              "receivedAt": 1793390167713.8945,
+              "rttMs": 0.403076171875,
+              "offsetLowerMs": 0.205322265625,
+              "offsetUpperMs": 0.6083984375
+            }
+          ],
+          "best": {
+            "index": 7,
+            "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+            "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+            "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+            "browserTimeOrigin": 1793390149031.2,
+            "browserAt": 1793390167712.5999,
+            "sentAt": 1793390167711.9453,
+            "receivedAt": 1793390167712.3403,
+            "rttMs": 0.39501953125,
+            "offsetLowerMs": 0.259521484375,
+            "offsetUpperMs": 0.654541015625
+          },
+          "offsetEstimateMs": 0.45703125,
+          "uncertaintyMs": 0.197509765625
+        },
+        {
+          "method": "browserMinusSupervisor bounded offset via CDP Runtime.evaluate",
+          "samples": [
+            {
+              "index": 1,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256289.4,
+              "sentAt": 1793391256285.9055,
+              "receivedAt": 1793391256291.0305,
+              "rttMs": 5.125,
+              "offsetLowerMs": -1.630615234375,
+              "offsetUpperMs": 3.494384765625
+            },
+            {
+              "index": 2,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256292.0999,
+              "sentAt": 1793391256291.2747,
+              "receivedAt": 1793391256291.8545,
+              "rttMs": 0.579833984375,
+              "offsetLowerMs": 0.245361328125,
+              "offsetUpperMs": 0.8251953125
+            },
+            {
+              "index": 3,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256292.5,
+              "sentAt": 1793391256291.9475,
+              "receivedAt": 1793391256292.2852,
+              "rttMs": 0.337646484375,
+              "offsetLowerMs": 0.21484375,
+              "offsetUpperMs": 0.552490234375
+            },
+            {
+              "index": 4,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256293.2,
+              "sentAt": 1793391256292.395,
+              "receivedAt": 1793391256292.9988,
+              "rttMs": 0.603759765625,
+              "offsetLowerMs": 0.201171875,
+              "offsetUpperMs": 0.804931640625
+            },
+            {
+              "index": 5,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256293.9,
+              "sentAt": 1793391256293.217,
+              "receivedAt": 1793391256293.6465,
+              "rttMs": 0.429443359375,
+              "offsetLowerMs": 0.25341796875,
+              "offsetUpperMs": 0.682861328125
+            },
+            {
+              "index": 6,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256294.5,
+              "sentAt": 1793391256293.7231,
+              "receivedAt": 1793391256294.2317,
+              "rttMs": 0.508544921875,
+              "offsetLowerMs": 0.268310546875,
+              "offsetUpperMs": 0.77685546875
+            },
+            {
+              "index": 7,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256295,
+              "sentAt": 1793391256294.2935,
+              "receivedAt": 1793391256294.9932,
+              "rttMs": 0.69970703125,
+              "offsetLowerMs": 0.0068359375,
+              "offsetUpperMs": 0.70654296875
+            },
+            {
+              "index": 8,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256295.8,
+              "sentAt": 1793391256295.0715,
+              "receivedAt": 1793391256295.5833,
+              "rttMs": 0.51171875,
+              "offsetLowerMs": 0.216796875,
+              "offsetUpperMs": 0.728515625
+            },
+            {
+              "index": 9,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256296.4,
+              "sentAt": 1793391256295.6963,
+              "receivedAt": 1793391256296.1333,
+              "rttMs": 0.43701171875,
+              "offsetLowerMs": 0.2666015625,
+              "offsetUpperMs": 0.70361328125
+            },
+            {
+              "index": 10,
+              "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+              "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+              "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+              "browserTimeOrigin": 1793390149031.2,
+              "browserAt": 1793391256296.8,
+              "sentAt": 1793391256296.26,
+              "receivedAt": 1793391256296.694,
+              "rttMs": 0.43408203125,
+              "offsetLowerMs": 0.10595703125,
+              "offsetUpperMs": 0.5400390625
+            }
+          ],
+          "best": {
+            "index": 3,
+            "targetID": "E3CF61E6F3C1005C8CEC5A864D9607E9",
+            "supervisorClockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+            "browserClockID": "browser:E3CF61E6F3C1005C8CEC5A864D9607E9:1793390149031.2",
+            "browserTimeOrigin": 1793390149031.2,
+            "browserAt": 1793391256292.5,
+            "sentAt": 1793391256291.9475,
+            "receivedAt": 1793391256292.2852,
+            "rttMs": 0.337646484375,
+            "offsetLowerMs": 0.21484375,
+            "offsetUpperMs": 0.552490234375
+          },
+          "offsetEstimateMs": 0.3836669921875,
+          "uncertaintyMs": 0.1688232421875
+        }
+      ],
+      "uiSamples": 33,
+      "uiEnough": true,
+      "rpcReviewEnough": false,
+      "directFirstTokenMs": {
+        "count": 30,
+        "p50": 1272.783447265625,
+        "p95": 2369.80712890625,
+        "max": 2926.9208984375
+      },
+      "directTotalMs": {
+        "count": 30,
+        "p50": 1303.336669921875,
+        "p95": 2373.380126953125,
+        "max": 2929.68212890625
+      },
+      "rpcReviewObservedReplyMs": {
+        "count": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "instrumentationDurableWriteMs": {
+        "count": 297,
+        "p50": 3.950708999997005,
+        "p95": 5.545583000057377,
+        "max": 9.944917000015266
+      },
+      "instrumentationScope": "Exact selected UI identities, matched to each synchronous immediately preceding source trace record; readiness and cleanup excluded.",
+      "instrumentationLimitation": "Durable write time includes trace JSON encoding/write/fsync, excludes the secondary overhead log and fault-config lookup. Do not subtract this instrumentation cost from reported wall latency.",
+      "intervals": {
+        "accepted_durable->host_admitted": {
+          "count": 33,
+          "p50": 50.6142578125,
+          "p95": 59.008056640625,
+          "max": 59.06689453125
+        },
+        "accepted_durable->dispatch_reserved": {
+          "count": 33,
+          "p50": 33.81689453125,
+          "p95": 41.73779296875,
+          "max": 41.764892578125
+        },
+        "dispatch_reserved->host_admitted": {
+          "count": 33,
+          "p50": 17.010986328125,
+          "p95": 19.9736328125,
+          "max": 21.052490234375
+        },
+        "host_admitted->host_dispatching": {
+          "count": 33,
+          "p50": 13.771240234375,
+          "p95": 14.289794921875,
+          "max": 14.5947265625
+        },
+        "host_dispatching->input_consumed": {
+          "count": 33,
+          "p50": 17.937255859375,
+          "p95": 23.018310546875,
+          "max": 24.120849609375
+        },
+        "input_consumed->model_start": {
+          "count": 33,
+          "p50": 29.93408203125,
+          "p95": 38.499267578125,
+          "max": 52.31982421875
+        },
+        "input_consumed->first_token": {
+          "count": 33,
+          "p50": 1404.142578125,
+          "p95": 2079.1103515625,
+          "max": 2111.71240234375
+        },
+        "first_token->host_reply_persisted": {
+          "count": 33,
+          "p50": 93.302001953125,
+          "p95": 1381.65087890625,
+          "max": 1558.18603515625
+        },
+        "host_reply_persisted->reply_persisted": {
+          "count": 33,
+          "p50": 17.9580078125,
+          "p95": 22.036376953125,
+          "max": 22.181884765625
+        }
+      },
+      "faults": [],
+      "issues": [
+        {
+          "stage": "pi_exit",
+          "metadata": {
+            "code": 143,
+            "signal": null,
+            "pid": 42958
+          },
+          "clockID": "supervisor:42944:d4b08b71-2dbb-449f-868d-5e78000a70cf",
+          "at": 1793391354048.7156,
+          "pid": 42944
+        }
+      ]
+    }
+  ]
+}

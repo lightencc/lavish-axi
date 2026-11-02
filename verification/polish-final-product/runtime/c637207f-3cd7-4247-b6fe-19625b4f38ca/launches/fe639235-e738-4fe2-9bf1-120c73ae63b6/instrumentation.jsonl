@@ -1,0 +1,7 @@
+{"stage":"harness_ready","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387959941.7087,"durableWriteMs":4.315208000000013}
+{"stage":"host_dispatching","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387959955.6943,"durableWriteMs":3.953125}
+{"stage":"input_consumed","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387959969.621,"durableWriteMs":3.9576250000000073}
+{"stage":"model_start","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387959991.6929,"durableWriteMs":4.141874999999999}
+{"stage":"first_token","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387961098.2856,"durableWriteMs":5.619500000000016}
+{"stage":"host_reply_persisted","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387961116.1682,"durableWriteMs":3.994707999999946}
+{"stage":"reply_persisted","clockID":"pi:40505:11954743-4725-4daa-afec-b104cd515205","at":1793387961132.3022,"durableWriteMs":3.9429589999999735}

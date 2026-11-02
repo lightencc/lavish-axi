@@ -1,0 +1,62 @@
+[
+  {
+    "path": "verification/polish-pi-combined-m0/host.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/page.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/web.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/coordinator-peer.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/host-extension.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/coordinator-child.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/web.test.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/serve-prepared.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/peer.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/host.test.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/probe.js",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "path": "verification/polish-pi-combined-m0/coordinator.test.js",
+    "exit": 0,
+    "output": ""
+  }
+]

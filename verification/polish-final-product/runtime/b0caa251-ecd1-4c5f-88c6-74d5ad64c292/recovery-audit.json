@@ -1,0 +1,12 @@
+{
+  "run": "/Users/lightencc/Documents/Projects/polish-axi/verification/polish-final-product/runtime/b0caa251-ecd1-4c5f-88c6-74d5ad64c292",
+  "stage": "end_sealed",
+  "id": "fault-end_sealed",
+  "capturedAt": "2026-10-30T19:19:17.940Z",
+  "pass": true,
+  "checks": [
+    "real crash fired at exact requested source stage",
+    "same session and same URL endpoint after owned restart",
+    "fixed final and marker batch preserved"
+  ]
+}

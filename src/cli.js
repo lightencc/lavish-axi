@@ -384,7 +384,12 @@ async function openCommand(args) {
     forceRestart: shouldForceRestartForLocalBuild(process.argv[1] || ""),
     reloadKey: sessionKey(absolute),
   });
-  const response = await postJson(`${baseUrl}/api/sessions`, { file: absolute, noGate, reopen });
+  const response = await postJson(`${baseUrl}/api/sessions`, {
+    file: absolute,
+    noGate,
+    reopen,
+    ...(args.includes("--polish") ? { polish: true } : {}),
+  });
   if (response.status === "user-ended") {
     return createUserEndedOpenOutput({
       file: absolute,
@@ -585,6 +590,7 @@ export function startPollWaitReporter({
  *   session: { file: string, status: string, session_ended?: boolean, ended_by?: string },
  *   prompts?: any[],
  *   artifact_failures?: any[],
+ *   delivery?: Record<string, unknown>,
  *   next_step?: string,
  *   dom_snapshot?: string,
  * }}
@@ -608,6 +614,7 @@ export function createPollOutput({ file, response, agent = "generic" }) {
       prompts: response.prompts || [],
       ...(artifactFailures.length > 0 ? { artifact_failures: artifactFailures } : {}),
       next_step: createFeedbackNextStep(file, artifactFailures, sessionEnded, endedBy, response.prompts || [], agent),
+      ...(response.delivery ? { delivery: response.delivery } : {}),
       dom_snapshot: response.dom_snapshot || "",
     };
   }

@@ -1,0 +1,1 @@
+First probe invocation failed during ESM linking: runtime.js used ../../../src instead of ../../src. ERR_MODULE_NOT_FOUND /Users/lightencc/Documents/Projects/src/session-store.js. Module evaluation never started; no Pi was spawned, no test message admitted. Corrected import path before first real run.

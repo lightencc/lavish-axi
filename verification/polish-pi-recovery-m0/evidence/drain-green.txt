@@ -1,0 +1,12 @@
+✔ drainer consumes the fixed final batch and marker with no connected client (92.446375ms)
+✔ queue acknowledgement cannot end or dispatch the marker early (53.8415ms)
+✔ uncertain adapter call stops drain and is never automatically retried (49.848167ms)
+✔ subscription failure cannot erase committed end event; reconnect snapshot recovers it (45.943584ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 280.163041

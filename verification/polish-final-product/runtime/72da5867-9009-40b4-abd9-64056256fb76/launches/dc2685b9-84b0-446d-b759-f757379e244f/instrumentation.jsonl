@@ -1,0 +1,9 @@
+{"stage":"harness_ready","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387851118.6646,"durableWriteMs":4.2542080000000055}
+{"stage":"dispatch_reserved","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387851140.503,"durableWriteMs":3.6757920000000013}
+{"stage":"host_admitted","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387851152.689,"durableWriteMs":3.9457089999999937}
+{"stage":"host_dispatching","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387851164.6926,"durableWriteMs":3.9484170000000063}
+{"stage":"input_consumed","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387851179.6418,"durableWriteMs":3.8957910000000027}
+{"stage":"model_start","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387851210.551,"durableWriteMs":3.711040999999966}
+{"stage":"first_token","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387852461.4412,"durableWriteMs":5.287459000000126}
+{"stage":"host_reply_persisted","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387852481.253,"durableWriteMs":4.925416999999925}
+{"stage":"reply_persisted","clockID":"pi:30521:37e93a1e-e584-4da4-9025-100cc7d253b1","at":1793387852495.2407,"durableWriteMs":3.8528749999998126}

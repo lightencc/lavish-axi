@@ -1,0 +1,14 @@
+{
+  "name": "polish",
+  "version": "0.1.96-claude.2",
+  "description": "HTML review in the current Claude Code session through a local MCP channel.",
+  "author": { "name": "Polish contributors" },
+  "license": "MIT",
+  "mcpServers": {
+    "polish": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/runtime/claude-channel.mjs"]
+    }
+  },
+  "channels": [{ "server": "polish", "displayName": "Polish HTML review" }]
+}

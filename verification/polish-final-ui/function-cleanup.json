@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-30T19:51:44.149748+00:00",
+  "session": "polish-function-resume",
+  "browserPid": 22856,
+  "daemonPid": 22855,
+  "method": "agent-browser --session polish-function-resume close",
+  "result": "Browser closed; ps confirms both PIDs absent",
+  "retainedEndedUi": "product-final-11/ended-ui.json",
+  "olderFunctionBrowser": {
+    "session": "polish-function-final",
+    "pid": 73023,
+    "profile": "agent-browser-chrome-c32c1a52-6eb4-4255-ba98-5f2ffae1b1ef",
+    "method": "agent-browser --session polish-function-final close",
+    "result": "Browser closed; ps confirms PID absent",
+    "at": "2026-10-30T19:55:43.633932+00:00"
+  }
+}

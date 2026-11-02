@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "## Network requests\nShowing 1-12 of 12 (Page 1 of 1).\nreqid=528 GET http://127.0.0.1:49793/ [200]\nreqid=529 GET http://127.0.0.1:49793/page.js [200]\nreqid=530 GET http://127.0.0.1:49793/binding [200]\nreqid=531 GET http://127.0.0.1:49793/query?id=pi3-99a4d4a5-9e43-4ec9-b489-7015f51ce4f6 [200]\nreqid=532 POST http://127.0.0.1:49793/submit [200]\nreqid=533 GET http://127.0.0.1:49793/query?id=pi3-99b60ea0-d6b2-48b5-bff1-d9c9df9fbd84 [200]\nreqid=534 POST http://127.0.0.1:49793/submit [200]\nreqid=535 POST http://127.0.0.1:49793/submit [200]\nreqid=536 GET http://127.0.0.1:49793/query?id=pi3-d9590feb-5785-42ec-8bf1-72b21a622158 [200]\nreqid=537 GET http://127.0.0.1:49793/query?id=pi3-d9590feb-5785-42ec-8bf1-72b21a622158 [200]\nreqid=538 POST http://127.0.0.1:49793/submit [200]\nreqid=539 GET http://127.0.0.1:49793/query?id=pi3-0c5cabc9-e051-44b9-a121-622e596cdc7b [net::ERR_CONNECTION_REFUSED]"
+    }
+  ]
+}
