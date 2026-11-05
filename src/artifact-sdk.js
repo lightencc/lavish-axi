@@ -1432,7 +1432,9 @@ export function createArtifactSdk(
       const node = pending.shift();
       if (!node) continue;
       if (node.nodeType === 3) {
-        if (String(node.textContent || "").trim()) nodes.push(node);
+        // Range rectangles may exist for content inside closed <details>. Those
+        // fragments are not rendered and must not inflate an ancestor cell's bounds.
+        if (String(node.textContent || "").trim() && node.parentElement?.checkVisibility()) nodes.push(node);
       } else if (descendants && node.nodeType === 1) {
         pending.unshift(...(node.childNodes || []));
       }

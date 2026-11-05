@@ -910,8 +910,8 @@ test("chrome can copy the full file path from the overflow menu", async () => {
   assert.match(html, /"file":"\/tmp\/artifact\.html"/);
   assert.match(js, /const filePath = String\(sessionData\.file \|\| ""\)/);
   assert.match(js, /copyText\(filePath\)/);
-  assert.match(js, /copyHintText\.textContent = "Copied"/);
-  assert.match(js, /copyHintText\.textContent = "Copy"/);
+  assert.match(js, /copyHintText\.textContent = chromeText\("Copied"\)/);
+  assert.match(js, /copyHintText\.textContent = chromeText\("Copy"\)/);
 });
 
 test("overflow menu offers reload, snapshot copy, and end session actions", async () => {

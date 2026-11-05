@@ -2,6 +2,14 @@ body.polish {
   color-scheme: light;
   --bg: #f5f6f8;
   --bg-panel: #fff;
+  --bg-bar: #fff;
+  --fg-dim: #475569;
+  --fg-label: #646a73;
+  --border-subtle: #dee0e3;
+  --border-strong: #8f959e;
+  --ink-800: #f5f6f8;
+  --ink-700: #eef2f6;
+  --danger: #b42318;
   --bg-elevated: #f5f6f8;
   --fg: #1f2329;
   --fg-faint: #646a73;
@@ -387,4 +395,26 @@ body.polish.panel-collapsed #panel {
   #polish-status {
     display: none;
   }
+}
+
+.polish .warnings-head,
+.polish .warnings-toolbar,
+.polish .warnings-foot {
+  flex-shrink: 0;
+}
+.polish .warnings-title,
+.polish .revisions-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+.polish .warnings-foot {
+  background: var(--bg-panel);
+  box-shadow: 0 -6px 16px #1f23290a;
+}
+.polish .warnings-button,
+.polish .warnings-button:hover:not(:disabled),
+.polish .warnings-button[aria-expanded="true"] {
+  background: #edf2ff;
+  color: #245bdb;
+  border-color: #bacefd;
 }

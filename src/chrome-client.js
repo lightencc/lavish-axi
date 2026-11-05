@@ -2615,6 +2615,71 @@ async function probeArtifactAvailability(loadToken) {
   }
 }
 
+function chromeText(text) {
+  if (!sessionData.polish) return text;
+  const translations = {
+    "Layout issues": "布局问题",
+    "Select all": "全选",
+    "None selected": "未选择",
+    "Queue selected fixes": "请求修复所选问题",
+    "Text cut off by its container": "文字被容器裁切",
+    "Control cut off by its container": "控件被容器裁切",
+    "Page scrolls sideways": "页面横向溢出",
+    "Control outside the viewport": "控件超出可视区域",
+    "Text outside the viewport": "文字超出可视区域",
+    "Text covered by another element": "文字被其他元素遮挡",
+    "An opaque sibling covers nearly all of this text, so it cannot be read.": "相邻元素遮挡了文字，导致无法阅读。",
+    Severe: "严重",
+    Open: "待处理",
+    "Queued for fix": "已请求修复",
+    "Queued for send": "待发送",
+    "Still present": "问题仍存在",
+    Unverified: "未核实",
+    Returned: "再次出现",
+    Resolved: "已解决",
+    Dismissed: "已忽略",
+    Obsolete: "已失效",
+    Desktop: "桌面",
+    Mobile: "手机",
+    "Tablet / compact": "平板 / 窄屏",
+    Reveal: "定位",
+    Dismiss: "忽略",
+    "(whole page)": "（整页）",
+    "No unresolved layout issues.": "没有未解决的布局问题。",
+    "just now": "刚刚",
+    Annotate: "批注",
+    Explore: "浏览",
+    More: "更多",
+    Editing: "当前文件",
+    Copy: "复制",
+    Copied: "已复制",
+    "Copy path": "复制路径",
+    "Reload artifact": "刷新内容",
+    "Copy DOM snapshot": "复制页面结构",
+    "Export standalone HTML": "导出独立 HTML",
+    "Publish link": "发布链接",
+    "End session": "结束通信",
+    Revisions: "修订记录",
+    "Hide conversation": "收起会话",
+    "Show conversation": "展开会话",
+    "Queueing sends a repair request with your next feedback. An issue is marked resolved only after a newer artifact load and a complete check at the same viewport no longer finds it.":
+      "所选问题将随下一条反馈提交修复请求。更新内容后，只有同尺寸窗口的完整检查确认问题消失，才会标记为已解决。",
+  };
+  if (translations[text]) return translations[text];
+  return text
+    .replace(/(\d+) unresolved (?:layout )?issues?/, "$1 个未解决问题")
+    .replace(/(\d+) already queued for a fix/, "$1 个已请求修复")
+    .replace(/(\d+) selected/, "已选择 $1 个")
+    .replace(/^Seen (.*)$/, "发现于 $1")
+    .replace(/(\d+)m ago/, "$1 分钟前")
+    .replace(/(\d+)h ago/, "$1 小时前")
+    .replace(/(\d+)d ago/, "$1 天前")
+    .replace(
+      /Rendered text crosses its container's (bottom|right) edge by ([\d.]+px) and is hidden\./,
+      (_, edge, px) => "文字超出容器" + (edge === "bottom" ? "底部" : "右侧") + " " + px + "，内容被隐藏。",
+    );
+}
+
 function activeWarnings() {
   return layoutWarnings.filter((warning) => warning && warning.active);
 }
@@ -2700,21 +2765,21 @@ function createWarningRow(warning) {
 
   const title = document.createElement("div");
   title.className = "warning-title";
-  title.textContent = warning.title;
+  title.textContent = chromeText(warning.title);
   body.appendChild(title);
 
   const explanation = document.createElement("p");
   explanation.className = "warning-explanation";
-  explanation.textContent = warning.explanation;
+  explanation.textContent = chromeText(warning.explanation);
   body.appendChild(explanation);
 
   const meta = document.createElement("div");
   meta.className = "warning-meta";
-  meta.appendChild(createWarningChip("Severe", "severity"));
-  meta.appendChild(createWarningChip(statusLabel, "status-" + warning.status));
-  meta.appendChild(createWarningChip(warning.viewport_label + " · " + warning.viewport_width + "px"));
+  meta.appendChild(createWarningChip(chromeText("Severe"), "severity"));
+  meta.appendChild(createWarningChip(chromeText(statusLabel), "status-" + warning.status));
+  meta.appendChild(createWarningChip(chromeText(warning.viewport_label) + " · " + warning.viewport_width + "px"));
   const seen = warningRelativeTime(warning.last_seen_at);
-  if (seen) meta.appendChild(createWarningChip("Seen " + seen));
+  if (seen) meta.appendChild(createWarningChip(chromeText("Seen " + chromeText(seen))));
   body.appendChild(meta);
 
   const target = document.createElement("code");
@@ -2728,7 +2793,7 @@ function createWarningRow(warning) {
     const reveal = document.createElement("button");
     reveal.type = "button";
     reveal.className = "warning-action";
-    reveal.textContent = "Reveal";
+    reveal.textContent = chromeText("Reveal");
     reveal.setAttribute("aria-label", "Reveal " + warning.title + " in the artifact");
     reveal.addEventListener("click", () => revealWarning(warning));
     actions.appendChild(reveal);
@@ -2736,7 +2801,7 @@ function createWarningRow(warning) {
   const dismiss = document.createElement("button");
   dismiss.type = "button";
   dismiss.className = "warning-action";
-  dismiss.textContent = "Dismiss";
+  dismiss.textContent = chromeText("Dismiss");
   dismiss.disabled = !selectable;
   dismiss.setAttribute(
     "aria-label",
@@ -2771,19 +2836,19 @@ function renderWarnings() {
   warningsCount.textContent = String(count);
   warningsButton.setAttribute(
     "aria-label",
-    count === 1 ? "1 unresolved layout issue" : count + " unresolved layout issues",
+    chromeText(count === 1 ? "1 unresolved layout issue" : count + " unresolved layout issues"),
   );
 
   const outstanding = active.filter((warning) => warning.outstanding).length;
   warningsSummary.textContent =
-    (count === 1 ? "1 unresolved issue" : count + " unresolved issues") +
-    (outstanding > 0 ? " · " + outstanding + " already queued for a fix" : "");
+    chromeText(count === 1 ? "1 unresolved issue" : count + " unresolved issues") +
+    (outstanding > 0 ? " · " + chromeText(outstanding + " already queued for a fix") : "");
 
   warningsList.replaceChildren();
   if (count === 0) {
     const empty = document.createElement("p");
     empty.className = "warnings-empty";
-    empty.textContent = "No unresolved layout issues.";
+    empty.textContent = chromeText("No unresolved layout issues.");
     warningsList.appendChild(empty);
   } else {
     for (const warning of active) warningsList.appendChild(createWarningRow(warning));
@@ -2799,7 +2864,7 @@ function updateWarningSelectionState() {
   // Default selection is never "everything": Select all is an explicit action.
   warningsSelectAll.checked = selectable.length > 0 && selectedCount === selectable.length;
   warningsSelectAll.indeterminate = selectedCount > 0 && selectedCount < selectable.length;
-  warningsSelected.textContent = selectedCount === 0 ? "None selected" : selectedCount + " selected";
+  warningsSelected.textContent = chromeText(selectedCount === 0 ? "None selected" : selectedCount + " selected");
   warningsQueueButton.disabled = selectedCount === 0 || ended || terminalSubmission !== null;
 }
 
@@ -3223,11 +3288,11 @@ function markSessionEnded() {
 function copyFilePath() {
   copyText(filePath);
   copyHint.classList.add("copied");
-  copyHintText.textContent = "Copied";
+  copyHintText.textContent = chromeText("Copied");
   clearTimeout(copyHintTimer);
   copyHintTimer = setTimeout(() => {
     copyHint.classList.remove("copied");
-    copyHintText.textContent = "Copy";
+    copyHintText.textContent = chromeText("Copy");
   }, 1600);
 }
 
@@ -4922,6 +4987,19 @@ events.set("polish-review", (data) => {
   }
   polishReviewUi.sync(data);
 });
+if (sessionData.polish) {
+  document.documentElement.lang = "zh-CN";
+  for (const element of document.querySelectorAll(
+    ".bar span, .bar h2, .bar p, .bar .menu-label, #warningsQueueButton",
+  )) {
+    if (element.childElementCount === 0) element.textContent = chromeText(element.textContent);
+  }
+  for (const element of document.querySelectorAll(".bar [title], .bar [aria-label]")) {
+    for (const attribute of ["title", "aria-label"]) {
+      if (element.hasAttribute(attribute)) element.setAttribute(attribute, chromeText(element.getAttribute(attribute)));
+    }
+  }
+}
 if (sessionData.polish && /** @type {any} */ (window).mountPolishReview) {
   polishReviewUi = /** @type {any} */ (window).mountPolishReview({
     key,
